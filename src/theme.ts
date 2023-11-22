@@ -1,15 +1,18 @@
 import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
-  black: {
-    normal: "#111111",
-    lighter: "#848C91",
+  word: {
+    main: "#f3f2ed",
+    sub: "#8f8d89",
     accent: "#000000",
+    darker: "#1f1f1f",
+    black: "#232E35",
   },
-  white: {
-    normal: "#f5f5f5",
-    darker: "#a9afb2",
-    accent: "#ffffff",
+
+  bg: {
+    normal: "#000000",
+    point: "#000c16",
+    lighter: "#202020",
   },
 
   yellow: { accent: "#F4D905", normal: "#FAEB9B" },

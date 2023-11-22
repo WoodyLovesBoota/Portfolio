@@ -1,0 +1,27 @@
+[
+  {
+    "projectName": "TravelGo.",
+    "skill": ["React", "Typescript"],
+    "image": "images/travelgo.png"
+  },
+  {
+    "projectName": "Netflix Clone.",
+    "skill": ["React", "Typescript"],
+    "image": "images/netflix.png"
+  },
+  {
+    "projectName": "Worlde.",
+    "skill": ["React", "Typescript"],
+    "image": "images/wordle.png"
+  },
+  {
+    "projectName": "Planner.",
+    "skill": ["HTML", "CSS", "Javascript"],
+    "image": "images/planner.png"
+  },
+  {
+    "projectName": "Calendar.",
+    "skill": ["HTML", "CSS", "Javascript"],
+    "image": "images/calendar.png"
+  }
+]
