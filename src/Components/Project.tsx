@@ -29,17 +29,17 @@ const Wrapper = styled(motion.div)`
   height: 450px;
   width: 450px;
   background-color: white;
-  border-radius: 12px;
+  border-radius: 10px;
   position: relative;
   cursor: pointer;
+  border: 1px solid #f4f4fa;
   @media (max-width: 1660px) {
     height: 420px;
     width: 420px;
-    border-radius: 10px;
+    border-radius: 9px;
   }
   @media (max-width: 1440px) {
     width: 420px;
-    border-radius: 10px;
   }
 `;
 
@@ -54,10 +54,12 @@ const Photo = styled.div<{ bgPhoto: string }>`
 `;
 
 const Blur = styled(motion.div)`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   width: 100%;
   height: 75%;
   position: absolute;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 `;
 
 const SubTitle = styled.h2``;

@@ -88,14 +88,10 @@ const Container = styled.div`
 const Main = styled.div`
   padding: 15% 8%;
   padding-bottom: 50px;
-  color: white;
+  color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
-  background-color: #000c16;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0.15)
-  );
+  background-color: ${(props) => props.theme.bg.normal};
   width: 50%;
   height: 100%;
   @media (max-width: 1160px) {
@@ -109,7 +105,7 @@ const Title = styled.h2`
   width: 120%;
   font-size: 2.5rem;
   line-height: 1.8;
-  font-weight: 350;
+  font-weight: 500;
   word-spacing: 2px;
   span {
     font-size: 2.5rem;
@@ -120,12 +116,11 @@ const Title = styled.h2`
 const SubTitle = styled.h2`
   width: 150%;
   font-size: 1.125rem;
-  font-weight: 350;
-  color: gray;
+  font-weight: 500;
+  color: ${(props) => props.theme.word.main};
   line-height: 2.4;
   margin-top: 50px;
   span {
-    color: white;
     font-size: 1.125rem;
     font-weight: 500;
   }
@@ -148,5 +143,5 @@ const LinkTitle = styled.h2`
 
 const LinkContent = styled.a`
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
 `;

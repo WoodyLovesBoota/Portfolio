@@ -4,8 +4,11 @@ import Header from "./Header";
 const Services = () => {
   return (
     <Wrapper>
-      <Header title="Education & Skills  " subTitle="LEARNING PATH" />
-      <Main></Main>
+      <Header title="Specialized in  " subTitle="SERVICES" />
+      <Main>
+        <ServiceBox></ServiceBox>
+        <ServiceBox></ServiceBox>
+      </Main>
     </Wrapper>
   );
 };
@@ -14,15 +17,24 @@ export default Services;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.normal};
+  background-color: ${(props) => props.theme.bg.point};
   padding: 8%;
   display: flex;
   flex-direction: column;
 `;
 
-const Main = styled.div``;
+const Main = styled.div`
+  padding: 8% 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+`;
 
-const EducationColumn = styled.div``;
+const ServiceBox = styled.div`
+  background-color: white;
+  width: 480px;
+  height: 480px;
+`;
 
 const EducationTitle = styled.h2``;
 

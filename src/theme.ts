@@ -2,17 +2,17 @@ import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   word: {
-    main: "#f3f2ed",
-    sub: "#8f8d89",
+    main: "#232E35",
+    sub: "#656D72",
     accent: "#000000",
-    darker: "#1f1f1f",
+    darker: "#EBEBFF",
     black: "#232E35",
   },
 
   bg: {
-    normal: "#000000",
-    point: "#000c16",
-    lighter: "#202020",
+    normal: "#f5f5f5",
+    point: "#F4F4FA",
+    lighter: "#EBEBFF",
   },
 
   yellow: { accent: "#F4D905", normal: "#FAEB9B" },

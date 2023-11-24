@@ -58,7 +58,7 @@ export default Education;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.normal};
+  background-color: ${(props) => props.theme.bg.point};
   padding: 8%;
   display: flex;
   flex-direction: column;
@@ -66,6 +66,7 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   padding: 8% 0;
+  padding-bottom: 0;
   display: flex;
 `;
 
@@ -76,21 +77,21 @@ const EducationColumn = styled.div`
 `;
 
 const EducationTitle = styled.h2`
-  font-size: 21px;
-  font-weight: 400;
+  font-size: 1.125rem;
+  font-weight: 500;
   margin-bottom: 12px;
 `;
 
 const EducationSubTitle = styled.h2`
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
   margin-bottom: 32px;
   color: ${(props) => props.theme.word.sub};
 `;
 
 const EducationYear = styled.h2`
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
 `;
 
 const EducationInfo = styled.div``;
@@ -101,9 +102,9 @@ const Feature = styled.div`
 
 const Circle = styled.div`
   background-color: ${(props) => props.theme.word.darker};
-  width: 21px;
-  height: 21px;
-  border-radius: 11px;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 0.6875rem;
 `;
 
 const SkillColumn = styled.div`
@@ -113,9 +114,9 @@ const SkillColumn = styled.div`
 
 const SkillDescription = styled.h2`
   color: ${(props) => props.theme.word.sub};
-  font-size: 21px;
+  font-size: 1.125rem;
   line-height: 2;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 const SkillGraph = styled.div`
@@ -128,21 +129,21 @@ const SkillRow = styled.div`
 `;
 
 const SkillName = styled.h2`
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   margin: 20px 0;
 `;
 
 const SkillBar = styled.div`
-  height: 11px;
+  height: 10px;
   border-radius: 4px;
-  background-color: ${(props) => props.theme.word.darker};
+  background-color: ${(props) => props.theme.bg.point};
   position: relative;
   width: 95%;
 `;
 
 const SkillFill = styled.div<{ width: string }>`
-  height: 11px;
+  height: 10px;
   border-radius: 4px;
   background-color: ${(props) => props.theme.main.accent};
   position: absolute;

@@ -3,11 +3,13 @@ import MainContent from "../Components/MainContent";
 import About from "../Components/About";
 import Projects from "../Components/Projects";
 import Education from "../Components/Education";
+import Services from "../Components/Services";
 
 const Home = () => {
   return (
     <Wrapper>
       <MainContent />
+      <Services />
       <Projects />
       <Education />
       <About />

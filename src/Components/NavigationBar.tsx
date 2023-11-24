@@ -44,7 +44,7 @@ const Content = styled.button`
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
-  color: white;
+  color: ${(props) => props.theme.word.main};
   cursor: pointer;
 `;
 

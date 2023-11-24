@@ -31,13 +31,13 @@ const SubTitle = styled.h2`
   font-size: 1rem;
   letter-spacing: 7.5px;
   margin-bottom: 20px;
-  font-weight: 400;
+  font-weight: 500;
 `;
 
 const Title = styled.h2`
   color: ${(props) => props.theme.word.main};
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
 `;
 
