@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Header from "./Header";
 
 const Education = () => {
-  const projectArr = [];
   return (
     <Wrapper>
       <Header title="Education & Skills  " subTitle="LEARNING PATH" />
@@ -27,6 +26,28 @@ const Education = () => {
             Additionally, I actively accumulate knowledge in various domains
             beyond front-end development.
           </SkillDescription>
+          <SkillGraph>
+            <SkillGraph>
+              <SkillRow>
+                <SkillName>React</SkillName>
+                <SkillBar>
+                  <SkillFill width="75%" />
+                </SkillBar>
+              </SkillRow>
+              <SkillRow>
+                <SkillName>Typescript / Javascirpt</SkillName>
+                <SkillBar>
+                  <SkillFill width="60%" />
+                </SkillBar>
+              </SkillRow>
+              <SkillRow>
+                <SkillName>Solidity</SkillName>
+                <SkillBar>
+                  <SkillFill width="70%" />
+                </SkillBar>
+              </SkillRow>
+            </SkillGraph>
+          </SkillGraph>
         </SkillColumn>
       </Main>
     </Wrapper>
@@ -97,8 +118,36 @@ const SkillDescription = styled.h2`
   font-weight: 300;
 `;
 
-const AchieveContentBox = styled.div``;
+const SkillGraph = styled.div`
+  margin: 90px 0;
+`;
 
-const AchieveContent = styled.h2``;
+const SkillRow = styled.div`
+  color: ${(props) => props.theme.word.main};
+  margin-bottom: 50px;
+`;
+
+const SkillName = styled.h2`
+  font-size: 18px;
+  font-weight: 400;
+  margin: 20px 0;
+`;
+
+const SkillBar = styled.div`
+  height: 11px;
+  border-radius: 4px;
+  background-color: ${(props) => props.theme.word.darker};
+  position: relative;
+  width: 95%;
+`;
+
+const SkillFill = styled.div<{ width: string }>`
+  height: 11px;
+  border-radius: 4px;
+  background-color: ${(props) => props.theme.main.accent};
+  position: absolute;
+  top: 0;
+  width: ${(props) => props.width};
+`;
 
 const cursorVar = {};

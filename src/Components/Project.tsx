@@ -29,16 +29,17 @@ const Wrapper = styled(motion.div)`
   height: 450px;
   width: 450px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
   cursor: pointer;
   @media (max-width: 1660px) {
     height: 420px;
     width: 420px;
-    border-radius: 9px;
+    border-radius: 10px;
   }
   @media (max-width: 1440px) {
     width: 420px;
+    border-radius: 10px;
   }
 `;
 
