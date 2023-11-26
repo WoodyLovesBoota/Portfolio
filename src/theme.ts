@@ -10,9 +10,10 @@ export const theme: DefaultTheme = {
   },
 
   bg: {
-    normal: "#f5f5f5",
-    point: "#F4F4FA",
+    normal: "#ffffff",
+    point: "#FBFBFB",
     lighter: "#EBEBFF",
+    blur: "#F6F7FC",
   },
 
   yellow: { accent: "#F4D905", normal: "#FAEB9B" },

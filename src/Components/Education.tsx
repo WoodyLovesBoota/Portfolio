@@ -7,24 +7,22 @@ const Education = () => {
       <Header title="Education & Skills  " subTitle="LEARNING PATH" />
       <Main>
         <EducationColumn>
-          <Feature>
-            <Circle />
-          </Feature>
-          <EducationInfo>
-            <EducationTitle>Seoul National University</EducationTitle>
-            <EducationSubTitle>
-              Bachelor's degree - Electrical and Computer Engineering
-            </EducationSubTitle>
-            <EducationYear>2015 - 2021</EducationYear>
-          </EducationInfo>
+          <EducationItem>
+            <Feature>
+              <Circle />
+            </Feature>
+            <EducationInfo>
+              <EducationTitle>Seoul National University</EducationTitle>
+              <EducationSubTitle>Bachelor's degree - Electrical and Computer Engineering</EducationSubTitle>
+              <EducationYear>2015 - 2021</EducationYear>
+            </EducationInfo>
+          </EducationItem>
         </EducationColumn>
         <SkillColumn>
           <SkillDescription>
-            I have been continuously learning in the field of front-end
-            development. Building upon a solid understanding of core languages
-            and frameworks, I possess versatile application skills.
-            Additionally, I actively accumulate knowledge in various domains
-            beyond front-end development.
+            I have been continuously learning in the field of front-end development. Building upon a solid understanding
+            of core languages and frameworks, I possess versatile application skills. Additionally, I actively
+            accumulate knowledge in various domains beyond front-end development.
           </SkillDescription>
           <SkillGraph>
             <SkillGraph>
@@ -72,8 +70,13 @@ const Main = styled.div`
 
 const EducationColumn = styled.div`
   color: ${(props) => props.theme.word.main};
-  display: flex;
   width: 40%;
+`;
+
+const EducationItem = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 70px;
 `;
 
 const EducationTitle = styled.h2`
@@ -98,6 +101,8 @@ const EducationInfo = styled.div``;
 
 const Feature = styled.div`
   margin-right: 32px;
+  display: flex;
+  align-items: center;
 `;
 
 const Circle = styled.div`

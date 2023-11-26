@@ -36,7 +36,7 @@ const SubTitle = styled.h2`
 
 const Title = styled.h2`
   color: ${(props) => props.theme.word.main};
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 1px;
 `;

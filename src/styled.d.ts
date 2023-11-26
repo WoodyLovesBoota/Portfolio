@@ -13,6 +13,7 @@ declare module "styled-components" {
       normal: string;
       point: string;
       lighter: string;
+      blur: string;
     };
     yellow: {
       accent: string;

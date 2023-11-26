@@ -1,26 +1,16 @@
 import styled from "styled-components";
 import Header from "./Header";
 
-const Services = () => {
+const Career = () => {
   return (
     <Wrapper>
-      <Header title="Specialized in  " subTitle="SERVICES" />
-      <Main>
-        <ServiceBox>
-          <ServiceIcon></ServiceIcon>
-          <ServiceTitle>Web Development</ServiceTitle>
-          <ServiceDescription>Create and maintain websites</ServiceDescription>
-        </ServiceBox>
-        <ServiceBox>
-          <ServiceTitle>Block-Chain Development</ServiceTitle>
-          <ServiceDescription></ServiceDescription>
-        </ServiceBox>
-      </Main>
+      <Header title="Work Experiences" subTitle="CAREER PATH" />
+      <Main></Main>
     </Wrapper>
   );
 };
 
-export default Services;
+export default Career;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -41,14 +31,13 @@ const ServiceBox = styled.div`
   background-color: white;
   width: 480px;
   height: 480px;
-  border-radius: 12px;
 `;
 
-const ServiceIcon = styled.h2``;
+const EducationTitle = styled.h2``;
 
-const ServiceTitle = styled.h2``;
+const EducationSubTitle = styled.h2``;
 
-const ServiceDescription = styled.h2``;
+const EducationYear = styled.h2``;
 
 const EducationInfo = styled.div``;
 

@@ -3,12 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Project = ({ project }: IProjectProps) => {
   return (
-    <Wrapper
-      variants={boxVar}
-      initial={"initial"}
-      whileHover={"hover"}
-      whileTap={"click"}
-    >
+    <Wrapper variants={boxVar} initial={"initial"} whileHover={"hover"} whileTap={"click"}>
       <Blur variants={blurVar}></Blur>
       <Photo bgPhoto={project.image}></Photo>
       <Info>

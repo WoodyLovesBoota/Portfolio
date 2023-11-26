@@ -21,7 +21,7 @@ export default Projects;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.normal};
+  background-color: ${(props) => props.theme.bg.point};
   padding: 8%;
   display: flex;
   flex-direction: column;

@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 16px;
+    font-weight: 300;
     font-family: "Noto sans KR", sans-serif;
     vertical-align: baseline;
     @media (max-width: 1440px) {
@@ -32,12 +33,10 @@ const GlobalStyle = createGlobalStyle`
     }
     @media (max-width: 1024px) {
       font-size: 11px;
-  }
+    }
     @media (max-width: 760px) {
       font-size: 10px;
-  }
-  
-
+    }
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
@@ -96,9 +95,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 const queryClient = new QueryClient();
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <QueryClientProvider client={queryClient}>

@@ -13,23 +13,17 @@ const MainContent = () => {
             <span>양태욱</span>입니다.
           </Title>
           <SubTitle>
-            프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에
-            흥미가 있으며
-            <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에
-            열정을 가지고 있습니다.
+            프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
+            <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
           </SubTitle>
           <Links>
             <Link>
               <LinkTitle>Github</LinkTitle>
-              <LinkContent href="https://github.com/WoodyLovesBoota">
-                https://github.com/WoodyLovesBoota
-              </LinkContent>
+              <LinkContent href="https://github.com/WoodyLovesBoota">https://github.com/WoodyLovesBoota</LinkContent>
             </Link>
             <Link>
               <LinkTitle>Blog</LinkTitle>
-              <LinkContent href="https://velog.io/@woodylovescoding">
-                https://velog.io/@woodylovescoding
-              </LinkContent>
+              <LinkContent href="https://velog.io/@woodylovescoding">https://velog.io/@woodylovescoding</LinkContent>
             </Link>
           </Links>
         </Main>
@@ -105,24 +99,24 @@ const Title = styled.h2`
   width: 120%;
   font-size: 2.5rem;
   line-height: 1.8;
-  font-weight: 500;
+  font-weight: 400;
   word-spacing: 2px;
   span {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 `;
 
 const SubTitle = styled.h2`
   width: 150%;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
   color: ${(props) => props.theme.word.main};
   line-height: 2.4;
   margin-top: 50px;
   span {
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
   }
 `;
 
