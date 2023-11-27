@@ -93,6 +93,11 @@ const Main = styled.div`
     height: 50%;
     padding-top: 8%;
   }
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 40%;
+    padding-top: 8%;
+  }
 `;
 
 const Title = styled.h2`

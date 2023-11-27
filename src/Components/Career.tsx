@@ -71,22 +71,31 @@ const Wrapper = styled.div`
 const Main = styled.div`
   display: flex;
   justify-content: flex-start;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `;
 
 const SelectMenu = styled.div`
-  width: 400px;
-  margin-right: 200px;
-  margin-top: 120px;
+  width: 25rem;
+  margin-right: 12.5rem;
+  margin-top: 7.5rem;
+  @media (max-width: 850px) {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+  }
 `;
 
 const SelectItem = styled.div<{ isCurrent: boolean }>`
-  padding: 25px 40px;
+  padding: 1.5625rem 2.5rem;
+  margin-right: 10px;
   background-color: ${(props) => (props.isCurrent ? props.theme.bg.normal : "transparent")};
   color: ${(props) => props.isCurrent && props.theme.word.accent};
 `;
 
 const SelectTitle = styled.h2`
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
 `;
 
@@ -97,37 +106,37 @@ const CareerBox = styled.div`
 `;
 
 const CareerTitle = styled.h2`
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: 400;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 `;
 
 const CareerName = styled.span`
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: 400;
   margin-left: 5px;
   text-decoration: underline;
 `;
 
 const CareerAddress = styled.h2`
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.word.sub};
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
 `;
 
 const CareerDuration = styled.h2`
-  font-size: 16px;
-  margin-bottom: 25px;
+  font-size: 1rem;
+  margin-bottom: 1.5625rem;
   font-weight: 400;
 `;
 
 const CareerSkills = styled.div`
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 `;
 
 const CareerSkill = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
@@ -145,7 +154,7 @@ const Divider = styled.div`
 
 const CareerDescription = styled.h2`
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   display: flex;
   align-items: center;
 `;
@@ -159,7 +168,7 @@ const CareerColumn = styled.div`
 
 const Bar = styled.div`
   background-color: lightgray;
-  width: 10px;
+  width: 0.625rem;
   height: 2px;
   border-radius: 2px;
   margin-right: 20px;

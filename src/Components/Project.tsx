@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Project = ({ project }: IProjectProps) => {
+  const navigate = useNavigate();
+
   return (
     <Wrapper variants={boxVar} initial={"initial"} whileHover={"hover"} whileTap={"click"}>
       <Blur variants={blurVar}></Blur>
@@ -34,7 +37,13 @@ const Wrapper = styled(motion.div)`
     border-radius: 9px;
   }
   @media (max-width: 1440px) {
-    width: 420px;
+    width: 350px;
+    height: 350px;
+  }
+
+  @media (max-width: 900px) {
+    height: 300px;
+    width: 300px;
   }
 `;
 
@@ -65,14 +74,14 @@ const Main = styled.div``;
 
 const Info = styled.div`
   height: 25%;
-  padding: 30px 20px;
+  padding: 1.5625rem 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 const InfoTitle = styled.div`
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: ${(props) => props.theme.word.black};
 `;
@@ -82,7 +91,7 @@ const InfoSkill = styled.h2`
 `;
 
 const SkillCircle = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;

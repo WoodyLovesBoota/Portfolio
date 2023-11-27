@@ -37,7 +37,10 @@ const Main = styled.div`
     grid-template-columns: repeat(auto-fill, 360px);
   }
   @media (max-width: 1440px) {
-    grid-template-columns: repeat(auto-fill, 450px);
+    grid-template-columns: repeat(auto-fill, 380px);
+  }
+  @media (max-width: 920px) {
+    grid-template-columns: repeat(auto-fill, 350px);
   }
 `;
 

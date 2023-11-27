@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Header from "./Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe, faLink } from "@fortawesome/free-solid-svg-icons";
 
 const Services = () => {
   return (
@@ -7,14 +9,18 @@ const Services = () => {
       <Header title="Specialized in  " subTitle="SERVICES" isCenter={true} />
       <Main>
         <ServiceBox>
-          <ServiceIcon></ServiceIcon>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faGlobe} />
+          </ServiceIcon>
           <ServiceTitle>Web Development</ServiceTitle>
           <ServiceDescription>
             Create responsive websites and use various technologies and frameworks to enhance user experiences.
           </ServiceDescription>
         </ServiceBox>
         <ServiceBox>
-          <ServiceIcon></ServiceIcon>
+          <ServiceIcon>
+            <FontAwesomeIcon icon={faLink} />
+          </ServiceIcon>
           <ServiceTitle>Block-Chain Development</ServiceTitle>
           <ServiceDescription>
             Build efficient and secure blockchain applications using smart contracts.
@@ -39,37 +45,48 @@ const Main = styled.div`
   padding: 8% 0;
   padding-bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;
 
 const ServiceBox = styled.div`
   background-color: white;
-  width: 480px;
-  height: 400px;
+  width: 30rem;
+  height: 25rem;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 80px;
+  padding: 5rem;
   text-align: center;
+  margin: 3.125rem 3.125rem;
 `;
 
 const ServiceIcon = styled.h2`
-  width: 64px;
-  height: 64px;
-  border-radius: 21px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.3125rem;
   background-color: ${(props) => props.theme.main.hlbg};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: ${(props) => props.theme.word.accent};
 `;
 
 const ServiceTitle = styled.h2`
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: 400;
 `;
 
 const ServiceDescription = styled.h2`
   font-weight: 300;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.7;
 `;
 
