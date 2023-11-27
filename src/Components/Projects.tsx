@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
-import Project from "./Project";
+import ProjectCard from "./ProjectCard";
 import projectData from "../projectData.json";
 import Header from "./Header";
 
@@ -9,8 +9,8 @@ const Projects = () => {
     <Wrapper>
       <Header title="Featured Portfolios" subTitle="MY WORKS" isCenter={false} />
       <Main>
-        {projectData.map((project) => (
-          <Project project={project} />
+        {projectData.map((project, index) => (
+          <ProjectCard project={project} color={index} />
         ))}
       </Main>
     </Wrapper>
@@ -21,7 +21,6 @@ export default Projects;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.point};
   padding: 8%;
   display: flex;
   flex-direction: column;
@@ -30,17 +29,12 @@ const Wrapper = styled.div`
 const Main = styled.div`
   padding: 8% 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 450px);
-  grid-row-gap: 8vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 2vw;
+  grid-column-gap: 1.5vw;
   justify-content: space-between;
-  @media (max-width: 1660px) {
-    grid-template-columns: repeat(auto-fill, 360px);
-  }
-  @media (max-width: 1440px) {
-    grid-template-columns: repeat(auto-fill, 380px);
-  }
-  @media (max-width: 920px) {
-    grid-template-columns: repeat(auto-fill, 350px);
+  @media (max-width: 1160px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 

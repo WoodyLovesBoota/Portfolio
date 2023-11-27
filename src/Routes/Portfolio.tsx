@@ -5,17 +5,22 @@ import Projects from "../Components/Projects";
 import Education from "../Components/Education";
 import Services from "../Components/Services";
 import Career from "../Components/Career";
+import { PathMatch, useMatch, useNavigate } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const Portfolio = () => {
+  const navigate = useNavigate();
+
+  const projectMatch: PathMatch<string> | null = useMatch("/project/:title");
+
   return (
-    <Wrapper>
-      <MainContent />
-      <Services />
-      <Projects />
-      <Career />
-      <Education />
-      <About />
-    </Wrapper>
+    <AnimatePresence>
+      {projectMatch && (
+        <>
+          <Wrapper>{projectMatch.params.title}</Wrapper>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
 

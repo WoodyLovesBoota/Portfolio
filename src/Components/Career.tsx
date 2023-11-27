@@ -61,7 +61,6 @@ export default Career;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.blur};
   padding: 8%;
   display: flex;
   flex-direction: column;
@@ -90,8 +89,14 @@ const SelectMenu = styled.div`
 const SelectItem = styled.div<{ isCurrent: boolean }>`
   padding: 1.5625rem 2.5rem;
   margin-right: 10px;
-  background-color: ${(props) => (props.isCurrent ? props.theme.bg.normal : "transparent")};
+  border-radius: 5px;
+  background-color: ${(props) => (props.isCurrent ? "rgba(255,255,255,0.3)" : "transparent")};
   color: ${(props) => props.isCurrent && props.theme.word.accent};
+  box-shadow: ${(props) => props.isCurrent && "0px 0px 64px 0 rgba(65, 65, 65, 0.1)"};
+  cursor: pointer;
+  transition: {
+    background-color: 0.5s ease-in-out;
+  }
 `;
 
 const SelectTitle = styled.h2`
@@ -103,6 +108,10 @@ const SelectIcon = styled.h2``;
 
 const CareerBox = styled.div`
   color: ${(props) => props.theme.word.main};
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  padding: 50px;
+  border-radius: 15px;
 `;
 
 const CareerTitle = styled.h2`
@@ -162,12 +171,11 @@ const CareerDescription = styled.h2`
 const CareerDescriptions = styled.div``;
 
 const CareerColumn = styled.div`
-  padding: 3% 0;
   width: 100%;
 `;
 
 const Bar = styled.div`
-  background-color: lightgray;
+  background-color: gray;
   width: 0.625rem;
   height: 2px;
   border-radius: 2px;

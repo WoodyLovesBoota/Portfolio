@@ -2,26 +2,36 @@
   {
     "projectName": "TravelGo.",
     "skill": ["React", "Typescript"],
-    "image": "images/travelgo.png"
+    "image": "images/travelgo.png",
+    "infoDesc": "Travel scheduling web application.",
+    "cardDesc": "TravelGo is a React.ts-based web application for creating and managing travel itineraries. Project is developed by emphasizing component modularization, Virtual DOM, and state management, and various React libraries for enhanced functionality."
   },
   {
     "projectName": "Netflix Clone.",
     "skill": ["React", "Typescript"],
-    "image": "images/netflix.png"
+    "image": "images/netflix.png",
+    "infoDesc": "Cloning the Netflix website.",
+    "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website. Deepening my understanding of fundamental React libraries such as React Router and React Query. Additionally, enhanced the user experience by incorporating various visual effects."
   },
   {
     "projectName": "Worlde.",
     "skill": ["React", "Typescript"],
-    "image": "images/wordle.png"
+    "image": "images/wordle.png",
+    "infoDesc": "Wordle, a word-guessing game.",
+    "cardDesc": "Wordle is a Word-guessing game developed with React and Typescript. Emphasizing efficient code writing through data communication between components and state management and implementing dynamic UI using conditional rendering to enhance the user experience."
   },
   {
     "projectName": "Planner.",
     "skill": ["HTML", "CSS", "Javascript"],
-    "image": "images/planner.png"
+    "image": "images/planner.png",
+    "infoDesc": "Productivity-focused web application.",
+    "cardDesc": "Planner is a project created with HTML, CSS, and Javascript. I attempted modularization by using various files to organize the project. Additionally, implemented features to fetch and use data from external APIs and combining diverse features and data to create a unified web application."
   },
   {
     "projectName": "Calendar.",
     "skill": ["HTML", "CSS", "Javascript"],
-    "image": "images/calendar.png"
+    "image": "images/calendar.png",
+    "infoDesc": "Travel scheduling web application.",
+    "cardDesc": "The Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it."
   }
 ]

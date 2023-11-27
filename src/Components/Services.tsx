@@ -35,7 +35,6 @@ export default Services;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.blur};
   padding: 8%;
   display: flex;
   flex-direction: column;
@@ -54,7 +53,8 @@ const Main = styled.div`
 `;
 
 const ServiceBox = styled.div`
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
   width: 30rem;
   height: 25rem;
   border-radius: 15px;
@@ -77,6 +77,7 @@ const ServiceIcon = styled.h2`
   align-items: center;
   font-size: 1.25rem;
   color: ${(props) => props.theme.word.accent};
+  box-shadow: 0px 0px 30px 0px rgba(43, 25, 69, 0.3);
 `;
 
 const ServiceTitle = styled.h2`

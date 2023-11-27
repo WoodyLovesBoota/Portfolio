@@ -86,6 +86,15 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${(props) => props.theme.bg.normal};
+  background: rgb(226, 245, 255);
+
+  background: linear-gradient(
+    to top,
+    rgba(226, 245, 255, 1) 0%,
+    rgba(242, 254, 255, 1) 35%,
+    rgba(242, 254, 255, 1) 85%,
+    rgba(226, 245, 255, 1) 100%
+  );
   width: 50%;
   height: 100%;
   @media (max-width: 1160px) {

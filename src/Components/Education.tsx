@@ -8,13 +8,17 @@ const Education = () => {
       <Main>
         <EducationColumn>
           <EducationItem>
-            <Feature>
-              <Circle />
-            </Feature>
             <EducationInfo>
               <EducationTitle>Seoul National University</EducationTitle>
               <EducationSubTitle>Bachelor's degree - Electrical and Computer Engineering</EducationSubTitle>
               <EducationYear>2015 - 2021</EducationYear>
+            </EducationInfo>
+          </EducationItem>
+          <EducationItem>
+            <EducationInfo>
+              <EducationTitle>Certificate</EducationTitle>
+              <EducationTitle>정보처리기사</EducationTitle>
+              <EducationYear>2021.08</EducationYear>
             </EducationInfo>
           </EducationItem>
         </EducationColumn>
@@ -25,26 +29,24 @@ const Education = () => {
             accumulate knowledge in various domains beyond front-end development.
           </SkillDescription>
           <SkillGraph>
-            <SkillGraph>
-              <SkillRow>
-                <SkillName>React</SkillName>
-                <SkillBar>
-                  <SkillFill width="75%" />
-                </SkillBar>
-              </SkillRow>
-              <SkillRow>
-                <SkillName>Typescript / Javascirpt</SkillName>
-                <SkillBar>
-                  <SkillFill width="60%" />
-                </SkillBar>
-              </SkillRow>
-              <SkillRow>
-                <SkillName>Solidity</SkillName>
-                <SkillBar>
-                  <SkillFill width="70%" />
-                </SkillBar>
-              </SkillRow>
-            </SkillGraph>
+            <SkillRow>
+              <SkillName>React</SkillName>
+              <SkillBar>
+                <SkillFill width="75%" />
+              </SkillBar>
+            </SkillRow>
+            <SkillRow>
+              <SkillName>Typescript / Javascirpt</SkillName>
+              <SkillBar>
+                <SkillFill width="60%" />
+              </SkillBar>
+            </SkillRow>
+            <SkillRow>
+              <SkillName>Solidity</SkillName>
+              <SkillBar>
+                <SkillFill width="70%" />
+              </SkillBar>
+            </SkillRow>
           </SkillGraph>
         </SkillColumn>
       </Main>
@@ -56,7 +58,6 @@ export default Education;
 
 const Wrapper = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.bg.point};
   padding: 8%;
   display: flex;
   flex-direction: column;
@@ -74,6 +75,8 @@ const Main = styled.div`
 const EducationColumn = styled.div`
   color: ${(props) => props.theme.word.main};
   width: 40%;
+  display: flex;
+  flex-direction: column;
   @media (max-width: 850px) {
     width: 100%;
   }
@@ -83,6 +86,10 @@ const EducationItem = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 4.375rem;
+  padding: 50px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
 `;
 
 const EducationTitle = styled.h2`
@@ -121,6 +128,9 @@ const Circle = styled.div`
 const SkillColumn = styled.div`
   width: 60%;
   padding: 0 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (max-width: 850px) {
     width: 100%;
   }
@@ -128,13 +138,21 @@ const SkillColumn = styled.div`
 
 const SkillDescription = styled.h2`
   color: ${(props) => props.theme.word.sub};
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 2;
   font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  padding: 50px;
+  border-radius: 15px;
 `;
 
 const SkillGraph = styled.div`
-  margin: 5.625rem 0;
+  margin-top: 70px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  padding: 50px;
+  border-radius: 15px;
 `;
 
 const SkillRow = styled.div`
