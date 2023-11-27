@@ -4,16 +4,21 @@ import Header from "./Header";
 const Services = () => {
   return (
     <Wrapper>
-      <Header title="Specialized in  " subTitle="SERVICES" />
+      <Header title="Specialized in  " subTitle="SERVICES" isCenter={true} />
       <Main>
         <ServiceBox>
           <ServiceIcon></ServiceIcon>
           <ServiceTitle>Web Development</ServiceTitle>
-          <ServiceDescription>Create and maintain websites</ServiceDescription>
+          <ServiceDescription>
+            Create responsive websites and use various technologies and frameworks to enhance user experiences.
+          </ServiceDescription>
         </ServiceBox>
         <ServiceBox>
+          <ServiceIcon></ServiceIcon>
           <ServiceTitle>Block-Chain Development</ServiceTitle>
-          <ServiceDescription></ServiceDescription>
+          <ServiceDescription>
+            Build efficient and secure blockchain applications using smart contracts.
+          </ServiceDescription>
         </ServiceBox>
       </Main>
     </Wrapper>
@@ -40,15 +45,33 @@ const Main = styled.div`
 const ServiceBox = styled.div`
   background-color: white;
   width: 480px;
-  height: 480px;
-  border-radius: 12px;
+  height: 400px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+  text-align: center;
 `;
 
-const ServiceIcon = styled.h2``;
+const ServiceIcon = styled.h2`
+  width: 64px;
+  height: 64px;
+  border-radius: 21px;
+  background-color: ${(props) => props.theme.main.hlbg};
+`;
 
-const ServiceTitle = styled.h2``;
+const ServiceTitle = styled.h2`
+  font-size: 21px;
+  font-weight: 400;
+`;
 
-const ServiceDescription = styled.h2``;
+const ServiceDescription = styled.h2`
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+`;
 
 const EducationInfo = styled.div``;
 

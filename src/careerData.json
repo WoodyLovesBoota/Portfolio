@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Haechi Labs",
+    "subTitle": ["Smart Contract Developer", "Haechi-Labs"],
+    "address": "Seoul, Republic of Korea",
+    "duration": "Nov 2020 - Dec 2021",
+    "skills": ["Solidity", "Typescript"],
+    "descriptions": [
+      "Researching security vulnerabilities in smart contracts and various domains.",
+      "Security audit of Ethereum smart contracts.",
+      "Developing Ethereum smart contract and a user-friendly interface for interaction."
+    ]
+  },
+  {
+    "title": "Haechi Labssssss",
+    "subTitle": ["test", "eeee"],
+    "address": "Seoul, tttt",
+    "duration": "Nov 2020 - Dec 2021",
+    "skills": ["Solidity", "zzzzz"],
+    "descriptions": ["blar blar", "asdfasds", "asdfxcvew"]
+  }
+]

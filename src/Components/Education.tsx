@@ -4,7 +4,7 @@ import Header from "./Header";
 const Education = () => {
   return (
     <Wrapper>
-      <Header title="Education & Skills  " subTitle="LEARNING PATH" />
+      <Header title="Education & Skills  " subTitle="LEARNING PATH" isCenter={false} />
       <Main>
         <EducationColumn>
           <EducationItem>

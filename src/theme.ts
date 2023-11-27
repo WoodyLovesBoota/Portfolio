@@ -4,9 +4,9 @@ export const theme: DefaultTheme = {
   word: {
     main: "#232E35",
     sub: "#656D72",
-    accent: "#000000",
+    accent: "#775EEF",
     darker: "#EBEBFF",
-    black: "#232E35",
+    black: "#000000",
   },
 
   bg: {

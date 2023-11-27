@@ -7,7 +7,7 @@ import Header from "./Header";
 const Projects = () => {
   return (
     <Wrapper>
-      <Header title="Featured Portfolios" subTitle="MY WORKS" />
+      <Header title="Featured Portfolios" subTitle="MY WORKS" isCenter={false} />
       <Main>
         {projectData.map((project) => (
           <Project project={project} />
