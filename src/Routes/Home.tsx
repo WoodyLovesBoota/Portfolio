@@ -8,6 +8,7 @@ import Career from "../Components/Career";
 import Blog from "../Components/Blog";
 import NavigationBar from "../Components/NavigationBar";
 import { useRef } from "react";
+import Contact from "../Components/Contact";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -63,6 +64,7 @@ const Home = () => {
       <Career ref={experienceRef} />
       <Blog ref={blogRef} />
       <Education ref={educationRef} />
+      <Contact ref={contactRef} />
     </Wrapper>
   );
 };

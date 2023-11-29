@@ -7,7 +7,6 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <Wrapper ref={ref}>
       <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} />
-
       <Main>
         <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
           <a href="https://velog.io/@woodylovescoding/React-Wordle-%EB%A7%8C%EB%93%A4%EA%B8%B0" target="_blank">

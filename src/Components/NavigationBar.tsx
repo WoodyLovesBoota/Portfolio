@@ -65,7 +65,7 @@ const Content = styled.button`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
@@ -79,7 +79,7 @@ const Contact = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   background-color: ${(props) => props.theme.main.accent};
   border: none;
   color: white;

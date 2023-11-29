@@ -7,8 +7,9 @@ const App = () => {
     <>
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/project/:title/:num" element={<Portfolio />} />
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />}>
+            <Route path="/project/:title/:num" element={<Portfolio />} />
+          </Route>
         </Routes>
       </Router>
     </>
