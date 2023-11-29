@@ -1,29 +1,39 @@
 import styled from "styled-components";
-import NavigationBar from "../Components/NavigationBar";
+import Header from "./Header";
+import { forwardRef } from "react";
 
-const MainContent = () => {
+const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <Wrapper>
-      <NavigationBar />
+    <Wrapper ref={ref}>
       <Container>
         <Main>
-          <Title>
+          <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
+          {/* <Title>
             다양한 분야에서 <span>성장</span>하는 개발자
             <br />
             <span>양태욱</span>입니다.
-          </Title>
-          <SubTitle>
+          </Title> */}
+          {/* <SubTitle>
             프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
             <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
+          </SubTitle> */}
+          <SubTitle>
+            Interested in combining programming expertise with design to <br />
+            effectively results. Also passionate about Front-End development <br />
+            and dedicated to crafting user experiences.
           </SubTitle>
           <Links>
             <Link>
               <LinkTitle>Github</LinkTitle>
-              <LinkContent href="https://github.com/WoodyLovesBoota">https://github.com/WoodyLovesBoota</LinkContent>
+              <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
+                https://github.com/WoodyLovesBoota
+              </LinkContent>
             </Link>
             <Link>
               <LinkTitle>Blog</LinkTitle>
-              <LinkContent href="https://velog.io/@woodylovescoding">https://velog.io/@woodylovescoding</LinkContent>
+              <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
+                https://velog.io/@woodylovescoding
+              </LinkContent>
             </Link>
           </Links>
         </Main>
@@ -31,7 +41,7 @@ const MainContent = () => {
       </Container>
     </Wrapper>
   );
-};
+});
 
 export default MainContent;
 
@@ -80,21 +90,23 @@ const Container = styled.div`
 `;
 
 const Main = styled.div`
-  padding: 15% 8%;
+  padding: 17% 8%;
   padding-bottom: 50px;
   color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
-  background-color: ${(props) => props.theme.bg.normal};
-  background: rgb(226, 245, 255);
 
-  background: linear-gradient(
-    to top,
-    rgba(226, 245, 255, 1) 0%,
-    rgba(242, 254, 255, 1) 35%,
-    rgba(242, 254, 255, 1) 85%,
-    rgba(226, 245, 255, 1) 100%
+  background: hsla(206, 63%, 86%, 1);
+
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(206, 63%, 86%, 1) 0%,
+    hsla(0, 0%, 93%, 1) 27%,
+    hsla(0, 0%, 93%, 1) 53%,
+    hsla(206, 63%, 86%, 1) 100%
   );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#c6dff2", endColorstr="#d6e8f7", GradientType=1 );
   width: 50%;
   height: 100%;
   @media (max-width: 1160px) {
@@ -111,12 +123,12 @@ const Main = styled.div`
 
 const Title = styled.h2`
   width: 120%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.8;
   font-weight: 400;
   word-spacing: 2px;
   span {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
   }
 `;
@@ -144,12 +156,12 @@ const Link = styled.div`
 `;
 
 const LinkTitle = styled.h2`
-  font-size: 1.125rem;
-  font-weight: 700;
-  width: 120px;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 7.5rem;
 `;
 
 const LinkContent = styled.a`
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
 `;
