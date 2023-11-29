@@ -2,36 +2,83 @@
   {
     "projectName": "TravelGo.",
     "skill": ["React", "Typescript"],
-    "image": "images/travelgo.png",
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo06.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo07.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo08.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo09.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo10.png?raw=true"
+    ],
     "infoDesc": "Travel scheduling web application.",
-    "cardDesc": "TravelGo is a React.ts-based web application for creating and managing travel itineraries. Project is developed by emphasizing component modularization, Virtual DOM, and state management, and various React libraries for enhanced functionality."
+    "cardDesc": "TravelGo is a React.ts-based web application for creating and managing travel itineraries. Project is developed by emphasizing component modularization, Virtual DOM, and state management, and various React libraries for enhanced functionality.",
+    "detailDesc": "TravelGo is a project implementing a React.ts-based web application to assist with travel scheduling. After learning React and various library usage through lectures and several projects, I independently undertook the project's planning, design, and development. I practiced component modularization, Virtual DOM, and state management. Furthermore, I developed the project by incorporating various libraries, including React Hook, React Query, Recoil, Styled-Components, and React Router.",
+    "demo": "https://main--soft-taffy-a6cbf8.netlify.app/",
+    "gibhub": "https://github.com/WoodyLovesBoota/TravelGo"
   },
   {
     "projectName": "Netflix Clone.",
     "skill": ["React", "Typescript"],
-    "image": "images/netflix.png",
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix05.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix06.png?raw=true"
+    ],
     "infoDesc": "Cloning the Netflix website.",
-    "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website. Deepening my understanding of fundamental React libraries such as React Router and React Query. Additionally, enhanced the user experience by incorporating various visual effects."
+    "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website. Deepening my understanding of fundamental React libraries such as React Router and React Query. Additionally, enhanced the user experience by incorporating various visual effects.",
+    "detailDesc": "The Netflix Clone is a clone coding project developed using React and Typescript, with reference to online courses. The focus of the project was to enhance understanding of fundamental React libraries such as React Router and React Query. By incorporating various animations and motion designs, I improved the visual effects, contributing to an enhanced user experience.",
+    "demo": "https://woodylovesboota.github.io/React-Project",
+    "gibhub": "https://github.com/WoodyLovesBoota/Netflix__Clone"
   },
   {
     "projectName": "Worlde.",
     "skill": ["React", "Typescript"],
-    "image": "images/wordle.png",
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Wordle/wordle01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Wordle/wordle02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Wordle/wordle03.png?raw=true"
+    ],
     "infoDesc": "Wordle, a word-guessing game.",
-    "cardDesc": "Wordle is a Word-guessing game developed with React and Typescript. Emphasizing efficient code writing through data communication between components and state management and implementing dynamic UI using conditional rendering to enhance the user experience."
+    "cardDesc": "Wordle is a Word-guessing game developed with React and Typescript. Emphasizing efficient code writing through data communication between components and state management and implementing dynamic UI using conditional rendering to enhance the user experience.",
+    "detailDesc": "Wordle is a word-guessing game developed with React and Typescript. The goal was to write scalable code through reusable components. I focused on data communication between components and state management during development. Additionally, I delved deeply into learning methods to enhance the user experience through the implementation of dynamic UI using conditional rendering.",
+    "demo": "https://woodylovesboota.github.io/Wordle",
+    "gibhub": "https://github.com/WoodyLovesBoota/Wordle"
   },
   {
     "projectName": "Planner.",
     "skill": ["HTML", "CSS", "Javascript"],
-    "image": "images/planner.png",
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner04.png?raw=true"
+    ],
     "infoDesc": "Productivity-focused web application.",
-    "cardDesc": "Planner is a project created with HTML, CSS, and Javascript. I attempted modularization by using various files to organize the project. Additionally, implemented features to fetch and use data from external APIs and combining diverse features and data to create a unified web application."
+    "cardDesc": "Planner is a project created with HTML, CSS, and Javascript. I attempted modularization by using various files to organize the project. Additionally, implemented features to fetch and use data from external APIs and combining diverse features and data to create a unified web application.",
+    "detailDesc": "Planner is a composite result of several simple projects, showcasing fundamental Front-End development using HTML, CSS, and Javascript. It incorporates responsive web design, and explores modularity by utilizing various files to structure the project. Additionally, it implements functionality to fetch information from external APIs, allowing the integration of diverse features and data to create a web application.",
+    "demo": "https://woodylovesboota.github.io/Planner",
+    "gibhub": "https://github.com/WoodyLovesBoota/Planner"
   },
   {
     "projectName": "Calendar.",
     "skill": ["HTML", "CSS", "Javascript"],
-    "image": "images/calendar.png",
-    "infoDesc": "Travel scheduling web application.",
-    "cardDesc": "The Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it."
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar04.png?raw=true"
+    ],
+    "infoDesc": "Time scheduling web application.",
+    "cardDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it.",
+    "detailDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it. While it may be a single-page project, this endeavor allowed me to independently implement various aspects, including screen composition, component placement, overall layout design, direct feature implementation, and detailed style design.",
+    "demo": "https://woodylovesboota.github.io/Calendar",
+    "gibhub": "https://github.com/WoodyLovesBoota/Calendar"
   }
 ]

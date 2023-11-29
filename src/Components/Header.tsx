@@ -22,7 +22,7 @@ const Wrapper = styled.div<{ isCenter: boolean }>`
 `;
 
 const Bar = styled.div`
-  background-color: lightgray;
+  background-color: gray;
   width: 1rem;
   height: 0.175rem;
   border-radius: 2px;

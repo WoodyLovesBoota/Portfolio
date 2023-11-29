@@ -2,8 +2,9 @@ import styled from "styled-components";
 import Header from "./Header";
 import { useState } from "react";
 import careerData from "../careerData.json";
+import { forwardRef } from "react";
 
-const Career = () => {
+const Career = forwardRef<HTMLDivElement>((props, ref) => {
   let [currentCareer, setCurrentCareer] = useState(0);
 
   const changeCurrent = (index: number) => {
@@ -11,7 +12,7 @@ const Career = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Main>
         <SelectColumn>
           <Header title="Work Experiences" subTitle="CAREER PATH" isCenter={false} />
@@ -55,7 +56,7 @@ const Career = () => {
       </Main>
     </Wrapper>
   );
-};
+});
 
 export default Career;
 
@@ -92,7 +93,7 @@ const SelectItem = styled.div<{ isCurrent: boolean }>`
   border-radius: 5px;
   background-color: ${(props) => (props.isCurrent ? "rgba(255,255,255,0.3)" : "transparent")};
   color: ${(props) => props.isCurrent && props.theme.word.accent};
-  box-shadow: ${(props) => props.isCurrent && "0px 0px 64px 0 rgba(65, 65, 65, 0.1)"};
+  box-shadow: ${(props) => props.isCurrent && "0px 0px 64px 0 rgba(65, 65, 65, 0.2)"};
   cursor: pointer;
   transition: {
     background-color: 0.5s ease-in-out;
@@ -109,7 +110,7 @@ const SelectIcon = styled.h2``;
 const CareerBox = styled.div`
   color: ${(props) => props.theme.word.main};
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   padding: 50px;
   border-radius: 15px;
 `;
@@ -149,7 +150,7 @@ const CareerSkill = styled.div`
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid gray;
   color: ${(props) => props.theme.word.sub};
   font-weight: 400;
 `;

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import Header from "./Header";
+import { forwardRef } from "react";
 
-const Education = () => {
+const Education = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Header title="Education & Skills  " subTitle="LEARNING PATH" isCenter={false} />
       <Main>
         <EducationColumn>
@@ -52,7 +53,7 @@ const Education = () => {
       </Main>
     </Wrapper>
   );
-};
+});
 
 export default Education;
 
@@ -86,10 +87,10 @@ const EducationItem = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 4.375rem;
-  padding: 50px;
+  padding: 3.125rem;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
 `;
 
 const EducationTitle = styled.h2`
@@ -101,13 +102,13 @@ const EducationTitle = styled.h2`
 const EducationSubTitle = styled.h2`
   font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 2rem;
   color: ${(props) => props.theme.word.sub};
 `;
 
 const EducationYear = styled.h2`
   font-size: 1rem;
   font-weight: 500;
+  margin-top: 2rem;
 `;
 
 const EducationInfo = styled.div``;
@@ -133,6 +134,7 @@ const SkillColumn = styled.div`
   justify-content: space-between;
   @media (max-width: 850px) {
     width: 100%;
+    padding: 0;
   }
 `;
 
@@ -142,7 +144,7 @@ const SkillDescription = styled.h2`
   line-height: 2;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   padding: 50px;
   border-radius: 15px;
 `;
@@ -150,7 +152,7 @@ const SkillDescription = styled.h2`
 const SkillGraph = styled.div`
   margin-top: 70px;
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   padding: 50px;
   border-radius: 15px;
 `;

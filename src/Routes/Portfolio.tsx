@@ -1,31 +1,267 @@
 import styled from "styled-components";
-import MainContent from "../Components/MainContent";
-import About from "../Components/About";
-import Projects from "../Components/Projects";
-import Education from "../Components/Education";
-import Services from "../Components/Services";
-import Career from "../Components/Career";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import projectData from "../projectData.json";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Portfolio = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [clickedPhoto, setClickedPhoto] = useState(0);
+  const [nowPhoto, setNowPhoto] = useState(1);
 
-  const projectMatch: PathMatch<string> | null = useMatch("/project/:title");
+  const colors = ["red", "orange", "blue", "green", "yellow"];
+  const projectMatch: PathMatch<string> | null = useMatch("/project/:title/:num");
+
+  const handleGoBackClicked = () => {
+    navigate("/");
+  };
+
+  const handlePhotoClicked = (photoNum: number) => {
+    setClickedPhoto(photoNum);
+  };
+
+  const handleUpClicked = () => {
+    if (nowPhoto < 3) {
+      setNowPhoto((current) => 99 + current);
+    } else setNowPhoto((current) => current - 3);
+  };
+
+  const handleDownClicked = () => {
+    setNowPhoto((current) => current + 3);
+  };
 
   return (
-    <AnimatePresence>
+    <Container>
       {projectMatch && (
-        <>
-          <Wrapper>{projectMatch.params.title}</Wrapper>
-        </>
+        <Wrapper bgColor={colors[Number(projectMatch.params.num)]}>
+          <PhotoBox>
+            <PhotoCard>
+              <Photo bgPhoto={projectData[Number(projectMatch.params.num)].image[clickedPhoto]} />
+            </PhotoCard>
+            <Photos>
+              <UpButton onClick={handleUpClicked}>
+                <FontAwesomeIcon icon={faChevronUp} />
+              </UpButton>
+              <AnimatePresence>
+                {[nowPhoto, nowPhoto + 1, nowPhoto + 2].map((e) => (
+                  <SmallPhoto
+                    variants={photoVar}
+                    initial="initial"
+                    animate="animate"
+                    exit={"exit"}
+                    whileHover={"hover"}
+                    onClick={() => {
+                      handlePhotoClicked(e % projectData[Number(projectMatch.params.num)].image.length);
+                    }}
+                    bgPhoto={
+                      projectData[Number(projectMatch.params.num)].image[
+                        e % projectData[Number(projectMatch.params.num)].image.length
+                      ]
+                    }
+                  />
+                ))}
+              </AnimatePresence>
+              <DownButton onClick={handleDownClicked}>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </DownButton>
+            </Photos>
+          </PhotoBox>
+          <Buttons>
+            <Button
+              variants={hoverVar}
+              whileHover={"hover"}
+              href={projectData[Number(projectMatch.params.num)].demo}
+              target="_blank"
+              color={colors[Number(projectMatch.params.num)]}
+            >
+              Visit Project Page
+            </Button>
+            <Button
+              variants={hoverVar}
+              whileHover={"hover"}
+              href={projectData[Number(projectMatch.params.num)].gibhub}
+              target="_blank"
+              color={colors[Number(projectMatch.params.num)]}
+            >
+              View Code
+            </Button>
+            <Button
+              variants={hoverVar}
+              whileHover={"hover"}
+              color={colors[Number(projectMatch.params.num)]}
+              onClick={handleGoBackClicked}
+            >
+              Previous Page
+            </Button>
+          </Buttons>
+          <Title>{projectMatch.params.title}</Title>
+          <Skills>
+            {projectData[Number(projectMatch.params.num)].skill.map((skill) => (
+              <SkillCircle>{skill}</SkillCircle>
+            ))}
+          </Skills>
+          <Description>{projectData[Number(projectMatch.params.num)].detailDesc}</Description>
+          <Pages>Github Code : {projectData[Number(projectMatch.params.num)].gibhub}</Pages>
+          <Pages>Demo Page : {projectData[Number(projectMatch.params.num)].demo}</Pages>
+        </Wrapper>
       )}
-    </AnimatePresence>
+    </Container>
   );
 };
 
 export default Portfolio;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ bgColor: string }>`
   width: 100vw;
+  background-color: ${(props) => {
+    return props.theme[props.bgColor].accent;
+  }};
+  color: white;
+  padding: 8% 20%;
+  padding-bottom: 8%;
 `;
+
+const Container = styled.div``;
+
+const PhotoBox = styled.div`
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 20px 0px white;
+  padding: 30px;
+`;
+
+const UpButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+`;
+
+const DownButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+`;
+
+const Photos = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 25%;
+  overflow-y: scroll;
+  position: relative;
+`;
+
+const PhotoCard = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 75%;
+  height: 500px;
+`;
+
+const Photo = styled.div<{ bgPhoto: string }>`
+  background-image: url(${(props) => props.bgPhoto});
+  background-position: top center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+  cursor: pointer;
+`;
+
+const SmallPhoto = styled(motion.div)<{ bgPhoto: string }>`
+  background-image: url(${(props) => props.bgPhoto});
+  background-position: top center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+`;
+
+const Title = styled.h2`
+  font-size: 48px;
+  font-weight: 500;
+  margin: 100px 0;
+  margin-bottom: 70px;
+  border-bottom: 2px solid white;
+  padding: 35px 0;
+  width: 90%;
+`;
+
+const Description = styled.h2`
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2.4;
+  margin-bottom: 100px;
+`;
+
+const Skills = styled.h2`
+  display: flex;
+  margin-bottom: 70px;
+`;
+
+const SkillCircle = styled.div`
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border: 1.5px solid white;
+  font-weight: 500;
+`;
+
+const Buttons = styled.div`
+  margin-top: 60px;
+`;
+
+const Button = styled(motion.a)<{ color: string }>`
+  background-color: white;
+  color: ${(props) => {
+    return props.theme[props.color].accent;
+  }};
+  padding: 15px 25px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+`;
+
+const Pages = styled.h2`
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+`;
+
+const hoverVar = {
+  hover: {
+    backgroundColor: "#ffffff22",
+    color: "#ffffff",
+  },
+};
+
+const photoVar = {
+  initial: {},
+  animate: {},
+  exit: {},
+};

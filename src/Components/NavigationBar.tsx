@@ -1,14 +1,25 @@
 import styled from "styled-components";
 
-const NavigationBar = () => {
+const NavigationBar = ({
+  onMainClick,
+  onPortfolioClick,
+  onExperienceClick,
+  onBlogClick,
+  onEducationClick,
+  onContactClick,
+  onServiceClick,
+}: INavProps) => {
   return (
     <Wrapper>
+      <Logo onClick={onMainClick}>YTW.</Logo>
       <Contents>
-        <Content>Home</Content>
-        <Content>Projects</Content>
-        <Content>About</Content>
+        <Content onClick={onServiceClick}>Services</Content>
+        <Content onClick={onPortfolioClick}>Portfolios</Content>
+        <Content onClick={onExperienceClick}>Experience</Content>
+        <Content onClick={onBlogClick}>Blog</Content>
+        <Content onClick={onEducationClick}>Education</Content>
+        <Content onClick={onContactClick}>Contacts</Content>
       </Contents>
-      <Contact>Contact Us</Contact>
     </Wrapper>
   );
 };
@@ -28,19 +39,33 @@ const Wrapper = styled.div`
 
 const Contents = styled.div`
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const Logo = styled.button`
+  height: 3.125rem;
+  padding: 12px 0;
+  font-size: 1.125rem;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  font-weight: 800;
+  border: none;
+  background-color: transparent;
+  letter-spacing: 1px;
+  color: ${(props) => props.theme.word.black};
+  cursor: pointer;
 `;
 
 const Content = styled.button`
   height: 3.125rem;
   padding: 12px 20px;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
@@ -61,3 +86,13 @@ const Contact = styled.button`
   letter-spacing: 1px;
   cursor: pointer;
 `;
+
+interface INavProps {
+  onServiceClick: React.MouseEventHandler<HTMLButtonElement>;
+  onMainClick: React.MouseEventHandler<HTMLButtonElement>;
+  onPortfolioClick: React.MouseEventHandler<HTMLButtonElement>;
+  onExperienceClick: React.MouseEventHandler<HTMLButtonElement>;
+  onBlogClick: React.MouseEventHandler<HTMLButtonElement>;
+  onEducationClick: React.MouseEventHandler<HTMLButtonElement>;
+  onContactClick: React.MouseEventHandler<HTMLButtonElement>;
+}

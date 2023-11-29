@@ -3,10 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import projectData from "../projectData.json";
 import Header from "./Header";
+import { useRecoilState } from "recoil";
+import { clickedProjectState } from "../atoms";
+import { forwardRef } from "react";
 
-const Projects = () => {
+const Projects = forwardRef<HTMLDivElement>((props, ref) => {
+  const [clickedProject, setClickedProject] = useRecoilState(clickedProjectState);
+
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Header title="Featured Portfolios" subTitle="MY WORKS" isCenter={false} />
       <Main>
         {projectData.map((project, index) => (
@@ -15,7 +20,7 @@ const Projects = () => {
       </Main>
     </Wrapper>
   );
-};
+});
 
 export default Projects;
 

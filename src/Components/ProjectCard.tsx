@@ -2,13 +2,16 @@ import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { clickedProjectState } from "../atoms";
 
 const ProjectCard = ({ project, color }: IProjectProps) => {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
+  const [clickedProject, setClickedProject] = useRecoilState(clickedProjectState);
 
   const handleProjectClicked = () => {
-    navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}`);
+    navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
   };
 
   const colors = ["red", "orange", "blue", "green", "yellow"];
@@ -40,10 +43,9 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
             <CardDesc>{project.cardDesc}</CardDesc>
           </CardDescription>
         ) : (
-          <Container key={project.image} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
+          <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
             <Info>
               <InfoTitle>{project.projectName}</InfoTitle>
-              <Divider />
               <InfoDesc>{project.infoDesc}</InfoDesc>
               <InfoSkill>
                 {project.skill.map((skill) => (
@@ -51,10 +53,9 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
                 ))}
               </InfoSkill>
             </Info>
-            <Photo bgPhoto={project.image}></Photo>
+            <Photo bgPhoto={project.image[0]} />
           </Container>
         )}
-        {/* <Blur variants={blurVar}></Blur> */}
       </AnimatePresence>
     </Wrapper>
   );
@@ -63,8 +64,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
 export default ProjectCard;
 
 const Wrapper = styled(motion.div)<{ color: string }>`
-  border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.9375rem;
   background-color: ${(props) => {
     let colors = props.color;
     return props.theme[colors].accent;
@@ -72,10 +72,18 @@ const Wrapper = styled(motion.div)<{ color: string }>`
   box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   position: relative;
   cursor: pointer;
-  padding: 50px 30px;
+  padding: 3.125rem 1.875rem;
   color: white;
-  height: 300px;
+  height: 18.75rem;
   width: 100%;
+  @media (max-width: 1160px) {
+    height: 300px;
+    padding: 50px 30px;
+  }
+  @media (max-width: 800px) {
+    height: 18.75rem;
+    padding: 3.125rem 1.875rem;
+  }
 `;
 
 const CardDescription = styled(motion.div)`
@@ -89,7 +97,13 @@ const CardDescription = styled(motion.div)`
 const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
-  font-size: 24px;
+  font-size: 1.5rem;
+  @media (max-width: 1160px) {
+    font-size: 21px;
+  }
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Container = styled(motion.div)`
@@ -119,13 +133,6 @@ const Blur = styled(motion.div)`
 
 const SubTitle = styled.h2``;
 
-const Divider = styled.div`
-  height: 3px;
-  background-color: white;
-  width: 100%;
-  margin: 25px 0;
-`;
-
 const Info = styled.div`
   padding: 1.5625rem 1.25rem;
   width: 50%;
@@ -138,13 +145,29 @@ const Info = styled.div`
 const InfoTitle = styled.div`
   font-size: 1.875rem;
   font-weight: 600;
+  border-bottom: 2px solid white;
+  padding-bottom: 1.5625rem;
+  @media (max-width: 1160px) {
+    font-size: 30px;
+  }
+  @media (max-width: 800px) {
+    font-size: 1.875rem;
+  }
 `;
 
 const InfoDesc = styled.h2`
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   width: 90%;
   line-height: 1.5;
+  margin-top: 1.5625rem;
+  font-size: 1rem;
+  @media (max-width: 1160px) {
+    font-size: 16px;
+  }
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
 `;
 
 const InfoSkill = styled.h2`
@@ -208,7 +231,7 @@ interface IProjectProps {
   project: {
     projectName: string;
     skill: string[];
-    image: string;
+    image: string[];
     infoDesc: string;
     cardDesc: string;
   };

@@ -2,10 +2,11 @@ import styled from "styled-components";
 import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faLink } from "@fortawesome/free-solid-svg-icons";
+import { forwardRef } from "react";
 
-const Services = () => {
+const Services = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Header title="Specialized in  " subTitle="SERVICES" isCenter={true} />
       <Main>
         <ServiceBox>
@@ -29,7 +30,7 @@ const Services = () => {
       </Main>
     </Wrapper>
   );
-};
+});
 
 export default Services;
 
@@ -54,7 +55,7 @@ const Main = styled.div`
 
 const ServiceBox = styled.div`
   background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.1);
+  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   width: 30rem;
   height: 25rem;
   border-radius: 15px;
