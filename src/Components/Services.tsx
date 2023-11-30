@@ -58,7 +58,7 @@ const ServiceBox = styled.div`
   box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
   width: 30rem;
   height: 25rem;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -91,25 +91,3 @@ const ServiceDescription = styled.h2`
   font-size: 1.0625rem;
   line-height: 1.7;
 `;
-
-const EducationInfo = styled.div``;
-
-const Feature = styled.div``;
-
-const Circle = styled.div``;
-
-const SkillColumn = styled.div``;
-
-const SkillDescription = styled.h2``;
-
-const SkillGraph = styled.div``;
-
-const SkillRow = styled.div``;
-
-const SkillName = styled.h2``;
-
-const SkillBar = styled.div``;
-
-const SkillFill = styled.div<{ width: string }>``;
-
-const cursorVar = {};

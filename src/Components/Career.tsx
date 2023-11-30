@@ -83,7 +83,7 @@ const SelectMenu = styled.div`
   @media (max-width: 850px) {
     display: flex;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
   }
 `;
 
@@ -158,12 +158,12 @@ const CareerSkill = styled.div`
 const Divider = styled.div`
   width: 100%;
   background-color: #f1f1f1;
-  height: 2px;
-  margin-bottom: 40px;
+  height: 0.125rem;
+  margin-bottom: 2.5rem;
 `;
 
 const CareerDescription = styled.h2`
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -178,11 +178,9 @@ const CareerColumn = styled.div`
 const Bar = styled.div`
   background-color: gray;
   width: 0.625rem;
-  height: 2px;
+  height: 0.125rem;
   border-radius: 2px;
-  margin-right: 20px;
+  margin-right: 1.25rem;
 `;
 
 const SelectColumn = styled.div``;
-
-const cursorVar = {};

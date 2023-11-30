@@ -2,72 +2,25 @@ import styled from "styled-components";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
-
+import blogData from "../blogData.json";
 const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <Wrapper ref={ref}>
       <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} />
       <Main>
-        <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
-          <a href="https://velog.io/@woodylovescoding/React-Wordle-%EB%A7%8C%EB%93%A4%EA%B8%B0" target="_blank">
-            <BlogPhoto
-              bgPhoto={
-                "https://velog.velcdn.com/images/woodylovescoding/post/ae926c4f-6ced-45df-8d57-5370698c5fce/image.png"
-              }
-            />
-            <BlogContent>
-              <BlogTitle>React로 Wordle 만들기</BlogTitle>
-              <BlogDate>2023.09.03</BlogDate>
-              <BlogDesc>
-                Typescript 와 React를 통해 간단한 숫자야구 게임 wordle을 만들어 보았다. React를 공부하며 배웠던 기능들을
-                최대한 활용해보고자 노력했고...
-              </BlogDesc>
-              <BlogButton>Continue Reading</BlogButton>
-            </BlogContent>
-          </a>
-        </BlogBox>
-        <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
-          <a
-            href="https://velog.io/@woodylovescoding/React.useForm-React.useRef-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%9E%85%EB%A0%A5%ED%95%9C-%EA%B8%80%EC%9E%90%EC%88%98%EC%97%90-%EB%94%B0%EB%9D%BC%EC%84%9C-%EA%B8%B8%EC%96%B4%EC%A7%80%EB%8A%94-input-%EB%A7%8C%EB%93%A4%EA%B8%B0"
-            target="_blank"
-          >
-            <BlogPhoto
-              bgPhoto={
-                "https://velog.velcdn.com/images/woodylovescoding/post/fe39b264-6d22-4261-9bc7-6cccfae27bf1/image.jpeg"
-              }
-            />
-            <BlogContent>
-              <BlogTitle>글자수에 따라서 변하는 input 만들기</BlogTitle>
-              <BlogDate>2023.09.17</BlogDate>
-              <BlogDesc>
-                Reac의 useForm 과 useRef를 이용하여 입력한 글자 수에 따라 길이가 변하는 input을 만드는 과정에서 submit이
-                되지 않는 문제가 생겼고...
-              </BlogDesc>
-              <BlogButton>Continue Reading</BlogButton>
-            </BlogContent>
-          </a>
-        </BlogBox>
-        <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
-          <a
-            href="https://velog.io/@woodylovescoding/React%EC%97%90-%EA%B5%AC%EA%B8%80%EB%A7%B5-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0-Google-maps-api"
-            target="_blank"
-          >
-            <BlogPhoto
-              bgPhoto={
-                "https://velog.velcdn.com/images/woodylovescoding/post/585525b0-7822-41ac-9aff-74550ef58e5d/image.png"
-              }
-            />
-            <BlogContent>
-              <BlogTitle>React에서 Google Maps API 사용하기</BlogTitle>
-              <BlogDate>2023.10.07</BlogDate>
-              <BlogDesc>
-                Google maps api는 위치와 지도에 관한 여러가지 기능을 제공한다. Api를 사용하여 화면에 지도를 띄우거나
-                장소를 검색하고, 장소 사이의 ...
-              </BlogDesc>
-              <BlogButton>Continue Reading</BlogButton>
-            </BlogContent>
-          </a>
-        </BlogBox>
+        {blogData.map((blog) => (
+          <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
+            <a href={blog.link} target="_blank">
+              <BlogPhoto bgPhoto={blog.image} />
+              <BlogContent>
+                <BlogTitle>{blog.title}</BlogTitle>
+                <BlogDate>{blog.date}</BlogDate>
+                <BlogDesc>{blog.description}</BlogDesc>
+                <BlogButton>Continue Reading</BlogButton>
+              </BlogContent>
+            </a>
+          </BlogBox>
+        ))}
       </Main>
       <Link>
         <LinkContent href="https://velog.io/@woodylovescoding">https://velog.io/@woodylovescoding</LinkContent>
@@ -109,11 +62,10 @@ const BlogBox = styled(motion.div)`
     margin: 30px 0;
   }
   @media (max-width: 1160px) {
-    width: 400px;
-    margin: 30px 0;
+    width: 40rem;
+    margin-bottom: 30px;
   }
   @media (max-width: 800px) {
-    width: 100%;
   }
 `;
 
@@ -175,34 +127,14 @@ const Link = styled(motion.div)`
   display: flex;
   margin-top: 8%;
   justify-content: center;
-  padding: 20px;
+  padding: 1.25rem;
 `;
 
 const LinkContent = styled.a`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: gray;
 `;
-
-const EducationInfo = styled.div``;
-
-const Feature = styled.div``;
-
-const Circle = styled.div``;
-
-const SkillColumn = styled.div``;
-
-const Page = styled.h2``;
-
-const SkillGraph = styled.div``;
-
-const SkillRow = styled.div``;
-
-const SkillName = styled.h2``;
-
-const SkillBar = styled.div``;
-
-const SkillFill = styled.div<{ width: string }>``;
 
 const shadowVar = {
   hover: { boxShadow: "0px 0px 64px 10px #484747bb", y: -15 },

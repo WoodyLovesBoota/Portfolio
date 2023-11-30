@@ -119,7 +119,7 @@ const Photo = styled.div<{ bgPhoto: string }>`
   background-image: url(${(props) => props.bgPhoto});
   background-position: top center;
   background-size: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 `;
 
 const Blur = styled(motion.div)`
@@ -127,8 +127,8 @@ const Blur = styled(motion.div)`
   width: 100%;
   height: 75%;
   position: absolute;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 `;
 
 const SubTitle = styled.h2``;
@@ -182,12 +182,6 @@ const SkillCircle = styled.div`
   border: 1.5px solid #f1f1f1;
   font-weight: 500;
 `;
-
-const AchieveTitle = styled.h2``;
-
-const AchieveContentBox = styled.div``;
-
-const AchieveContent = styled.h2``;
 
 const mainVar = {
   initial: { y: 50, opacity: 0 },

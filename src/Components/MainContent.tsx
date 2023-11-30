@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Header from "./Header";
 import { forwardRef } from "react";
+import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles, faBlog } from "@fortawesome/free-solid-svg-icons";
 
 const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
   return (
@@ -24,15 +27,23 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
           </SubTitle>
           <Links>
             <Link>
-              <LinkTitle>Github</LinkTitle>
               <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
-                https://github.com/WoodyLovesBoota
+                <FontAwesomeIcon icon={faGithub} />
               </LinkContent>
             </Link>
             <Link>
-              <LinkTitle>Blog</LinkTitle>
+              <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
+                <FontAwesomeIcon icon={faInstagram} />
+              </LinkContent>
+            </Link>
+            <Link>
+              <LinkContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </LinkContent>
+            </Link>
+            <Link>
               <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
-                https://velog.io/@woodylovescoding
+                <FontAwesomeIcon icon={faBlog} />
               </LinkContent>
             </Link>
           </Links>
@@ -86,6 +97,7 @@ const Container = styled.div`
   display: flex;
   @media (max-width: 1160px) {
     flex-direction: column-reverse;
+    width: 100%;
   }
 `;
 
@@ -95,9 +107,7 @@ const Main = styled.div`
   color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
-
   background: hsla(206, 63%, 86%, 1);
-
   background: -webkit-linear-gradient(
     45deg,
     hsla(206, 63%, 86%, 1) 0%,
@@ -113,23 +123,12 @@ const Main = styled.div`
     width: 100%;
     height: 50%;
     padding-top: 8%;
+    justify-content: center;
   }
   @media (max-width: 700px) {
     width: 100%;
     height: 40%;
     padding-top: 8%;
-  }
-`;
-
-const Title = styled.h2`
-  width: 120%;
-  font-size: 2rem;
-  line-height: 1.8;
-  font-weight: 400;
-  word-spacing: 2px;
-  span {
-    font-size: 2rem;
-    font-weight: 500;
   }
 `;
 
@@ -144,24 +143,20 @@ const SubTitle = styled.h2`
     font-size: 1rem;
     font-weight: 400;
   }
+  @media (max-width: 1160px) {
+    width: 100%;
+  }
 `;
 
 const Links = styled.div`
-  margin-top: auto;
-`;
-
-const Link = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-top: 25px;
 `;
 
-const LinkTitle = styled.h2`
-  font-size: 1rem;
-  font-weight: 500;
-  width: 7.5rem;
-`;
+const Link = styled.div``;
 
 const LinkContent = styled.a`
-  font-size: 1rem;
+  font-size: 1.3125rem;
   font-weight: 500;
+  margin-right: 1.5625rem;
 `;

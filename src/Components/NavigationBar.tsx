@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 18px 8%;
+  padding: 1.125rem 8%;
   position: absolute;
   top: 0;
   z-index: 2;
@@ -45,7 +45,6 @@ const Contents = styled.div`
 
 const Logo = styled.button`
   height: 3.125rem;
-  padding: 12px 0;
   font-size: 1.125rem;
   display: flex;
   justify-content: center;
@@ -53,14 +52,14 @@ const Logo = styled.button`
   font-weight: 800;
   border: none;
   background-color: transparent;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   color: ${(props) => props.theme.word.black};
   cursor: pointer;
 `;
 
 const Content = styled.button`
   height: 3.125rem;
-  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
   font-size: 0.875rem;
   display: flex;
   justify-content: flex-end;
@@ -68,22 +67,8 @@ const Content = styled.button`
   font-weight: 500;
   border: none;
   background-color: transparent;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
   color: ${(props) => props.theme.word.main};
-  cursor: pointer;
-`;
-
-const Contact = styled.button`
-  padding: 12px 20px;
-  font-size: 1.125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-  background-color: ${(props) => props.theme.main.accent};
-  border: none;
-  color: white;
-  letter-spacing: 1px;
   cursor: pointer;
 `;
 

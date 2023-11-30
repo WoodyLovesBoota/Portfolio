@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import MainContent from "../Components/MainContent";
-import About from "../Components/About";
 import Projects from "../Components/Projects";
 import Education from "../Components/Education";
 import Services from "../Components/Services";
@@ -9,6 +8,7 @@ import Blog from "../Components/Blog";
 import NavigationBar from "../Components/NavigationBar";
 import { useRef } from "react";
 import Contact from "../Components/Contact";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -65,6 +65,7 @@ const Home = () => {
       <Blog ref={blogRef} />
       <Education ref={educationRef} />
       <Contact ref={contactRef} />
+      <Footer />
     </Wrapper>
   );
 };

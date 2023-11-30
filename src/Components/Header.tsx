@@ -26,7 +26,7 @@ const Bar = styled.div`
   width: 1rem;
   height: 0.175rem;
   border-radius: 2px;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
 `;
 
 const SubTitle = styled.h2`
@@ -34,8 +34,8 @@ const SubTitle = styled.h2`
   align-items: center;
   color: ${(props) => props.theme.word.sub};
   font-size: 1rem;
-  letter-spacing: 7.5px;
-  margin-bottom: 20px;
+  letter-spacing: 0.4688rem;
+  margin-bottom: 1.25rem;
   font-weight: 500;
 `;
 
@@ -43,7 +43,7 @@ const Title = styled.h2`
   color: ${(props) => props.theme.word.main};
   font-size: 2.5rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 `;
 
 interface IHeaderProps {

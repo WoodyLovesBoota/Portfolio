@@ -88,7 +88,7 @@ const EducationItem = styled.div`
   align-items: flex-start;
   margin-bottom: 4.375rem;
   padding: 3.125rem;
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
 `;
@@ -113,25 +113,11 @@ const EducationYear = styled.h2`
 
 const EducationInfo = styled.div``;
 
-const Feature = styled.div`
-  margin-right: 32px;
-  display: flex;
-  align-items: center;
-`;
-
-const Circle = styled.div`
-  background-color: ${(props) => props.theme.word.darker};
-  width: 1.125rem;
-  height: 1.125rem;
-  border-radius: 0.6875rem;
-`;
-
 const SkillColumn = styled.div`
   width: 60%;
   padding: 0 6%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   @media (max-width: 850px) {
     width: 100%;
     padding: 0;
@@ -145,16 +131,16 @@ const SkillDescription = styled.h2`
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
-  padding: 50px;
-  border-radius: 15px;
+  padding: 3.125rem;
+  border-radius: 0.9375rem;
 `;
 
 const SkillGraph = styled.div`
-  margin-top: 70px;
+  margin-top: 4.375rem;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
-  padding: 50px;
-  border-radius: 15px;
+  padding: 3.125rem;
+  border-radius: 0.9375rem;
 `;
 
 const SkillRow = styled.div`
@@ -170,7 +156,7 @@ const SkillName = styled.h2`
 
 const SkillBar = styled.div`
   height: 0.625rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   background-color: ${(props) => props.theme.bg.point};
   position: relative;
   width: 95%;
@@ -178,11 +164,9 @@ const SkillBar = styled.div`
 
 const SkillFill = styled.div<{ width: string }>`
   height: 0.625rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   background-color: ${(props) => props.theme.main.accent};
   position: absolute;
   top: 0;
   width: ${(props) => props.width};
 `;
-
-const cursorVar = {};

@@ -14,7 +14,9 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           <NameInput placeholder="Name" />
           <EmailInput placeholder="Email" />
           <MessageInput placeholder="Message" />
-          <Button>Send Message</Button>
+          <Button variants={buttonVar} whileTap={"click"}>
+            Send Message
+          </Button>
         </Form>
         <Info>
           <InfoBox>
@@ -54,8 +56,10 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             </InfoContent>
           </InfoBox>
           <LinkBox>
-            <DownLoad>DownLoad My CV</DownLoad>
-          </LinkBox>{" "}
+            <DownLoad variants={buttonVar} whileTap={"click"}>
+              DownLoad My CV
+            </DownLoad>
+          </LinkBox>
         </Info>
       </Container>
     </Wrapper>
@@ -72,6 +76,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   padding: 5% 0;
+  justify-content: space-between;
   @media (max-width: 800px) {
     flex-direction: column;
     justify-content: flex-start;
@@ -81,15 +86,15 @@ const Container = styled.div`
 
 const LinkBox = styled.div``;
 
-const DownLoad = styled.div`
+const DownLoad = styled(motion.div)`
   margin-top: 5%;
-  padding: 15px 25px;
+  padding: 0.9375rem 1.5625rem;
   display: inline-block;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
   color: white;
   background: linear-gradient(to right, #3498db, #9b59b6, #5dade2, #1f618d, #8e44ad);
-  border-radius: 15px;
+  border-radius: 0.9375rem;
   cursor: pointer;
 `;
 
@@ -128,7 +133,7 @@ const EmailInput = styled.input`
   padding: 1.25rem;
   &:focus {
     outline: none;
-    border: 2.5px solid ${(props) => props.theme.main.accent};
+    border: 0.1563rem solid ${(props) => props.theme.main.accent};
   }
   @media (max-width: 800px) {
     width: 100%;
@@ -143,7 +148,7 @@ const MessageInput = styled.textarea`
   padding: 1.25rem;
   &:focus {
     outline: none;
-    border: 2.5px solid ${(props) => props.theme.main.accent};
+    border: 0.1563rem solid ${(props) => props.theme.main.accent};
   }
   @media (max-width: 800px) {
     width: 100%;
@@ -151,13 +156,13 @@ const MessageInput = styled.textarea`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   width: 90%;
   background-color: ${(props) => props.theme.main.accent};
   color: white;
   padding: 1.5625rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   margin-top: auto;
   font-size: 1rem;
   cursor: pointer;
@@ -167,9 +172,9 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  width: 50%;
-  padding: 5%;
-  border-radius: 25px;
+  width: 45%;
+  padding: 3% 5%;
+  border-radius: 1.5625rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -220,7 +225,6 @@ const Icon = styled.div`
   box-shadow: 0px 0px 30px 0px rgba(43, 25, 69, 0.3);
 `;
 
-const shadowVar = {
-  hover: { boxShadow: "0px 0px 64px 10px #484747bb", y: -15 },
+const buttonVar = {
   click: { scale: 0.95 },
 };

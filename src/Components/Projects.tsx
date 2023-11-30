@@ -3,13 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import projectData from "../projectData.json";
 import Header from "./Header";
-import { useRecoilState } from "recoil";
-import { clickedProjectState } from "../atoms";
 import { forwardRef } from "react";
 
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
-  const [clickedProject, setClickedProject] = useRecoilState(clickedProjectState);
-
   return (
     <Wrapper ref={ref}>
       <Header title="Featured Portfolios" subTitle="MY WORKS" isCenter={false} />
@@ -42,21 +38,3 @@ const Main = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
-
-const Info = styled.div``;
-
-const InfoTitle = styled.div``;
-
-const InfoContent = styled.h2``;
-
-const Achieves = styled.div``;
-
-const Achieve = styled.div``;
-
-const AchieveTitle = styled.h2``;
-
-const AchieveContentBox = styled.div``;
-
-const AchieveContent = styled.h2``;
-
-const cursorVar = {};
