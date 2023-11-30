@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AnimatePresence, motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import projectData from "../projectData.json";
 import Header from "./Header";

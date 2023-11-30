@@ -10,7 +10,6 @@ import { languageState } from "../atoms";
 
 const Portfolio = () => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
   const [clickedPhoto, setClickedPhoto] = useState(0);
   const [nowPhoto, setNowPhoto] = useState(1);
   const isEng = useRecoilValue(languageState);

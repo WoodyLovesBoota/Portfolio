@@ -3,7 +3,7 @@ import Header from "./Header";
 import { forwardRef } from "react";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilValue } from "recoil";
 import { languageState, themeState } from "../atoms";
 

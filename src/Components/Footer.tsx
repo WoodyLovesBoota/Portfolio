@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import Header from "./Header";
-import { motion } from "framer-motion";
-import { forwardRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useRecoilValue } from "recoil";
 import { themeState } from "../atoms";
