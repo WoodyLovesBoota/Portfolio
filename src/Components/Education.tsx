@@ -1,33 +1,45 @@
 import styled from "styled-components";
 import Header from "./Header";
 import { forwardRef } from "react";
+import { useRecoilValue } from "recoil";
+import { languageState } from "../atoms";
 
 const Education = forwardRef<HTMLDivElement>((props, ref) => {
+  const isEng = useRecoilValue(languageState);
+
   return (
     <Wrapper ref={ref}>
       <Header title="Education & Skills  " subTitle="LEARNING PATH" isCenter={false} />
       <Main>
         <EducationColumn>
           <EducationItem>
-            <EducationInfo>
-              <EducationTitle>Seoul National University</EducationTitle>
-              <EducationSubTitle>Bachelor's degree - Electrical and Computer Engineering</EducationSubTitle>
-              <EducationYear>2015 - 2021</EducationYear>
-            </EducationInfo>
+            {isEng ? (
+              <EducationInfo>
+                <EducationTitle>Seoul National University</EducationTitle>
+                <EducationSubTitle>Bachelor's degree - Electrical and Computer Engineering</EducationSubTitle>
+                <EducationYear>2015 - 2021</EducationYear>
+              </EducationInfo>
+            ) : (
+              <EducationInfo>
+                <EducationTitle>서울대학교</EducationTitle>
+                <EducationSubTitle>전기정보공학부 학사</EducationSubTitle>
+                <EducationYear>2015 - 2021</EducationYear>
+              </EducationInfo>
+            )}
           </EducationItem>
           <EducationItem>
             <EducationInfo>
               <EducationTitle>Certificate</EducationTitle>
-              <EducationTitle>정보처리기사</EducationTitle>
+              <EducationTitle>{isEng ? "Engineer Information Processing" : "정보처리기사"}</EducationTitle>
               <EducationYear>2021.08</EducationYear>
             </EducationInfo>
           </EducationItem>
         </EducationColumn>
         <SkillColumn>
           <SkillDescription>
-            I have been continuously learning in the field of front-end development. Building upon a solid understanding
-            of core languages and frameworks, I possess versatile application skills. Additionally, I actively
-            accumulate knowledge in various domains beyond front-end development.
+            {isEng
+              ? "I have been continuously learning in the field of front-end development. Building upon a solid understanding of core languages and frameworks, I possess versatile application skills. Additionally, I actively accumulate knowledge in various domains beyond front-end development."
+              : "저는 지속적으로 프론트 엔드 개발 분야에 대한 학습을 이어가고 있습니다. 기본 언어와 프레임워크에 대한 철저한 이해를 바탕으로 다양한 응용 능력을 갖추고 있으며, 더불어 프론트 엔드 이외의 다양한 영역에 대한 지식도 적극적으로 쌓아가고 있습니다."}
           </SkillDescription>
           <SkillGraph>
             <SkillRow>
@@ -89,8 +101,8 @@ const EducationItem = styled.div`
   margin-bottom: 4.375rem;
   padding: 3.125rem;
   border-radius: 0.9375rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
 `;
 
 const EducationTitle = styled.h2`
@@ -129,16 +141,16 @@ const SkillDescription = styled.h2`
   font-size: 1.0625rem;
   line-height: 2;
   font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   padding: 3.125rem;
   border-radius: 0.9375rem;
 `;
 
 const SkillGraph = styled.div`
   margin-top: 4.375rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   padding: 3.125rem;
   border-radius: 0.9375rem;
 `;

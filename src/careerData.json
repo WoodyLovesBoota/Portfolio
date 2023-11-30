@@ -9,6 +9,13 @@
       "Researching security vulnerabilities in smart contracts and various domains.",
       "Security audit of Ethereum smart contracts.",
       "Developing Ethereum smart contract and a user-friendly interface for interaction."
+    ],
+    "subTitleKor": ["스마트컨트랙트 개발", "Haechi-Labs"],
+    "addressKor": "대한민국 서울특별시",
+    "descriptionsKor": [
+      "스마트 컨트랙트 및 다양한 분야의 보안 취약점에 대한 연구",
+      "스마트 컨트랙트 보안감사",
+      "이더리움 스마트 컨트랙트 및 사용자 UI 개발"
     ]
   }
 ]

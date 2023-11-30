@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { languageState } from "../atoms";
 
 const ProjectCard = ({ project, color }: IProjectProps) => {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
+  const isEng = useRecoilValue(languageState);
 
   const handleProjectClicked = () => {
     navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
@@ -29,7 +32,32 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
       onHoverEnd={handleHoverEnd}
     >
       <AnimatePresence>
-        {isHover ? (
+        {isEng ? (
+          isHover ? (
+            <CardDescription
+              key={project.projectName}
+              variants={descVar}
+              initial={"initial"}
+              animate={"animate"}
+              exit={"exit"}
+            >
+              <CardDesc>{project.cardDesc}</CardDesc>
+            </CardDescription>
+          ) : (
+            <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
+              <Info>
+                <InfoTitle>{project.projectName}</InfoTitle>
+                <InfoDesc>{project.infoDesc}</InfoDesc>
+                <InfoSkill>
+                  {project.skill.map((skill) => (
+                    <SkillCircle>{skill}</SkillCircle>
+                  ))}
+                </InfoSkill>
+              </Info>
+              <Photo bgPhoto={project.image[0]} />
+            </Container>
+          )
+        ) : isHover ? (
           <CardDescription
             key={project.projectName}
             variants={descVar}
@@ -37,7 +65,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
             animate={"animate"}
             exit={"exit"}
           >
-            <CardDesc>{project.cardDesc}</CardDesc>
+            <CardDesc>{project.cardDescKor}</CardDesc>
           </CardDescription>
         ) : (
           <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
@@ -66,7 +94,7 @@ const Wrapper = styled(motion.div)<{ color: string }>`
     let colors = props.color;
     return props.theme[colors].accent;
   }};
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   position: relative;
   cursor: pointer;
   padding: 3.125rem 1.875rem;
@@ -194,6 +222,7 @@ interface IProjectProps {
     image: string[];
     infoDesc: string;
     cardDesc: string;
+    cardDescKor: string;
   };
   color: number;
 }

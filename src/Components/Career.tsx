@@ -3,9 +3,12 @@ import Header from "./Header";
 import { useState } from "react";
 import careerData from "../careerData.json";
 import { forwardRef } from "react";
+import { useRecoilValue } from "recoil";
+import { languageState } from "../atoms";
 
 const Career = forwardRef<HTMLDivElement>((props, ref) => {
-  let [currentCareer, setCurrentCareer] = useState(0);
+  const [currentCareer, setCurrentCareer] = useState(0);
+  const isEng = useRecoilValue(languageState);
 
   const changeCurrent = (index: number) => {
     setCurrentCareer(index);
@@ -33,9 +36,12 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
         <CareerColumn>
           <CareerBox>
             <CareerTitle>
-              {careerData[currentCareer].subTitle[0]} <CareerName>{careerData[currentCareer].subTitle[1]}</CareerName>
+              {isEng ? careerData[currentCareer].subTitle[0] : careerData[currentCareer].subTitleKor[0]}
+              <CareerName>{careerData[currentCareer].subTitle[1]}</CareerName>
             </CareerTitle>
-            <CareerAddress>{careerData[currentCareer].address}</CareerAddress>
+            <CareerAddress>
+              {isEng ? careerData[currentCareer].address : careerData[currentCareer].addressKor}
+            </CareerAddress>
             <CareerDuration>{careerData[currentCareer].duration}</CareerDuration>
             <CareerSkills>
               {careerData[currentCareer].skills.map((skill) => (
@@ -44,12 +50,19 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
             </CareerSkills>
             <Divider />
             <CareerDescriptions>
-              {careerData[currentCareer].descriptions.map((description) => (
-                <CareerDescription>
-                  <Bar />
-                  {description}
-                </CareerDescription>
-              ))}
+              {isEng
+                ? careerData[currentCareer].descriptions.map((description) => (
+                    <CareerDescription>
+                      <Bar />
+                      {description}
+                    </CareerDescription>
+                  ))
+                : careerData[currentCareer].descriptionsKor.map((description) => (
+                    <CareerDescription>
+                      <Bar />
+                      {description}
+                    </CareerDescription>
+                  ))}
             </CareerDescriptions>
           </CareerBox>
         </CareerColumn>
@@ -91,9 +104,9 @@ const SelectItem = styled.div<{ isCurrent: boolean }>`
   padding: 1.5625rem 2.5rem;
   margin-right: 10px;
   border-radius: 5px;
-  background-color: ${(props) => (props.isCurrent ? "rgba(255,255,255,0.3)" : "transparent")};
+  background-color: ${(props) => (props.isCurrent ? props.theme.bg.lighter : "transparent")};
   color: ${(props) => props.isCurrent && props.theme.word.accent};
-  box-shadow: ${(props) => props.isCurrent && "0px 0px 64px 0 rgba(65, 65, 65, 0.2)"};
+  box-shadow: ${(props) => props.isCurrent && `0px 0px 64px 0 ${props.theme.bg.blur}`};
   cursor: pointer;
   transition: {
     background-color: 0.5s ease-in-out;
@@ -109,8 +122,8 @@ const SelectIcon = styled.h2``;
 
 const CareerBox = styled.div`
   color: ${(props) => props.theme.word.main};
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   padding: 50px;
   border-radius: 15px;
 `;
@@ -176,7 +189,7 @@ const CareerColumn = styled.div`
 `;
 
 const Bar = styled.div`
-  background-color: gray;
+  background-color: ${(props) => props.theme.word.sub};
   width: 0.625rem;
   height: 0.125rem;
   border-radius: 2px;

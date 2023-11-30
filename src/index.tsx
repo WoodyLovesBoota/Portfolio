@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { theme } from "./theme";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
 import "./assets/fonts/font.css";
@@ -20,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   article, aside, canvas, details, embed,
   figure, figcaption, footer, header, hgroup,
   main, menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
+  time, mark, audio, video,button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -28,6 +27,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-family: "Noto sans KR", sans-serif;
     vertical-align: baseline;
+    font-weight: 300;
+    line-height: 1.2;
     @media (max-width: 1440px) {
       font-size: 12px;
     }
@@ -36,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
     }
     @media (max-width: 760px) {
       font-size: 10px;
+    }
+    @media (max-width: 500px) {
+      font-size: 9px;
     }
   }
   /* HTML5 display-role reset for older browsers */
@@ -69,11 +73,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    font-weight: 300;
-    line-height: 1.2;
-  }
-
   a {
     text-decoration:none;
     color:inherit;
@@ -100,10 +99,8 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <QueryClientProvider client={queryClient}>
     <RecoilRoot>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <App />
-      </ThemeProvider>
+      <GlobalStyle />
+      <App />
     </RecoilRoot>
   </QueryClientProvider>
 );

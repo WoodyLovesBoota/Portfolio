@@ -4,50 +4,103 @@ import { forwardRef } from "react";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles, faBlog } from "@fortawesome/free-solid-svg-icons";
+import { useRecoilValue } from "recoil";
+import { languageState, themeState } from "../atoms";
 
 const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
+  const isEng = useRecoilValue(languageState);
+  const isDark = useRecoilValue(themeState);
+
   return (
     <Wrapper ref={ref}>
       <Container>
-        <Main>
-          <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
-          {/* <Title>
-            다양한 분야에서 <span>성장</span>하는 개발자
-            <br />
-            <span>양태욱</span>입니다.
-          </Title> */}
-          {/* <SubTitle>
-            프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
-            <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
-          </SubTitle> */}
-          <SubTitle>
-            Interested in combining programming expertise with design to <br />
-            effectively results. Also passionate about Front-End development <br />
-            and dedicated to crafting user experiences.
-          </SubTitle>
-          <Links>
-            <Link>
-              <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
-                <FontAwesomeIcon icon={faGithub} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
-                <FontAwesomeIcon icon={faInstagram} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
-                <FontAwesomeIcon icon={faBlog} />
-              </LinkContent>
-            </Link>
-          </Links>
-        </Main>
+        {isDark ? (
+          <DarkMain>
+            {isEng ? (
+              <>
+                <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
+                <SubTitle>
+                  Interested in combining programming expertise with design to <br />
+                  effectively results. Also passionate about Front-End development <br />
+                  and dedicated to crafting user experiences.
+                </SubTitle>
+              </>
+            ) : (
+              <>
+                <Header title="양태욱" subTitle="MY NAME IS" isCenter={false} />
+                <SubTitle>
+                  프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
+                  <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
+                </SubTitle>
+              </>
+            )}
+            <Links>
+              <Link>
+                <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
+                  <FontAwesomeIcon icon={faGithub} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
+                  <FontAwesomeIcon icon={faBlog} />
+                </LinkContent>
+              </Link>
+            </Links>
+          </DarkMain>
+        ) : (
+          <Main>
+            {isEng ? (
+              <>
+                <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
+                <SubTitle>
+                  Interested in combining programming expertise with design to <br />
+                  effectively results. Also passionate about Front-End development <br />
+                  and dedicated to crafting user experiences.
+                </SubTitle>
+              </>
+            ) : (
+              <>
+                <Header title="양태욱" subTitle="MY NAME IS" isCenter={false} />
+                <SubTitle>
+                  프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
+                  <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
+                </SubTitle>
+              </>
+            )}
+            <Links>
+              <Link>
+                <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
+                  <FontAwesomeIcon icon={faGithub} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
+                  <FontAwesomeIcon icon={faBlog} />
+                </LinkContent>
+              </Link>
+            </Links>
+          </Main>
+        )}
         <Photo />
       </Container>
     </Wrapper>
@@ -76,7 +129,7 @@ const Photo = styled.div`
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("images/photo.png");
+    url("https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/photo.png?raw=true");
   background-position: center;
   background-size: cover;
   width: 50%;
@@ -84,6 +137,9 @@ const Photo = styled.div`
   @media (max-width: 1160px) {
     width: 100%;
     height: 50%;
+  }
+  @media (max-width: 700px) {
+    height: 60%;
   }
 `;
 
@@ -119,6 +175,55 @@ const Main = styled.div`
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#c6dff2", endColorstr="#d6e8f7", GradientType=1 );
   width: 50%;
   height: 100%;
+  @media (max-width: 1160px) {
+    width: 100%;
+    height: 50%;
+    padding-top: 8%;
+    justify-content: center;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 40%;
+    padding-top: 8%;
+  }
+`;
+
+const DarkMain = styled.div`
+  padding: 17% 8%;
+  padding-bottom: 50px;
+  color: ${(props) => props.theme.word.main};
+  display: flex;
+  flex-direction: column;
+  background: hsla(206, 69%, 16%, 1);
+
+  background: linear-gradient(
+    45deg,
+    hsla(206, 69%, 16%, 1) 0%,
+    hsla(0, 0%, 26%, 1) 36%,
+    hsla(0, 0%, 26%, 1) 63%,
+    hsla(206, 69%, 16%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    45deg,
+    hsla(206, 69%, 16%, 1) 0%,
+    hsla(0, 0%, 26%, 1) 36%,
+    hsla(0, 0%, 26%, 1) 63%,
+    hsla(206, 69%, 16%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(206, 69%, 16%, 1) 0%,
+    hsla(0, 0%, 26%, 1) 36%,
+    hsla(0, 0%, 26%, 1) 63%,
+    hsla(206, 69%, 16%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0D2E47", endColorstr="#424242", GradientType=1 );
+  width: 50%;
+  height: 100%;
+
   @media (max-width: 1160px) {
     width: 100%;
     height: 50%;

@@ -3,13 +3,18 @@ import Header from "./Header";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import blogData from "../blogData.json";
+import { themeState } from "../atoms";
+import { useRecoilValue } from "recoil";
+
 const Blog = forwardRef<HTMLDivElement>((props, ref) => {
+  const isDark = useRecoilValue(themeState);
+
   return (
     <Wrapper ref={ref}>
       <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} />
       <Main>
         {blogData.map((blog) => (
-          <BlogBox variants={shadowVar} whileHover={"hover"} whileTap={"click"}>
+          <BlogBox variants={shadowVar} whileHover={isDark ? "darkHover" : "hover"} whileTap={"click"}>
             <a href={blog.link} target="_blank">
               <BlogPhoto bgPhoto={blog.image} />
               <BlogContent>
@@ -23,7 +28,9 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
         ))}
       </Main>
       <Link>
-        <LinkContent href="https://velog.io/@woodylovescoding">https://velog.io/@woodylovescoding</LinkContent>
+        <LinkContent variants={navVar} whileHover={"hover"} href="https://velog.io/@woodylovescoding">
+          https://velog.io/@woodylovescoding
+        </LinkContent>
       </Link>
     </Wrapper>
   );
@@ -51,8 +58,8 @@ const Main = styled.div`
 `;
 
 const BlogBox = styled(motion.div)`
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   width: 28.125rem;
   height: 40.625rem;
   border-radius: 15px;
@@ -90,6 +97,7 @@ const BlogContent = styled.div`
 const BlogTitle = styled.h2`
   font-size: 1.125rem;
   font-weight: 400;
+  color: ${(props) => props.theme.word.main};
 `;
 
 const BlogDate = styled.span`
@@ -107,7 +115,6 @@ const BlogDesc = styled.h2`
   font-size: 1rem;
   line-height: 2;
   color: ${(props) => props.theme.word.sub};
-  color: gray;
 `;
 
 const BlogButton = styled(motion.button)`
@@ -117,7 +124,6 @@ const BlogButton = styled(motion.button)`
   background-color: transparent;
   font-size: 1rem;
   color: ${(props) => props.theme.word.sub};
-  color: gray;
   padding-top: 0.625rem;
   padding-bottom: 1.875rem;
   cursor: pointer;
@@ -130,13 +136,18 @@ const Link = styled(motion.div)`
   padding: 1.25rem;
 `;
 
-const LinkContent = styled.a`
+const LinkContent = styled(motion.a)`
   font-size: 0.875rem;
   font-weight: 400;
-  color: gray;
+  color: ${(props) => props.theme.word.sub};
 `;
 
 const shadowVar = {
   hover: { boxShadow: "0px 0px 64px 10px #484747bb", y: -15 },
+  darkHover: { boxShadow: "0px 0px 64px 10px #bebebebb", y: -15 },
   click: { scale: 0.95 },
+};
+
+const navVar = {
+  hover: { y: -15 },
 };

@@ -43,16 +43,28 @@ const NavigationBar = ({
     <Wrapper>
       <Logo onClick={onMainClick}>YTW.</Logo>
       <Contents>
-        <Content onClick={onServiceClick}>Services</Content>
-        <Content onClick={onPortfolioClick}>Portfolios</Content>
-        <Content onClick={onExperienceClick}>Experience</Content>
-        <Content onClick={onBlogClick}>Blog</Content>
-        <Content onClick={onEducationClick}>Education</Content>
-        <Content onClick={onContactClick}>Contacts</Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onServiceClick}>
+          Services
+        </Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onPortfolioClick}>
+          Portfolios
+        </Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onExperienceClick}>
+          Experience
+        </Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onBlogClick}>
+          Blog
+        </Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onEducationClick}>
+          Education
+        </Content>
+        <Content variants={navVar} whileHover={"hover"} onClick={onContactClick}>
+          Contacts
+        </Content>
       </Contents>
       <Toggles>
         <Language>
-          <LanguageToggle isOpen={isToggleOpen} onClick={onLangToggleClick}>
+          <LanguageToggle isDark={isDark} isOpen={isToggleOpen} onClick={onLangToggleClick}>
             <LanguageTitle>Language</LanguageTitle>
             <Icon>
               <FontAwesomeIcon icon={faChevronDown} />
@@ -60,7 +72,13 @@ const NavigationBar = ({
           </LanguageToggle>
           {isToggleOpen && (
             <LanguageList variants={listVar} initial="initial" animate="animate">
-              <LanguageItem variants={hoverVar} whileHover={"hover"} onClick={onKoreaClick} isNow={!isEng}>
+              <LanguageItem
+                isDark={isDark}
+                variants={hoverVar}
+                whileHover={isDark ? "darkhover" : "hover"}
+                onClick={onKoreaClick}
+                isNow={!isEng}
+              >
                 <Korea width={"15px"} />
                 <LanguageContent>Korean</LanguageContent>
                 {!isEng && (
@@ -69,7 +87,13 @@ const NavigationBar = ({
                   </Check>
                 )}
               </LanguageItem>
-              <LanguageItem variants={hoverVar} whileHover={"hover"} onClick={onEnglishClick} isNow={isEng}>
+              <LanguageItem
+                isDark={isDark}
+                variants={hoverVar}
+                whileHover={isDark ? "darkhover" : "hover"}
+                onClick={onEnglishClick}
+                isNow={isEng}
+              >
                 <English width={"15px"} />
                 <LanguageContent>English</LanguageContent>
                 {isEng && (
@@ -121,6 +145,9 @@ const Contents = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @media (max-width: 760px) {
+    display: none;
+  }
 `;
 
 const Logo = styled.button`
@@ -137,7 +164,7 @@ const Logo = styled.button`
   cursor: pointer;
 `;
 
-const Content = styled.button`
+const Content = styled(motion.button)`
   height: 3.125rem;
   padding: 0.75rem 1.25rem;
   font-size: 0.875rem;
@@ -155,6 +182,7 @@ const Content = styled.button`
 const Toggles = styled.div`
   display: flex;
   align-items: center;
+  color: ${(props) => props.theme.word.main};
 `;
 
 const Language = styled.div``;
@@ -170,12 +198,19 @@ const LanguageTitle = styled.h2`
   letter-spacing: 0.0625rem;
 `;
 
-const LanguageToggle = styled.div<{ isOpen: boolean }>`
+const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background-color: ${(props) => (props.isOpen ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.4)")};
+  background-color: ${(props) =>
+    props.isOpen
+      ? props.isDark
+        ? "rgba(0, 0, 0, 0.7)"
+        : "rgba(255, 255, 255, 0.7)"
+      : props.isDark
+      ? "rgba(0, 0, 0, 0.4)"
+      : "rgba(255, 255, 255, 0.4)"};
   padding: 1.25rem;
   border-radius: 0.625rem;
   position: relative;
@@ -185,18 +220,26 @@ const LanguageToggle = styled.div<{ isOpen: boolean }>`
 const LanguageList = styled(motion.div)`
   position: absolute;
   top: 5.625rem;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: ${(props) => props.theme.bg.lighter};
   border-radius: 0.625rem;
   width: 12.5rem;
 `;
 
-const LanguageItem = styled(motion.div)<{ isNow: boolean }>`
+const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
   padding: 0.9375rem 1.25rem;
   cursor: pointer;
-  background-color: ${(props) => props.isNow && "rgba(255, 255, 255, 0.7)"};
+  background-color: ${(props) =>
+    props.isNow
+      ? props.isDark
+        ? "rgba(0, 0, 0, 0.7)"
+        : "rgba(255, 255, 255, 0.7)"
+      : props.isDark
+      ? "#0000004d"
+      : "#ffffff4d"};
+
   &:first-child {
     border-top-right-radius: 0.625rem;
     border-top-left-radius: 0.625rem;
@@ -270,9 +313,19 @@ const hoverVar = {
       duration: 0.1,
     },
   },
+  darkhover: {
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    transition: {
+      duration: 0.1,
+    },
+  },
 };
 
 const listVar = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
+};
+
+const navVar = {
+  hover: { y: -10 },
 };

@@ -4,63 +4,126 @@ import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles } from "@fortawesome/free-solid-svg-icons";
+import { useRecoilValue } from "recoil";
+import { languageState, themeState } from "../atoms";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+  const isEng = useRecoilValue(languageState);
+  const isDark = useRecoilValue(themeState);
+
   return (
     <Wrapper ref={ref}>
       <Header title="Contact" subTitle="ABOUT ME" isCenter={false} />
       <Container>
         <Form>
-          <NameInput placeholder="Name" />
-          <EmailInput placeholder="Email" />
-          <MessageInput placeholder="Message" />
+          <NameInput placeholder={isEng ? "Name" : "이름"} />
+          <EmailInput placeholder={isEng ? "Email" : "이메일"} />
+          <MessageInput placeholder={isEng ? "Message" : "메시지"} />
           <Button variants={buttonVar} whileTap={"click"}>
             Send Message
           </Button>
         </Form>
-        <Info>
-          <InfoBox>
-            <Icon>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </Icon>
-            <InfoContent>
-              <InfoTitle>Address</InfoTitle>
-              <InfoDetail>(13628) Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</InfoDetail>
-            </InfoContent>
-          </InfoBox>
-          <InfoBox>
-            <Icon>
-              <FontAwesomeIcon icon={faPhoneVolume} />
-            </Icon>
-            <InfoContent>
-              <InfoTitle>Phone</InfoTitle>
-              <InfoDetail>(+82) 10-2363-7164</InfoDetail>
-            </InfoContent>
-          </InfoBox>
-          <InfoBox>
-            <Icon>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </Icon>
-            <InfoContent>
-              <InfoTitle>E-Mail</InfoTitle>
-              <InfoDetail>woodylovesboota@gmail.com</InfoDetail>
-            </InfoContent>
-          </InfoBox>
-          <InfoBox>
-            <Icon>
-              <FontAwesomeIcon icon={faCakeCandles} />
-            </Icon>
-            <InfoContent>
-              <InfoTitle>Birth</InfoTitle>
-              <InfoDetail>1995.12.26</InfoDetail>
-            </InfoContent>
-          </InfoBox>
-          <LinkBox>
-            <DownLoad variants={buttonVar} whileTap={"click"}>
-              DownLoad My CV
-            </DownLoad>
-          </LinkBox>
-        </Info>
+        {isEng ? (
+          <Info>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>Address</InfoTitle>
+                <InfoDetail>(13628) Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faPhoneVolume} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>Phone</InfoTitle>
+                <InfoDetail>(+82) 10-2363-7164</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>E-Mail</InfoTitle>
+                <InfoDetail>woodylovesboota@gmail.com</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faCakeCandles} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>Birth</InfoTitle>
+                <InfoDetail>1995.12.26</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <LinkBox>
+              {isDark ? (
+                <DarkDownLoad variants={buttonVar} whileTap={"click"}>
+                  DownLoad My CV
+                </DarkDownLoad>
+              ) : (
+                <DownLoad variants={buttonVar} whileTap={"click"}>
+                  DownLoad My CV
+                </DownLoad>
+              )}
+            </LinkBox>
+          </Info>
+        ) : (
+          <Info>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>주소</InfoTitle>
+                <InfoDetail>(13628) 대한민국 경기도 성남시 분당구 미금일로 58</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faPhoneVolume} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>연락처</InfoTitle>
+                <InfoDetail>(+82) 10-2363-7164</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>이메일</InfoTitle>
+                <InfoDetail>woodylovesboota@gmail.com</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <InfoBox>
+              <Icon>
+                <FontAwesomeIcon icon={faCakeCandles} />
+              </Icon>
+              <InfoContent>
+                <InfoTitle>생년월일</InfoTitle>
+                <InfoDetail>1995.12.26</InfoDetail>
+              </InfoContent>
+            </InfoBox>
+            <LinkBox>
+              {isDark ? (
+                <DarkDownLoad variants={buttonVar} whileTap={"click"}>
+                  이력서 다운받기
+                </DarkDownLoad>
+              ) : (
+                <DownLoad variants={buttonVar} whileTap={"click"}>
+                  이력서 다운받기
+                </DownLoad>
+              )}
+            </LinkBox>
+          </Info>
+        )}
       </Container>
     </Wrapper>
   );
@@ -98,6 +161,18 @@ const DownLoad = styled(motion.div)`
   cursor: pointer;
 `;
 
+const DarkDownLoad = styled(motion.div)`
+  margin-top: 5%;
+  padding: 0.9375rem 1.5625rem;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(to right, yellow, #ffcc00, #66cc33, #339966, green);
+  border-radius: 0.9375rem;
+  cursor: pointer;
+`;
+
 const Form = styled.form`
   width: 45%;
   display: flex;
@@ -115,6 +190,8 @@ const NameInput = styled.input`
   border: none;
   margin-bottom: 2.25rem;
   padding: 1.25rem;
+  background-color: ${(props) => props.theme.bg.normal};
+  color: ${(props) => props.theme.word.main};
   &:focus {
     outline: none;
     border: 2.5px solid ${(props) => props.theme.main.accent};
@@ -131,6 +208,8 @@ const EmailInput = styled.input`
   border: none;
   margin-bottom: 2.25rem;
   padding: 1.25rem;
+  background-color: ${(props) => props.theme.bg.normal};
+  color: ${(props) => props.theme.word.main};
   &:focus {
     outline: none;
     border: 0.1563rem solid ${(props) => props.theme.main.accent};
@@ -146,6 +225,8 @@ const MessageInput = styled.textarea`
   border-radius: 0.5rem;
   border: none;
   padding: 1.25rem;
+  background-color: ${(props) => props.theme.bg.normal};
+  color: ${(props) => props.theme.word.main};
   &:focus {
     outline: none;
     border: 0.1563rem solid ${(props) => props.theme.main.accent};
@@ -165,6 +246,7 @@ const Button = styled(motion.button)`
   border-radius: 0.625rem;
   margin-top: auto;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   @media (max-width: 800px) {
     width: 100%;
@@ -178,8 +260,9 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 64px 0 rgba(65, 65, 65, 0.2);
+  color: ${(props) => props.theme.word.main};
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -195,7 +278,7 @@ const InfoBox = styled.div`
 const InfoDetail = styled.h2`
   font-size: 0.875rem;
   font-weight: 400;
-  color: gray;
+  color: ${(props) => props.theme.word.sub};
 `;
 
 const InfoTitle = styled.h2`
@@ -220,9 +303,9 @@ const Icon = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.25rem;
-  color: ${(props) => props.theme.word.accent};
+  color: ${(props) => props.theme.word.black};
   margin-right: 2.5rem;
-  box-shadow: 0px 0px 30px 0px rgba(43, 25, 69, 0.3);
+  box-shadow: 0px 0px 30px 0 ${(props) => props.theme.bg.blur};
 `;
 
 const buttonVar = {
