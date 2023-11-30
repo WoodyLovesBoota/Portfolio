@@ -71,7 +71,7 @@ const Wrapper = styled.div`
 const Main = styled.div`
   display: flex;
   justify-content: flex-start;
-  @media (max-width: 850px) {
+  @media (max-width: 950px) {
     flex-direction: column;
   }
 `;
@@ -80,7 +80,7 @@ const SelectMenu = styled.div`
   width: 25rem;
   margin-right: 12.5rem;
   margin-top: 7.5rem;
-  @media (max-width: 850px) {
+  @media (max-width: 950px) {
     display: flex;
     width: 100%;
     margin-bottom: 1.875rem;

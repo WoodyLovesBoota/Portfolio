@@ -1,14 +1,11 @@
 import { atom } from "recoil";
 
-export const clickedProjectState = atom<IProject>({
-  key: "clickedProject",
-  default: { projectName: "", skill: [""], image: "", infoDesc: "", cardDesc: "" },
+export const languageState = atom<boolean>({
+  key: "isEng",
+  default: true,
 });
 
-interface IProject {
-  projectName: string;
-  skill: string[];
-  image: string;
-  infoDesc: string;
-  cardDesc: string;
-}
+export const themeState = atom<boolean>({
+  key: "isDark",
+  default: false,
+});

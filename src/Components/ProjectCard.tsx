@@ -2,13 +2,10 @@ import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useRecoilState } from "recoil";
-import { clickedProjectState } from "../atoms";
 
 const ProjectCard = ({ project, color }: IProjectProps) => {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
-  const [clickedProject, setClickedProject] = useRecoilState(clickedProjectState);
 
   const handleProjectClicked = () => {
     navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
@@ -77,12 +74,10 @@ const Wrapper = styled(motion.div)<{ color: string }>`
   height: 18.75rem;
   width: 100%;
   @media (max-width: 1160px) {
-    height: 300px;
-    padding: 50px 30px;
+    width: 75%;
   }
   @media (max-width: 800px) {
-    height: 18.75rem;
-    padding: 3.125rem 1.875rem;
+    width: 100%;
   }
 `;
 
@@ -98,12 +93,6 @@ const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
   font-size: 1.5rem;
-  @media (max-width: 1160px) {
-    font-size: 21px;
-  }
-  @media (max-width: 800px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const Container = styled(motion.div)`
@@ -122,17 +111,6 @@ const Photo = styled.div<{ bgPhoto: string }>`
   border-radius: 0.5rem;
 `;
 
-const Blur = styled(motion.div)`
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
-  width: 100%;
-  height: 75%;
-  position: absolute;
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-`;
-
-const SubTitle = styled.h2``;
-
 const Info = styled.div`
   padding: 1.5625rem 1.25rem;
   width: 50%;
@@ -147,12 +125,6 @@ const InfoTitle = styled.div`
   font-weight: 600;
   border-bottom: 2px solid white;
   padding-bottom: 1.5625rem;
-  @media (max-width: 1160px) {
-    font-size: 30px;
-  }
-  @media (max-width: 800px) {
-    font-size: 1.875rem;
-  }
 `;
 
 const InfoDesc = styled.h2`
@@ -162,12 +134,6 @@ const InfoDesc = styled.h2`
   line-height: 1.5;
   margin-top: 1.5625rem;
   font-size: 1rem;
-  @media (max-width: 1160px) {
-    font-size: 16px;
-  }
-  @media (max-width: 800px) {
-    font-size: 1rem;
-  }
 `;
 
 const InfoSkill = styled.h2`
