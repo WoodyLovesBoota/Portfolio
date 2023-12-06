@@ -20,17 +20,16 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
               <>
                 <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
                 <SubTitle>
-                  Interested in combining programming expertise with design to <br />
-                  effectively results. Also passionate about Front-End development <br />
-                  and dedicated to crafting user experiences.
+                  Interested in combining programming expertise with design to effectively results. Also passionate
+                  about Front-End development and dedicated to crafting user experiences.
                 </SubTitle>
               </>
             ) : (
               <>
                 <Header title="양태욱" subTitle="MY NAME IS" isCenter={false} />
                 <SubTitle>
-                  프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며
-                  <br /> <span>Front-End 개발</span>과 그로 인한 사용자 경험 창조에 열정을 가지고 있습니다.
+                  프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며 Front-End 개발과 그로
+                  인한 사용자 경험 창조에 열정을 가지고 있습니다.
                 </SubTitle>
               </>
             )}
@@ -238,12 +237,18 @@ const DarkMain = styled.div`
 `;
 
 const SubTitle = styled.h2`
-  width: 150%;
+  width: 100%;
   font-size: 1rem;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
   line-height: 2.4;
   margin-top: 50px;
+  @media (max-width: 1160px) {
+    width: 70%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const Links = styled.div`
