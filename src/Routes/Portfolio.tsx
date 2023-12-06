@@ -110,12 +110,6 @@ const Portfolio = () => {
           ) : (
             <Description>{projectData[Number(projectMatch.params.num)].detailDescKor}</Description>
           )}
-          <Pages href={projectData[Number(projectMatch.params.num)].gibhub} target="_blank">
-            Github Code : {projectData[Number(projectMatch.params.num)].gibhub}
-          </Pages>
-          <Pages href={projectData[Number(projectMatch.params.num)].demo} target="_blank">
-            Demo Page : {projectData[Number(projectMatch.params.num)].demo}
-          </Pages>
         </Wrapper>
       )}
     </Container>
@@ -230,6 +224,9 @@ const Title = styled.h2`
   border-bottom: 0.125rem solid white;
   padding: 2.1875rem 0;
   width: 90%;
+  @media (max-width: 500px) {
+    margin-top: 0;
+  }
 `;
 
 const Description = styled.h2`
@@ -255,6 +252,10 @@ const SkillCircle = styled.div`
 
 const Buttons = styled.div`
   margin-top: 3.75rem;
+  display: flex;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 const Button = styled(motion.a)<{ color: string }>`
@@ -264,18 +265,14 @@ const Button = styled(motion.a)<{ color: string }>`
   }};
   padding: 0.9375rem 1.5625rem;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.875rem;
   border-radius: 0.9375rem;
   margin-right: 1.25rem;
   cursor: pointer;
-`;
-
-const Pages = styled.a`
-  font-size: 1.125rem;
-  font-weight: 400;
-  margin-bottom: 1.875rem;
-  display: block;
-  cursor: pointer;
+  @media (max-width: 500px) {
+    width: 150px;
+    margin-bottom: 10px;
+  }
 `;
 
 const hoverVar = {

@@ -83,7 +83,7 @@ const Main = styled.div`
 const ServiceBox = styled.div`
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  width: 30rem;
+  width: min(30rem, 100%);
   height: 25rem;
   border-radius: 0.9375rem;
   display: flex;
@@ -105,7 +105,7 @@ const ServiceIcon = styled.h2`
   align-items: center;
   font-size: 1.25rem;
   color: ${(props) => props.theme.word.black};
-  box-shadow: 0px 0px 30px 0 ${(props) => props.theme.bg.blur};
+  box-shadow: 0rem 0rem 1.875rem 0 ${(props) => props.theme.bg.blur};
 `;
 
 const ServiceTitle = styled.h2`

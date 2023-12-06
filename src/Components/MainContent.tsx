@@ -159,7 +159,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   padding: 17% 8%;
-  padding-bottom: 50px;
+  padding-bottom: 3.125rem;
   color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
@@ -248,7 +248,7 @@ const SubTitle = styled.h2`
 
 const Links = styled.div`
   display: flex;
-  margin-top: 25px;
+  margin-top: 1.5625rem;
 `;
 
 const Link = styled.div``;

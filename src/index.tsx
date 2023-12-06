@@ -30,15 +30,13 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     line-height: 1.2;
     @media (max-width: 1440px) {
-      font-size: 12px;
+      font-size: 14px;
     }
 
     @media (max-width: 760px) {
-      font-size: 13px;
+      font-size: 12px;
     }
-    @media (max-width: 500px) {
-      font-size: 14px;
-    }
+
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
