@@ -6,20 +6,47 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPhoneVolume, faEnvelope, faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilValue } from "recoil";
 import { languageState, themeState } from "../atoms";
+import { useForm } from "react-hook-form";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   const isEng = useRecoilValue(languageState);
   const isDark = useRecoilValue(themeState);
+  const { register, handleSubmit, setValue } = useForm<IForm>();
+
+  const onValid = (data: IForm) => {
+    setValue("name", "");
+    setValue("email", "");
+    setValue("message", "");
+  };
 
   return (
     <Wrapper ref={ref}>
       <Header title="Contact" subTitle="ABOUT ME" isCenter={false} />
       <Container>
-        <Form>
-          <NameInput placeholder={isEng ? "Name" : "이름"} />
-          <EmailInput placeholder={isEng ? "Email" : "이메일"} />
-          <MessageInput placeholder={isEng ? "Message" : "메시지"} />
-          <Button variants={buttonVar} whileTap={"click"}>
+        <Form
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbxferxVdCmG0i2_T4N-neira2mG8sA81Ujp4HYk3rT8Q0WhNR4OfdlWKrpTcfoENuJt/exec"
+          target="frAttachFiles"
+          data-email="woodylovesboota@gmail.com"
+        >
+          <NameInput
+            {...register("name", { required: true })}
+            name="name"
+            type="text"
+            placeholder={isEng ? "Name" : "이름"}
+          />
+          <EmailInput
+            {...register("email", { required: true })}
+            name="email"
+            type="text"
+            placeholder={isEng ? "Email" : "이메일"}
+          />
+          <MessageInput
+            {...register("message", { required: true })}
+            name="message"
+            placeholder={isEng ? "Message" : "메시지"}
+          />
+          <Button variants={buttonVar} whileTap={"click"} type="submit">
             Send Message
           </Button>
         </Form>
@@ -125,6 +152,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           </Info>
         )}
       </Container>
+      <Iframe name="frAttachFiles"></Iframe>
     </Wrapper>
   );
 });
@@ -134,6 +162,10 @@ export default Contact;
 const Wrapper = styled.div`
   width: 100%;
   padding: 8%;
+`;
+
+const Iframe = styled.iframe`
+  display: none;
 `;
 
 const Container = styled.div`
@@ -311,3 +343,9 @@ const Icon = styled.div`
 const buttonVar = {
   click: { scale: 0.95 },
 };
+
+interface IForm {
+  name: string;
+  email: string;
+  message: string;
+}

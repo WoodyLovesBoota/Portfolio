@@ -40,6 +40,10 @@ declare module "styled-components" {
       accent: string;
       normal: string;
     };
+    gray: {
+      accent: string;
+      normal: string;
+    };
     main: {
       accent: string;
       normal: string;

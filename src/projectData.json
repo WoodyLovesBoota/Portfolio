@@ -44,6 +44,27 @@
     "detailDescKor": "Netflix Clone은 React와 Typescript를 이용하여 개발한 클론 코딩 프로젝트이며, 온라인 강의를 참고하여 개발하였습니다. 프로젝트를 통해 React Router와 React Query 등 React의 기본적인 라이브러리에 대한 이해를 높이는 것에 집중하였고, 다양한 animation과 모션 디자인을 활용하여 시각적인 효과를 부여함으로써 사용자 경험을 향상할 수 있었습니다. 프로젝트를 통해 React 및 관련 기술들을 실제 개발 환경에서 어떻게 활용하는지에 대한 실전 경험을 쌓았습니다."
   },
   {
+    "projectName": "BlackNWhite.",
+    "skill": ["React", "Typescript"],
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw06.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw05.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
+    ],
+    "infoDesc": "Mini game colleciton",
+    "cardDesc": "BNW is a React and TypeScript-based initiative featuring an array of mini-games.The project aims to enhance problem-solving skills during the process of game implementation",
+    "detailDesc": "BNW is a project that includes various mini-games, enhancing problem-solving skills through the implementation of basic functionalities and termination conditions for each mini-game. Through the project, I faced various challenges, accumulating practical experience and enabling the development of effective strategies for complex problems. In addition, various animation effects were applied to provide users with a richer and more immersive experience.",
+    "demo": "https://main--magenta-unicorn-80ac8f.netlify.app/",
+    "gibhub": "https://github.com/WoodyLovesBoota/BNW",
+    "infoDescKor": "",
+    "cardDescKor": "BNW는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. 게임을 구현하는 과정에서 문제해결 능력을 키운다는 것을 목표로 하였습니다.",
+    "detailDescKor": "BNW는 다양한 미니게임을 담은 프로젝트로, 각 미니게임의 기본 동작과 종료 조건을 구현하면서 개발에서의 문제해결 능력을 향상시켰습니다. 프로젝트를 통해 다양한 도전에 직면하며 실전 경험을 쌓음으로써, 복잡한 문제에 대한 효과적인 전략을 세울 수 있었습니다. 뿐만 아니라, 다양한 애니메이션 효과를 적용하여 사용자에게 더 풍부하고 몰입도 높은 경험을 제공하였습니다. BNW는 게임 개발의 다양한 측면을 다루면서, 기술적인 향상과 창의적인 접근을 통해 결과물을 도출하였습니다."
+  },
+  {
     "projectName": "Wordle.",
     "skill": ["React", "Typescript"],
     "image": [

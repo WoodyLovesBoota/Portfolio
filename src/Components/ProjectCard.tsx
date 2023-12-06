@@ -14,7 +14,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
     navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
   };
 
-  const colors = ["red", "orange", "blue", "green", "yellow"];
+  const colors = ["red", "orange", "blue", "green", "yellow", "purple"];
 
   const handleHoverStart = () => {
     setIsHover(true);
@@ -92,8 +92,9 @@ const Wrapper = styled(motion.div)<{ color: string }>`
   border-radius: 0.9375rem;
   background-color: ${(props) => {
     let colors = props.color;
-    return props.theme[colors].accent;
+    return props.theme[props.color].accent;
   }};
+
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   position: relative;
   cursor: pointer;
