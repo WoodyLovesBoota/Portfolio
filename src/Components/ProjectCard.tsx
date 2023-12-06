@@ -122,6 +122,9 @@ const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
   font-size: 1.5rem;
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Container = styled(motion.div)`
@@ -138,6 +141,9 @@ const Photo = styled.div<{ bgPhoto: string }>`
   background-position: top center;
   background-size: cover;
   border-radius: 0.5rem;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Info = styled.div`
@@ -147,6 +153,9 @@ const Info = styled.div`
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const InfoTitle = styled.div`

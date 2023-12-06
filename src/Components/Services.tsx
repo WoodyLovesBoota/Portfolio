@@ -73,7 +73,7 @@ const Main = styled.div`
   padding-bottom: 0;
   display: flex;
   justify-content: center;
-  @media (max-width: 800px) {
+  @media (max-width: 870px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;

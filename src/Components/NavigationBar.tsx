@@ -215,6 +215,10 @@ const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
   border-radius: 0.625rem;
   position: relative;
   width: 12.5rem;
+  @media (max-width: 760px) {
+    height: 2.1875rem;
+    width: 10.5rem;
+  }
 `;
 
 const LanguageList = styled(motion.div)`
@@ -223,6 +227,10 @@ const LanguageList = styled(motion.div)`
   background-color: ${(props) => props.theme.bg.lighter};
   border-radius: 0.625rem;
   width: 12.5rem;
+  @media (max-width: 760px) {
+    width: 10.5rem;
+    top: 4.625rem;
+  }
 `;
 
 const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
@@ -278,6 +286,10 @@ const Toggle = styled(motion.div)<{ isDark: boolean }>`
   color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
   cursor: pointer;
   background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
+  @media (max-width: 760px) {
+    width: 3.75rem;
+    height: 2.1875rem;
+  }
 `;
 
 const Circle = styled(motion.div)`
@@ -294,6 +306,9 @@ const Circle = styled(motion.div)`
 const Blank = styled.div`
   width: 45%;
   height: 90%;
+  @media (max-width: 760px) {
+    width: 50%;
+  }
 `;
 
 interface INavProps {

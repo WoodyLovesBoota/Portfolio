@@ -32,14 +32,12 @@ const GlobalStyle = createGlobalStyle`
     @media (max-width: 1440px) {
       font-size: 12px;
     }
-    @media (max-width: 1024px) {
-      font-size: 11px;
-    }
+
     @media (max-width: 760px) {
-      font-size: 10px;
+      font-size: 13px;
     }
     @media (max-width: 500px) {
-      font-size: 9px;
+      font-size: 14px;
     }
   }
   /* HTML5 display-role reset for older browsers */

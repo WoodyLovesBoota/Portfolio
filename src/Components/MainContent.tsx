@@ -244,13 +244,6 @@ const SubTitle = styled.h2`
   color: ${(props) => props.theme.word.main};
   line-height: 2.4;
   margin-top: 50px;
-  span {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  @media (max-width: 1160px) {
-    width: 100%;
-  }
 `;
 
 const Links = styled.div`

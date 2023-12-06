@@ -69,10 +69,12 @@ const BlogBox = styled(motion.div)`
     margin: 30px 0;
   }
   @media (max-width: 1160px) {
-    width: 40rem;
+    width: min(40rem, 100%);
     margin-bottom: 30px;
   }
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
+    width: 100%;
+    margin-bottom: 30px;
   }
 `;
 

@@ -277,7 +277,7 @@ const Button = styled(motion.button)`
   border: none;
   border-radius: 0.625rem;
   margin-top: auto;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   cursor: pointer;
   @media (max-width: 800px) {
