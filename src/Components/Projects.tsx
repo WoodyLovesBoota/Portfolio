@@ -33,7 +33,8 @@ const Main = styled.div`
   grid-row-gap: 2vw;
   grid-column-gap: 1.5vw;
   justify-content: space-between;
-  @media (max-width: 1160px) {
+  @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 20px;
   }
 `;

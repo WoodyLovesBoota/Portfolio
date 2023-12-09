@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import projectData from "../projectData.json";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faChevronDown, faLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { useRecoilValue } from "recoil";
 import { languageState } from "../atoms";
 
@@ -14,7 +14,7 @@ const Portfolio = () => {
   const [nowPhoto, setNowPhoto] = useState(1);
   const isEng = useRecoilValue(languageState);
 
-  const colors = ["red", "orange", "blue", "green", "yellow"];
+  const colors = ["red", "orange", "blue", "green", "yellow", "purple"];
   const projectMatch: PathMatch<string> | null = useMatch("/project/:title/:num");
 
   const handleGoBackClicked = () => {
@@ -79,7 +79,7 @@ const Portfolio = () => {
               target="_blank"
               color={colors[Number(projectMatch.params.num)]}
             >
-              Visit Project Page
+              DEMO
             </Button>
             <Button
               variants={hoverVar}
@@ -88,18 +88,20 @@ const Portfolio = () => {
               target="_blank"
               color={colors[Number(projectMatch.params.num)]}
             >
-              View Code
+              CODE
             </Button>
-            <Button
+          </Buttons>
+          <Title>
+            <GoBack
               variants={hoverVar}
               whileHover={"hover"}
               color={colors[Number(projectMatch.params.num)]}
               onClick={handleGoBackClicked}
             >
-              Previous Page
-            </Button>
-          </Buttons>
-          <Title>{projectMatch.params.title}</Title>
+              <FontAwesomeIcon icon={faLeftLong} />
+            </GoBack>
+            {projectMatch.params.title}
+          </Title>
           <Skills>
             {projectData[Number(projectMatch.params.num)].skill.map((skill) => (
               <SkillCircle>{skill}</SkillCircle>
@@ -125,8 +127,8 @@ const Wrapper = styled.div<{ bgColor: string }>`
   }};
   color: white;
   padding: 8% 20%;
-  padding-bottom: 8%;
-  @media (max-width: 760px) {
+  min-height: 100vh;
+  @media (max-width: 800px) {
     padding: 8% 10%;
   }
 `;
@@ -137,7 +139,7 @@ const PhotoBox = styled.div`
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 20px 0px white;
-  padding: 1.875rem;
+  padding: 30px;
 `;
 
 const UpButton = styled.div`
@@ -147,7 +149,7 @@ const UpButton = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 1.875rem;
+  height: 30px;
   cursor: pointer;
   font-weight: 500;
   background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
@@ -160,7 +162,7 @@ const DownButton = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 1.875rem;
+  height: 30px;
   cursor: pointer;
   font-weight: 500;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
@@ -169,11 +171,11 @@ const DownButton = styled.div`
 const Photos = styled.div`
   display: flex;
   flex-direction: column;
-  height: 31.25rem;
+  height: 500px;
   width: 25%;
   overflow-y: scroll;
   position: relative;
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;
@@ -184,12 +186,12 @@ const PhotoCard = styled(motion.div)`
   align-items: center;
   cursor: pointer;
   width: 75%;
-  height: 31.25rem;
-  @media (max-width: 1024px) {
+  height: 500px;
+  @media (max-width: 1200px) {
     width: 100%;
     height: 300px;
   }
-  @media (max-width: 760px) {
+  @media (max-width: 800px) {
     height: 250px;
   }
 `;
@@ -203,7 +205,7 @@ const Photo = styled.div<{ bgPhoto: string }>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-bottom: 0.9375rem;
+  padding-bottom: 15px;
   cursor: pointer;
 `;
 
@@ -212,28 +214,32 @@ const SmallPhoto = styled(motion.div)<{ bgPhoto: string }>`
   background-position: top center;
   background-size: cover;
   width: 100%;
-  height: 12.5rem;
+  height: 200px;
   cursor: pointer;
 `;
 
 const Title = styled.h2`
   font-size: 3rem;
   font-weight: 500;
-  margin: 6.25rem 0;
-  margin-bottom: 4.375rem;
+  margin-top: 6.25rem;
+  margin-bottom: 3.125rem;
   border-bottom: 0.125rem solid white;
-  padding: 2.1875rem 0;
-  width: 90%;
-  @media (max-width: 500px) {
-    margin-top: 0;
+  padding: 1.25rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  @media (max-width: 800px) {
+    margin-top: 3.125rem;
   }
 `;
 
 const Description = styled.h2`
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 2.4;
-  margin-bottom: 6.25rem;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 const Skills = styled.h2`
@@ -242,20 +248,17 @@ const Skills = styled.h2`
 `;
 
 const SkillCircle = styled.div`
-  font-size: 0.875rem;
-  border-radius: 0.375rem;
-  padding: 0.375rem 0.75rem;
-  margin-right: 0.625rem;
-  border: 0.0938rem solid white;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  border: 1.5px solid white;
   font-weight: 500;
 `;
 
 const Buttons = styled.div`
-  margin-top: 3.75rem;
+  margin-top: 1.875rem;
   display: flex;
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
 `;
 
 const Button = styled(motion.a)<{ color: string }>`
@@ -265,14 +268,22 @@ const Button = styled(motion.a)<{ color: string }>`
   }};
   padding: 0.9375rem 1.5625rem;
   font-weight: 700;
-  font-size: 0.875rem;
-  border-radius: 0.9375rem;
-  margin-right: 1.25rem;
+  font-size: 14px;
+  border-radius: 15px;
+  margin-right: 15px;
   cursor: pointer;
-  @media (max-width: 500px) {
-    width: 150px;
-    margin-bottom: 10px;
-  }
+`;
+
+const GoBack = styled(motion.button)<{ color: string }>`
+  background-color: white;
+  color: ${(props) => {
+    return props.theme[props.color].accent;
+  }};
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 50px;
+  margin-right: 20px;
+  cursor: pointer;
 `;
 
 const hoverVar = {

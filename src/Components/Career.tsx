@@ -54,13 +54,13 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
                 ? careerData[currentCareer].descriptions.map((description) => (
                     <CareerDescription>
                       <Bar />
-                      {description}
+                      <p>{description}</p>
                     </CareerDescription>
                   ))
                 : careerData[currentCareer].descriptionsKor.map((description) => (
                     <CareerDescription>
                       <Bar />
-                      {description}
+                      <p>{description}</p>
                     </CareerDescription>
                   ))}
             </CareerDescriptions>
@@ -83,20 +83,21 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   display: flex;
-  justify-content: flex-start;
-  @media (max-width: 950px) {
+  justify-content: space-between;
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
 `;
 
 const SelectMenu = styled.div`
-  width: 25rem;
-  margin-right: 12.5rem;
-  margin-top: 7.5rem;
-  @media (max-width: 950px) {
+  width: 400px;
+  margin-right: 20px;
+  margin-top: 120px;
+  @media (max-width: 1200px) {
     display: flex;
     width: 100%;
-    margin-bottom: 1.875rem;
+    margin-bottom: 20px;
+    margin-top: 50px;
   }
 `;
 
@@ -124,31 +125,43 @@ const CareerBox = styled.div`
   color: ${(props) => props.theme.word.main};
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  padding: 50px;
+  padding: 3.125rem;
   border-radius: 15px;
+  width: 100%;
 `;
 
 const CareerTitle = styled.h2`
-  font-size: 1.3125rem;
+  font-size: 21px;
   font-weight: 400;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 15px;
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
 `;
 
 const CareerName = styled.span`
-  font-size: 1.3125rem;
+  font-size: 21px;
   font-weight: 400;
   margin-left: 5px;
   text-decoration: underline;
+  @media (max-width: 1200px) {
+    font-size: 18px;
+  }
+  @media (max-width: 800px) {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const CareerAddress = styled.h2`
-  font-size: 1rem;
+  font-size: 16px;
   color: ${(props) => props.theme.word.sub};
   margin-bottom: 1.5625rem;
 `;
 
 const CareerDuration = styled.h2`
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 1.5625rem;
   font-weight: 400;
 `;
@@ -159,7 +172,7 @@ const CareerSkills = styled.div`
 `;
 
 const CareerSkill = styled.div`
-  font-size: 0.75rem;
+  font-size: 12px;
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
@@ -171,21 +184,32 @@ const CareerSkill = styled.div`
 const Divider = styled.div`
   width: 100%;
   background-color: #f1f1f1;
-  height: 0.125rem;
+  height: 2px;
   margin-bottom: 2.5rem;
 `;
 
-const CareerDescription = styled.h2`
+const CareerDescription = styled.div`
   margin-bottom: 1.25rem;
-  font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  p {
+    width: 90%;
+    margin-left: 20px;
+    font-size: 16px;
+  }
 `;
 
-const CareerDescriptions = styled.div``;
+const CareerDescriptions = styled.div`
+  width: 100%;
+`;
 
 const CareerColumn = styled.div`
-  width: 100%;
+  width: 1000px;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const Bar = styled.div`
@@ -193,7 +217,6 @@ const Bar = styled.div`
   width: 0.625rem;
   height: 0.125rem;
   border-radius: 2px;
-  margin-right: 1.25rem;
 `;
 
 const SelectColumn = styled.div``;

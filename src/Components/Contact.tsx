@@ -47,7 +47,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             placeholder={isEng ? "Message" : "메시지"}
           />
           <Button variants={buttonVar} whileTap={"click"} type="submit">
-            Send Message
+            {isEng ? "Send Message" : "메시지 보내기"}
           </Button>
         </Form>
         {isEng ? (
@@ -172,7 +172,7 @@ const Container = styled.div`
   display: flex;
   padding: 5% 0;
   justify-content: space-between;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -183,25 +183,25 @@ const LinkBox = styled.div``;
 
 const DownLoad = styled(motion.div)`
   margin-top: 5%;
-  padding: 0.9375rem 1.5625rem;
+  padding: 15px 25px;
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 16px;
   font-weight: 500;
   color: white;
-  background: linear-gradient(to right, #3498db, #9b59b6, #5dade2, #1f618d, #8e44ad);
-  border-radius: 0.9375rem;
+  background-color: ${(props) => props.theme.main.accent};
+  border-radius: 15px;
   cursor: pointer;
 `;
 
 const DarkDownLoad = styled(motion.div)`
   margin-top: 5%;
-  padding: 0.9375rem 1.5625rem;
+  padding: 15px 25px;
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 16px;
   font-weight: 500;
   color: white;
-  background: linear-gradient(to right, yellow, #ffcc00, #66cc33, #339966, green);
-  border-radius: 0.9375rem;
+  background-color: ${(props) => props.theme.main.accent};
+  border-radius: 15px;
   cursor: pointer;
 `;
 
@@ -209,63 +209,69 @@ const Form = styled.form`
   width: 45%;
   display: flex;
   flex-direction: column;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 `;
 
 const NameInput = styled.input`
   width: 90%;
-  height: 4rem;
-  border-radius: 0.5rem;
+  height: 64px;
+  border-radius: 8px;
   border: none;
-  margin-bottom: 2.25rem;
-  padding: 1.25rem;
+  margin-bottom: 20px;
+  padding: 20px;
   background-color: ${(props) => props.theme.bg.normal};
   color: ${(props) => props.theme.word.main};
+  font-size: 16px;
+
   &:focus {
     outline: none;
     border: 2.5px solid ${(props) => props.theme.main.accent};
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
 
 const EmailInput = styled.input`
   width: 90%;
-  height: 4rem;
-  border-radius: 0.5rem;
+  height: 64px;
+  border-radius: 8px;
   border: none;
-  margin-bottom: 2.25rem;
-  padding: 1.25rem;
+  margin-bottom: 20px;
+  padding: 20px;
   background-color: ${(props) => props.theme.bg.normal};
   color: ${(props) => props.theme.word.main};
+  font-size: 16px;
+
   &:focus {
     outline: none;
-    border: 0.1563rem solid ${(props) => props.theme.main.accent};
+    border: 2.5px solid ${(props) => props.theme.main.accent};
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
 
 const MessageInput = styled.textarea`
   width: 90%;
-  height: 16.875rem;
-  border-radius: 0.5rem;
+  height: 100%;
+  border-radius: 8px;
   border: none;
-  padding: 1.25rem;
+  padding: 20px;
   background-color: ${(props) => props.theme.bg.normal};
   color: ${(props) => props.theme.word.main};
+  margin-bottom: 20px;
+  font-size: 16px;
   &:focus {
     outline: none;
-    border: 0.1563rem solid ${(props) => props.theme.main.accent};
+    border: 2.5008px solid ${(props) => props.theme.main.accent};
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
-    margin-bottom: 2.25rem;
+    min-height: 200px;
   }
 `;
 
@@ -273,29 +279,29 @@ const Button = styled(motion.button)`
   width: 90%;
   background-color: ${(props) => props.theme.main.accent};
   color: white;
-  padding: 1.5625rem;
+  padding: 20px;
   border: none;
-  border-radius: 0.625rem;
+  border-radius: 10px;
   margin-top: auto;
-  font-size: 1.15rem;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
 
 const Info = styled.div`
-  width: 45%;
+  width: 50%;
   padding: 3% 5%;
-  border-radius: 1.5625rem;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: ${(props) => props.theme.word.main};
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `;
@@ -308,15 +314,15 @@ const InfoBox = styled.div`
 `;
 
 const InfoDetail = styled.h2`
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   color: ${(props) => props.theme.word.sub};
 `;
 
 const InfoTitle = styled.h2`
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
-  margin-bottom: 0.625rem;
+  margin-bottom: 10px;
 `;
 
 const InfoContent = styled.div`
@@ -327,14 +333,14 @@ const InfoContent = styled.div`
 `;
 
 const Icon = styled.div`
-  width: 4rem;
-  height: 4rem;
-  border-radius: 1.3125rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 21px;
   background-color: ${(props) => props.theme.main.hlbg};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 20px;
   color: ${(props) => props.theme.word.black};
   margin-right: 2.5rem;
   box-shadow: 0px 0px 30px 0 ${(props) => props.theme.bg.blur};

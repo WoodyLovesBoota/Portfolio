@@ -29,14 +29,17 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: baseline;
     font-weight: 300;
     line-height: 1.2;
-    @media (max-width: 1440px) {
-      font-size: 14px;
-    }
+    word-break:break-all;
 
-    @media (max-width: 760px) {
+    -webkit-touch-callout: none;
+     user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     -webkit-user-select: none;
+
+    @media (max-width: 1000px) {
       font-size: 12px;
     }
-
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,

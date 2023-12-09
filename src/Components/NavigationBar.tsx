@@ -135,7 +135,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.125rem 8%;
+  padding: 18px 8%;
   position: absolute;
   top: 0;
   z-index: 2;
@@ -145,36 +145,35 @@ const Contents = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  @media (max-width: 760px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;
 
 const Logo = styled.button`
-  height: 3.125rem;
-  font-size: 1.125rem;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 800;
   border: none;
   background-color: transparent;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 1px;
   color: ${(props) => props.theme.word.black};
   cursor: pointer;
 `;
 
 const Content = styled(motion.button)`
-  height: 3.125rem;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.875rem;
+  height: 50px;
+  padding: 12px 20px;
+  font-size: 14px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-weight: 500;
   border: none;
   background-color: transparent;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 1px;
   color: ${(props) => props.theme.word.main};
   cursor: pointer;
 `;
@@ -193,9 +192,9 @@ const Icon = styled.span`
 `;
 
 const LanguageTitle = styled.h2`
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.0625rem;
+  letter-spacing: 1px;
 `;
 
 const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
@@ -211,25 +210,25 @@ const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
       : props.isDark
       ? "rgba(0, 0, 0, 0.4)"
       : "rgba(255, 255, 255, 0.4)"};
-  padding: 1.25rem;
-  border-radius: 0.625rem;
+  padding: 16px 20px;
+  border-radius: 10px;
   position: relative;
-  width: 12.5rem;
-  @media (max-width: 760px) {
-    height: 2.1875rem;
-    width: 10.5rem;
+  width: 200px;
+  @media (max-width: 1200px) {
+    height: 40px;
+    width: 168px;
   }
 `;
 
 const LanguageList = styled(motion.div)`
   position: absolute;
-  top: 5.625rem;
+  top: 90px;
   background-color: ${(props) => props.theme.bg.lighter};
-  border-radius: 0.625rem;
-  width: 12.5rem;
-  @media (max-width: 760px) {
-    width: 10.5rem;
-    top: 4.625rem;
+  border-radius: 10px;
+  width: 200px;
+  @media (max-width: 1200px) {
+    width: 168px;
+    top: 74px;
   }
 `;
 
@@ -237,7 +236,7 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0.9375rem 1.25rem;
+  padding: 12px 20px;
   cursor: pointer;
   background-color: ${(props) =>
     props.isNow
@@ -249,20 +248,20 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
       : "#ffffff4d"};
 
   &:first-child {
-    border-top-right-radius: 0.625rem;
-    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
   }
   &:last-child {
-    border-bottom-right-radius: 0.625rem;
-    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 `;
 
 const LanguageContent = styled.div`
   font-size: 0.875rem;
   font-weight: 300;
-  margin-left: 1.25rem;
-  letter-spacing: 0.0625rem;
+  margin-left: 20px;
+  letter-spacing: 1px;
 `;
 
 const Check = styled.h2`
@@ -272,23 +271,23 @@ const Check = styled.h2`
 `;
 
 const Theme = styled.div`
-  margin-left: 1.5625rem;
+  margin-left: 25px;
 `;
 
 const Toggle = styled(motion.div)<{ isDark: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 1.5625rem;
-  width: 5.625rem;
-  height: 2.8125rem;
-  padding: 0.25rem 0.5rem;
+  border-radius: 25px;
+  width: 90px;
+  height: 45px;
+  padding: 4px 8px;
   color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
   cursor: pointer;
   background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
-  @media (max-width: 760px) {
-    width: 3.75rem;
-    height: 2.1875rem;
+  @media (max-width: 1200px) {
+    width: 60px;
+    height: 35px;
   }
 `;
 
@@ -304,11 +303,8 @@ const Circle = styled(motion.div)`
 `;
 
 const Blank = styled.div`
-  width: 45%;
+  width: 55%;
   height: 90%;
-  @media (max-width: 760px) {
-    width: 50%;
-  }
 `;
 
 interface INavProps {

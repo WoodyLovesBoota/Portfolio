@@ -54,7 +54,6 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
                   ))}
                 </InfoSkill>
               </Info>
-              <Photo bgPhoto={project.image[0]} />
             </Container>
           )
         ) : isHover ? (
@@ -89,7 +88,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
 export default ProjectCard;
 
 const Wrapper = styled(motion.div)<{ color: string }>`
-  border-radius: 0.9375rem;
+  border-radius: 15px;
   background-color: ${(props) => {
     let colors = props.color;
     return props.theme[props.color].accent;
@@ -98,15 +97,12 @@ const Wrapper = styled(motion.div)<{ color: string }>`
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   position: relative;
   cursor: pointer;
-  padding: 3.125rem 1.875rem;
+  padding: 50px 30px;
   color: white;
-  height: 18.75rem;
+  height: 300px;
   width: 100%;
-  @media (max-width: 1160px) {
-    width: 75%;
-  }
-  @media (max-width: 800px) {
-    width: 100%;
+  @media (max-width: 1200px) {
+    height: 250px;
   }
 `;
 
@@ -115,16 +111,12 @@ const CardDescription = styled(motion.div)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
   font-size: 1.5rem;
-  @media (max-width: 500px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const Container = styled(motion.div)`
@@ -140,7 +132,7 @@ const Photo = styled.div<{ bgPhoto: string }>`
   background-image: url(${(props) => props.bgPhoto});
   background-position: top center;
   background-size: cover;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   @media (max-width: 500px) {
     display: none;
   }
@@ -148,14 +140,11 @@ const Photo = styled.div<{ bgPhoto: string }>`
 
 const Info = styled.div`
   padding: 1.5625rem 1.25rem;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  @media (max-width: 500px) {
-    width: 100%;
-  }
 `;
 
 const InfoTitle = styled.div`
@@ -167,11 +156,11 @@ const InfoTitle = styled.div`
 
 const InfoDesc = styled.h2`
   font-weight: 500;
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
   width: 90%;
   line-height: 1.5;
-  margin-top: 1.5625rem;
-  font-size: 1rem;
+  margin-top: 25px;
+  font-size: 16px;
 `;
 
 const InfoSkill = styled.h2`
@@ -179,11 +168,11 @@ const InfoSkill = styled.h2`
 `;
 
 const SkillCircle = styled.div`
-  font-size: 0.75rem;
+  font-size: 12px;
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
-  border: 1.5px solid #f1f1f1;
+  border: 1.5008px solid #f1f1f1;
   font-weight: 500;
 `;
 

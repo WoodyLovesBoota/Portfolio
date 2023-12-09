@@ -50,7 +50,7 @@ const Main = styled.div`
   padding-bottom: 0;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 1160px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -60,21 +60,31 @@ const Main = styled.div`
 const BlogBox = styled(motion.div)`
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  width: 28.125rem;
-  height: 40.625rem;
+  width: min(450px, 32%);
+  height: 650px;
   border-radius: 15px;
   cursor: pointer;
-  @media (max-width: 1700px) {
-    width: 31%;
-    margin: 30px 0;
+  @media (max-width: 1600px) {
+    height: 600px;
   }
-  @media (max-width: 1160px) {
-    width: min(40rem, 100%);
-    margin-bottom: 30px;
-  }
-  @media (max-width: 500px) {
+  @media (max-width: 1200px) {
     width: 100%;
+    height: 350px;
     margin-bottom: 30px;
+    a {
+      display: flex;
+      width: 100%;
+      height: 350px;
+    }
+  }
+  @media (max-width: 700px) {
+    height: 550px;
+    margin-bottom: 40px;
+
+    a {
+      flex-direction: column;
+      height: 550px;
+    }
   }
 `;
 
@@ -85,25 +95,54 @@ const BlogPhoto = styled.div<{ bgPhoto: string }>`
   height: 55%;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+  @media (max-width: 1600px) {
+    height: 50%;
+  }
+  @media (max-width: 1200px) {
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0px;
+  }
+  @media (max-width: 700px) {
+    height: 50%;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+  }
 `;
 
 const BlogContent = styled.div`
-  padding: 1.875rem;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: 45%;
   padding-bottom: 0;
+  @media (max-width: 1600px) {
+    height: 50%;
+  }
+  @media (max-width: 1200px) {
+    height: 100%;
+    width: 50%;
+    padding: 1.875rem 3.125rem;
+    padding-bottom: 0;
+  }
+  @media (max-width: 700px) {
+    height: 50%;
+    width: 100%;
+  }
 `;
 
 const BlogTitle = styled.h2`
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
 `;
 
 const BlogDate = styled.span`
-  font-size: 0.875rem;
+  font-size: 14px;
   border-radius: 4px;
   padding: 4px 8px;
   border: 1px solid lightgray;
@@ -114,9 +153,12 @@ const BlogDate = styled.span`
 
 const BlogDesc = styled.h2`
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 2;
   color: ${(props) => props.theme.word.sub};
+  @media (max-width: 1600px) {
+    line-height: 1.7;
+  }
 `;
 
 const BlogButton = styled(motion.button)`
@@ -124,22 +166,25 @@ const BlogButton = styled(motion.button)`
   width: 100%;
   border: none;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 16px;
   color: ${(props) => props.theme.word.sub};
-  padding-top: 0.625rem;
-  padding-bottom: 1.875rem;
+  padding-top: 10px;
+  padding-bottom: 30px;
   cursor: pointer;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Link = styled(motion.div)`
   display: flex;
   margin-top: 8%;
   justify-content: center;
-  padding: 1.25rem;
+  padding: 20px;
 `;
 
 const LinkContent = styled(motion.a)`
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 400;
   color: ${(props) => props.theme.word.sub};
 `;

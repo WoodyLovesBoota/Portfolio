@@ -1,27 +1,24 @@
 [
   {
-    "projectName": "TravelGo.",
+    "projectName": "BEEE.",
     "skill": ["React", "Typescript"],
     "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo01.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo03.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo06.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo07.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo08.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo09.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/travelgo/travelgo10.png?raw=true"
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee07.png?raw=true"
     ],
     "infoDesc": "Travel scheduling web application.",
-    "cardDesc": "TravelGo is a React.ts-based web application for creating and managing travel itineraries. Project is developed by emphasizing component modularization, Virtual DOM, and state management, and various React libraries for enhanced functionality.",
-    "detailDesc": "TravelGo is a project implementing a React.ts-based web application to assist with travel scheduling. After learning React and various library usage through lectures and several projects, I independently undertook the project's planning, design, and development. I practiced component modularization, Virtual DOM, and state management. Furthermore, I developed the project by incorporating various libraries, including React Hook, React Query, Recoil, Styled-Components, and React Router.",
+    "cardDesc": "BEEE is a React.ts-based web application for creating and managing travel itineraries. ",
+    "detailDesc": "BEEE is a project implementing a React.ts-based web application to assist with travel scheduling. After learning React and various library usage through lectures and several projects, I independently undertook the project's planning, design, and development. I practiced component modularization, Virtual DOM, and state management. Furthermore, I developed the project by incorporating various libraries, including React Hook, React Query, Recoil, Styled-Components, and React Router.",
     "demo": "https://main--soft-taffy-a6cbf8.netlify.app/",
     "gibhub": "https://github.com/WoodyLovesBoota/TravelGo",
     "infoDescKor": "",
-    "cardDescKor": "TravelGo는 여행 일정을 생성하고 관리하는 데 사용되는 React.ts 기반의 웹 애플리케이션으로서 컴포넌트 모듈화, Virtual DOM 및 상태 관리에 중점을 두고 개발하였습니다. 또한 다양한 React 라이브러리를 활용하여 기능을 향상시켰습니다.",
-    "detailDescKor": "TravelGo는 React.ts 기반하여 여행 스케줄에 도움을 주는 웹 어플리케이션을 구현한 프로젝트 입니다. 강의와 클론 코딩을 통해 React 및 다양한 라이브러리 사용법을 학습한 후, 스스로 기획, 디자인, 개발을 수행하였습니다.  React를 활용하여 컴포넌트 모듈화, Virtual DOM, 상태 관리 등의 기본 기능을 연습하고, React Hook, React Query, Recoil, Styled-Components, React Router 등 다양한 라이브러리를 활용하여 프로젝트를 개발했습니다."
+    "cardDescKor": "BEEE는 여행 일정을 생성하고 관리하는 데 사용되는 React.ts 기반의 웹 애플리케이션입니다.",
+    "detailDescKor": "BEEE는 React.ts 기반하여 여행 스케줄에 도움을 주는 웹 어플리케이션을 구현한 프로젝트 입니다. 강의와 클론 코딩을 통해 React 및 다양한 라이브러리 사용법을 학습한 후, 스스로 기획, 디자인, 개발을 수행하였습니다.  React를 활용하여 컴포넌트 모듈화, Virtual DOM, 상태 관리 등의 기본 기능을 연습하고, React Hook, React Query, Recoil, Styled-Components, React Router 등 다양한 라이브러리를 활용하여 프로젝트를 개발했습니다."
   },
   {
     "projectName": "Netflix Clone.",
@@ -35,12 +32,12 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix06.png?raw=true"
     ],
     "infoDesc": "Cloning the Netflix website.",
-    "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website. Deepening my understanding of fundamental React libraries such as React Router and React Query. Additionally, enhanced the user experience by incorporating various visual effects.",
+    "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website.",
     "detailDesc": "The Netflix Clone is a clone coding project developed using React and Typescript, with reference to online courses. The focus of the project was to enhance understanding of fundamental React libraries such as React Router and React Query. By incorporating various animations and motion designs, I improved the visual effects, contributing to an enhanced user experience.",
     "demo": "https://woodylovesboota.github.io/React-Project",
     "gibhub": "https://github.com/WoodyLovesBoota/Netflix__Clone",
     "infoDescKor": "",
-    "cardDescKor": "Netflix Clone은 Netflix 웹사이트를 클론 코딩한 프로젝트로 React와 Typescript를 사용하여 구현하였습니다. 프로젝트를 통해 React Router와 React Query 등 React의 기본적인 라이브러리에 대한 이해를 높였고, 다양한 시각적인 효과를 부여함으로써 사용자 경험을 향상시켰습니다.",
+    "cardDescKor": "Netflix Clone은 Netflix 웹사이트를 클론 코딩한 프로젝트로 React와 Typescript를 사용하여 구현하였습니다.",
     "detailDescKor": "Netflix Clone은 React와 Typescript를 이용하여 개발한 클론 코딩 프로젝트이며, 온라인 강의를 참고하여 개발하였습니다. 프로젝트를 통해 React Router와 React Query 등 React의 기본적인 라이브러리에 대한 이해를 높이는 것에 집중하였고, 다양한 animation과 모션 디자인을 활용하여 시각적인 효과를 부여함으로써 사용자 경험을 향상할 수 있었습니다. 프로젝트를 통해 React 및 관련 기술들을 실제 개발 환경에서 어떻게 활용하는지에 대한 실전 경험을 쌓았습니다."
   },
   {
@@ -56,12 +53,12 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
     ],
     "infoDesc": "Mini game colleciton",
-    "cardDesc": "BNW is a React and TypeScript-based initiative featuring an array of mini-games.The project aims to enhance problem-solving skills during the process of game implementation",
+    "cardDesc": "BNW is a React and TypeScript-based initiative featuring an array of mini-games.",
     "detailDesc": "BNW is a project that includes various mini-games, enhancing problem-solving skills through the implementation of basic functionalities and termination conditions for each mini-game. Through the project, I faced various challenges, accumulating practical experience and enabling the development of effective strategies for complex problems. In addition, various animation effects were applied to provide users with a richer and more immersive experience.",
     "demo": "https://main--magenta-unicorn-80ac8f.netlify.app/",
     "gibhub": "https://github.com/WoodyLovesBoota/BNW",
     "infoDescKor": "",
-    "cardDescKor": "BNW는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. 게임을 구현하는 과정에서 문제해결 능력을 키운다는 것을 목표로 하였습니다.",
+    "cardDescKor": "BNW는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. ",
     "detailDescKor": "BNW는 다양한 미니게임을 담은 프로젝트로, 각 미니게임의 기본 동작과 종료 조건을 구현하면서 개발에서의 문제해결 능력을 향상시켰습니다. 프로젝트를 통해 다양한 도전에 직면하며 실전 경험을 쌓음으로써, 복잡한 문제에 대한 효과적인 전략을 세울 수 있었습니다. 뿐만 아니라, 다양한 애니메이션 효과를 적용하여 사용자에게 더 풍부하고 몰입도 높은 경험을 제공하였습니다. BNW는 게임 개발의 다양한 측면을 다루면서, 기술적인 향상과 창의적인 접근을 통해 결과물을 도출하였습니다."
   },
   {
@@ -73,12 +70,12 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Wordle/wordle03.png?raw=true"
     ],
     "infoDesc": "Wordle, a word-guessing game.",
-    "cardDesc": "Wordle is a Word-guessing game developed with React and Typescript. Emphasizing efficient code writing through data communication between components and state management and implementing dynamic UI using conditional rendering to enhance the user experience.",
+    "cardDesc": "Wordle is a Word-guessing game developed with React and Typescript.",
     "detailDesc": "Wordle is a word-guessing game developed with React and Typescript. The goal was to write scalable code through reusable components. I focused on data communication between components and state management during development. Additionally, I delved deeply into learning methods to enhance the user experience through the implementation of dynamic UI using conditional rendering.",
     "demo": "https://woodylovesboota.github.io/Wordle",
     "gibhub": "https://github.com/WoodyLovesBoota/Wordle",
     "infoDescKor": "",
-    "cardDescKor": "Wordle은 React와 Typescript를 기반으로 개발된 Word-guessing game입니다. 컴포넌트 간의 데이터 통신과 상태 관리에 중점을 두어 효율적인 코드 작성을 목표로 하였고, 조건부 렌더링을 활용한 동적 UI를 구현하여 사용자 경험을 향상하는 방법에 대해 심층적으로 학습하였습니다.",
+    "cardDescKor": "Wordle은 React와 Typescript를 기반으로 개발된 Word-guessing game입니다.",
     "detailDescKor": "Wordle은 React와 Typescript를 기반으로 개발한 단어 맞추기 게임이다. 재사용 가능한 컴포넌트 등을 통해 scalable 한 코드를 작성는 것을 목표로 하였다. 컴포넌트 간의 데이터 통신과 상태 관리에 중점을 두어 개발을 진행하였다. 또한, 조건부 렌더링을 활용한 동적 UI를 구현하여 사용자 경험을 향상하는 방법에 대해 심층적으로 학습하였습니다."
   },
   {
@@ -91,12 +88,12 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner04.png?raw=true"
     ],
     "infoDesc": "Productivity-focused web application.",
-    "cardDesc": "Planner is a project created with HTML, CSS, and Javascript. I attempted modularization by using various files to organize the project. Additionally, implemented features to fetch and use data from external APIs and combining diverse features and data to create a unified web application.",
+    "cardDesc": "Planner is a productivity-focused web application created with HTML, CSS, and Javascript.",
     "detailDesc": "Planner is a composite result of several simple projects, showcasing fundamental Front-End development using HTML, CSS, and Javascript. It incorporates responsive web design, and explores modularity by utilizing various files to structure the project. Additionally, it implements functionality to fetch information from external APIs, allowing the integration of diverse features and data to create a web application.",
     "demo": "https://woodylovesboota.github.io/Planner",
     "gibhub": "https://github.com/WoodyLovesBoota/Planner",
     "infoDescKor": "",
-    "cardDescKor": "Planner 는 HTML, CSS, Javascript를 이용한 프로젝트로 . 다양한 파일을 활용하여 하나의 프로젝트를 구성하는 모듈화를 시도하였습니다. 또한, API를 활용하여 외부에서 정보를 받아오는 기능을 구현하였고 이를 통해 다양한 기능과 정보를 결합하여 하나의 웹 애플리케이션을 구현했습니다.",
+    "cardDescKor": "Planner는 HTML, CSS, Javascript를 이용한여 제작한 개인의 생산성을 높이는 웹 어플리케이션 입니다.",
     "detailDescKor": "Planner는 간단한 여러 프로젝트를 통합하여 만든 결과물입니다. HTML, CSS, Javascript를 이용한 Front-End 개발의 기본 동작을 습득하고, 이후의 반응형 웹 디자인 등 실험적인 시도를 담아낸 프로젝트입니다. 다양한 파일을 활용하여 하나의 프로젝트를 구성하는 모듈화를 시도하였습니다. 또한, 개발자 또는 사용자가 정보를 입력하는 것이 아닌 API를 활용하여 외부에서 정보를 받아오는 기능을 구현하였고 이를 통해 다양한 기능과 정보를 결합하여 웹 애플리케이션을 구현했습니다."
   },
   {
@@ -109,12 +106,12 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar04.png?raw=true"
     ],
     "infoDesc": "Time scheduling web application.",
-    "cardDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it.",
+    "cardDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript.",
     "detailDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it. While it may be a single-page project, this endeavor allowed me to independently implement various aspects, including screen composition, component placement, overall layout design, direct feature implementation, and detailed style design.",
     "demo": "https://woodylovesboota.github.io/Calendar",
     "gibhub": "https://github.com/WoodyLovesBoota/Calendar",
     "infoDescKor": "",
-    "cardDescKor": "Calendar는 HTML, CSS, Javascript를 통해 만든 web 달력 application 이다. 개발자가 제공하는 정보를 단순히 사용자가 읽는것이 아닌 사용자와 직접 상호작용하는 웹 사이트를 구현하는 것을 목표로 했습니다.",
+    "cardDescKor": "Calendar는 HTML, CSS, Javascript를 통해 만든 web 달력 application 입니다.",
     "detailDescKor": "Calendar는 HTML, CSS, Javascript를 공부한 후 만들어 낸 첫 결과물로, 사용자와 상호작용하는 웹 사이트를 구현하는 것을 목표로 했습니다. 이 프로젝트는 비록 single-page-project이지만, 화면 구성, 컴포넌트 배치, 전체적인 레이아웃 설계부터 직접적인 기능 구현 및 디테일한 스타일 디자인까지 여러 가지를 혼자서 구현하여 결과물을 완성하는 경험을 할 수 있었습니다."
   }
 ]

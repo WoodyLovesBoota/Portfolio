@@ -79,14 +79,14 @@ const Icons = styled.div`
 `;
 
 const Icon = styled.a`
-  font-size: 1.3125rem;
-  margin: 0 0.9375rem;
+  font-size: 21px;
+  margin: 0 15px;
   cursor: pointer;
   color: ${(props) => props.theme.word.main};
 `;
 
 const Info = styled.div`
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
 `;
