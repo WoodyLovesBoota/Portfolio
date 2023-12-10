@@ -13,7 +13,7 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
     <Wrapper ref={ref}>
       <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} />
       <Main>
-        {blogData.map((blog) => (
+        {blogData.slice(0, 3).map((blog) => (
           <BlogBox variants={shadowVar} whileHover={isDark ? "darkHover" : "hover"} whileTap={"click"}>
             <a href={blog.link} target="_blank">
               <BlogPhoto bgPhoto={blog.image} />
