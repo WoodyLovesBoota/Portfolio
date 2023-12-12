@@ -77,7 +77,6 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
                 ))}
               </InfoSkill>
             </Info>
-            <Photo bgPhoto={project.image[0]} />
           </Container>
         )}
       </AnimatePresence>
@@ -89,20 +88,17 @@ export default ProjectCard;
 
 const Wrapper = styled(motion.div)<{ color: string }>`
   border-radius: 15px;
-  background-color: ${(props) => {
-    let colors = props.color;
-    return props.theme[props.color].accent;
-  }};
-
+  background-color: ${(props) => props.theme[props.color].accent};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   position: relative;
   cursor: pointer;
-  padding: 50px 30px;
+  padding: 28px 32px;
   color: white;
-  height: 300px;
+  height: 250px;
   width: 100%;
+
   @media (max-width: 1200px) {
-    height: 250px;
+    padding: 16px 20px;
   }
 `;
 

@@ -71,17 +71,22 @@ export default Education;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Main = styled.div`
-  padding: 8% 0;
-  padding-bottom: 0;
+  padding: 72px 0;
   display: flex;
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
+  }
+  @media (max-width: 800px) {
+    padding: 24px 0;
   }
 `;
 
@@ -90,7 +95,7 @@ const EducationColumn = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     width: 100%;
   }
 `;
@@ -99,19 +104,22 @@ const EducationItem = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 70px;
-  padding: 3.125rem;
+  padding: 50px;
   border-radius: 15px;
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     margin-bottom: 20px;
+  }
+  @media (max-width: 1200px) {
+    padding: 32px;
   }
 `;
 
 const EducationTitle = styled.h2`
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 `;
 
 const EducationSubTitle = styled.h2`
@@ -123,17 +131,17 @@ const EducationSubTitle = styled.h2`
 const EducationYear = styled.h2`
   font-size: 16px;
   font-weight: 500;
-  margin-top: 2rem;
+  margin-top: 32px;
 `;
 
 const EducationInfo = styled.div``;
 
 const SkillColumn = styled.div`
   width: 60%;
-  padding: 0 6%;
+  padding: 0 36px;
   display: flex;
   flex-direction: column;
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     width: 100%;
     padding: 0;
   }
@@ -146,34 +154,47 @@ const SkillDescription = styled.h2`
   font-weight: 400;
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  padding: 3.125rem;
+  padding: 50px;
   border-radius: 15px;
+  @media (max-width: 800px) {
+    padding: 32px;
+  }
 `;
 
 const SkillGraph = styled.div`
   margin-top: 70px;
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  padding: 3.125rem;
+  padding: 50px;
   border-radius: 15px;
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     margin-top: 20px;
+  }
+  @media (max-width: 800px) {
+    padding: 32px;
   }
 `;
 
 const SkillRow = styled.div`
   color: ${(props) => props.theme.word.main};
-  margin-bottom: 3.125rem;
+  margin-bottom: 50px;
+  @media (max-width: 800px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const SkillName = styled.h2`
   font-size: 18px;
   font-weight: 400;
-  margin: 1.25rem 0;
+  margin: 20px 0;
+
+  @media (max-width: 800px) {
+    margin: 10px 0;
+  }
 `;
 
 const SkillBar = styled.div`
-  height: 0.625rem;
+  height: 10px;
   border-radius: 4px;
   background-color: ${(props) => props.theme.bg.point};
   position: relative;
@@ -181,7 +202,7 @@ const SkillBar = styled.div`
 `;
 
 const SkillFill = styled.div<{ width: string }>`
-  height: 0.625rem;
+  height: 10px;
   border-radius: 4px;
   background-color: ${(props) => props.theme.main.accent};
   position: absolute;

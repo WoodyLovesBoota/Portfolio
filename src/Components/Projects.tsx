@@ -21,20 +21,23 @@ export default Projects;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Main = styled.div`
-  padding: 8% 0;
+  padding: 72px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 2vw;
-  grid-column-gap: 1.5vw;
+  grid-gap: 32px;
   justify-content: space-between;
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 20px;
+    grid-gap: 16px;
+    padding: 16px 0;
   }
 `;

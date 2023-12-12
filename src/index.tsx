@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Noto sans KR", sans-serif;
     vertical-align: baseline;
     font-weight: 300;
-    line-height: 1.2;
+    line-height: 1.5;
     word-break:break-all;
 
     -webkit-touch-callout: none;
@@ -37,8 +37,8 @@ const GlobalStyle = createGlobalStyle`
      -ms-user-select: none;
      -webkit-user-select: none;
 
-    @media (max-width: 1000px) {
-      font-size: 12px;
+    @media (max-width: 1200px) {
+      font-size: 14px;
     }
   }
   /* HTML5 display-role reset for older browsers */

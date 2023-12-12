@@ -109,8 +109,7 @@ const Container = styled.div`
 `;
 
 const Main = styled.div`
-  padding: 17% 8%;
-  padding-bottom: 50px;
+  padding: 300px 72px;
   color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
@@ -121,51 +120,11 @@ const Main = styled.div`
     padding-top: 0;
     height: 70%;
     justify-content: center;
+    padding-bottom: 50px;
   }
-`;
-
-const DarkMain = styled.div`
-  padding: 17% 8%;
-  padding-bottom: 50px;
-  color: ${(props) => props.theme.word.main};
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 100%;
-  @media (max-width: 1200px) {
-    width: 100%;
-    padding-top: 0;
-    height: 70%;
-    justify-content: center;
+  @media (max-width: 800px) {
+    padding: 16px;
   }
-
-  background: hsla(206, 69%, 16%, 1);
-
-  background: linear-gradient(
-    45deg,
-    hsla(206, 69%, 16%, 1) 0%,
-    hsla(0, 0%, 26%, 1) 36%,
-    hsla(0, 0%, 26%, 1) 63%,
-    hsla(206, 69%, 16%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    45deg,
-    hsla(206, 69%, 16%, 1) 0%,
-    hsla(0, 0%, 26%, 1) 36%,
-    hsla(0, 0%, 26%, 1) 63%,
-    hsla(206, 69%, 16%, 1) 100%
-  );
-
-  background: -webkit-linear-gradient(
-    45deg,
-    hsla(206, 69%, 16%, 1) 0%,
-    hsla(0, 0%, 26%, 1) 36%,
-    hsla(0, 0%, 26%, 1) 63%,
-    hsla(206, 69%, 16%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0D2E47", endColorstr="#424242", GradientType=1 );
 `;
 
 const SubTitle = styled.p`
@@ -173,16 +132,11 @@ const SubTitle = styled.p`
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
   line-height: 2.4;
-  margin-top: 3.125rem;
-
-  @media (max-width: 1200px) {
-    margin-bottom: 3.125rem;
-  }
+  margin: 30px 0;
 `;
 
 const Links = styled.div`
   display: flex;
-  margin-top: 25px;
 `;
 
 const Link = styled.div``;

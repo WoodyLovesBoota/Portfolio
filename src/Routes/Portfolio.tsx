@@ -126,10 +126,10 @@ const Wrapper = styled.div<{ bgColor: string }>`
     return props.theme[props.bgColor].accent;
   }};
   color: white;
-  padding: 8% 20%;
+  padding: 8% 72px;
   min-height: 100vh;
   @media (max-width: 800px) {
-    padding: 8% 10%;
+    padding: 8% 16px;
   }
 `;
 
@@ -139,7 +139,7 @@ const PhotoBox = styled.div`
   display: flex;
   align-items: center;
   box-shadow: 0px 0px 20px 0px white;
-  padding: 30px;
+  padding: 0.625rem;
 `;
 
 const UpButton = styled.div`
@@ -171,8 +171,8 @@ const DownButton = styled.div`
 const Photos = styled.div`
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 25%;
+  height: 35vw;
+  width: 23vw;
   overflow-y: scroll;
   position: relative;
   @media (max-width: 1200px) {
@@ -185,14 +185,11 @@ const PhotoCard = styled(motion.div)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 75%;
-  height: 500px;
+  width: 70vw;
+  height: 35vw;
   @media (max-width: 1200px) {
-    width: 100%;
-    height: 300px;
-  }
-  @media (max-width: 800px) {
-    height: 250px;
+    width: 90vw;
+    height: 45vw;
   }
 `;
 
@@ -214,7 +211,7 @@ const SmallPhoto = styled(motion.div)<{ bgPhoto: string }>`
   background-position: top center;
   background-size: cover;
   width: 100%;
-  height: 200px;
+  height: 33.33%;
   cursor: pointer;
 `;
 
@@ -234,7 +231,7 @@ const Title = styled.h2`
 `;
 
 const Description = styled.h2`
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 400;
   line-height: 2.4;
   @media (max-width: 800px) {

@@ -33,17 +33,23 @@ const SubTitle = styled.h2`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.word.sub};
-  font-size: 1rem;
-  letter-spacing: 0.4688rem;
-  margin-bottom: 1.25rem;
+  font-size: 16px;
+  letter-spacing: 7px;
+  margin-bottom: 10px;
   font-weight: 500;
+  @media (max-width: 800px) {
+    letter-spacing: 4px;
+  }
 `;
 
 const Title = styled.h2`
   color: ${(props) => props.theme.word.main};
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 0.0625rem;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  @media (max-width: 800px) {
+    font-size: 32px;
+  }
 `;
 
 interface IHeaderProps {

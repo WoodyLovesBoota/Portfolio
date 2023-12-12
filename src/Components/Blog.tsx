@@ -21,7 +21,6 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
                 <BlogTitle>{blog.title}</BlogTitle>
                 <BlogDate>{blog.date}</BlogDate>
                 <BlogDesc>{blog.description}</BlogDesc>
-                <BlogButton>Continue Reading</BlogButton>
               </BlogContent>
             </a>
           </BlogBox>
@@ -40,13 +39,16 @@ export default Blog;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Main = styled.div`
-  padding: 8% 0;
+  padding: 72px 0;
   padding-bottom: 0;
   display: flex;
   justify-content: space-between;
@@ -54,6 +56,10 @@ const Main = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+  @media (max-width: 800px) {
+    padding: 24px 0;
+    padding-bottom: 0;
   }
 `;
 
@@ -78,12 +84,12 @@ const BlogBox = styled(motion.div)`
     }
   }
   @media (max-width: 700px) {
-    height: 550px;
+    height: 500px;
     margin-bottom: 40px;
 
     a {
       flex-direction: column;
-      height: 550px;
+      height: 500px;
     }
   }
 `;
@@ -126,12 +132,13 @@ const BlogContent = styled.div`
   @media (max-width: 1200px) {
     height: 100%;
     width: 50%;
-    padding: 1.875rem 3.125rem;
+    padding: 24px;
     padding-bottom: 0;
   }
   @media (max-width: 700px) {
     height: 50%;
     width: 100%;
+    padding: 16px;
   }
 `;
 
@@ -147,7 +154,7 @@ const BlogDate = styled.span`
   padding: 4px 8px;
   border: 1px solid lightgray;
   font-weight: 400;
-  margin: 1.25rem 0;
+  margin: 20px 0;
   color: ${(props) => props.theme.word.sub};
 `;
 
@@ -178,9 +185,11 @@ const BlogButton = styled(motion.button)`
 
 const Link = styled(motion.div)`
   display: flex;
-  margin-top: 8%;
+  margin: 72px 0;
   justify-content: center;
-  padding: 20px;
+  @media (max-width: 800px) {
+    margin: 36px 0;
+  }
 `;
 
 const LinkContent = styled(motion.a)`

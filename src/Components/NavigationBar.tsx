@@ -135,27 +135,31 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 18px 8%;
+  padding: 25px 72px;
   position: absolute;
   top: 0;
   z-index: 2;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Contents = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-left: auto;
   @media (max-width: 1200px) {
     display: none;
   }
 `;
 
 const Logo = styled.button`
-  font-size: 18px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 800;
+  font-weight: 700;
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
@@ -164,18 +168,17 @@ const Logo = styled.button`
 `;
 
 const Content = styled(motion.button)`
-  height: 50px;
-  padding: 12px 20px;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
   color: ${(props) => props.theme.word.main};
   cursor: pointer;
+  margin-right: 26px;
 `;
 
 const Toggles = styled.div`
@@ -188,11 +191,11 @@ const Language = styled.div``;
 
 const Icon = styled.span`
   margin-left: 15px;
-  font-size: 10px;
+  font-size: 16px;
 `;
 
 const LanguageTitle = styled.h2`
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
 `;
@@ -210,25 +213,20 @@ const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
       : props.isDark
       ? "rgba(0, 0, 0, 0.4)"
       : "rgba(255, 255, 255, 0.4)"};
-  padding: 16px 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   position: relative;
-  width: 200px;
-  @media (max-width: 1200px) {
-    height: 40px;
-    width: 168px;
-  }
+  width: 160px;
 `;
 
 const LanguageList = styled(motion.div)`
   position: absolute;
-  top: 90px;
+  top: 80px;
   background-color: ${(props) => props.theme.bg.lighter};
   border-radius: 10px;
-  width: 200px;
-  @media (max-width: 1200px) {
-    width: 168px;
-    top: 74px;
+  width: 160px;
+  @media (max-width: 800px) {
+    top: 70px;
   }
 `;
 
@@ -236,7 +234,7 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   cursor: pointer;
   background-color: ${(props) =>
     props.isNow
@@ -258,20 +256,21 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
 `;
 
 const LanguageContent = styled.div`
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 26px;
   letter-spacing: 1px;
 `;
 
 const Check = styled.h2`
   color: ${(props) => props.theme.green.accent};
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 16px;
   margin-left: auto;
 `;
 
 const Theme = styled.div`
-  margin-left: 25px;
+  margin-left: 26px;
 `;
 
 const Toggle = styled(motion.div)<{ isDark: boolean }>`
@@ -281,14 +280,10 @@ const Toggle = styled(motion.div)<{ isDark: boolean }>`
   border-radius: 25px;
   width: 90px;
   height: 45px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
   cursor: pointer;
   background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
-  @media (max-width: 1200px) {
-    width: 60px;
-    height: 35px;
-  }
 `;
 
 const Circle = styled(motion.div)`
@@ -299,7 +294,7 @@ const Circle = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 16px;
 `;
 
 const Blank = styled.div`

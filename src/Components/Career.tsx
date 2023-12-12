@@ -75,10 +75,13 @@ export default Career;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
   display: flex;
   flex-direction: column;
   color: ${(props) => props.theme.word.main};
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Main = styled.div`
@@ -91,7 +94,7 @@ const Main = styled.div`
 
 const SelectMenu = styled.div`
   width: 400px;
-  margin-right: 20px;
+  margin-right: 100px;
   margin-top: 120px;
   @media (max-width: 1200px) {
     display: flex;
@@ -99,10 +102,13 @@ const SelectMenu = styled.div`
     margin-bottom: 20px;
     margin-top: 50px;
   }
+  @media (max-width: 800px) {
+    margin-top: 32px;
+  }
 `;
 
 const SelectItem = styled.div<{ isCurrent: boolean }>`
-  padding: 1.5625rem 2.5rem;
+  padding: 28px 32px;
   margin-right: 10px;
   border-radius: 5px;
   background-color: ${(props) => (props.isCurrent ? props.theme.bg.lighter : "transparent")};
@@ -112,10 +118,13 @@ const SelectItem = styled.div<{ isCurrent: boolean }>`
   transition: {
     background-color: 0.5s ease-in-out;
   }
+  @media (max-width: 1200px) {
+    padding: 16px 20px;
+  }
 `;
 
 const SelectTitle = styled.h2`
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 400;
 `;
 
@@ -125,17 +134,22 @@ const CareerBox = styled.div`
   color: ${(props) => props.theme.word.main};
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  padding: 3.125rem;
+  padding: 48px;
   border-radius: 15px;
   width: 100%;
+  @media (max-width: 800px) {
+    padding: 24px;
+  }
 `;
 
 const CareerTitle = styled.h2`
   font-size: 21px;
   font-weight: 400;
   margin-bottom: 15px;
-  @media (max-width: 1200px) {
+  word-break: normal;
+  @media (max-width: 800px) {
     font-size: 18px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -144,31 +158,37 @@ const CareerName = styled.span`
   font-weight: 400;
   margin-left: 5px;
   text-decoration: underline;
-  @media (max-width: 1200px) {
-    font-size: 18px;
-  }
+  word-break: normal;
   @media (max-width: 800px) {
-    display: block;
-    width: 100%;
-    margin-left: 0;
+    font-size: 18px;
   }
 `;
 
 const CareerAddress = styled.h2`
   font-size: 16px;
+  font-weight: 400;
   color: ${(props) => props.theme.word.sub};
-  margin-bottom: 1.5625rem;
+  margin-bottom: 25px;
+  @media (max-width: 800px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const CareerDuration = styled.h2`
   font-size: 16px;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 25px;
   font-weight: 400;
+  @media (max-width: 800px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const CareerSkills = styled.div`
   display: flex;
-  margin-bottom: 2.5rem;
+  margin-bottom: 40px;
+  @media (max-width: 800px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const CareerSkill = styled.div`
@@ -185,11 +205,14 @@ const Divider = styled.div`
   width: 100%;
   background-color: #f1f1f1;
   height: 2px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 40px;
+  @media (max-width: 800px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const CareerDescription = styled.div`
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -198,6 +221,12 @@ const CareerDescription = styled.div`
     width: 90%;
     margin-left: 20px;
     font-size: 16px;
+  }
+  @media (max-width: 800px) {
+    margin-bottom: 10px;
+    p {
+      margin-left: 0px;
+    }
   }
 `;
 
@@ -217,6 +246,9 @@ const Bar = styled.div`
   width: 0.625rem;
   height: 0.125rem;
   border-radius: 2px;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const SelectColumn = styled.div``;

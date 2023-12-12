@@ -63,14 +63,17 @@ export default Services;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
+  padding-top: 144px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Main = styled.div`
-  padding: 8% 0;
-  padding-bottom: 0;
+  padding: 25px 0;
   display: flex;
   justify-content: center;
   @media (max-width: 1200px) {
@@ -84,20 +87,18 @@ const ServiceBox = styled.div`
   background-color: ${(props) => props.theme.bg.lighter};
   box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   width: min(480px, 100%);
-  height: 420px;
+  height: auto;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem;
+  padding: 80px;
   text-align: center;
-  margin: 50px 50px;
+  margin: 50px;
   @media (max-width: 1200px) {
     margin: 20px 0;
-  }
-  @media (max-width: 800px) {
-    height: 360px;
+    padding: 60px 40px;
   }
 `;
 
@@ -112,20 +113,23 @@ const ServiceIcon = styled.h2`
   font-size: 20px;
   color: ${(props) => props.theme.word.black};
   box-shadow: 0px 0px 30px 0 ${(props) => props.theme.bg.blur};
+  margin-bottom: 40px;
 `;
 
 const ServiceTitle = styled.h2`
   font-size: 18px;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
+  margin-bottom: 40px;
+
   @media (max-width: 800px) {
     font-size: 16px;
   }
 `;
 
 const ServiceDescription = styled.h2`
-  font-weight: 300;
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.7;
   color: ${(props) => props.theme.word.sub};
 `;

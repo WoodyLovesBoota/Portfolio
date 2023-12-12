@@ -161,7 +161,10 @@ export default Contact;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 8%;
+  padding: 72px;
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Iframe = styled.iframe`
@@ -170,19 +173,22 @@ const Iframe = styled.iframe`
 
 const Container = styled.div`
   display: flex;
-  padding: 5% 0;
+  padding: 72px 0;
   justify-content: space-between;
   @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
+  @media (max-width: 800px) {
+    padding: 16px 0;
+  }
 `;
 
 const LinkBox = styled.div``;
 
 const DownLoad = styled(motion.div)`
-  margin-top: 5%;
+  margin-top: 72px;
   padding: 15px 25px;
   display: inline-block;
   font-size: 16px;
@@ -191,10 +197,13 @@ const DownLoad = styled(motion.div)`
   background-color: ${(props) => props.theme.main.accent};
   border-radius: 15px;
   cursor: pointer;
+  @media (max-width: 800px) {
+    margin-top: 16px;
+  }
 `;
 
 const DarkDownLoad = styled(motion.div)`
-  margin-top: 5%;
+  margin-top: 72px;
   padding: 15px 25px;
   display: inline-block;
   font-size: 16px;
@@ -203,6 +212,9 @@ const DarkDownLoad = styled(motion.div)`
   background-color: ${(props) => props.theme.main.accent};
   border-radius: 15px;
   cursor: pointer;
+  @media (max-width: 800px) {
+    margin-top: 16px;
+  }
 `;
 
 const Form = styled.form`
@@ -267,7 +279,7 @@ const MessageInput = styled.textarea`
   font-size: 16px;
   &:focus {
     outline: none;
-    border: 2.5008px solid ${(props) => props.theme.main.accent};
+    border: 2.5px solid ${(props) => props.theme.main.accent};
   }
   @media (max-width: 1000px) {
     width: 100%;
@@ -293,7 +305,7 @@ const Button = styled(motion.button)`
 
 const Info = styled.div`
   width: 50%;
-  padding: 3% 5%;
+  padding: 36px 48px;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -304,13 +316,19 @@ const Info = styled.div`
   @media (max-width: 1000px) {
     width: 100%;
   }
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const InfoBox = styled.div`
   display: flex;
-  margin: 1.5625rem 0;
+  margin: 25px 0;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 800px) {
+    margin: 10px 0;
+  }
 `;
 
 const InfoDetail = styled.h2`
@@ -342,8 +360,11 @@ const Icon = styled.div`
   align-items: center;
   font-size: 20px;
   color: ${(props) => props.theme.word.black};
-  margin-right: 2.5rem;
+  margin-right: 40px;
   box-shadow: 0px 0px 30px 0 ${(props) => props.theme.bg.blur};
+  @media (max-width: 800px) {
+    margin-right: 25px;
+  }
 `;
 
 const buttonVar = {
