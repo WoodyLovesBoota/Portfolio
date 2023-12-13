@@ -1,5 +1,26 @@
 [
   {
+    "projectName": "ALCOHOLISM.",
+    "skill": ["React", "Typescript"],
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee03.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee07.png?raw=true"
+    ],
+    "infoDesc": "A web application providing information about cocktails.",
+    "cardDesc": "ALCOHOLISM is a web application that provides various information about cocktails, including recipes, ingredients, and more.",
+    "detailDesc": "ALCOHOLISM is a web application that utilizes an open API to provide diverse information about cocktails. Developed using React and TypeScript, the project prioritized enhancing user experience through careful attention to design elements. Efforts were made to minimize API fetch while still delivering a wide range of information to users, and dynamic effects were incorporated through the use of animation elements, contributing to the creation of a more efficient and engaging application.",
+    "demo": "https://grand-vacherin-4122b2.netlify.app",
+    "gibhub": "https://github.com/WoodyLovesBoota/Alcoholism",
+    "infoDescKor": "",
+    "cardDescKor": "ALCOHOLISM은 칵테일에 대한 레시피, 재료 등 다양한 정보를 제공하는 웹 어플리케이션입니다.",
+    "detailDescKor": "ALCOHOLISM은 오픈 API를 활용하여 칵테일에 대한 다양한 정보를 제공하는 웹 어플리케이션입니다. React와 TypeScript를 활용하여 개발되었으며, 프로젝트 진행 과정에서 디자인적 요소에 특별한 주의를 기울여 사용자 경험을 향상시켰습니다. API fetch를 최소화하면서도 사용자들에게 풍부한 정보를 제공하기 위해 노력하였고, 애니메이션적 효과를 통해 동적인 요소를 추가하여 더욱 효율적이면서 매력적인 어플리케이션을 구현하였습니다."
+  },
+  {
     "projectName": "BEEE.",
     "skill": ["React", "Typescript"],
     "image": [

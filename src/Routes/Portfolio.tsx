@@ -14,7 +14,7 @@ const Portfolio = () => {
   const [nowPhoto, setNowPhoto] = useState(1);
   const isEng = useRecoilValue(languageState);
 
-  const colors = ["red", "orange", "blue", "green", "yellow", "purple"];
+  const colors = ["red", "orange", "green", "gray", "yellow", "blue", "purple"];
   const projectMatch: PathMatch<string> | null = useMatch("/project/:title/:num");
 
   const handleGoBackClicked = () => {
@@ -277,9 +277,15 @@ const GoBack = styled(motion.button)<{ color: string }>`
     return props.theme[props.color].accent;
   }};
   padding: 10px;
-  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
   border-radius: 50px;
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
 `;
 

@@ -14,7 +14,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
     navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
   };
 
-  const colors = ["red", "orange", "blue", "green", "yellow", "purple"];
+  const colors = ["red", "orange", "green", "gray", "yellow", "blue", "purple"];
 
   const handleHoverStart = () => {
     setIsHover(true);
