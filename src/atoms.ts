@@ -9,3 +9,8 @@ export const themeState = atom<boolean>({
   key: "isDark",
   default: false,
 });
+
+export const screenState = atom<number>({
+  key: "screenWidth",
+  default: 0,
+});

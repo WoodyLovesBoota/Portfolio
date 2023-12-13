@@ -30,18 +30,21 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           data-email="woodylovesboota@gmail.com"
         >
           <NameInput
+            autoComplete="off"
             {...register("name", { required: true })}
             name="name"
             type="text"
             placeholder={isEng ? "Name" : "이름"}
           />
           <EmailInput
+            autoComplete="off"
             {...register("email", { required: true })}
             name="email"
             type="text"
             placeholder={isEng ? "Email" : "이메일"}
           />
           <MessageInput
+            autoComplete="off"
             {...register("message", { required: true })}
             name="message"
             placeholder={isEng ? "Message" : "메시지"}

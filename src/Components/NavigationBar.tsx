@@ -216,7 +216,7 @@ const LanguageToggle = styled.div<{ isDark: boolean; isOpen: boolean }>`
   padding: 10px 20px;
   border-radius: 10px;
   position: relative;
-  width: 160px;
+  width: 180px;
 `;
 
 const LanguageList = styled(motion.div)`
@@ -224,7 +224,7 @@ const LanguageList = styled(motion.div)`
   top: 80px;
   background-color: ${(props) => props.theme.bg.lighter};
   border-radius: 10px;
-  width: 160px;
+  width: 180px;
   @media (max-width: 800px) {
     top: 70px;
   }
@@ -281,9 +281,14 @@ const Toggle = styled(motion.div)<{ isDark: boolean }>`
   width: 90px;
   height: 45px;
   padding: 4px 10px;
-  color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
+  color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.red.accent)};
   cursor: pointer;
-  background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.yellow.accent)};
+  background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.red.accent)};
+  @media (max-width: 800px) {
+    width: 45px;
+    position: relative;
+    padding: 0;
+  }
 `;
 
 const Circle = styled(motion.div)`
@@ -300,6 +305,12 @@ const Circle = styled(motion.div)`
 const Blank = styled.div`
   width: 55%;
   height: 90%;
+  @media (max-width: 800px) {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 5px;
+  }
 `;
 
 interface INavProps {

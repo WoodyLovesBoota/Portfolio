@@ -2,19 +2,22 @@ import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useRecoilValue } from "recoil";
-import { languageState } from "../atoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { languageState, screenState } from "../atoms";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectCard = ({ project, color }: IProjectProps) => {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
   const isEng = useRecoilValue(languageState);
+  const [screen, setScreen] = useRecoilState(screenState);
 
   const handleProjectClicked = () => {
     navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
   };
 
-  const colors = ["red", "orange", "green", "gray", "yellow", "blue", "purple"];
+  const colors = ["red", "purple", "green", "gray", "yellow", "blue", "orange"];
 
   const handleHoverStart = () => {
     setIsHover(true);
@@ -31,9 +34,9 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isEng ? (
-          isHover ? (
+          isHover && screen !== 0 ? (
             <CardDescription
               key={project.projectName}
               variants={descVar}
@@ -42,21 +45,31 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
               exit={"exit"}
             >
               <CardDesc>{project.cardDesc}</CardDesc>
+              <Icon>
+                <FontAwesomeIcon icon={faRightLong} />
+              </Icon>
             </CardDescription>
           ) : (
             <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
               <Info>
                 <InfoTitle>{project.projectName}</InfoTitle>
-                <InfoDesc>{project.infoDesc}</InfoDesc>
-                <InfoSkill>
-                  {project.skill.map((skill) => (
-                    <SkillCircle>{skill}</SkillCircle>
-                  ))}
-                </InfoSkill>
+                <InfoContent>
+                  <InfoSkill>
+                    {project.skill.map((skill) => (
+                      <SkillCircle>{skill}</SkillCircle>
+                    ))}
+                  </InfoSkill>
+                  <InfoDesc>{project.infoDesc}</InfoDesc>
+                </InfoContent>
+                {screen === 0 && (
+                  <IconRight>
+                    <FontAwesomeIcon icon={faRightLong} />
+                  </IconRight>
+                )}
               </Info>
             </Container>
           )
-        ) : isHover ? (
+        ) : isHover && screen !== 0 ? (
           <CardDescription
             key={project.projectName}
             variants={descVar}
@@ -65,17 +78,27 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
             exit={"exit"}
           >
             <CardDesc>{project.cardDescKor}</CardDesc>
+            <Icon>
+              <FontAwesomeIcon icon={faRightLong} />
+            </Icon>
           </CardDescription>
         ) : (
           <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
             <Info>
               <InfoTitle>{project.projectName}</InfoTitle>
-              <InfoDesc>{project.infoDesc}</InfoDesc>
-              <InfoSkill>
-                {project.skill.map((skill) => (
-                  <SkillCircle>{skill}</SkillCircle>
-                ))}
-              </InfoSkill>
+              <InfoContent>
+                <InfoSkill>
+                  {project.skill.map((skill) => (
+                    <SkillCircle>{skill}</SkillCircle>
+                  ))}
+                </InfoSkill>
+                <InfoDesc>{project.infoDesc}</InfoDesc>
+              </InfoContent>
+              {screen === 0 && (
+                <IconRight>
+                  <FontAwesomeIcon icon={faRightLong} />
+                </IconRight>
+              )}
             </Info>
           </Container>
         )}
@@ -87,18 +110,22 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
 export default ProjectCard;
 
 const Wrapper = styled(motion.div)<{ color: string }>`
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: ${(props) => props.theme[props.color].accent};
-  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
   position: relative;
   cursor: pointer;
-  padding: 28px 32px;
+  padding: 24px;
   color: white;
-  height: 250px;
   width: 100%;
+  height: 25vw;
 
   @media (max-width: 1200px) {
-    padding: 16px 20px;
+    padding: 12px 24px;
+    height: 15vw;
+  }
+  @media (max-width: 800px) {
+    height: 20vw;
+    padding: 20px;
   }
 `;
 
@@ -112,51 +139,64 @@ const CardDescription = styled(motion.div)`
 const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
-  font-size: 1.5rem;
+  font-size: 21px;
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+const Icon = styled.h2`
+  color: white;
+  margin-top: auto;
+  font-size: 18px;
+`;
+
+const IconRight = styled.h2`
+  color: white;
+  margin-left: auto;
+  font-size: 18px;
 `;
 
 const Container = styled(motion.div)`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Photo = styled.div<{ bgPhoto: string }>`
-  width: 45%;
-  height: 100%;
-  background-image: url(${(props) => props.bgPhoto});
-  background-position: top center;
-  background-size: cover;
-  border-radius: 8px;
-  @media (max-width: 500px) {
-    display: none;
-  }
 `;
 
 const Info = styled.div`
-  padding: 1.5625rem 1.25rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+  @media (max-width: 800px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 const InfoTitle = styled.div`
-  font-size: 1.875rem;
+  font-size: 30px;
   font-weight: 600;
-  border-bottom: 2px solid white;
-  padding-bottom: 1.5625rem;
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
+`;
+
+const InfoContent = styled.div`
+  margin-top: auto;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const InfoDesc = styled.h2`
-  font-weight: 500;
-  margin-bottom: 20px;
-  width: 90%;
-  line-height: 1.5;
-  margin-top: 25px;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 18px;
+  word-break: normal;
+  margin-top: 10px;
+  @media (max-width: 1200px) {
+    font-size: 16px;
+    margin-top: 5px;
+  }
 `;
 
 const InfoSkill = styled.h2`
@@ -168,44 +208,49 @@ const SkillCircle = styled.div`
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
-  border: 1.5008px solid #f1f1f1;
+  border: 1.5px solid #f1f1f1;
   font-weight: 500;
+  @media (max-width: 1200px) {
+    padding: 2px 4px;
+    margin-right: 5px;
+    border: 1px solid #f1f1f1;
+  }
 `;
 
 const mainVar = {
-  initial: { y: 50, opacity: 0 },
+  initial: { y: 20, opacity: 0 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.15,
-      delay: 0.15,
+      duration: 0.1,
+      delay: 0.1,
     },
   },
   exit: {
-    y: 50,
+    y: 20,
     opacity: 0,
     transition: {
-      duration: 0.15,
+      duration: 0.1,
     },
   },
 };
 
 const descVar = {
-  initial: { y: -50, opacity: 0 },
+  initial: { y: -20, opacity: 0 },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.15,
-      delay: 0.15,
+      duration: 0.1,
+      delay: 0.1,
     },
   },
   exit: {
-    y: -50,
+    y: -20,
     opacity: 0,
     transition: {
-      duration: 0.15,
+      duration: 0.1,
     },
   },
 };

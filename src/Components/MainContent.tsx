@@ -70,7 +70,7 @@ const Wrapper = styled.div`
   @media (max-width: 1200px) {
     height: 115vw;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     height: 1000px;
   }
 `;

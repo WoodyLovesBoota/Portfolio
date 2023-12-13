@@ -16,13 +16,13 @@ export const lightTheme: DefaultTheme = {
     blur: "#41414133",
   },
 
-  yellow: { accent: "#FFC107", normal: "#FAEB9B" },
-  orange: { accent: "#FF7000", normal: "#F8D099" },
-  blue: { accent: "#3081D0", normal: "#87CEFA", neon: "#5AE9F3" },
-  red: { accent: "#D21312", normal: "#F7AEA6" },
-  purple: { accent: "#C478E2", normal: "#E8BBF2" },
-  green: { accent: "#7CC56E", normal: "#D0F0C1" },
-  gray: { accent: "#767582", normal: "#D0F0C1" },
+  yellow: { accent: "#EE98D7", normal: "#FAEB9B" },
+  orange: { accent: "#94455D", normal: "#F8D099" },
+  blue: { accent: "#669FFF", normal: "#87CEFA", neon: "#5AE9F3" },
+  red: { accent: "#DB5144", normal: "#F7AEA6" },
+  purple: { accent: "#957BD7", normal: "#E8BBF2" },
+  green: { accent: "#6C9E6B", normal: "#D0F0C1" },
+  gray: { accent: "#83828C", normal: "#D0F0C1" },
 
   main: {
     accent: "#775EEF",
@@ -51,13 +51,13 @@ export const darkTheme: DefaultTheme = {
     blur: "#bebebe33",
   },
 
-  yellow: { accent: "#FFC107", normal: "#FAEB9B" },
-  orange: { accent: "#FF7000", normal: "#F8D099" },
-  blue: { accent: "#3081D0", normal: "#87CEFA", neon: "#5AE9F3" },
-  red: { accent: "#D21312", normal: "#F7AEA6" },
-  purple: { accent: "#C478E2", normal: "#E8BBF2" },
-  green: { accent: "#7CC56E", normal: "#D0F0C1" },
-  gray: { accent: "#767582", normal: "#D0F0C1" },
+  yellow: { accent: "#EE98D7", normal: "#FAEB9B" },
+  orange: { accent: "#94455D", normal: "#F8D099" },
+  blue: { accent: "#669FFF", normal: "#87CEFA", neon: "#5AE9F3" },
+  red: { accent: "#DB5144", normal: "#F7AEA6" },
+  purple: { accent: "#957BD7", normal: "#E8BBF2" },
+  green: { accent: "#6C9E6B", normal: "#D0F0C1" },
+  gray: { accent: "#83828C", normal: "#D0F0C1" },
 
   main: {
     accent: "#FFC107",

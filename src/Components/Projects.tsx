@@ -29,15 +29,28 @@ const Wrapper = styled.div`
   }
 `;
 
+// const Main = styled.div`
+//   padding: 72px 0;
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-gap: 32px;
+//   justify-content: space-between;
+//   @media (max-width: 800px) {
+//     grid-template-columns: repeat(1, 1fr);
+//     grid-gap: 16px;
+//     padding: 16px 0;
+//   }
+// `;
+
 const Main = styled.div`
   padding: 72px 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
   justify-content: space-between;
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 16px;
+    grid-gap: 10px;
     padding: 16px 0;
   }
 `;

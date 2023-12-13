@@ -37,8 +37,8 @@ const GlobalStyle = createGlobalStyle`
      -ms-user-select: none;
      -webkit-user-select: none;
 
-    @media (max-width: 1200px) {
-      font-size: 14px;
+    @media (max-width: 1000px) {
+      font-size: 12px;
     }
   }
   /* HTML5 display-role reset for older browsers */
@@ -78,16 +78,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   &::-webkit-scrollbar {
-    background-color: transparent;
+    background-color: transparent;    
+    display: none;
     width: 0;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: transparent;    
+    display: none;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: transparent;
+    display: none;
     border-radius: 10px;
   }
 `;
