@@ -165,8 +165,9 @@ export default Contact;
 const Wrapper = styled.div`
   width: 100%;
   padding: 72px;
+  padding-top: 144px;
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
@@ -184,7 +185,7 @@ const Container = styled.div`
     align-items: center;
   }
   @media (max-width: 800px) {
-    padding: 16px 0;
+    padding: 45px 0;
   }
 `;
 

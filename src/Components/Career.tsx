@@ -16,9 +16,9 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Wrapper ref={ref}>
+      <Header title="Work Experiences" subTitle="CAREER PATH" isCenter={false} />
       <Main>
         <SelectColumn>
-          <Header title="Work Experiences" subTitle="CAREER PATH" isCenter={false} />
           <SelectMenu>
             {careerData.map((career, index) => (
               <SelectItem
@@ -76,41 +76,37 @@ export default Career;
 const Wrapper = styled.div`
   width: 100%;
   padding: 72px;
-  display: flex;
-  flex-direction: column;
+  padding-top: 144px;
   color: ${(props) => props.theme.word.main};
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
 const Main = styled.div`
   display: flex;
+  padding: 72px 0;
   justify-content: space-between;
   @media (max-width: 1200px) {
     flex-direction: column;
+    padding: 45px 0;
   }
 `;
 
 const SelectMenu = styled.div`
   width: 400px;
   margin-right: 100px;
-  margin-top: 120px;
+  margin-bottom: 20px;
   @media (max-width: 1200px) {
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
-    margin-top: 50px;
-  }
-  @media (max-width: 800px) {
-    margin-top: 32px;
   }
 `;
 
 const SelectItem = styled.div<{ isCurrent: boolean }>`
   padding: 28px 32px;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: ${(props) => (props.isCurrent ? props.theme.bg.lighter : "transparent")};
   color: ${(props) => props.isCurrent && props.theme.word.accent};
   box-shadow: ${(props) => props.isCurrent && `0px 0px 64px 0 ${props.theme.bg.blur}`};
@@ -148,7 +144,6 @@ const CareerTitle = styled.h2`
   margin-bottom: 15px;
   word-break: normal;
   @media (max-width: 800px) {
-    font-size: 18px;
     margin-bottom: 10px;
   }
 `;
@@ -159,9 +154,6 @@ const CareerName = styled.span`
   margin-left: 5px;
   text-decoration: underline;
   word-break: normal;
-  @media (max-width: 800px) {
-    font-size: 18px;
-  }
 `;
 
 const CareerAddress = styled.h2`
@@ -177,7 +169,7 @@ const CareerAddress = styled.h2`
 const CareerDuration = styled.h2`
   font-size: 16px;
   margin-bottom: 25px;
-  font-weight: 400;
+  font-weight: 500;
   @media (max-width: 800px) {
     margin-bottom: 10px;
   }
@@ -198,7 +190,7 @@ const CareerSkill = styled.div`
   margin-right: 10px;
   border: 1px solid gray;
   color: ${(props) => props.theme.word.sub};
-  font-weight: 400;
+  font-weight: 500;
 `;
 
 const Divider = styled.div`

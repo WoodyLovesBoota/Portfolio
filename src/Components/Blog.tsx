@@ -40,10 +40,11 @@ export default Blog;
 const Wrapper = styled.div`
   width: 100%;
   padding: 72px;
+  padding-top: 144px;
   display: flex;
   flex-direction: column;
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
@@ -58,7 +59,7 @@ const Main = styled.div`
     align-items: center;
   }
   @media (max-width: 800px) {
-    padding: 24px 0;
+    padding: 45px 0;
     padding-bottom: 0;
   }
 `;

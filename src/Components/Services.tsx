@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
@@ -97,7 +97,8 @@ const ServiceBox = styled.div`
   text-align: center;
   margin: 50px;
   @media (max-width: 1200px) {
-    margin: 20px 0;
+    margin: 0;
+    margin-top: 20px;
     padding: 60px 40px;
   }
 `;

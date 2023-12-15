@@ -41,26 +41,6 @@ const Education = forwardRef<HTMLDivElement>((props, ref) => {
               ? "I have been continuously learning in the field of front-end development. Building upon a solid understanding of core languages and frameworks, I possess versatile application skills. Additionally, I actively accumulate knowledge in various domains beyond front-end development."
               : "저는 지속적으로 프론트 엔드 개발 분야에 대한 학습을 이어가고 있습니다. 기본 언어와 프레임워크에 대한 철저한 이해를 바탕으로 다양한 응용 능력을 갖추고 있으며, 더불어 프론트 엔드 이외의 다양한 영역에 대한 지식도 적극적으로 쌓아가고 있습니다."}
           </SkillDescription>
-          <SkillGraph>
-            <SkillRow>
-              <SkillName>React</SkillName>
-              <SkillBar>
-                <SkillFill width="75%" />
-              </SkillBar>
-            </SkillRow>
-            <SkillRow>
-              <SkillName>Typescript / Javascirpt</SkillName>
-              <SkillBar>
-                <SkillFill width="60%" />
-              </SkillBar>
-            </SkillRow>
-            <SkillRow>
-              <SkillName>Solidity</SkillName>
-              <SkillBar>
-                <SkillFill width="70%" />
-              </SkillBar>
-            </SkillRow>
-          </SkillGraph>
         </SkillColumn>
       </Main>
     </Wrapper>
@@ -72,10 +52,11 @@ export default Education;
 const Wrapper = styled.div`
   width: 100%;
   padding: 72px;
+  padding-top: 144px;
   display: flex;
   flex-direction: column;
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
@@ -86,7 +67,7 @@ const Main = styled.div`
     flex-direction: column;
   }
   @media (max-width: 800px) {
-    padding: 24px 0;
+    padding: 45px 0;
   }
 `;
 
@@ -120,12 +101,14 @@ const EducationTitle = styled.h2`
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 12px;
+  word-break: normal;
 `;
 
 const EducationSubTitle = styled.h2`
   font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.word.sub};
+  word-break: normal;
 `;
 
 const EducationYear = styled.h2`

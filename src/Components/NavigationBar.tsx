@@ -172,7 +172,7 @@ const Content = styled(motion.button)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-weight: 400;
+  font-weight: 500;
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
@@ -196,7 +196,7 @@ const Icon = styled.span`
 
 const LanguageTitle = styled.h2`
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
 `;
 
@@ -257,14 +257,14 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
 
 const LanguageContent = styled.div`
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   margin-left: 26px;
   letter-spacing: 1px;
 `;
 
 const Check = styled.h2`
   color: ${(props) => props.theme.green.accent};
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   margin-left: auto;
 `;

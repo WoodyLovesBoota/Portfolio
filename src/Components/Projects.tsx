@@ -21,11 +21,12 @@ export default Projects;
 
 const Wrapper = styled.div`
   width: 100%;
+  padding-top: 144px;
   padding: 72px;
   display: flex;
   flex-direction: column;
   @media (max-width: 800px) {
-    padding: 16px;
+    padding: 48px 16px;
   }
 `;
 
@@ -51,6 +52,6 @@ const Main = styled.div`
   @media (max-width: 1200px) {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
-    padding: 16px 0;
+    padding: 45px 0;
   }
 `;
