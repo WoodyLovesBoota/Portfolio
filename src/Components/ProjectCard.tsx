@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { languageState, screenState } from "../atoms";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightLong } from "@fortawesome/free-solid-svg-icons";
+
+import { ReactComponent as Arrow } from "../assets/arrow.svg";
 
 const ProjectCard = ({ project, color }: IProjectProps) => {
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
             >
               <CardDesc>{project.cardDesc}</CardDesc>
               <Icon>
-                <FontAwesomeIcon icon={faRightLong} />
+                <Arrow width={"30"} />
               </Icon>
             </CardDescription>
           ) : (
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
                 </InfoContent>
                 {screen === 0 && (
                   <IconRight>
-                    <FontAwesomeIcon icon={faRightLong} />
+                    <Arrow width={"30"} />
                   </IconRight>
                 )}
               </Info>
@@ -79,7 +79,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
           >
             <CardDesc>{project.cardDescKor}</CardDesc>
             <Icon>
-              <FontAwesomeIcon icon={faRightLong} />
+              <Arrow width={"30"} />
             </Icon>
           </CardDescription>
         ) : (
@@ -96,7 +96,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
               </InfoContent>
               {screen === 0 && (
                 <IconRight>
-                  <FontAwesomeIcon icon={faRightLong} />
+                  <Arrow width={"30"} />
                 </IconRight>
               )}
             </Info>
