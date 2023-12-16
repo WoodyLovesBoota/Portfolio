@@ -60,11 +60,11 @@ export const darkTheme: DefaultTheme = {
   gray: { accent: "#83828C", normal: "#D0F0C1" },
 
   main: {
-    accent: "#FFC107",
+    accent: "#669FFF",
     normal: "#EBEBFF",
     blur: "#e6cef8",
     bg: "#F4F4FA",
-    hlbg: "#FFC107",
+    hlbg: "#669FFF",
     word: "#0C0B31",
     point: "#EBEBFF",
   },

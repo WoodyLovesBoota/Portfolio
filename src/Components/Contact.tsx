@@ -141,7 +141,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                 <InfoDetail>1995.12.26</InfoDetail>
               </InfoContent>
             </InfoBox>
-            <LinkBox>
+            {/* <LinkBox>
               {isDark ? (
                 <DarkDownLoad variants={buttonVar} whileTap={"click"}>
                   이력서 다운받기
@@ -151,7 +151,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                   이력서 다운받기
                 </DownLoad>
               )}
-            </LinkBox>
+            </LinkBox> */}
           </Info>
         )}
       </Container>
@@ -248,6 +248,7 @@ const NameInput = styled.input`
   }
   @media (max-width: 1000px) {
     width: 100%;
+    margin-bottom: 10px;
   }
 `;
 
@@ -268,6 +269,7 @@ const EmailInput = styled.input`
   }
   @media (max-width: 1000px) {
     width: 100%;
+    margin-bottom: 10px;
   }
 `;
 
@@ -288,6 +290,7 @@ const MessageInput = styled.textarea`
   @media (max-width: 1000px) {
     width: 100%;
     min-height: 200px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -304,6 +307,9 @@ const Button = styled(motion.button)`
   cursor: pointer;
   @media (max-width: 1000px) {
     width: 100%;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 `;
 

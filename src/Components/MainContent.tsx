@@ -132,7 +132,8 @@ const SubTitle = styled.p`
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
   line-height: 2.4;
-  margin: 30px 0;
+  margin: 50px 0;
+  word-break: normal;
 `;
 
 const Links = styled.div`

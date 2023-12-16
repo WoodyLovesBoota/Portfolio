@@ -168,7 +168,7 @@ const Logo = styled.button`
 `;
 
 const Content = styled(motion.button)`
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -178,7 +178,7 @@ const Content = styled(motion.button)`
   letter-spacing: 1px;
   color: ${(props) => props.theme.word.main};
   cursor: pointer;
-  margin-right: 26px;
+  margin-right: 30px;
 `;
 
 const Toggles = styled.div`
@@ -195,7 +195,7 @@ const Icon = styled.span`
 `;
 
 const LanguageTitle = styled.h2`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
 `;
@@ -256,7 +256,7 @@ const LanguageItem = styled(motion.div)<{ isDark: boolean; isNow: boolean }>`
 `;
 
 const LanguageContent = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   margin-left: 26px;
   letter-spacing: 1px;
