@@ -37,7 +37,6 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
           <CareerBox>
             <CareerTitle>
               {isEng ? careerData[currentCareer].subTitle[0] : careerData[currentCareer].subTitleKor[0]}
-              <CareerName>{careerData[currentCareer].subTitle[1]}</CareerName>
             </CareerTitle>
             <CareerAddress>
               {isEng ? careerData[currentCareer].address : careerData[currentCareer].addressKor}

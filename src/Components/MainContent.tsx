@@ -27,8 +27,8 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
             <>
               <Header title="양태욱" subTitle="MY NAME IS" isCenter={false} />
               <SubTitle>
-                프로그래밍 전문성과 디자인의 결합을 통한 효과적인 결과물 표현에 흥미가 있으며 Front-End 개발과 그로 인한
-                사용자 경험 창조에 열정을 가지고 있습니다.
+                Front-End 개발과 그로 인한 사용자 경험 창조에 열정을 가지고 있으며 기초적인 언어와 프레임워크에 대한
+                이해를 바탕으로 다양한 응용능력을 갖추고 있습니다.
               </SubTitle>
             </>
           )}

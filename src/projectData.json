@@ -1,6 +1,6 @@
 [
   {
-    "projectName": "ALCOHOLISM.",
+    "projectName": "ALCOHOLISM",
     "skill": ["React", "Typescript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
@@ -8,7 +8,7 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true"
     ],
-    "infoDesc": "A web application providing information about cocktails.",
+    "infoDesc": "providing information about coctails",
     "cardDesc": "ALCOHOLISM is a web application that provides various information about cocktails, including recipes, ingredients, and more.",
     "detailDesc": "ALCOHOLISM is a web application that utilizes an open API to provide diverse information about cocktails. Developed using React and TypeScript, the project prioritized enhancing user experience through careful attention to design elements. Efforts were made to minimize API fetch while still delivering a wide range of information to users, and dynamic effects were incorporated through the use of animation elements, contributing to the creation of a more efficient and engaging application.",
     "demo": "https://grand-vacherin-4122b2.netlify.app",
@@ -19,7 +19,7 @@
     "subtitle": "Grab a Drink,/ providing information about coctails."
   },
   {
-    "projectName": "BEEE.",
+    "projectName": "BEEE",
     "skill": ["React", "Typescript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
@@ -27,18 +27,18 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true"
     ],
-    "infoDesc": "Travel scheduling web application.",
+    "infoDesc": "make your own trip",
     "cardDesc": "BEEE is a React.ts-based web application for creating and managing travel itineraries. ",
     "detailDesc": "BEEE is a project implementing a React.ts-based web application to assist with travel scheduling. After learning React and various library usage through lectures and several projects, I independently undertook the project's planning, design, and development. I practiced component modularization, Virtual DOM, and state management. Furthermore, I developed the project by incorporating various libraries, including React Hook, React Query, Recoil, Styled-Components, and React Router.",
     "demo": "https://main--soft-taffy-a6cbf8.netlify.app/",
     "gibhub": "https://github.com/WoodyLovesBoota/TravelGo",
     "infoDescKor": "",
-    "cardDescKor": "BEEE는 여행 일정을 생성하고 관리하는 데 사용되는 React.ts 기반의 웹 애플리케이션입니다.",
+    "cardDescKor": "BEEE는 여행 일정을 생성하고 관리하는 데 사용되는 React.ts 기반의 웹 어플리케이션입니다.",
     "detailDescKor": "BEEE는 React.ts 기반하여 여행 스케줄에 도움을 주는 웹 어플리케이션을 구현한 프로젝트 입니다. 강의와 클론 코딩을 통해 React 및 다양한 라이브러리 사용법을 학습한 후, 스스로 기획, 디자인, 개발을 수행하였습니다.  React를 활용하여 컴포넌트 모듈화, Virtual DOM, 상태 관리 등의 기본 기능을 연습하고, React Hook, React Query, Recoil, Styled-Components, React Router 등 다양한 라이브러리를 활용하여 프로젝트를 개발했습니다.",
     "subtitle": "Hit the road,/ make your own trip."
   },
   {
-    "projectName": "Netflix Clone.",
+    "projectName": "Netflix Clone",
     "skill": ["React", "Typescript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix01.png?raw=true",
@@ -48,7 +48,7 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix05.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix06.png?raw=true"
     ],
-    "infoDesc": "Cloning the Netflix website.",
+    "infoDesc": "cloning the Netflix website",
     "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website.",
     "detailDesc": "The Netflix Clone is a clone coding project developed using React and Typescript, with reference to online courses. The focus of the project was to enhance understanding of fundamental React libraries such as React Router and React Query. By incorporating various animations and motion designs, I improved the visual effects, contributing to an enhanced user experience.",
     "demo": "https://woodylovesboota.github.io/React-Project",
@@ -59,7 +59,7 @@
     "subtitle": "See What's Next,/ netflix clone coding."
   },
   {
-    "projectName": "BlackNWhite.",
+    "projectName": "BlackNWhite",
     "skill": ["React", "Typescript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw06.png?raw=true",
@@ -69,7 +69,7 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw02.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
     ],
-    "infoDesc": "Mini game colleciton",
+    "infoDesc": "providing several mini games",
     "cardDesc": "BNW is a React and TypeScript-based initiative featuring an array of mini-games.",
     "detailDesc": "BNW is a project that includes various mini-games, enhancing problem-solving skills through the implementation of basic functionalities and termination conditions for each mini-game. Through the project, I faced various challenges, accumulating practical experience and enabling the development of effective strategies for complex problems. In addition, various animation effects were applied to provide users with a richer and more immersive experience.",
     "demo": "https://main--magenta-unicorn-80ac8f.netlify.app/",
@@ -80,7 +80,7 @@
     "subtitle": "Play your cards right,/ providing several mini games."
   },
   {
-    "projectName": "Planner.",
+    "projectName": "Planner",
     "skill": ["HTML", "CSS", "Javascript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner01.png?raw=true",
@@ -88,7 +88,7 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner03.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner04.png?raw=true"
     ],
-    "infoDesc": "Productivity-focused web application.",
+    "infoDesc": "elevate your browsing with daily inspiration",
     "cardDesc": "Planner is a productivity-focused web application created with HTML, CSS, and Javascript.",
     "detailDesc": "Planner is a composite result of several simple projects, showcasing fundamental Front-End development using HTML, CSS, and Javascript. It incorporates responsive web design, and explores modularity by utilizing various files to structure the project. Additionally, it implements functionality to fetch information from external APIs, allowing the integration of diverse features and data to create a web application.",
     "demo": "https://woodylovesboota.github.io/Planner",
@@ -99,7 +99,7 @@
     "subtitle": "Keep the ball rolling,/ elevate your browsing with daily inspiration."
   },
   {
-    "projectName": "Calendar.",
+    "projectName": "Calendar",
     "skill": ["HTML", "CSS", "Javascript"],
     "image": [
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar01.png?raw=true",
@@ -107,13 +107,13 @@
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar03.png?raw=true",
       "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Calendar/calendar04.png?raw=true"
     ],
-    "infoDesc": "Time scheduling web application.",
+    "infoDesc": "organize your schedule and keep track of important dates",
     "cardDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript.",
     "detailDesc": "Calendar is a web calendar application created using HTML, CSS, and Javascript. The goal was to implement a website where users directly interact with the information provided by the developer, rather than simply reading it. While it may be a single-page project, this endeavor allowed me to independently implement various aspects, including screen composition, component placement, overall layout design, direct feature implementation, and detailed style design.",
     "demo": "https://woodylovesboota.github.io/Calendar",
     "gibhub": "https://github.com/WoodyLovesBoota/Calendar",
     "infoDescKor": "",
-    "cardDescKor": "Calendar는 HTML, CSS, Javascript를 통해 만든 web 달력 application 입니다.",
+    "cardDescKor": "Calendar는 HTML, CSS, Javascript를 통해 만든 달력 어플리케이션 입니다.",
     "detailDescKor": "Calendar는 HTML, CSS, Javascript를 공부한 후 만들어 낸 첫 결과물로, 사용자와 상호작용하는 웹 사이트를 구현하는 것을 목표로 했습니다. 이 프로젝트는 비록 single-page-project이지만, 화면 구성, 컴포넌트 배치, 전체적인 레이아웃 설계부터 직접적인 기능 구현 및 디테일한 스타일 디자인까지 여러 가지를 혼자서 구현하여 결과물을 완성하는 경험을 할 수 있었습니다.",
     "subtitle": "Turn over a new leaf,/ organize your schedule and keep track of important dates."
   }

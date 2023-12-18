@@ -141,17 +141,6 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                 <InfoDetail>1995.12.26</InfoDetail>
               </InfoContent>
             </InfoBox>
-            {/* <LinkBox>
-              {isDark ? (
-                <DarkDownLoad variants={buttonVar} whileTap={"click"}>
-                  이력서 다운받기
-                </DarkDownLoad>
-              ) : (
-                <DownLoad variants={buttonVar} whileTap={"click"}>
-                  이력서 다운받기
-                </DownLoad>
-              )}
-            </LinkBox> */}
           </Info>
         )}
       </Container>
@@ -222,7 +211,7 @@ const DarkDownLoad = styled(motion.div)`
 `;
 
 const Form = styled.form`
-  width: 45%;
+  width: 48%;
   display: flex;
   flex-direction: column;
   @media (max-width: 1000px) {
@@ -232,7 +221,7 @@ const Form = styled.form`
 `;
 
 const NameInput = styled.input`
-  width: 90%;
+  width: 100%;
   height: 64px;
   border-radius: 8px;
   border: none;
@@ -253,7 +242,7 @@ const NameInput = styled.input`
 `;
 
 const EmailInput = styled.input`
-  width: 90%;
+  width: 100%;
   height: 64px;
   border-radius: 8px;
   border: none;
@@ -268,13 +257,12 @@ const EmailInput = styled.input`
     border: 2.5px solid ${(props) => props.theme.main.accent};
   }
   @media (max-width: 1000px) {
-    width: 100%;
     margin-bottom: 10px;
   }
 `;
 
 const MessageInput = styled.textarea`
-  width: 90%;
+  width: 100%;
   height: 100%;
   border-radius: 8px;
   border: none;
@@ -288,14 +276,13 @@ const MessageInput = styled.textarea`
     border: 2.5px solid ${(props) => props.theme.main.accent};
   }
   @media (max-width: 1000px) {
-    width: 100%;
     min-height: 200px;
     margin-bottom: 10px;
   }
 `;
 
 const Button = styled(motion.button)`
-  width: 90%;
+  width: 100%;
   background-color: ${(props) => props.theme.main.accent};
   color: white;
   padding: 20px;
@@ -306,7 +293,6 @@ const Button = styled(motion.button)`
   font-weight: 500;
   cursor: pointer;
   @media (max-width: 1000px) {
-    width: 100%;
     padding: 10px;
     margin-top: 0;
     margin-bottom: 30px;
@@ -314,7 +300,7 @@ const Button = styled(motion.button)`
 `;
 
 const Info = styled.div`
-  width: 50%;
+  width: 48%;
   padding: 36px 48px;
   border-radius: 25px;
   display: flex;

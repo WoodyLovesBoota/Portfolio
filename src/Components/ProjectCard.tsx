@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { languageState, screenState } from "../atoms";
+import projectData from "../projectData.json";
 
 import { ReactComponent as Arrow } from "../assets/arrow.svg";
 
@@ -12,10 +13,6 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
   const [isHover, setIsHover] = useState(false);
   const isEng = useRecoilValue(languageState);
   const [screen, setScreen] = useRecoilState(screenState);
-
-  const handleProjectClicked = () => {
-    navigate(`/project/${project.projectName.slice(0, project.projectName.length - 1)}/${color}`);
-  };
 
   const colors = ["red", "purple", "green", "gray", "yellow", "blue", "orange"];
 
@@ -29,10 +26,11 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
 
   return (
     <Wrapper
-      onClick={handleProjectClicked}
       color={colors[color]}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
+      href={projectData[Number(color)].demo}
+      target="_blank"
     >
       <AnimatePresence mode="wait">
         {isEng ? (
@@ -109,7 +107,7 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
 
 export default ProjectCard;
 
-const Wrapper = styled(motion.div)<{ color: string }>`
+const Wrapper = styled(motion.a)<{ color: string }>`
   border-radius: 5px;
   background-color: ${(props) => props.theme[props.color].accent};
   position: relative;
@@ -148,7 +146,8 @@ const CardDesc = styled.h2`
 const Icon = styled.h2`
   color: white;
   margin-top: auto;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
 `;
 
 const IconRight = styled.h2`
