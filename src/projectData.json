@@ -38,6 +38,27 @@
     "subtitle": "Hit the road,/ make your own trip."
   },
   {
+    "projectName": "Mini Games",
+    "skill": ["React", "Typescript"],
+    "image": [
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw06.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw01.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw05.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw04.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw02.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
+    ],
+    "infoDesc": "providing several mini games",
+    "cardDesc": "Mini Games is a React and TypeScript-based initiative featuring an array of mini-games.",
+    "detailDesc": "Mini Games is a project that includes various mini-games, enhancing problem-solving skills through the implementation of basic functionalities and termination conditions for each mini-game. Through the project, I faced various challenges, accumulating practical experience and enabling the development of effective strategies for complex problems. In addition, various animation effects were applied to provide users with a richer and more immersive experience.",
+    "demo": "https://main--magenta-unicorn-80ac8f.netlify.app/",
+    "gibhub": "https://github.com/WoodyLovesBoota/BNW",
+    "infoDescKor": "",
+    "cardDescKor": "Mini Games는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. ",
+    "detailDescKor": "Mini Games는 다양한 미니게임을 담은 프로젝트로, 각 미니게임의 기본 동작과 종료 조건을 구현하면서 개발에서의 문제해결 능력을 향상시켰습니다. 프로젝트를 통해 다양한 도전에 직면하며 실전 경험을 쌓음으로써, 복잡한 문제에 대한 효과적인 전략을 세울 수 있었습니다. 뿐만 아니라, 다양한 애니메이션 효과를 적용하여 사용자에게 더 풍부하고 몰입도 높은 경험을 제공하였습니다. BNW는 게임 개발의 다양한 측면을 다루면서, 기술적인 향상과 창의적인 접근을 통해 결과물을 도출하였습니다.",
+    "subtitle": "Play your cards right,/ providing several mini games."
+  },
+  {
     "projectName": "Netflix Clone",
     "skill": ["React", "Typescript"],
     "image": [
@@ -51,34 +72,14 @@
     "infoDesc": "cloning the Netflix website",
     "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website.",
     "detailDesc": "The Netflix Clone is a clone coding project developed using React and Typescript, with reference to online courses. The focus of the project was to enhance understanding of fundamental React libraries such as React Router and React Query. By incorporating various animations and motion designs, I improved the visual effects, contributing to an enhanced user experience.",
-    "demo": "https://woodylovesboota.github.io/React-Project",
+    "demo": "https://moonlit-cocada-e0073b.netlify.app/",
     "gibhub": "https://github.com/WoodyLovesBoota/Netflix__Clone",
     "infoDescKor": "",
     "cardDescKor": "Netflix Clone은 Netflix 웹사이트를 클론 코딩한 프로젝트로 React와 Typescript를 사용하여 구현하였습니다.",
     "detailDescKor": "Netflix Clone은 React와 Typescript를 이용하여 개발한 클론 코딩 프로젝트이며, 온라인 강의를 참고하여 개발하였습니다. 프로젝트를 통해 React Router와 React Query 등 React의 기본적인 라이브러리에 대한 이해를 높이는 것에 집중하였고, 다양한 animation과 모션 디자인을 활용하여 시각적인 효과를 부여함으로써 사용자 경험을 향상할 수 있었습니다. 프로젝트를 통해 React 및 관련 기술들을 실제 개발 환경에서 어떻게 활용하는지에 대한 실전 경험을 쌓았습니다.",
     "subtitle": "See What's Next,/ netflix clone coding."
   },
-  {
-    "projectName": "BlackNWhite",
-    "skill": ["React", "Typescript"],
-    "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw06.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw01.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw05.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
-    ],
-    "infoDesc": "providing several mini games",
-    "cardDesc": "BNW is a React and TypeScript-based initiative featuring an array of mini-games.",
-    "detailDesc": "BNW is a project that includes various mini-games, enhancing problem-solving skills through the implementation of basic functionalities and termination conditions for each mini-game. Through the project, I faced various challenges, accumulating practical experience and enabling the development of effective strategies for complex problems. In addition, various animation effects were applied to provide users with a richer and more immersive experience.",
-    "demo": "https://main--magenta-unicorn-80ac8f.netlify.app/",
-    "gibhub": "https://github.com/WoodyLovesBoota/BNW",
-    "infoDescKor": "",
-    "cardDescKor": "BNW는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. ",
-    "detailDescKor": "BNW는 다양한 미니게임을 담은 프로젝트로, 각 미니게임의 기본 동작과 종료 조건을 구현하면서 개발에서의 문제해결 능력을 향상시켰습니다. 프로젝트를 통해 다양한 도전에 직면하며 실전 경험을 쌓음으로써, 복잡한 문제에 대한 효과적인 전략을 세울 수 있었습니다. 뿐만 아니라, 다양한 애니메이션 효과를 적용하여 사용자에게 더 풍부하고 몰입도 높은 경험을 제공하였습니다. BNW는 게임 개발의 다양한 측면을 다루면서, 기술적인 향상과 창의적인 접근을 통해 결과물을 도출하였습니다.",
-    "subtitle": "Play your cards right,/ providing several mini games."
-  },
+
   {
     "projectName": "Planner",
     "skill": ["HTML", "CSS", "Javascript"],
