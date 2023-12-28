@@ -48,7 +48,13 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
               </Icon>
             </CardDescription>
           ) : (
-            <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
+            <Container
+              key={project.image[0]}
+              variants={mainVar}
+              initial={"initial"}
+              animate={"animate"}
+              exit={"exit"}
+            >
               <Info>
                 <InfoTitle>{project.projectName}</InfoTitle>
                 <InfoContent>
@@ -81,7 +87,13 @@ const ProjectCard = ({ project, color }: IProjectProps) => {
             </Icon>
           </CardDescription>
         ) : (
-          <Container key={project.image[0]} variants={mainVar} initial={"initial"} animate={"animate"} exit={"exit"}>
+          <Container
+            key={project.image[0]}
+            variants={mainVar}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+          >
             <Info>
               <InfoTitle>{project.projectName}</InfoTitle>
               <InfoContent>
@@ -109,13 +121,14 @@ export default ProjectCard;
 
 const Wrapper = styled(motion.a)<{ color: string }>`
   border-radius: 5px;
-  background-color: ${(props) => props.theme[props.color].accent};
+  /* background-color: ${(props) => props.theme[props.color].accent}; */
   position: relative;
   cursor: pointer;
   padding: 24px;
-  color: white;
   width: 100%;
   height: 25vw;
+  background-color: ${(props) => props.theme.bg.lighter};
+  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
 
   @media (max-width: 1200px) {
     padding: 12px 24px;
@@ -138,20 +151,19 @@ const CardDesc = styled.h2`
   font-weight: 400;
   line-height: 1.7;
   font-size: 21px;
+  color: black;
   @media (max-width: 800px) {
     display: none;
   }
 `;
 
 const Icon = styled.h2`
-  color: white;
   margin-top: auto;
   display: flex;
   align-items: center;
 `;
 
 const IconRight = styled.h2`
-  color: white;
   margin-left: auto;
   font-size: 18px;
 `;
@@ -175,6 +187,7 @@ const Info = styled.div`
 const InfoTitle = styled.div`
   font-size: 30px;
   font-weight: 600;
+  color: black;
   @media (max-width: 1200px) {
     font-size: 24px;
   }
@@ -182,6 +195,8 @@ const InfoTitle = styled.div`
 
 const InfoContent = styled.div`
   margin-top: auto;
+  color: black;
+
   @media (max-width: 800px) {
     display: none;
   }
@@ -192,6 +207,8 @@ const InfoDesc = styled.h2`
   font-size: 18px;
   word-break: normal;
   margin-top: 10px;
+  color: black;
+
   @media (max-width: 1200px) {
     font-size: 16px;
     margin-top: 5px;
@@ -207,12 +224,12 @@ const SkillCircle = styled.div`
   border-radius: 4px;
   padding: 4px 8px;
   margin-right: 10px;
-  border: 1.5px solid #f1f1f1;
+  border: 1.5px solid black;
   font-weight: 500;
   @media (max-width: 1200px) {
     padding: 2px 4px;
     margin-right: 5px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid black;
   }
 `;
 

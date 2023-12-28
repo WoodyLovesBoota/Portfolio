@@ -63,7 +63,7 @@ const NavigationBar = ({
         </Content>
       </Contents>
       <Toggles>
-        <Language>
+        {/* <Language>
           <LanguageToggle isDark={isDark} isOpen={isToggleOpen} onClick={onLangToggleClick}>
             <LanguageTitle>Language</LanguageTitle>
             <Icon>
@@ -104,9 +104,25 @@ const NavigationBar = ({
               </LanguageItem>
             </LanguageList>
           )}
-        </Language>
-        <Theme>
-          <Toggle isDark={isDark} onClick={onToggleClick}>
+        </Language> */}
+        <Lang
+          isnow={!isEng}
+          onClick={() => {
+            setIsEng(false);
+          }}
+        >
+          Kr
+        </Lang>
+        <Lang
+          isnow={isEng}
+          onClick={() => {
+            setIsEng(true);
+          }}
+        >
+          En
+        </Lang>
+        {/* <Theme> */}
+        {/* <Toggle isDark={isDark} onClick={onToggleClick}>
             <Blank>
               {isDark && (
                 <Circle layoutId="circle">
@@ -121,8 +137,8 @@ const NavigationBar = ({
                 </Circle>
               )}
             </Blank>
-          </Toggle>
-        </Theme>
+          </Toggle> */}
+        {/* </Theme> */}
       </Toggles>
     </Wrapper>
   );
@@ -136,9 +152,12 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 25px 72px;
-  position: absolute;
+  position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(9.8px);
   @media (max-width: 800px) {
     padding: 16px;
   }
@@ -163,7 +182,7 @@ const Logo = styled.button`
   border: none;
   background-color: transparent;
   letter-spacing: 1px;
-  color: ${(props) => props.theme.word.black};
+  color: black;
   cursor: pointer;
 `;
 
@@ -178,13 +197,25 @@ const Content = styled(motion.button)`
   letter-spacing: 1px;
   color: ${(props) => props.theme.word.main};
   cursor: pointer;
-  margin-right: 30px;
+  margin-right: 50px;
 `;
 
 const Toggles = styled.div`
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.word.main};
+  margin-left: 50px;
+`;
+
+const Lang = styled.h2<{ isnow: boolean }>`
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 30px;
+  text-decoration: ${(props) => props.isnow && "underline"};
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Language = styled.div``;
@@ -270,7 +301,7 @@ const Check = styled.h2`
 `;
 
 const Theme = styled.div`
-  margin-left: 26px;
+  margin-left: 50px;
 `;
 
 const Toggle = styled(motion.div)<{ isDark: boolean }>`
@@ -283,7 +314,8 @@ const Toggle = styled(motion.div)<{ isDark: boolean }>`
   padding: 4px 10px;
   color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.red.accent)};
   cursor: pointer;
-  background-color: ${(props) => (props.isDark ? props.theme.purple.accent : props.theme.red.accent)};
+  background-color: ${(props) =>
+    props.isDark ? props.theme.purple.accent : props.theme.red.accent};
   @media (max-width: 800px) {
     width: 45px;
     position: relative;
@@ -344,5 +376,5 @@ const listVar = {
 };
 
 const navVar = {
-  hover: { y: -10 },
+  hover: { textDecoration: "underline", transition: { duration: 0.5 } },
 };

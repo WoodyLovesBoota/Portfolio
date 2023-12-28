@@ -15,47 +15,43 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
     <Wrapper ref={ref}>
       <Container>
         <Main>
-          {isEng ? (
-            <>
-              <Header title="YANG TAE WOOK" subTitle="MY NAME IS" isCenter={false} />
-              <SubTitle>
-                Interested in combining programming expertise with design to effectively results. Also passionate about
-                Front-End development and dedicated to crafting user experiences.
-              </SubTitle>
-            </>
-          ) : (
-            <>
-              <Header title="양태욱" subTitle="MY NAME IS" isCenter={false} />
-              <SubTitle>
-                Front-End 개발과 그로 인한 사용자 경험 창조에 열정을 가지고 있으며 기초적인 언어와 프레임워크에 대한
-                이해를 바탕으로 다양한 응용능력을 갖추고 있습니다.
-              </SubTitle>
-            </>
-          )}
-          <Links>
-            <Link>
-              <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
-                <FontAwesomeIcon icon={faGithub} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
-                <FontAwesomeIcon icon={faInstagram} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
-                <FontAwesomeIcon icon={faLinkedin} />
-              </LinkContent>
-            </Link>
-            <Link>
-              <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
-                <FontAwesomeIcon icon={faBlog} />
-              </LinkContent>
-            </Link>
-          </Links>
+          <Contents>
+            <Introduce>
+              <Title>
+                양태욱
+                <br />
+                YANG TAE WOOK
+              </Title>
+              <SubTitle>FRONT-END WEB DEVELOPER / BLOCK-CHAIN DEVELOPER</SubTitle>
+            </Introduce>
+            <Links>
+              <Link>
+                <LinkContent target="_blank" href="https://github.com/WoodyLovesBoota">
+                  GITHUB
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://www.instagram.com/tttaeook/">
+                  INSTAGRAM
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent
+                  target="_blank"
+                  href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/"
+                >
+                  LINKEDIN
+                </LinkContent>
+              </Link>
+              <Link>
+                <LinkContent target="_blank" href="https://velog.io/@woodylovescoding">
+                  BLOG
+                </LinkContent>
+              </Link>
+            </Links>
+          </Contents>
         </Main>
-        <Photo />
+        {/* <Photo /> */}
       </Container>
     </Wrapper>
   );
@@ -66,13 +62,7 @@ export default MainContent;
 const Wrapper = styled.div`
   width: 100vw;
   position: relative;
-  height: 56.25vw;
-  @media (max-width: 1200px) {
-    height: 115vw;
-  }
-  @media (max-width: 800px) {
-    height: 1000px;
-  }
+  min-height: 100vh;
 `;
 
 const Photo = styled.div`
@@ -88,10 +78,6 @@ const Photo = styled.div`
   background-size: cover;
   width: 50%;
   height: 100%;
-  @media (max-width: 1200px) {
-    width: 100%;
-    height: 60%;
-  }
 `;
 
 const Container = styled.div`
@@ -102,48 +88,71 @@ const Container = styled.div`
   left: 0;
   height: 100%;
   display: flex;
-  @media (max-width: 1200px) {
-    flex-direction: column-reverse;
-    width: 100%;
-  }
+  align-items: center;
 `;
 
 const Main = styled.div`
-  padding: 300px 72px;
-  color: ${(props) => props.theme.word.main};
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: center;
   height: 100%;
-  @media (max-width: 1200px) {
-    width: 100%;
-    padding-top: 0;
-    height: 70%;
-    justify-content: center;
-    padding-bottom: 50px;
-  }
-  @media (max-width: 800px) {
-    padding: 16px;
-  }
+  width: 100%;
+  padding-left: 200px;
+`;
+
+const Introduce = styled.div``;
+
+const Contents = styled.div`
+  border-left: 0.5px solid gray;
+  padding-top: 22vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Title = styled.h2`
+  font-size: 60px;
+  font-weight: 500;
+  border-left: 3px solid #e74946;
+  padding-left: 122px;
+  margin-left: -2px;
+  height: 70px;
+  display: flex;
+  align-items: center;
 `;
 
 const SubTitle = styled.p`
   font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
-  line-height: 2.4;
-  margin: 50px 0;
+  /* line-height: 2.4; */
   word-break: normal;
+  margin: 100px 0;
+  margin-bottom: 70px;
+  padding-left: 130px;
+`;
+
+const LinkTitle = styled.h2`
+  font-size: 16px;
+  font-weight: 300;
+  padding-left: 130px;
+  margin-bottom: 20px;
 `;
 
 const Links = styled.div`
-  display: flex;
+  padding-right: 50px;
 `;
 
-const Link = styled.div``;
+const Link = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const LinkContent = styled.a`
-  font-size: 21px;
-  font-weight: 500;
-  margin-right: 25px;
+  font-size: 16px;
+  font-weight: 300;
+  &:hover {
+    text-decoration: underline;
+  }
 `;

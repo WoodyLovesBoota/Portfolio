@@ -8,6 +8,7 @@ import { screenState } from "./atoms";
 import { useRecoilState } from "recoil";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useEffect } from "react";
+import Portfolio from "./Routes/Portfolio";
 
 const App = () => {
   const isDark = useRecoilValue(themeState);
@@ -24,6 +25,8 @@ const App = () => {
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
+          <Route path="/:title" element={<Portfolio />} />
+
           <Route path="/" element={<Home />}></Route>
         </Routes>
       </Router>

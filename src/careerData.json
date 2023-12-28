@@ -1,7 +1,7 @@
 [
   {
     "title": "Haechi Labs",
-    "subTitle": ["Smart Contract Developer", "Haechi-Labs"],
+    "subTitle": ["Smart Contract Security Audit & Development", "Haechi-Labs"],
     "address": "Seoul, Republic of Korea",
     "duration": "Nov 2020 - Dec 2021",
     "skills": ["Solidity", "Typescript"],
@@ -10,12 +10,12 @@
       "Security audit of Ethereum smart contracts.",
       "Developing Ethereum smart contract and a user-friendly interface for interaction."
     ],
-    "subTitleKor": ["스마트컨트랙트 개발", "Haechi-Labs"],
+    "subTitleKor": ["스마트 컨트랙트 개발 및 보안감사", "Haechi-Labs"],
     "addressKor": "대한민국 서울특별시",
     "descriptionsKor": [
-      "스마트 컨트랙트 및 다양한 분야의 보안 취약점에 대한 연구",
-      "스마트 컨트랙트 보안감사",
-      "이더리움 스마트 컨트랙트 및 사용자 UI 개발"
+      "50회 이상의 security audit을 통해 스마트 컨트랙트의 코드를 검토하여 보안 취약성을 식별하고, 이를 해결하기 위한 권장 사항을 제공하여 스마트 컨트랙트의 안전성을 향상시켰습니다.",
+      "Solidity를 활용하여 Defi, NFT, Dapp, ERC20 등 안전하고 효율적인 스마트 컨트랙트를 설계하고 구현하였습니다.",
+      "블록체인과 스마트 컨트랙트 생태계를 포함하여 다양한 분야에 발생하는 보안 문제에 대한 연구를 통해 보안 위협에 대응하는 솔루션을 개발하는데 기여하였습니다."
     ]
   }
 ]

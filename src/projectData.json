@@ -1,12 +1,12 @@
 [
   {
-    "projectName": "ALCOHOLISM",
-    "skill": ["React", "Typescript"],
+    "projectName": "Alcoholism",
+    "skill": ["React", "Typescript", "React Query", "Responsive design", "Animation"],
     "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true"
+      "https://images.unsplash.com/photo-1581927692308-be9e43b4d860?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Alcoholism/Alcoholism11.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Alcoholism/Alcoholism3.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Alcoholism/Alcoholism2.png?raw=true"
     ],
     "infoDesc": "providing information about coctails",
     "cardDesc": "ALCOHOLISM is a web application that provides various information about cocktails, including recipes, ingredients, and more.",
@@ -15,17 +15,14 @@
     "gibhub": "https://github.com/WoodyLovesBoota/Alcoholism",
     "infoDescKor": "",
     "cardDescKor": "ALCOHOLISM은 칵테일에 대한 레시피, 재료 등 다양한 정보를 제공하는 웹 어플리케이션입니다.",
-    "detailDescKor": "ALCOHOLISM은 오픈 API를 활용하여 칵테일에 대한 다양한 정보를 제공하는 웹 어플리케이션입니다. React와 TypeScript를 활용하여 개발되었으며, 프로젝트 진행 과정에서 디자인적 요소에 특별한 주의를 기울여 사용자 경험을 향상시켰습니다. API fetch를 최소화하면서도 사용자들에게 풍부한 정보를 제공하기 위해 노력하였고, 애니메이션적 효과를 통해 동적인 요소를 추가하여 더욱 효율적이면서 매력적인 어플리케이션을 구현하였습니다.",
-    "subtitle": "Grab a Drink,/ providing information about coctails."
+    "detailDescKor": "ALCOHOLISM은 오픈 API를 활용하여 칵테일에 대한 다양한 정보를 제공하는 웹 어플리케이션입니다. React와 TypeScript를 활용하여 개발되었으며, 프로젝트 진행 과정에서 디자인적 요소에 특별한 주의를 기울여 사용자 경험을 향상시켰습니다. API fetch를 최소화하면서도 사용자들에게 풍부한 정보를 제공하기 위해 노력하였고, 애니메이션적 효과를 통해 동적인 요소를 추가하여 더욱 효율적이면서 매력적인 어플리케이션을 구현하였습니다. 마지막으로 반응형 디자인을 통해 디바이스의 크기에 따라 변하는 UI를 구축하였습니다.",
+    "subtitle": "Provides information about coctails."
   },
   {
-    "projectName": "BEEE",
-    "skill": ["React", "Typescript"],
+    "projectName": "TravelGo",
+    "skill": ["React", "Typescript", "Open API", "React Query", "State Management"],
     "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Beee/beee06.png?raw=true"
+      "https://images.unsplash.com/photo-1555371363-27a37f8e8c46?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ],
     "infoDesc": "make your own trip",
     "cardDesc": "BEEE is a React.ts-based web application for creating and managing travel itineraries. ",
@@ -34,19 +31,19 @@
     "gibhub": "https://github.com/WoodyLovesBoota/TravelGo",
     "infoDescKor": "",
     "cardDescKor": "BEEE는 여행 일정을 생성하고 관리하는 데 사용되는 React.ts 기반의 웹 어플리케이션입니다.",
-    "detailDescKor": "BEEE는 React.ts 기반하여 여행 스케줄에 도움을 주는 웹 어플리케이션을 구현한 프로젝트 입니다. 강의와 클론 코딩을 통해 React 및 다양한 라이브러리 사용법을 학습한 후, 스스로 기획, 디자인, 개발을 수행하였습니다.  React를 활용하여 컴포넌트 모듈화, Virtual DOM, 상태 관리 등의 기본 기능을 연습하고, React Hook, React Query, Recoil, Styled-Components, React Router 등 다양한 라이브러리를 활용하여 프로젝트를 개발했습니다.",
-    "subtitle": "Hit the road,/ make your own trip."
+    "detailDescKor": "TravelGo는 여행을 준비하는 과정에서 도움을 주는 웹 애플리케이션 입니다. Google Maps API를 이용하였으며 React와 Typescript로 개발하였습니다. Recoil과 React Query, Framer 등 다양한 라이브러리를 활용하였습니다. 특히 다수의 API를 fetch 하는 과정에서 다량의 데이터를 효율적으로 관리하는것에 중점을 두고 구현하였습니다",
+    "subtitle": "Make your own trip."
   },
   {
     "projectName": "Mini Games",
-    "skill": ["React", "Typescript"],
+    "skill": ["React", "Typescript", "Animation", "Solution"],
     "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw06.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw01.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw05.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/bnw07.png?raw=true"
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame5.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame6.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame3.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame5.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame2.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/BNW/Minigame4.png?raw=true"
     ],
     "infoDesc": "providing several mini games",
     "cardDesc": "Mini Games is a React and TypeScript-based initiative featuring an array of mini-games.",
@@ -55,19 +52,17 @@
     "gibhub": "https://github.com/WoodyLovesBoota/BNW",
     "infoDescKor": "",
     "cardDescKor": "Mini Games는 다양한 미니게임을 구현한 프로젝트이며 React와 Typescript를 이용하여 개발하였습니다. ",
-    "detailDescKor": "Mini Games는 다양한 미니게임을 담은 프로젝트로, 각 미니게임의 기본 동작과 종료 조건을 구현하면서 개발에서의 문제해결 능력을 향상시켰습니다. 프로젝트를 통해 다양한 도전에 직면하며 실전 경험을 쌓음으로써, 복잡한 문제에 대한 효과적인 전략을 세울 수 있었습니다. 뿐만 아니라, 다양한 애니메이션 효과를 적용하여 사용자에게 더 풍부하고 몰입도 높은 경험을 제공하였습니다. BNW는 게임 개발의 다양한 측면을 다루면서, 기술적인 향상과 창의적인 접근을 통해 결과물을 도출하였습니다.",
-    "subtitle": "Play your cards right,/ providing several mini games."
+    "detailDescKor": "Mini Games는 다양한 미니게임을 제공하는 애플리케이션 입니다. React와 Typescript를 이용하여 개발하였으며, 다양한 애니메이션 효과를 적용하여 사용자 경험을 개선하기 위해 노력했습니다. 게임 로직, 사용자 입력 처리 등, 게임을 만드는 과정에서 더욱 구체적으로 알고리즘을 이해하고 적용할 수 있었습니다.",
+    "subtitle": "Provides several mini games."
   },
   {
     "projectName": "Netflix Clone",
     "skill": ["React", "Typescript"],
     "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix01.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix03.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix04.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix05.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/netflix06.png?raw=true"
+      "https://images.unsplash.com/photo-1512070800540-0d4192faa057?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/Netflix1.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/Netflix2.png?raw=true",
+      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Netflix/Netflix3.png?raw=true"
     ],
     "infoDesc": "cloning the Netflix website",
     "cardDesc": "Netflix Clone is a project built with React and Typescript, replicating the Netflix website.",
@@ -77,7 +72,7 @@
     "infoDescKor": "",
     "cardDescKor": "Netflix Clone은 Netflix 웹사이트를 클론 코딩한 프로젝트로 React와 Typescript를 사용하여 구현하였습니다.",
     "detailDescKor": "Netflix Clone은 React와 Typescript를 이용하여 개발한 클론 코딩 프로젝트이며, 온라인 강의를 참고하여 개발하였습니다. 프로젝트를 통해 React Router와 React Query 등 React의 기본적인 라이브러리에 대한 이해를 높이는 것에 집중하였고, 다양한 animation과 모션 디자인을 활용하여 시각적인 효과를 부여함으로써 사용자 경험을 향상할 수 있었습니다. 프로젝트를 통해 React 및 관련 기술들을 실제 개발 환경에서 어떻게 활용하는지에 대한 실전 경험을 쌓았습니다.",
-    "subtitle": "See What's Next,/ netflix clone coding."
+    "subtitle": "Cloning the Netflix website."
   },
 
   {
@@ -97,7 +92,7 @@
     "infoDescKor": "",
     "cardDescKor": "Planner는 HTML, CSS, Javascript를 이용한여 제작한 개인의 생산성을 높이는 웹 어플리케이션 입니다.",
     "detailDescKor": "Planner는 간단한 여러 프로젝트를 통합하여 만든 결과물입니다. HTML, CSS, Javascript를 이용한 Front-End 개발의 기본 동작을 습득하고, 이후의 반응형 웹 디자인 등 실험적인 시도를 담아낸 프로젝트입니다. 다양한 파일을 활용하여 하나의 프로젝트를 구성하는 모듈화를 시도하였습니다. 또한, 개발자 또는 사용자가 정보를 입력하는 것이 아닌 API를 활용하여 외부에서 정보를 받아오는 기능을 구현하였고 이를 통해 다양한 기능과 정보를 결합하여 웹 애플리케이션을 구현했습니다.",
-    "subtitle": "Keep the ball rolling,/ elevate your browsing with daily inspiration."
+    "subtitle": "Elevate your browsing with daily inspiration."
   },
   {
     "projectName": "Calendar",
@@ -116,6 +111,6 @@
     "infoDescKor": "",
     "cardDescKor": "Calendar는 HTML, CSS, Javascript를 통해 만든 달력 어플리케이션 입니다.",
     "detailDescKor": "Calendar는 HTML, CSS, Javascript를 공부한 후 만들어 낸 첫 결과물로, 사용자와 상호작용하는 웹 사이트를 구현하는 것을 목표로 했습니다. 이 프로젝트는 비록 single-page-project이지만, 화면 구성, 컴포넌트 배치, 전체적인 레이아웃 설계부터 직접적인 기능 구현 및 디테일한 스타일 디자인까지 여러 가지를 혼자서 구현하여 결과물을 완성하는 경험을 할 수 있었습니다.",
-    "subtitle": "Turn over a new leaf,/ organize your schedule and keep track of important dates."
+    "subtitle": "Organize your schedule and keep track of important dates."
   }
 ]

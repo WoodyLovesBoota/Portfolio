@@ -3,10 +3,8 @@ import App from "./App";
 import { createGlobalStyle } from "styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
-import "./assets/fonts/font.css";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700;800&display=swap');
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -25,11 +23,14 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     font-size: 16px;
     font-weight: 300;
-    font-family: "Noto sans KR", sans-serif;
+    font-family: Inter, sans-serif;
     vertical-align: baseline;
     font-weight: 300;
     line-height: 1.5;
     word-break:break-all;
+    color: black;
+
+    scroll-behavior:smooth;
 
     -webkit-touch-callout: none;
      user-select: none;
@@ -45,6 +46,10 @@ const GlobalStyle = createGlobalStyle`
   article, aside, details, figcaption, figure,
   footer, header, hgroup, main, menu, nav, section {
     display: block;
+  }
+  body { 
+    /* background-color: #f7f4f2; */
+    background-color: white;
   }
   /* HTML5 hidden-attribute fix for newer browsers */
   *[hidden] {
@@ -69,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-    box-sizing: border-box;
+  box-sizing: border-box;
   }
 
   a {

@@ -11,23 +11,29 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Wrapper ref={ref}>
-      <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} />
+      {/* <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} /> */}
+      <Title>Personal Blog</Title>
       <Main>
-        {blogData.slice(0, 3).map((blog) => (
-          <BlogBox variants={shadowVar} whileHover={isDark ? "darkHover" : "hover"} whileTap={"click"}>
+        {blogData.map((blog) => (
+          <BlogBox>
             <a href={blog.link} target="_blank">
               <BlogPhoto bgPhoto={blog.image} />
               <BlogContent>
                 <BlogTitle>{blog.title}</BlogTitle>
                 <BlogDate>{blog.date}</BlogDate>
-                <BlogDesc>{blog.description}</BlogDesc>
+                {/* <BlogDesc>{blog.description}</BlogDesc> */}
               </BlogContent>
             </a>
           </BlogBox>
         ))}
       </Main>
       <Link>
-        <LinkContent variants={navVar} whileHover={"hover"} href="https://velog.io/@woodylovescoding">
+        <LinkContent
+          variants={navVar}
+          whileHover={"hover"}
+          href="https://velog.io/@woodylovescoding"
+          target="_black"
+        >
           https://velog.io/@woodylovescoding
         </LinkContent>
       </Link>
@@ -39,149 +45,67 @@ export default Blog;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 72px;
-  padding-top: 144px;
+  padding: 200px 0;
   display: flex;
   flex-direction: column;
-  @media (max-width: 800px) {
-    padding: 48px 16px;
-  }
+`;
+
+const Title = styled.h2`
+  font-size: 32px;
+  font-weight: 500;
+  padding-left: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e74946;
 `;
 
 const Main = styled.div`
-  padding: 72px 0;
-  padding-bottom: 0;
-  display: flex;
+  padding: 80px 60px;
+  display: grid;
   justify-content: space-between;
-  @media (max-width: 1200px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  @media (max-width: 800px) {
-    padding: 45px 0;
-    padding-bottom: 0;
-  }
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
 `;
 
 const BlogBox = styled(motion.div)`
-  background-color: ${(props) => props.theme.bg.lighter};
-  box-shadow: 0px 0px 64px 0 ${(props) => props.theme.bg.blur};
-  width: min(450px, 32%);
-  height: 650px;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 6px;
   cursor: pointer;
-  @media (max-width: 1600px) {
-    height: 600px;
-  }
-  @media (max-width: 1200px) {
-    width: 100%;
-    height: 350px;
-    margin-bottom: 30px;
-    a {
-      display: flex;
-      width: 100%;
-      height: 350px;
-    }
-  }
-  @media (max-width: 700px) {
-    height: 500px;
-    margin-bottom: 40px;
-
-    a {
-      flex-direction: column;
-      height: 500px;
-    }
-  }
+  margin-right: 20px;
+  padding: 20px;
+  border: 0.5px solid lightgray;
 `;
 
 const BlogPhoto = styled.div<{ bgPhoto: string }>`
   background-image: url(${(props) => props.bgPhoto});
   background-position: center center;
   background-size: cover;
-  height: 55%;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  @media (max-width: 1600px) {
-    height: 50%;
-  }
-  @media (max-width: 1200px) {
-    height: 100%;
-    width: 50%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 0px;
-  }
-  @media (max-width: 700px) {
-    height: 50%;
-    width: 100%;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 15px;
-  }
+  height: 300px;
+  border-radius: 8px;
 `;
 
 const BlogContent = styled.div`
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 45%;
-  padding-bottom: 0;
-  @media (max-width: 1600px) {
-    height: 50%;
-  }
-  @media (max-width: 1200px) {
-    height: 100%;
-    width: 50%;
-    padding: 24px;
-    padding-bottom: 0;
-  }
-  @media (max-width: 700px) {
-    height: 50%;
-    width: 100%;
-    padding: 16px;
-  }
+  padding: 20px 10px;
 `;
 
 const BlogTitle = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: ${(props) => props.theme.word.main};
+  word-break: normal;
 `;
 
-const BlogDate = styled.span`
+const BlogDate = styled.h2`
   font-size: 14px;
   border-radius: 4px;
   padding: 4px 8px;
   border: 1px solid lightgray;
   font-weight: 400;
-  margin: 20px 0;
+  margin-top: 20px;
+  display: inline-block;
   color: ${(props) => props.theme.word.sub};
-`;
-
-const BlogDesc = styled.h2`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 2;
-  color: ${(props) => props.theme.word.sub};
-  @media (max-width: 1600px) {
-    line-height: 1.7;
-  }
-`;
-
-const BlogButton = styled(motion.button)`
-  margin-top: auto;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  font-size: 16px;
-  color: ${(props) => props.theme.word.sub};
-  padding-top: 10px;
-  padding-bottom: 30px;
-  cursor: pointer;
-  @media (max-width: 500px) {
-    display: none;
-  }
 `;
 
 const Link = styled(motion.div)`
@@ -198,12 +122,6 @@ const LinkContent = styled(motion.a)`
   font-weight: 400;
   color: ${(props) => props.theme.word.sub};
 `;
-
-const shadowVar = {
-  hover: { boxShadow: "0px 0px 64px 10px #484747bb", y: -15 },
-  darkHover: { boxShadow: "0px 0px 64px 10px #bebebebb", y: -15 },
-  click: { scale: 0.95 },
-};
 
 const navVar = {
   hover: { y: -15 },

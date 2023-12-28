@@ -102,8 +102,10 @@ export default Home;
 
 const Wrapper = styled.div`
   width: 100vw;
+  background-color: white;
 
-  background: hsla(206, 63%, 86%, 1);
+  /* background-color: #f7f4f2; */
+  /* background: hsla(206, 63%, 86%, 1);
 
   background: linear-gradient(
     135deg,
@@ -150,7 +152,7 @@ const Wrapper = styled.div`
     hsla(206, 63%, 86%, 1) 100%
   );
 
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#c6dff2", endColorstr="#d6e8f7", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#c6dff2", endColorstr="#d6e8f7", GradientType=1 ); */
 `;
 
 const DarkWrapper = styled.div`
