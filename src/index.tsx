@@ -27,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: baseline;
     font-weight: 300;
     line-height: 1.5;
-    word-break:break-all;
     color: black;
 
     scroll-behavior:smooth;

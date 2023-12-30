@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Header from "./Header";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import blogData from "../blogData.json";
@@ -11,8 +10,19 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Wrapper ref={ref}>
-      {/* <Header title="Personal Blog" subTitle="MY ARTICLES" isCenter={true} /> */}
-      <Title>Personal Blog</Title>
+      <Title>
+        <span>P</span>ersonal Blog
+      </Title>
+      <Link>
+        <LinkContent
+          variants={navVar}
+          whileHover={"hover"}
+          href="https://velog.io/@woodylovescoding"
+          target="_blank"
+        >
+          https://velog.io/@woodylovescoding
+        </LinkContent>
+      </Link>
       <Main>
         {blogData.map((blog) => (
           <BlogBox>
@@ -21,22 +31,11 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
               <BlogContent>
                 <BlogTitle>{blog.title}</BlogTitle>
                 <BlogDate>{blog.date}</BlogDate>
-                {/* <BlogDesc>{blog.description}</BlogDesc> */}
               </BlogContent>
             </a>
           </BlogBox>
         ))}
       </Main>
-      <Link>
-        <LinkContent
-          variants={navVar}
-          whileHover={"hover"}
-          href="https://velog.io/@woodylovescoding"
-          target="_black"
-        >
-          https://velog.io/@woodylovescoding
-        </LinkContent>
-      </Link>
     </Wrapper>
   );
 });
@@ -44,45 +43,45 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
 export default Blog;
 
 const Wrapper = styled.div`
+  padding: 500px 0;
   width: 100%;
-  padding: 200px 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h2`
-  font-size: 32px;
-  font-weight: 500;
-  padding-left: 80px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #e74946;
+  font-size: 18px;
+  font-weight: 400;
+
+  span {
+    color: #e74946;
+    font-size: 18px;
+    font-weight: 500;
+  }
 `;
 
 const Main = styled.div`
-  padding: 80px 60px;
   display: grid;
   justify-content: space-between;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  grid-gap: 20px;
+  padding: 0 200px;
 `;
 
 const BlogBox = styled(motion.div)`
   width: 100%;
   border-radius: 6px;
   cursor: pointer;
-  margin-right: 20px;
   padding: 20px;
-  border: 0.5px solid lightgray;
+  border: 1px solid lightgray;
 `;
 
 const BlogPhoto = styled.div<{ bgPhoto: string }>`
   background-image: url(${(props) => props.bgPhoto});
   background-position: center center;
   background-size: cover;
-  height: 300px;
+  height: 15vw;
   border-radius: 8px;
 `;
 
@@ -110,11 +109,9 @@ const BlogDate = styled.h2`
 
 const Link = styled(motion.div)`
   display: flex;
-  margin: 72px 0;
   justify-content: center;
-  @media (max-width: 800px) {
-    margin: 36px 0;
-  }
+  padding: 100px 0;
+  padding-bottom: 80px;
 `;
 
 const LinkContent = styled(motion.a)`
@@ -124,5 +121,5 @@ const LinkContent = styled(motion.a)`
 `;
 
 const navVar = {
-  hover: { y: -15 },
+  hover: { y: -10 },
 };

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import projectData from "../projectData.json";
-import Header from "./Header";
 import { forwardRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
@@ -34,12 +33,12 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
 
   useEffect(() => {
     controls.start({ y: -100 + scrollY / 40 });
-    controls1.start({ opacity: -20.5 + scrollY / 100 });
-    controls2.start({ opacity: -24.5 + scrollY / 100 });
-    controls3.start({ opacity: -28.5 + scrollY / 100 });
-    controls4.start({ opacity: -32.5 + scrollY / 100 });
-    controls5.start({ opacity: -36.5 + scrollY / 100 });
-    controls6.start({ opacity: -40.5 + scrollY / 100 });
+    controls1.start({ opacity: -21.5 + scrollY / 100 });
+    controls2.start({ opacity: -26 + scrollY / 100 });
+    controls3.start({ opacity: -30.5 + scrollY / 100 });
+    controls4.start({ opacity: -35 + scrollY / 100 });
+    controls5.start({ opacity: -39.5 + scrollY / 100 });
+    controls6.start({ opacity: -44 + scrollY / 100 });
   }, [scrollY, controls]);
 
   return (

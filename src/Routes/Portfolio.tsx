@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import projectData from "../projectData.json";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { languageState } from "../atoms";
 
 import NavigationBar from "../Components/NavigationBar";
-import { useRef } from "react";
 
 import { useRecoilValue } from "recoil";
-import { themeState } from "../atoms";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -17,16 +15,6 @@ const Portfolio = () => {
   const isEng = useRecoilValue(languageState);
 
   const projectMatch: PathMatch<string> | null = useMatch("/:name");
-
-  const mainRef = useRef<HTMLDivElement>(null);
-  const serviceRef = useRef<HTMLDivElement>(null);
-  const portfolioRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const blogRef = useRef<HTMLDivElement>(null);
-  const educationRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const isDark = useRecoilValue(themeState);
 
   const onMainClick = () => {
     navigate("/");
@@ -56,15 +44,14 @@ const Portfolio = () => {
     navigate("/");
   };
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [projectMatch?.params.name]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectMatch?.params.name]);
 
   return (
     <Wrapper>
       <NavigationBar
         onContactClick={onContactClick}
-        onEducationClick={onEducationClick}
         onBlogClick={onBlogClick}
         onExperienceClick={onExperienceClick}
         onPortfolioClick={onPortfolioClick}

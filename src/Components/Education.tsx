@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Header from "./Header";
 import { forwardRef } from "react";
 import { useRecoilValue } from "recoil";
 import { languageState } from "../atoms";

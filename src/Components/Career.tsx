@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Header from "./Header";
 import { useState } from "react";
 import careerData from "../careerData.json";
 import { forwardRef } from "react";
@@ -16,65 +15,68 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Wrapper ref={ref}>
-      <VerHalf />
+      <Title>
+        <span>C</span>areer & <span>E</span>xperience
+      </Title>
 
-      <Half />
-      {/* <Header title="Work Experiences" subTitle="CAREER PATH" isCenter={false} /> */}
-      <Container>
-        <Main>
-          <Title>Career</Title>
-          {/* <SelectColumn>
-            <SelectMenu>
-              {careerData.map((career, index) => (
-                <SelectItem
-                  onClick={() => {
-                    changeCurrent(index);
-                  }}
-                  isCurrent={currentCareer === index ? true : false}
-                >
-                  <SelectTitle> </SelectTitle>
-                  <SelectIcon></SelectIcon>
-                </SelectItem>
-              ))}
-            </SelectMenu>
-          </SelectColumn> */}
-          <CareerColumn>
-            <CareerBox>
-              <CareerTitle>
-                {isEng
-                  ? careerData[currentCareer].subTitle[0]
-                  : careerData[currentCareer].subTitleKor[0]}{" "}
-                in {careerData[currentCareer].title}
-              </CareerTitle>
-              {/* <CareerAddress>
-                {isEng ? careerData[currentCareer].address : careerData[currentCareer].addressKor}
-              </CareerAddress> */}
-              <CareerDuration>{careerData[currentCareer].duration}</CareerDuration>
-              <CareerSkills>
-                {careerData[currentCareer].skills.map((skill) => (
-                  <CareerSkill>{skill}</CareerSkill>
-                ))}
-              </CareerSkills>
-              {/* <Divider /> */}
-              <CareerDescriptions>
-                {isEng
-                  ? careerData[currentCareer].descriptions.map((description) => (
-                      <CareerDescription>
-                        <Bar />
-                        <Contents>{description}</Contents>
-                      </CareerDescription>
-                    ))
-                  : careerData[currentCareer].descriptionsKor.map((description) => (
-                      <CareerDescription>
-                        <Bar />
-                        <Contents>{description}</Contents>
-                      </CareerDescription>
-                    ))}
-              </CareerDescriptions>
-            </CareerBox>
-          </CareerColumn>
-        </Main>
-      </Container>
+      <CareerBox>
+        <CareerTitle>Haechi Labs</CareerTitle>
+        <CareerSubtitle>
+          {isEng
+            ? "Smart Contract Security Audit & Development"
+            : "스마트 컨트랙트 개발 및 보안감사"}
+        </CareerSubtitle>
+        <CareerDuration>Nov 2020 - Dec 2021</CareerDuration>
+
+        {isEng ? (
+          <CareerDescription>
+            Through more than 50 security audits, I have reviewed smart contract code, identified
+            security vulnerabilities, and provided recommended solutions to enhance platform safety.
+            Utilizing Solidity, I have designed and implemented secure and efficient smart contracts
+            for areas such as Defi, NFT, Dapp, ERC20. I have contributed to developing solutions to
+            address security threats by researching security issues across various domains,
+            including the blockchain and smart contract ecosystem.
+          </CareerDescription>
+        ) : (
+          <CareerDescription>
+            50회 이상의 security audit을 통해 스마트 컨트랙트의 코드를 검토하여 보안 취약성을
+            식별하고, 이를 해결하기 위한 권장 사항을 제공하여 플랫폼의 안전성을 향상시켰습니다.
+            Solidity를 활용하여 Defi, NFT, Dapp, ERC20 등 안전하고 효율적인 스마트 컨트랙트를
+            설계하고 구현하였습니다. 블록체인과 스마트 컨트랙트 생태계를 포함하여 다양한 분야에
+            발생하는 보안 문제에 대한 연구를 통해 보안 위협에 대응하는 솔루션을 개발하는데
+            기여하였습니다.
+          </CareerDescription>
+        )}
+      </CareerBox>
+      <CareerBox>
+        <CareerTitle> {isEng ? "Seoul National University" : "서울대학교"}</CareerTitle>
+        <CareerSubtitle>
+          {isEng ? "Bachelor's degree - Electrical and Computer Engineering" : "전기정보공학 학사"}
+        </CareerSubtitle>
+        <CareerDuration>Mar 2015 - Feb 2021</CareerDuration>
+
+        {isEng ? (
+          <CareerDescription>
+            I specialized in software engineering while majoring in Electrical and Computer
+            Engineering at Seoul National University. In addition to traditional electrical,
+            electronic, and information technologies, I acquired knowledge in software development.
+            I learned various programming languages such as C, C++, Java, Python, and Javascript. I
+            also studied foundational concepts in software engineering, including data structures,
+            algorithms, computer architecture, and networks. Furthermore, I explored modern software
+            technologies such as blockchain, machine learning, and data communication, enabling me
+            to integrate diverse software skills effectively.
+          </CareerDescription>
+        ) : (
+          <CareerDescription>
+            서울대학교 전기정보 공학 중 소프트웨어 공학을 세부전공하여 전통적인 전기, 전자 및 정보
+            기술에 더해 소프트웨어 개발과 관련된 지식을 쌓았습니다. C, C++, Java, Python, Javascript
+            등 다양한 프로그래밍 언어와 더불어 자료구조, 알고리즘, 컴퓨터 구조, 네트워크 등
+            소프트웨어 공학의 기초를 학습하였습니다. 또한 블록체인, 머신러닝, 데이터 통신 등
+            현대적인 소프트웨어 기술을 학습하여 다양한 소프트웨어 기술을 통합적으로 활용할 수
+            있습니다.
+          </CareerDescription>
+        )}
+      </CareerBox>
     </Wrapper>
   );
 });
@@ -84,103 +86,50 @@ export default Career;
 const Wrapper = styled.div`
   width: 100%;
   color: ${(props) => props.theme.word.main};
-`;
-
-const Half = styled.div`
-  width: 50%;
-  height: 0;
-  border-top: 0.5px solid gray;
-`;
-
-const VerHalf = styled.div`
-  width: 50%;
-  height: 600px;
-  border-right: 0.5px solid gray;
-`;
-
-const Container = styled.div`
-  padding-left: 200px;
-  border-left: 0.5px solid gray;
+  padding-top: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h2`
-  font-size: 32px;
-  font-weight: 500;
-  padding-left: 80px;
-  padding-top: 200px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 80px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #e74946;
-`;
+  font-size: 18px;
+  margin-bottom: 100px;
+  font-weight: 400;
 
-const Main = styled.div`
-  border-left: 0.5px solid gray;
-  padding-top: 100px;
-  padding-bottom: 200px;
+  span {
+    color: #e74946;
+    font-size: 18px;
+    font-weight: 500;
+  }
 `;
 
 const CareerBox = styled.div`
-  color: ${(props) => props.theme.word.main};
-  padding: 0 80px;
-  width: 100%;
+  width: 30vw;
+  margin-bottom: 40px;
 `;
 
 const CareerTitle = styled.h2`
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 400;
-  margin-bottom: 40px;
   word-break: normal;
 `;
 
-const CareerDuration = styled.h2`
-  font-size: 14px;
-  margin-bottom: 40px;
+const CareerSubtitle = styled.h2`
+  font-size: 16px;
   font-weight: 400;
   color: gray;
 `;
 
-const CareerDescription = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+const CareerDuration = styled.h2`
+  font-size: 14px;
+  font-weight: 300;
+  color: gray;
   margin-bottom: 20px;
 `;
 
-const CareerDescriptions = styled.div`
-  width: 100%;
-`;
-
-const Contents = styled.h2`
+const CareerDescription = styled.div`
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
-  color: ${(props) => props.theme.word.sub};
-`;
-
-const CareerColumn = styled.div``;
-
-const Bar = styled.div`
-  background-color: ${(props) => props.theme.word.sub};
-  width: 5px;
-  height: 5px;
-  border-radius: 100px;
-  margin-right: 15px;
-`;
-
-const CareerSkills = styled.div`
-  display: flex;
-  margin-bottom: 40px;
-`;
-
-const CareerSkill = styled.div`
-  font-size: 12px;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-right: 10px;
-  border: 1px solid gray;
-  color: ${(props) => props.theme.word.sub};
-  font-weight: 500;
+  line-height: 2;
 `;
