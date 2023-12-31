@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     line-height: 1.5;
     color: black;
-
+    word-break: keep-all;
     scroll-behavior:smooth;
 
     @font-face {
@@ -38,12 +38,6 @@ const GlobalStyle = createGlobalStyle`
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
       unicode-range: U+1100-11FF,U+3130-318F,U+A960-A97F,U+AC00-D7A3,U+D7B0-D7FF
     }
-
-    -webkit-touch-callout: none;
-     user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     -webkit-user-select: none;
 
     @media (max-width: 1000px) {
       font-size: 12px;

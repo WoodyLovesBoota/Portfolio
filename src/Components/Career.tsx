@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState } from "react";
-import careerData from "../careerData.json";
 import { forwardRef } from "react";
 import { useRecoilValue } from "recoil";
 import { languageState } from "../atoms";
@@ -39,12 +38,9 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
           </CareerDescription>
         ) : (
           <CareerDescription>
-            50회 이상의 security audit을 통해 스마트 컨트랙트의 코드를 검토하여 보안 취약성을
-            식별하고, 이를 해결하기 위한 권장 사항을 제공하여 플랫폼의 안전성을 향상시켰습니다.
-            Solidity를 활용하여 Defi, NFT, Dapp, ERC20 등 안전하고 효율적인 스마트 컨트랙트를
-            설계하고 구현하였습니다. 블록체인과 스마트 컨트랙트 생태계를 포함하여 다양한 분야에
-            발생하는 보안 문제에 대한 연구를 통해 보안 위협에 대응하는 솔루션을 개발하는데
-            기여하였습니다.
+            50회 이상의 security audit을 통해 코드의 보안 취약성을 식별하고, 이를 해결하여 플랫폼의
+            안전성을 향상시켰습니다. 또한 Solidity를 활용하여 Defi, NFT, Dapp, ERC20 등 다양한
+            분야의 스마트 컨트랙트를 설계하고 구현하였습니다.
           </CareerDescription>
         )}
       </CareerBox>
@@ -68,12 +64,10 @@ const Career = forwardRef<HTMLDivElement>((props, ref) => {
           </CareerDescription>
         ) : (
           <CareerDescription>
-            서울대학교 전기정보 공학 중 소프트웨어 공학을 세부전공하여 전통적인 전기, 전자 및 정보
-            기술에 더해 소프트웨어 개발과 관련된 지식을 쌓았습니다. C, C++, Java, Python, Javascript
-            등 다양한 프로그래밍 언어와 더불어 자료구조, 알고리즘, 컴퓨터 구조, 네트워크 등
-            소프트웨어 공학의 기초를 학습하였습니다. 또한 블록체인, 머신러닝, 데이터 통신 등
-            현대적인 소프트웨어 기술을 학습하여 다양한 소프트웨어 기술을 통합적으로 활용할 수
-            있습니다.
+            서울대학교 전기정보 공학부 재학 중 소프트웨어 공학을 세부전공하여 소프트웨어 개발과
+            관련된 지식을 쌓았습니다. C, C++, Java, Python, Javascript 등 다양한 프로그래밍 언어를
+            학습하였고, 자료구조, 알고리즘, 컴퓨터 구조, 네트워크 등 소프트웨어 공학의 기초와 더불어
+            블록체인, 머신러닝, 데이터 통신 등 현대적인 소프트웨어 기술을 학습하였습니다.
           </CareerDescription>
         )}
       </CareerBox>

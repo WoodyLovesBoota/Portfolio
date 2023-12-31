@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import projectData from "../projectData.json";
 import { useEffect, useRef } from "react";
-import { languageState } from "../atoms";
+import { languageState, projectState } from "../atoms";
 
 import NavigationBar from "../Components/NavigationBar";
 
@@ -13,6 +12,8 @@ const Portfolio = () => {
   const navigate = useNavigate();
 
   const isEng = useRecoilValue(languageState);
+
+  const projectData = useRecoilValue(projectState);
 
   const projectMatch: PathMatch<string> | null = useMatch("/:name");
 
@@ -67,106 +68,98 @@ const Portfolio = () => {
         onServiceClick={onServiceClick}
         onMainClick={onMainClick}
       />
-      {projectMatch && (
-        <Container>
-          <TitleRow>
-            <Title>{projectMatch.params.name}</Title>
-            <TitleImage
-              bgphoto={`url(${
-                projectData[
-                  projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                ].image[0]
-              })`}
-            />
-          </TitleRow>
-          <DescriptionRow>
-            <Skills>
-              <SkillTitle>Skill</SkillTitle>
-              {projectData[
-                projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-              ].skill.map((skill) => (
-                <Skill>{skill}</Skill>
-              ))}
-            </Skills>
-            <Description>
-              {isEng
-                ? projectData[
-                    projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                  ].detailDesc
-                : projectData[
-                    projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                  ].detailDescKor}
-              <Buttons>
-                <Button
-                  variants={hoverVar}
-                  whileHover={"hover"}
-                  href={
-                    projectData[
-                      projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                    ].demo
-                  }
-                  target="_blank"
-                >
-                  See the website
-                </Button>
-                <Button
-                  variants={hoverVar}
-                  whileHover={"hover"}
-                  href={
-                    projectData[
-                      projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                    ].gibhub
-                  }
-                  target="_blank"
-                >
-                  See code
-                </Button>
-              </Buttons>
-            </Description>
-          </DescriptionRow>
-          <ImageRow>
-            {projectData[
-              projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-            ].image
-              .slice(1)
-              .map((e, index) => (
-                <MainImage src={e} />
-              ))}
-          </ImageRow>
-          <PageButtons>
-            <PageButton
-              onClick={() => {
-                navigate(
-                  `/${
-                    projectData[
-                      (projectData.findIndex((e) => e.projectName === projectMatch.params.name) -
-                        1) %
-                        projectData.length
-                    ].projectName
-                  }`
-                );
-              }}
-            >
-              Prev
-            </PageButton>
-            <PageButton
-              onClick={() => {
-                navigate(
-                  `/${
-                    projectData[
-                      (projectData.findIndex((e) => e.projectName === projectMatch.params.name) +
-                        1) %
-                        projectData.length
-                    ].projectName
-                  }`
-                );
-              }}
-            >
-              Next
-            </PageButton>
-          </PageButtons>
-        </Container>
-      )}
+      {projectMatch &&
+        projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)] && (
+          <Container>
+            <TitleRow>
+              <Title>{projectMatch.params.name}</Title>
+              <TitleImage
+                bgphoto={`url(${
+                  projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                    .image[0]
+                })`}
+              />
+            </TitleRow>
+            <DescriptionRow>
+              <Skills>
+                <SkillTitle>Skill</SkillTitle>
+                {projectData[
+                  projectData.findIndex((e) => e.name === projectMatch.params.name)
+                ].skill.map((skill) => (
+                  <Skill>{skill}</Skill>
+                ))}
+              </Skills>
+              <Description>
+                {isEng
+                  ? projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                      .detail
+                  : projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                      .detailKor}
+                <Buttons>
+                  <Button
+                    variants={hoverVar}
+                    whileHover={"hover"}
+                    href={
+                      projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                        .demo
+                    }
+                    target="_blank"
+                  >
+                    See the website
+                  </Button>
+                  <Button
+                    variants={hoverVar}
+                    whileHover={"hover"}
+                    href={
+                      projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                        .github
+                    }
+                    target="_blank"
+                  >
+                    See code
+                  </Button>
+                </Buttons>
+              </Description>
+            </DescriptionRow>
+            <ImageRow>
+              {projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)].image
+                .slice(1)
+                .map((e, index) => (
+                  <MainImage src={e} />
+                ))}
+            </ImageRow>
+            <PageButtons>
+              <PageButton
+                onClick={() => {
+                  navigate(
+                    `/${
+                      projectData[
+                        (projectData.findIndex((e) => e.name === projectMatch.params.name) - 1) %
+                          projectData.length
+                      ].name
+                    }`
+                  );
+                }}
+              >
+                Prev
+              </PageButton>
+              <PageButton
+                onClick={() => {
+                  navigate(
+                    `/${
+                      projectData[
+                        (projectData.findIndex((e) => e.name === projectMatch.params.name) + 1) %
+                          projectData.length
+                      ].name
+                    }`
+                  );
+                }}
+              >
+                Next
+              </PageButton>
+            </PageButtons>
+          </Container>
+        )}
     </Wrapper>
   );
 };

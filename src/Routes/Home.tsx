@@ -1,16 +1,11 @@
 import styled from "styled-components";
 import MainContent from "../Components/MainContent";
 import Projects from "../Components/Projects";
-import Education from "../Components/Education";
-import Services from "../Components/Services";
-import Career from "../Components/Career";
 import Blog from "../Components/Blog";
 import NavigationBar from "../Components/NavigationBar";
 import { useRef } from "react";
 import Contact from "../Components/Contact";
 import Footer from "../Components/Footer";
-import { useRecoilValue } from "recoil";
-import { themeState } from "../atoms";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -20,8 +15,6 @@ const Home = () => {
   const blogRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-
-  const isDark = useRecoilValue(themeState);
 
   const onMainClick = () => {
     mainRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -62,12 +55,10 @@ const Home = () => {
         onMainClick={onMainClick}
       />
       <MainContent ref={mainRef} />
-      <Services ref={serviceRef} />
       <Projects ref={portfolioRef} />
-      <Career ref={experienceRef} />
       <Blog ref={blogRef} />
       <Contact ref={contactRef} />
-      <Footer />
+      <Footer onMainClick={onMainClick} />
     </Wrapper>
   );
 };

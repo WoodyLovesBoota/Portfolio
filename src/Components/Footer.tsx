@@ -1,56 +1,92 @@
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBlog } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useRecoilValue } from "recoil";
-import { themeState } from "../atoms";
 
-const Footer = () => {
-  const isDark = useRecoilValue(themeState);
+import { ReactComponent as Arrow } from "../assets/arrowsmalltop.svg";
+import { motion } from "framer-motion";
 
+const Footer = ({ onMainClick }: INavProps) => {
   return (
     <Wrapper>
-      <FooterTitleRow>
-        <Logo>YTW.</Logo>
-        <RestTitleContent>ABOUT</RestTitleContent>
-        <RestTitleContent>WORK</RestTitleContent>
-        <RestTitleContent>LINK</RestTitleContent>
-      </FooterTitleRow>
       <FooterMainRow>
-        <FirstContent>woodylovesboota@gmail.com</FirstContent>
-        <RestContent href="https://github.com/WoodyLovesBoota/TravelGo" target="_blank">
-          View Code
-        </RestContent>
-        <RestContent href="https://woodylovesboota.xyz/" target="_blank">
-          Portfolio
-        </RestContent>
-        <RestContent target="_blank" href="https://www.instagram.com/tttaeook/">
-          Instagram
-        </RestContent>
-      </FooterMainRow>
-      <FooterMainRow>
-        <FirstContent>010-2363-7164</FirstContent>
-        <RestContent></RestContent>
-        <RestContent target="_blank" href="https://github.com/WoodyLovesBoota">
-          Github
-        </RestContent>
-        <RestContent target="_blank" href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/">
-          LinkedIn
-        </RestContent>
-      </FooterMainRow>
-      <FooterMainRow>
-        <FirstContent></FirstContent>
-        <RestContent></RestContent>
-        <RestContent target="_blank" href="https://velog.io/@woodylovescoding">
-          Personal Blog
-        </RestContent>
-        <RestContent></RestContent>
-      </FooterMainRow>
-      <FooterMainRow>
-        <FirstContent>@ 2023 YangTaeWook All Rights Reserved.</FirstContent>
-        <RestContent></RestContent>
-        <RestContent></RestContent>
-        <RestContent></RestContent>
+        <FirstContent>@ YANGTAEWOOK 2023.</FirstContent>
+        <Center>
+          <RestContent
+            variants={hoverTargetBar}
+            animate="animate"
+            whileHover={"hover"}
+            href="https://github.com/WoodyLovesBoota/TravelGo"
+            target="_blank"
+          >
+            GITHUB <UnderBar variants={hoverUnderVar} />
+          </RestContent>
+          <RestContent
+            variants={hoverTargetBar}
+            animate="animate"
+            whileHover={"hover"}
+            target="_blank"
+            href="https://velog.io/@woodylovescoding"
+          >
+            BLOG <UnderBar variants={hoverUnderVar} />
+          </RestContent>
+          <RestContent
+            variants={hoverTargetBar}
+            animate="animate"
+            whileHover={"hover"}
+            target="_blank"
+            href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/"
+          >
+            LINKEDIN
+            <UnderBar variants={hoverUnderVar} />
+          </RestContent>
+        </Center>
+        <Button onClick={onMainClick}>
+          <Ment variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
+            BACK TO TOP
+            <UnderBar variants={hoverUnderVar} />
+          </Ment>
+
+          <Circle variants={hoverVar} animate="animate" whileHover={"hover"}>
+            {/* <Arrow fill="white" /> */}
+            <motion.svg
+              width="31"
+              height="31"
+              viewBox="0 0 31 31"
+              fill="transparent"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="0.5" y="0.5" width="30" height="30" rx="15" stroke="#000000" />
+              <g clip-path="url(#clip0_36_118)">
+                <motion.path
+                  variants={svgVar}
+                  d="M7.5 8C7.5 5.46386 9.33911 3.5 11.5 3.5C13.6609 3.5 15.5 5.46386 15.5 8C15.5 10.5361 13.6609 12.5 11.5 12.5C9.33911 12.5 7.5 10.5361 7.5 8Z"
+                  stroke="#ffffff"
+                />
+                <motion.path
+                  variants={svgVar}
+                  d="M15.5 8C15.5 5.46386 17.3391 3.5 19.5 3.5C21.6609 3.5 23.5 5.46386 23.5 8C23.5 10.5361 21.6609 12.5 19.5 12.5C17.3391 12.5 15.5 10.5361 15.5 8Z"
+                  stroke="#ffffff"
+                />
+                <motion.line
+                  x1="15.5"
+                  y1="23"
+                  x2="15.5"
+                  y2="8"
+                  stroke="#ffffff"
+                  variants={svgVar}
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_36_118">
+                  <rect
+                    width="9"
+                    height="15"
+                    fill="transparent"
+                    transform="translate(20 23) rotate(-180)"
+                  />
+                </clipPath>
+              </defs>
+            </motion.svg>
+          </Circle>
+        </Button>
       </FooterMainRow>
     </Wrapper>
   );
@@ -59,51 +95,88 @@ const Footer = () => {
 export default Footer;
 
 const Wrapper = styled.div`
-  background-color: lightgray;
-  padding: 50px 216px;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
 `;
 
-const FooterTitleRow = styled.div`
+const Center = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
 `;
 
 const FirstContent = styled.h1`
-  width: 375px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
-  font-family: "Helvetica Neue", sans-serif;
+  color: white;
 `;
 
-const Logo = styled.h1`
-  width: 375px;
-  font-size: 24px;
+const RestContent = styled(motion.a)`
+  margin: 0 20px;
+  font-size: 16px;
   font-weight: 400;
-  font-family: "Archivo Black";
-`;
-
-const RestTitleContent = styled.h2`
-  width: 216px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
-  font-family: "Helvetica Neue", sans-serif;
-`;
-
-const RestContent = styled.a`
-  width: 216px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  font-family: "Helvetica Neue", sans-serif;
   cursor: pointer;
+  color: white;
 `;
 
 const FooterMainRow = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 1440px;
 `;
+
+const Button = styled.button`
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Circle = styled(motion.div)`
+  border-radius: 100px;
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+`;
+
+const UnderBar = styled(motion.div)`
+  background-color: white;
+  width: 100%;
+  height: 1px;
+`;
+
+const Ment = styled(motion.h2)`
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+`;
+
+interface INavProps {
+  onMainClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const hoverVar = {
+  animate: { backgroundColor: "#000000", fill: "#ffffff" },
+  hover: { backgroundColor: "#ffffff", fill: "#000000" },
+};
+
+const svgVar = {
+  animate: { stroke: "#ffffff" },
+  hover: { stroke: "#000000" },
+};
+
+const hoverTargetBar = {
+  animate: {},
+  hover: {},
+};
+
+const hoverUnderVar = {
+  animate: { width: 0 },
+  hover: { width: "100%" },
+};
