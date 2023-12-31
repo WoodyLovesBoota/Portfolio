@@ -125,6 +125,7 @@ const ToggleHeader = styled(motion.div)`
   z-index: 2;
   cursor: pointer;
   padding: 36px 0;
+  background-color: black;
 `;
 
 const ToggleButton = styled.div`
@@ -229,13 +230,13 @@ const CareerName = styled.h2`
 const toggleVar = {
   initial: { height: "0px" },
   animate: { height: "auto" },
-  exit: { height: "0px", transition: {} },
+  exit: { height: "0px", transition: { delay: 0.1 } },
 };
 
 const contentVar = {
   initial: { y: 10, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: {} },
-  exit: {},
+  animate: { y: 0, opacity: 1, transition: { delay: 0.3 } },
+  exit: { opacity: 0, y: -10 },
 };
 
 const hoverTargetVar = {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as Arrow } from "../assets/arrowsmalltop.svg";
 import { motion } from "framer-motion";
 
-const Footer = ({ onMainClick }: INavProps) => {
+const Footer = () => {
   return (
     <Wrapper>
       <FooterMainRow>
@@ -38,7 +38,11 @@ const Footer = ({ onMainClick }: INavProps) => {
             <UnderBar variants={hoverUnderVar} />
           </RestContent>
         </Center>
-        <Button onClick={onMainClick}>
+        <Button
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
           <Ment variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
             BACK TO TOP
             <UnderBar variants={hoverUnderVar} />
@@ -100,10 +104,21 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 150px 0;
+  @media (max-width: 745px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 const Center = styled.div`
   display: flex;
+  @media (max-width: 745px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 50px 0;
+  }
 `;
 
 const FirstContent = styled.h1`
@@ -118,12 +133,24 @@ const RestContent = styled(motion.a)`
   font-weight: 400;
   cursor: pointer;
   color: white;
+  @media (max-width: 745px) {
+    margin: 5px 0;
+  }
 `;
 
 const FooterMainRow = styled.div`
   display: flex;
   justify-content: space-between;
   width: 1440px;
+  @media (max-width: 1500px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+  @media (max-width: 745px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 const Button = styled.button`

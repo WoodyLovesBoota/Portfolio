@@ -58,7 +58,7 @@ const Home = () => {
       <Projects ref={portfolioRef} />
       <Blog ref={blogRef} />
       <Contact ref={contactRef} />
-      <Footer onMainClick={onMainClick} />
+      <Footer />
     </Wrapper>
   );
 };
