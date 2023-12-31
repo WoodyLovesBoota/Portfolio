@@ -1,5 +1,17 @@
 [
   {
+    "projectName": "TravelGo",
+    "skill": ["React", "Typescript", "Open API", "React Query", "State Management"],
+    "image": [
+      "https://images.unsplash.com/photo-1555371363-27a37f8e8c46?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "demo": "https://main--soft-taffy-a6cbf8.netlify.app/",
+    "gibhub": "https://github.com/WoodyLovesBoota/TravelGo",
+    "detailDesc": "TravelGo is a web application designed to assist in the travel preparation process. Developed using React and Typescript, it incorporates the Google Maps API. Various libraries such as Recoil, React Query, and Framer were utilized. The emphasis during implementation was on efficiently managing a large amount of data, particularly in the process of fetching data from multiple APIs.",
+    "detailDescKor": "TravelGo는 여행을 준비하는 과정에서 도움을 주는 웹 애플리케이션 입니다. Google Maps API를 이용하였으며 React와 Typescript로 개발하였습니다. Recoil과 React Query, Framer 등 다양한 라이브러리를 활용하였습니다. 특히 다수의 API를 fetch 하는 과정에서 다량의 데이터를 효율적으로 관리하는것에 중점을 두고 구현하였습니다",
+    "subtitle": "Make your own trip."
+  },
+  {
     "projectName": "Alcoholism",
     "skill": ["React", "Typescript", "React Query", "Responsive design", "Animation"],
     "image": [
@@ -14,18 +26,7 @@
     "detailDescKor": "ALCOHOLISM은 오픈 API를 활용하여 칵테일에 대한 다양한 정보를 제공하는 웹 어플리케이션입니다. React와 TypeScript를 활용하여 개발되었으며, 프로젝트 진행 과정에서 디자인적 요소에 특별한 주의를 기울여 사용자 경험을 향상시켰습니다. API fetch를 최소화하면서도 사용자들에게 풍부한 정보를 제공하기 위해 노력하였고, 애니메이션적 효과를 통해 동적인 요소를 추가하여 더욱 효율적이면서 매력적인 어플리케이션을 구현하였습니다. 마지막으로 반응형 디자인을 통해 디바이스의 크기에 따라 변하는 UI를 구축하였습니다.",
     "subtitle": "Provides information about coctails."
   },
-  {
-    "projectName": "TravelGo",
-    "skill": ["React", "Typescript", "Open API", "React Query", "State Management"],
-    "image": [
-      "https://images.unsplash.com/photo-1555371363-27a37f8e8c46?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    ],
-    "demo": "https://main--soft-taffy-a6cbf8.netlify.app/",
-    "gibhub": "https://github.com/WoodyLovesBoota/TravelGo",
-    "detailDesc": "BEEE is a project implementing a React.ts-based web application to assist with travel scheduling. After learning React and various library usage through lectures and several projects, I independently undertook the project's planning, design, and development. I practiced component modularization, Virtual DOM, and state management. Furthermore, I developed the project by incorporating various libraries, including React Hook, React Query, Recoil, Styled-Components, and React Router.",
-    "detailDescKor": "TravelGo는 여행을 준비하는 과정에서 도움을 주는 웹 애플리케이션 입니다. Google Maps API를 이용하였으며 React와 Typescript로 개발하였습니다. Recoil과 React Query, Framer 등 다양한 라이브러리를 활용하였습니다. 특히 다수의 API를 fetch 하는 과정에서 다량의 데이터를 효율적으로 관리하는것에 중점을 두고 구현하였습니다",
-    "subtitle": "Make your own trip."
-  },
+
   {
     "projectName": "Mini Games",
     "skill": ["React", "Typescript", "Animation", "Solution"],
@@ -46,7 +47,7 @@
   },
   {
     "projectName": "Netflix Clone",
-    "skill": ["React", "Typescript"],
+    "skill": ["React", "Typescript", "Open API", "React Query"],
     "image": [
       "https://images.unsplash.com/photo-1512070800540-0d4192faa057?q=80&w=3520&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://firebasestorage.googleapis.com/v0/b/travelgo-6fa6a.appspot.com/o/Netflix%2FNetflix1.webp?alt=media&token=cedf5903-e350-4a46-ab96-d6530b2fb96a",
@@ -60,21 +61,6 @@
     "subtitle": "Cloning the Netflix website."
   },
 
-  {
-    "projectName": "Planner",
-    "skill": ["HTML", "CSS", "Javascript"],
-    "image": [
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner01.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner02.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner03.png?raw=true",
-      "https://github.com/WoodyLovesBoota/Portfolio-Images/blob/main/Planner/planner04.png?raw=true"
-    ],
-    "demo": "https://woodylovesboota.github.io/Planner",
-    "gibhub": "https://github.com/WoodyLovesBoota/Planner",
-    "detailDesc": "Planner is a composite result of several simple projects, showcasing fundamental Front-End development using HTML, CSS, and Javascript. It incorporates responsive web design, and explores modularity by utilizing various files to structure the project. Additionally, it implements functionality to fetch information from external APIs, allowing the integration of diverse features and data to create a web application.",
-    "detailDescKor": "Planner는 간단한 여러 프로젝트를 통합하여 만든 결과물입니다. HTML, CSS, Javascript를 이용한 Front-End 개발의 기본 동작을 습득하고, 이후의 반응형 웹 디자인 등 실험적인 시도를 담아낸 프로젝트입니다. 다양한 파일을 활용하여 하나의 프로젝트를 구성하는 모듈화를 시도하였습니다. 또한, 개발자 또는 사용자가 정보를 입력하는 것이 아닌 API를 활용하여 외부에서 정보를 받아오는 기능을 구현하였고 이를 통해 다양한 기능과 정보를 결합하여 웹 애플리케이션을 구현했습니다.",
-    "subtitle": "Elevate your browsing with daily inspiration."
-  },
   {
     "projectName": "Calendar",
     "skill": ["HTML", "CSS", "Javascript"],

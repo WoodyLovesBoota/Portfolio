@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import projectData from "../projectData.json";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { languageState } from "../atoms";
 
 import NavigationBar from "../Components/NavigationBar";
@@ -16,6 +16,14 @@ const Portfolio = () => {
 
   const projectMatch: PathMatch<string> | null = useMatch("/:name");
 
+  const mainRef = useRef<HTMLDivElement>(null);
+  const serviceRef = useRef<HTMLDivElement>(null);
+  const portfolioRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const blogRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
   const onMainClick = () => {
     navigate("/");
   };
@@ -26,6 +34,7 @@ const Portfolio = () => {
 
   const onPortfolioClick = () => {
     navigate("/");
+    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const onExperienceClick = () => {
@@ -80,11 +89,13 @@ const Portfolio = () => {
               ))}
             </Skills>
             <Description>
-              {
-                projectData[
-                  projectData.findIndex((e) => e.projectName === projectMatch.params.name)
-                ].detailDescKor
-              }
+              {isEng
+                ? projectData[
+                    projectData.findIndex((e) => e.projectName === projectMatch.params.name)
+                  ].detailDesc
+                : projectData[
+                    projectData.findIndex((e) => e.projectName === projectMatch.params.name)
+                  ].detailDescKor}
               <Buttons>
                 <Button
                   variants={hoverVar}
@@ -264,7 +275,7 @@ const PageButtons = styled.div`
 const PageButton = styled.button`
   background-color: transparent;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   cursor: pointer;
 `;
 

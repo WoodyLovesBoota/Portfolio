@@ -23,13 +23,21 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
     font-size: 16px;
     font-weight: 300;
-    font-family: Inter, sans-serif;
+    font-family: 'SUIT-Regular', Inter, sans-serif;
     vertical-align: baseline;
     font-weight: 300;
     line-height: 1.5;
     color: black;
 
     scroll-behavior:smooth;
+
+    @font-face {
+      font-family: 'SUIT-Regular';
+      font-weight: normal;
+      font-weight: 400;
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+      unicode-range: U+1100-11FF,U+3130-318F,U+A960-A97F,U+AC00-D7A3,U+D7B0-D7FF
+    }
 
     -webkit-touch-callout: none;
      user-select: none;

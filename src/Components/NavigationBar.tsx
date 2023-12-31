@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(9.8px);
   @media (max-width: 800px) {
