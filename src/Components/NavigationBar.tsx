@@ -187,6 +187,9 @@ const Wrapper = styled.div`
   @media (max-width: 745px) {
     padding: 0 20px;
   }
+  @media (max-width: 745px) {
+    height: 65px;
+  }
 `;
 
 const ToggleList = styled.div`
@@ -214,7 +217,6 @@ const LangBar = styled.h2`
 const LangChoicedBar = styled.h2`
   font-size: 16px;
   line-height: 2;
-  /* height: 40px; */
   background-color: black;
   display: flex;
   align-items: center;
@@ -254,6 +256,9 @@ const Content = styled(motion.button)`
   cursor: pointer;
   margin-right: 30px;
   transform-origin: center left;
+  @media (max-width: 745px) {
+    display: none;
+  }
 `;
 
 const Ment = styled.h2`

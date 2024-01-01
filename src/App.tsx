@@ -12,7 +12,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { firebaseDB } from "./firebase/firebase";
 
 const App = () => {
-  const mobileMatch = useMediaQuery("(max-width:800px)");
+  const mobileMatch = useMediaQuery("(max-width:745px)");
   const midMatch = useMediaQuery("(max-width:1200px)");
   const [screen, setScreen] = useRecoilState(screenState);
   const [projectData, setProjectData] = useRecoilState(projectState);

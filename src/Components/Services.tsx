@@ -9,31 +9,11 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Wrapper ref={ref}>
-      {isEng ? (
-        <Main>
-          <ServiceTitle>Front-End</ServiceTitle>
-          <ServiceDescription>
-            I can create web interfaces using HTML, CSS, and JavaScript. I have experience using
-            front-end frameworks like React to write modularized code through a component-based
-            architecture. I am familiar with core concepts such as state management and routing,
-            allowing me to develop web applications effectively.
-          </ServiceDescription>
-
-          <ServiceTitle>Block-Chain</ServiceTitle>
-          <ServiceDescription>
-            I have the ability to design and implement smart contracts on major platforms like
-            Ethereum using the Solidity language. Leveraging experience in smart contract security
-            audits, I thoroughly review code to develop secure and efficient protocols. I can
-            contribute to enhancing project stability through my expertise.
-          </ServiceDescription>
-        </Main>
-      ) : (
-        <Main>
-          <ToggleBox title={0} />
-          <ToggleBox title={1} />
-          <ToggleBox title={2} />
-        </Main>
-      )}
+      <Main>
+        <ToggleBox title={0} />
+        <ToggleBox title={1} />
+        <ToggleBox title={2} />
+      </Main>
     </Wrapper>
   );
 });

@@ -139,15 +139,15 @@ const SubTitle = styled.h2`
   text-align: right;
   margin-bottom: 150px;
   @media (max-width: 1500px) {
-    font-size: 10.42vw;
+    font-size: 10vw;
   }
 
   @media (max-width: 1080px) {
-    margin-bottom: 80px;
+    margin-top: 80px;
+    font-size: 9.7vw;
   }
   @media (max-width: 745px) {
-    margin-bottom: 40px;
-    font-size: 60px;
+    margin-top: 40px;
   }
 `;
 

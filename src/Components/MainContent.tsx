@@ -1,16 +1,16 @@
 import styled, { keyframes } from "styled-components";
 import { forwardRef, useRef } from "react";
 import { ReactComponent as Bg } from "../assets/bg.svg";
-import { ReactComponent as Github } from "../assets/github.svg";
-import { ReactComponent as Velog } from "../assets/velog.svg";
-import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
 import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import "../assets/fonts/font.css";
 import Services from "./Services";
 import { motion } from "framer-motion";
+import { useRecoilState } from "recoil";
+import { screenState } from "../atoms";
 
 const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
   const serviceRef = useRef<HTMLDivElement>(null);
+  const [screen, setScreen] = useRecoilState(screenState);
 
   const onServiceClick = () => {
     serviceRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -20,7 +20,13 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
     <>
       <Wrapper ref={ref}>
         <Background>
-          <Bg width={"100%"} />
+          <BgWrapper>
+            {screen === 0 ? (
+              <Bg height={60} preserveAspectRatio="none" />
+            ) : (
+              <Bg height={200} preserveAspectRatio="none" />
+            )}
+          </BgWrapper>
           <BlackBox />
         </Background>
         <Main>
@@ -31,7 +37,7 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
               TAEWOOK
             </Title>
             <SubTitle>
-              <h2>FRONT-END WEB DEVELOPER </h2>& BLOCK-CHAIN DEVELOPER
+              <h2>FRONT-END WEB DEVELOPER </h2>& BLOCKCHAIN DEVELOPER
             </SubTitle>
           </Introduce>
           <Links>
@@ -106,6 +112,10 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
+`;
+
+const BgWrapper = styled.div`
+  margin-bottom: -7px;
 `;
 
 const Background = styled.div`

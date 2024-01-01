@@ -170,12 +170,36 @@ const Portfolio = () => {
               <Column>
                 <RowTitle>Project Details</RowTitle>
                 <Skills>
-                  <SkillTitle>Skills:</SkillTitle>
-                  {projectData[
-                    projectData.findIndex((e) => e.name === projectMatch.params.name)
-                  ].skill.map((skill) => (
-                    <Skill>{skill}</Skill>
-                  ))}
+                  <SkillTitle>Date</SkillTitle>
+                  <Skill>
+                    {projectData[
+                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    ].date[0].slice(0, 4) +
+                      "." +
+                      projectData[
+                        projectData.findIndex((e) => e.name === projectMatch.params.name)
+                      ].date[0].slice(4)}
+                  </Skill>
+                  <Divider>~</Divider>
+                  <Skill>
+                    {projectData[
+                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    ].date[1].slice(0, 4) +
+                      "." +
+                      projectData[
+                        projectData.findIndex((e) => e.name === projectMatch.params.name)
+                      ].date[1].slice(4)}
+                  </Skill>
+                </Skills>
+                <Skills>
+                  <SkillTitle>Skills</SkillTitle>
+                  <SkillList>
+                    {projectData[
+                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    ].skill.map((skill) => (
+                      <Skill>{skill}</Skill>
+                    ))}
+                  </SkillList>
                 </Skills>
               </Column>
               <Column>
@@ -307,6 +331,12 @@ const LinktoProject = styled.a`
   cursor: pointer;
 `;
 
+const Divider = styled.h2`
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 10px;
+`;
+
 const Box = styled(motion.div)<{ bgphoto: string }>`
   width: 100%;
   height: 810px;
@@ -361,9 +391,12 @@ const Title = styled.h2`
 
   @media (max-width: 1080px) {
     margin-top: 80px;
+    margin-bottom: 80px;
   }
   @media (max-width: 745px) {
     margin-top: 40px;
+    margin-bottom: 40px;
+
     font-size: 60px;
   }
 `;
@@ -411,12 +444,21 @@ const SkillTitle = styled.h2`
   line-height: 2;
 `;
 
+const SkillList = styled.div`
+  display: flex;
+  width: calc(100% - 150px);
+  overflow-x: auto;
+`;
+
 const Skills = styled.div`
   display: flex;
   padding: 12px 0;
   border-bottom: 1px solid #e6e6e6;
   align-items: center;
   width: 90%;
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
 `;
 
 const Skill = styled.h2`

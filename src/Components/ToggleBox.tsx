@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { ReactComponent as Plus } from "../assets/plus.svg";
 import { ReactComponent as Minus } from "../assets/minus.svg";
 import "../assets/fonts/font.css";
-import Career from "./Career";
+import { useRecoilState } from "recoil";
+import { languageState } from "../atoms";
 
 const ToggleBox = ({ title }: { title: number }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isEng, setIsEng] = useRecoilState(languageState);
 
   return (
     <Wrapper>
@@ -53,19 +55,38 @@ const ToggleBox = ({ title }: { title: number }) => {
                 <ContentToggle>
                   <ContentRow>
                     <ContentTitle>FRONT-END</ContentTitle>
-                    <ContentDescription>
-                      HTML, CSS, JavaScript와 React를 활용하여 웹 프로젝트를 설계하고 개발할 수
-                      있습니다. 컴포넌트 기반 아키텍처를 통해 모듈화된 코드를 작성할 수 있고, 상태
-                      관리와 라우팅 등의 핵심 개념을 활용할 수 있습니다.
-                    </ContentDescription>
+                    {isEng ? (
+                      <ContentDescription>
+                        I can design and develop web projects using HTML, CSS, JavaScript, and
+                        React. I am able to write modular code through a component-based
+                        architecture, and utilize core concepts such as state management and
+                        routing.
+                      </ContentDescription>
+                    ) : (
+                      <ContentDescription>
+                        HTML, CSS, JavaScript와 React를 활용하여 웹 프로젝트를 설계하고 개발할 수
+                        있습니다. 컴포넌트 기반 아키텍처를 통해 모듈화된 코드를 작성할 수 있고, 상태
+                        관리와 라우팅 등의 핵심 개념을 활용할 수 있습니다.
+                      </ContentDescription>
+                    )}
                   </ContentRow>
                   <ContentRow>
                     <ContentTitle>BLOCKCHAIN</ContentTitle>
-                    <ContentDescription>
-                      Solidity 언어를 사용하여 이더리움 플랫폼에서 스마트 컨트랙트를 설계하고 구현할
-                      수 있습니다. 또한 스마트 컨트랙트 보안 감사 분야에서의 경험을 바탕으로 코드를
-                      꼼꼼하게 검토하여 프로젝트의 안정성을 높이는 데 기여할 수 있습니다.
-                    </ContentDescription>
+                    {isEng ? (
+                      <ContentDescription>
+                        I am capable of designing and implementing smart contracts on the Ethereum
+                        platform using the Solidity language. Additionally, based on my experience
+                        in the field of smart contract security audits, I can meticulously review
+                        code to contribute to the stability of the project.
+                      </ContentDescription>
+                    ) : (
+                      <ContentDescription>
+                        Solidity 언어를 사용하여 이더리움 플랫폼에서 스마트 컨트랙트를 설계하고
+                        구현할 수 있습니다. 또한 스마트 컨트랙트 보안 감사 분야에서의 경험을
+                        바탕으로 코드를 꼼꼼하게 검토하여 프로젝트의 안정성을 높이는 데 기여할 수
+                        있습니다.
+                      </ContentDescription>
+                    )}
                   </ContentRow>
                 </ContentToggle>
               ) : title === 1 ? (
@@ -73,12 +94,28 @@ const ToggleBox = ({ title }: { title: number }) => {
                   <ContentRow>
                     <CareerTitle>NOV, 2020 - DEC, 2021</CareerTitle>
                     <CareerBox>
-                      <CareerName>Haechi Labs 스마트 컨트랙트 개발 및 보안감사</CareerName>
-                      <ContentDescription>
-                        50회 이상의 security audit을 통해 코드의 보안 취약성을 식별하고, 이를
-                        해결하여 플랫폼의 안전성을 향상시켰습니다. 또한 Solidity를 활용하여 Defi,
-                        NFT, Dapp, ERC20 등 다양한 분야의 스마트 컨트랙트를 설계하고 구현하였습니다.
-                      </ContentDescription>
+                      {isEng ? (
+                        <CareerName>
+                          Haechi Labs Smart Contract Development and Security Audit
+                        </CareerName>
+                      ) : (
+                        <CareerName>Haechi Labs 스마트 컨트랙트 개발 및 보안감사</CareerName>
+                      )}
+                      {isEng ? (
+                        <ContentDescription>
+                          Through more than 50 security audits, I have identified and resolved code
+                          vulnerabilities, thereby enhancing the platform's security. Additionally,
+                          I have designed and implemented smart contracts in various fields such as
+                          DeFi, NFT, Dapp, and ERC20, utilizing Solidity
+                        </ContentDescription>
+                      ) : (
+                        <ContentDescription>
+                          50회 이상의 security audit을 통해 코드의 보안 취약성을 식별하고, 이를
+                          해결하여 플랫폼의 안전성을 향상시켰습니다. 또한 Solidity를 활용하여 Defi,
+                          NFT, Dapp, ERC20 등 다양한 분야의 스마트 컨트랙트를 설계하고
+                          구현하였습니다.
+                        </ContentDescription>
+                      )}
                     </CareerBox>
                   </ContentRow>
                 </ContentToggle>
@@ -87,14 +124,34 @@ const ToggleBox = ({ title }: { title: number }) => {
                   <ContentRow>
                     <CareerTitle>MAR, 2015 - FEB, 2021</CareerTitle>
                     <CareerBox>
-                      <CareerName>서울대학교 공과대학 전기정보공학 학사</CareerName>
-                      <ContentDescription>
-                        서울대학교 전기정보 공학부 재학 중 소프트웨어 공학을 세부전공하여 소프트웨어
-                        개발과 관련된 지식을 쌓았습니다. C, C++, Java, Python, Javascript 등 다양한
-                        프로그래밍 언어를 학습하였고, 자료구조, 알고리즘, 컴퓨터 구조, 네트워크 등
-                        소프트웨어 공학의 기초와 더불어 블록체인, 머신러닝, 데이터 통신 등 현대적인
-                        소프트웨어 기술을 학습하였습니다.
-                      </ContentDescription>
+                      {isEng ? (
+                        <CareerName>
+                          Bachelor of Electrical and Computer Engineering, College of Engineering,
+                          Seoul National University
+                        </CareerName>
+                      ) : (
+                        <CareerName>서울대학교 공과대학 전기정보공학 학사</CareerName>
+                      )}{" "}
+                      {isEng ? (
+                        <ContentDescription>
+                          While studying at the Department of Electrical and Computer Engineering at
+                          Seoul National University, I majored in software engineering to build my
+                          knowledge in software development. I learned various programming languages
+                          such as C, C++, Java, Python, and JavaScript, along with foundational
+                          subjects in software engineering like data structures, algorithms,
+                          computer architecture, and networks. In addition, I also studied modern
+                          software technologies including blockchain, machine learning, and data
+                          communications.
+                        </ContentDescription>
+                      ) : (
+                        <ContentDescription>
+                          서울대학교 전기정보 공학부 재학 중 소프트웨어 공학을 세부전공하여
+                          소프트웨어 개발과 관련된 지식을 쌓았습니다. C, C++, Java, Python,
+                          Javascript 등 다양한 프로그래밍 언어를 학습하였고, 자료구조, 알고리즘,
+                          컴퓨터 구조, 네트워크 등 소프트웨어 공학의 기초와 더불어 블록체인,
+                          머신러닝, 데이터 통신 등 현대적인 소프트웨어 기술을 학습하였습니다.
+                        </ContentDescription>
+                      )}
                     </CareerBox>
                   </ContentRow>
                 </ContentToggle>
@@ -230,13 +287,13 @@ const CareerName = styled.h2`
 const toggleVar = {
   initial: { height: "0px" },
   animate: { height: "auto" },
-  exit: { height: "0px", transition: { delay: 0.1 } },
+  exit: { height: "0px", transition: {} },
 };
 
 const contentVar = {
   initial: { y: 10, opacity: 0 },
-  animate: { y: 0, opacity: 1, transition: { delay: 0.3 } },
-  exit: { opacity: 0, y: -10 },
+  animate: { y: 0, opacity: 1, transition: { delay: 0.2 } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.1 } },
 };
 
 const hoverTargetVar = {

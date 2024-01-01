@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { forwardRef, useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
-import { blogState } from "../atoms";
+import { blogState, languageState } from "../atoms";
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
 const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   const blogData = useRecoilValue(blogState);
+  const isEng = useRecoilValue(languageState);
 
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
@@ -58,7 +59,7 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
                 <a href={blog.link} target="_blank">
                   <BlogPhoto bgPhoto={blog.image} />
                   <BlogContent>
-                    <BlogTitle>{blog.title}</BlogTitle>
+                    <BlogTitle>{isEng ? blog.titleEng : blog.title}</BlogTitle>
                     <BlogDate>{blog.date}</BlogDate>
                   </BlogContent>
                 </a>
