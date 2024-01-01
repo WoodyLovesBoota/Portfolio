@@ -10,7 +10,7 @@ export const projectState = atom<IProjectDate[]>({
   default: [
     {
       name: "",
-      skill: [""],
+      skill: "",
       image: [""],
       demo: "",
       github: "",
@@ -42,7 +42,7 @@ export const screenState = atom<number>({
 
 interface IProjectDate {
   name: string;
-  skill: string[];
+  skill: string;
   image: string[];
   demo: string;
   github: string;

@@ -305,6 +305,7 @@ const ProjectSpanL = styled.span`
   }
   @media (max-width: 745px) {
     text-align: center;
+    font-size: 32px;
   }
 `;
 
@@ -320,6 +321,7 @@ const ProjectSpanR = styled.span`
   }
   @media (max-width: 745px) {
     text-align: center;
+    font-size: 32px;
   }
 `;
 

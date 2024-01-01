@@ -112,10 +112,13 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const BgWrapper = styled.div`
-  margin-bottom: -7px;
+  display: flex;
 `;
 
 const Background = styled.div`
@@ -131,8 +134,10 @@ const Background = styled.div`
 `;
 
 const BlackBox = styled.div`
-  width: 100%;
-  height: calc(100vh - 352px);
+  height: calc(50vh + 200px);
+  @media (max-width: 745px) {
+    height: calc(50vh + 200px);
+  }
   background-color: black;
 `;
 
@@ -146,6 +151,7 @@ const Main = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Introduce = styled.div`

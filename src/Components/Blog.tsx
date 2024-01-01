@@ -37,7 +37,7 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
             animate="animate"
             whileHover={"hover"}
             target="_blank"
-            href="https://github.com/WoodyLovesBoota"
+            href="https://velog.io/@woodylovescoding"
           >
             <Ment variants={hoverOverVar}>
               VISIT BLOG
