@@ -194,7 +194,11 @@ interface INavProps {
 
 const hoverVar = {
   animate: { backgroundColor: "#000000", fill: "#ffffff" },
-  hover: { backgroundColor: "#ffffff", fill: "#000000" },
+  hover: {
+    backgroundColor: "#ffffff",
+    fill: "#000000",
+    transition: { delay: 0.15, type: "spring" },
+  },
 };
 
 const svgVar = {

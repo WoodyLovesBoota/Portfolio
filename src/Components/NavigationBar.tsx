@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
 import { languageState } from "../atoms";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
@@ -17,6 +17,7 @@ const NavigationBar = ({
   blogRef,
 }: INavProps) => {
   const [isEng, setIsEng] = useRecoilState(languageState);
+  const pathLength = useMotionValue(0);
 
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
@@ -70,7 +71,44 @@ const NavigationBar = ({
 
   return (
     <Wrapper istop={scrollY === 0}>
-      <Logo onClick={onMainClick}>YTW.</Logo>
+      <Logo onClick={onMainClick}>
+        <motion.svg
+          width="73"
+          height="20"
+          viewBox="0 0 73 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            initial={{ pathLength: 0, fill: "rgba(0,0,0,0)" }}
+            animate={{ pathLength: 1, fill: "rgba(0,0,0,1)", transition: { duration: 4 } }}
+            d="M7.79115 20V12.7767L0 0H5.07459L8.20982 5.25505L9.94225 8.20982H10.2406L11.9418 5.25505L15.0746 0H20.0602L12.269 12.7767V20H7.79115Z"
+            fill="transparent"
+            stroke={"black"}
+          />
+          <motion.path
+            initial={{ pathLength: 0, fill: "rgba(0,0,0,0)" }}
+            animate={{ pathLength: 1, fill: "rgba(0,0,0,1)", transition: { duration: 4 } }}
+            d="M26.9875 20V4.03032H20.539V0H37.9139V4.03032H31.4653V20H26.9875Z"
+            fill="transparent"
+            stroke={"black"}
+          />
+          <motion.path
+            initial={{ pathLength: 0, fill: "rgba(0,0,0,0)" }}
+            animate={{ pathLength: 1, fill: "rgba(0,0,0,1)", transition: { duration: 4 } }}
+            d="M42.6588 20L38.6309 0H43.8258L45.3489 9.01588L46.0659 15.6136H46.3956L47.6203 9.01588L49.9735 0H56.333L58.691 8.95573L59.9447 15.6136H60.2719L60.9889 8.95573L62.512 0H67.5866L63.5563 20H57.0188L54.6006 11.1333L53.2579 4.8051H52.9596L51.6169 11.1333L49.2276 20H42.6588Z"
+            fill="transparent"
+            stroke={"black"}
+          />
+          <motion.path
+            initial={{ pathLength: 0, fill: "rgba(0,0,0,0)" }}
+            animate={{ pathLength: 1, fill: "rgba(0,0,0,1)", transition: { duration: 4 } }}
+            d="M66.5736 19.9997V14.7158H72.1848V19.9997H66.5736Z"
+            fill="transparent"
+            stroke={"black"}
+          />
+        </motion.svg>
+      </Logo>
       <Contents>
         <Content
           variants={hoverTargetBar}
