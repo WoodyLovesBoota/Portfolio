@@ -80,9 +80,9 @@ const Portfolio = () => {
     setIndex((prev) => (prev === 0 ? prev : prev - 1));
   };
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [projectMatch?.params.name]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectMatch?.params.name]);
 
   useEffect(() => {
     setIndex(0);
