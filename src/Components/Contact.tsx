@@ -1,10 +1,5 @@
 import styled from "styled-components";
 import { forwardRef } from "react";
-
-import { ReactComponent as Bg } from "../assets/bg.svg";
-import { ReactComponent as Github } from "../assets/github.svg";
-import { ReactComponent as Velog } from "../assets/velog.svg";
-import { ReactComponent as LinkedIn } from "../assets/linkedin.svg";
 import { motion } from "framer-motion";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
@@ -14,7 +9,11 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
         <Header>
           <Subject>CONTACT</Subject>
         </Header>
-        <Title>WOODYLOVESBOOTA@GMAIL.COM</Title>
+        <Title>
+          WOODYLOVESBOOTA
+          <br />
+          @GMAIL.COM
+        </Title>
         <SubTitle>010-2363-7164</SubTitle>
 
         <InfoBox>
@@ -115,8 +114,8 @@ const Title = styled.h2`
   font-family: ClashGrotesk-Medium;
   font-size: 150px;
   line-height: 0.9;
-  word-break: break-all;
   letter-spacing: -1.5px;
+  overflow-x: hidden;
   @media (max-width: 1500px) {
     font-size: 10vw;
   }
@@ -149,19 +148,6 @@ const SubTitle = styled.h2`
   @media (max-width: 745px) {
     margin-top: 40px;
   }
-`;
-
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-`;
-
-const InfoRow = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
 `;
 
 const InfoBox = styled.div`

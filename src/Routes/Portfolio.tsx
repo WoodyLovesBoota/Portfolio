@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { languageState, projectState } from "../atoms";
@@ -19,6 +19,8 @@ const Portfolio = () => {
   const experienceRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
+  const [isRight, setIsRight] = useState(1);
 
   const onMainClick = () => {
     navigate("/");
@@ -60,6 +62,8 @@ const Portfolio = () => {
   };
 
   const increaseIndex = () => {
+    setIsRight(1);
+
     projectData &&
       setIndex((prev) =>
         prev ===
@@ -72,6 +76,7 @@ const Portfolio = () => {
   };
 
   const decreaseIndex = () => {
+    setIsRight(-1);
     setIndex((prev) => (prev === 0 ? prev : prev - 1));
   };
 
@@ -125,21 +130,34 @@ const Portfolio = () => {
                 <SlideButtonL onClick={decreaseIndex}>
                   <AngleL />
                 </SlideButtonL>
-                <Card
-                  key={index + "boxImage"}
-                  bgphoto={`url(${
-                    projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
-                      .image[index]
-                  })`}
-                >
-                  <LinktoProject
-                    href={
-                      projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
-                        .demo
-                    }
-                    target="_blank"
-                  ></LinktoProject>
-                </Card>
+                <AnimatePresence custom={isRight}>
+                  {projectData[
+                    projectData.findIndex((e) => e.name === projectMatch.params.name)
+                  ].image.map((e, i) => (
+                    <Card
+                      custom={isRight}
+                      variants={index === i ? cardVar : noVar}
+                      initial={"initial"}
+                      animate={isRight ? "animate" : "animateWhenLeft"}
+                      exit={"exit"}
+                      key={index === i ? i + "boxImage" : i + "no"}
+                      bgphoto={`url(${
+                        projectData[
+                          projectData.findIndex((e) => e.name === projectMatch.params.name)
+                        ].image[i]
+                      })`}
+                    >
+                      <LinktoProject
+                        href={
+                          projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].demo
+                        }
+                        target="_blank"
+                      ></LinktoProject>
+                    </Card>
+                  ))}
+                </AnimatePresence>
                 <SlideButton onClick={increaseIndex}>
                   <AngleR />
                 </SlideButton>
@@ -156,25 +174,52 @@ const Portfolio = () => {
                 <Skills>
                   <SkillTitle>Date:</SkillTitle>
                   <SkillList>
-                    <Skill>
-                      {projectData[
+                    {projectData[
+                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    ].date[0].slice(0, 4) +
+                      "." +
+                      projectData[
                         projectData.findIndex((e) => e.name === projectMatch.params.name)
-                      ].date[0].slice(0, 4) +
-                        "." +
-                        projectData[
-                          projectData.findIndex((e) => e.name === projectMatch.params.name)
-                        ].date[0].slice(4)}
-                    </Skill>
-                    <Divider>~</Divider>
-                    <Skill>
-                      {projectData[
+                      ].date[0].slice(4) ===
+                    projectData[
+                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    ].date[1].slice(0, 4) +
+                      "." +
+                      projectData[
                         projectData.findIndex((e) => e.name === projectMatch.params.name)
-                      ].date[1].slice(0, 4) +
-                        "." +
-                        projectData[
+                      ].date[1].slice(4) ? (
+                      <Skill>
+                        {projectData[
                           projectData.findIndex((e) => e.name === projectMatch.params.name)
-                        ].date[1].slice(4)}
-                    </Skill>
+                        ].date[0].slice(0, 4) +
+                          "." +
+                          projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].date[0].slice(4)}
+                      </Skill>
+                    ) : (
+                      <>
+                        <Skill>
+                          {projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].date[0].slice(0, 4) +
+                            "." +
+                            projectData[
+                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            ].date[0].slice(4)}
+                        </Skill>
+                        <Divider>-</Divider>
+                        <Skill>
+                          {projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].date[1].slice(0, 4) +
+                            "." +
+                            projectData[
+                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            ].date[1].slice(4)}
+                        </Skill>
+                      </>
+                    )}
                   </SkillList>
                 </Skills>
                 <Skills>
@@ -201,7 +246,9 @@ const Portfolio = () => {
                 </Description>
               </Column>
             </DescriptionRow>
-            <Arrow />
+            <BigArrowWrapper>
+              <Arrow />
+            </BigArrowWrapper>
             <Button
               variants={hoverVar}
               animate="animate"
@@ -270,6 +317,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 745px) {
+    padding-top: 120px;
+  }
 `;
 
 const Container = styled.div`
@@ -296,6 +347,7 @@ const SlideButton = styled(motion.div)`
   font-size: 36px;
   color: white;
   cursor: pointer;
+  padding: 0 30px;
 `;
 
 const SlideButtonL = styled(motion.div)`
@@ -307,8 +359,8 @@ const SlideButtonL = styled(motion.div)`
   font-size: 36px;
   color: white;
   cursor: pointer;
-  /* background-color: black; */
   z-index: 1;
+  padding: 0 30px;
 `;
 
 const LinktoProject = styled.a`
@@ -327,6 +379,9 @@ const Box = styled.div`
   width: 100%;
   position: relative;
   height: 810px;
+  overflow: hidden;
+  border-radius: 30px;
+
   @media (max-width: 1500px) {
     height: 56.25vw;
   }
@@ -339,8 +394,9 @@ const Card = styled(motion.div)<{ bgphoto: string }>`
   background-position: center;
   background-size: cover;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.03);
-  border-radius: 30px;
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -408,12 +464,12 @@ const DescriptionRow = styled.div`
   @media (max-width: 1080px) {
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 80px;
+    margin-top: 50px;
   }
 
   @media (max-width: 745px) {
     margin-bottom: 40px;
-    margin-top: 80px;
+    margin-top: 40px;
   }
 `;
 
@@ -428,7 +484,7 @@ const Column = styled.div`
 const RowTitle = styled.h2`
   font-size: 28px;
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
 `;
 
 const SkillTitle = styled.h2`
@@ -453,7 +509,7 @@ const Skills = styled.div`
   padding: 12px 0;
   border-bottom: 1px solid #e6e6e6;
   align-items: center;
-  width: 90%;
+  width: calc(100% - 30px);
   @media (max-width: 1080px) {
     width: 100%;
   }
@@ -473,7 +529,21 @@ const Skill = styled.h2`
 const Description = styled.h2`
   font-size: 16px;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.8;
+`;
+
+const shake = keyframes`
+    0%, 100% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+`;
+
+const BigArrowWrapper = styled.div`
+  animation: ${shake} 1s ease-in-out infinite;
 `;
 
 const Button = styled(motion.a)`
@@ -483,6 +553,7 @@ const Button = styled(motion.a)`
   line-height: 0.9;
   text-transform: uppercase;
   margin-bottom: 100px;
+
   @media (max-width: 1500px) {
     font-size: 10.42vw;
   }
@@ -493,12 +564,16 @@ const Button = styled(motion.a)`
 `;
 
 const PageButtons = styled.div`
-  width: 100%;
+  width: 100vw;
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 100px;
   border-top: 1px solid #e6e6e6;
+  @media (max-width: 745px) {
+    padding: 0 20px;
+  }
 `;
 
 const PageButton = styled.button`
@@ -599,14 +674,17 @@ const hoverUnderBarVar = {
   hover: { width: "100%" },
 };
 
-const rowVariants = {
-  hidden: (custom: number) => ({
-    x: (window.outerWidth + 15) * custom,
-  }),
-
-  visible: { x: 0, y: -0 },
-
+const cardVar = {
+  initial: (custom: number) => ({ x: custom === 1 ? "100%" : "-100%" }),
+  animate: { x: 0, opacity: 1, transition: { type: "tween", duration: 0.7 } },
   exit: (custom: number) => ({
-    x: (-window.outerWidth - 15) * custom,
+    x: custom === 1 ? "-100%" : "100%",
+    transition: { type: "tween", duration: 0.7 },
   }),
+};
+
+const noVar = {
+  initial: { x: 0, opacity: 0 },
+  animate: {},
+  exit: {},
 };

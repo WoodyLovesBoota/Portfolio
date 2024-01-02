@@ -42,14 +42,16 @@ const Footer = () => {
           onClick={() => {
             window.scrollTo(0, 0);
           }}
+          variants={hoverTargetBar}
+          animate="animate"
+          whileHover={"hover"}
         >
-          <Ment variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
+          <Ment variants={hoverTargetBar}>
             BACK TO TOP
             <UnderBar variants={hoverUnderVar} />
           </Ment>
 
-          <Circle variants={hoverVar} animate="animate" whileHover={"hover"}>
-            {/* <Arrow fill="white" /> */}
+          <Circle variants={hoverVar}>
             <motion.svg
               width="31"
               height="31"
@@ -153,7 +155,7 @@ const FooterMainRow = styled.div`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   background-color: transparent;
   cursor: pointer;
   display: flex;
