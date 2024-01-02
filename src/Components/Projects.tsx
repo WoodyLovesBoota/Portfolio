@@ -3,7 +3,7 @@ import { forwardRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useRecoilState } from "recoil";
-import { projectState } from "../atoms";
+import { languageState, projectState } from "../atoms";
 import "../assets/fonts/font.css";
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
@@ -11,6 +11,7 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(-1);
   const [projectData, setProjectData] = useRecoilState(projectState);
+  const [isEng, setIsEng] = useRecoilState(languageState);
 
   const onProjectClick = (name: string) => {
     navigate(`/${name}`);
@@ -76,7 +77,9 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                         }}
                       >
                         <ProjectSpanL>{project.name}</ProjectSpanL>
-                        <ProjectDetail>{project.subtitle}</ProjectDetail>
+                        <ProjectDetail>
+                          {isEng ? project.subtitle : project.subtitleKor}
+                        </ProjectDetail>
                       </MentionR>
                     </ProjectTitleL>
                   </ProjectBox>
@@ -133,7 +136,9 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
                         }}
                       >
                         <ProjectSpanR>{project.name}</ProjectSpanR>
-                        <ProjectDetail>{project.subtitle}</ProjectDetail>
+                        <ProjectDetail>
+                          {isEng ? project.subtitle : project.subtitleKor}
+                        </ProjectDetail>
                       </Mention>
                     </ProjectTitleR>
                   </ProjectBox>
@@ -155,6 +160,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
 `;
 
 const Header = styled.div`
@@ -162,6 +168,8 @@ const Header = styled.div`
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
 `;
 
 const Subject = styled.h2`
@@ -365,7 +373,6 @@ const ProjectPhotoFrame = styled(motion.div)`
   width: 67%;
   height: 100%;
   cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
   border-radius: 30px;
   overflow: hidden;
@@ -382,12 +389,10 @@ const ProjectPhotoFrame = styled(motion.div)`
 const ProjectPhoto = styled(motion.div)<{ bgphoto: string; isnow: boolean }>`
   background: ${(props) => props.bgphoto};
   background-position: center center;
-  opacity: ${(props) => (props.isnow ? "1" : "0.8")};
   background-size: cover;
   width: 100%;
   height: 100%;
   cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
   border-radius: 30px;
 `;
@@ -409,13 +414,13 @@ const normalVar = {
 };
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.1 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.1 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
+  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.1 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.1 } },
+  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
 };
 
 const hoverTargetBar = {

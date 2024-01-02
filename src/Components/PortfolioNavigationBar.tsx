@@ -5,117 +5,47 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const NavigationBar = ({
-  onMainClick,
-  onPortfolioClick,
-  onBlogClick,
-  onContactClick,
-  mainRef,
-  portFolioRef,
-  contactRef,
-  blogRef,
-}: INavProps) => {
+const PortfolioNaviagationBar = () => {
   const [isEng, setIsEng] = useRecoilState(languageState);
 
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
   const [scrollY, setScrollY] = useState(0);
 
-  const [isnow, setIsnow] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  useEffect(() => {
-    if (
-      mainRef.current?.scrollHeight &&
-      portFolioRef.current?.scrollHeight &&
-      blogRef.current?.scrollHeight &&
-      contactRef.current?.scrollHeight
-    ) {
-      if (scrollY < mainRef.current?.scrollHeight + 300) setIsnow(0);
-      else if (
-        scrollY > mainRef.current?.scrollHeight + 300 &&
-        scrollY < mainRef.current?.scrollHeight + portFolioRef.current.scrollHeight + 300
-      ) {
-        setIsnow(1);
-      } else if (
-        scrollY > mainRef.current?.scrollHeight + portFolioRef.current.scrollHeight + 300 &&
-        scrollY <
-          mainRef.current?.scrollHeight +
-            portFolioRef.current.scrollHeight +
-            blogRef.current.scrollHeight +
-            300
-      ) {
-        setIsnow(2);
-      } else if (
-        scrollY >
-        mainRef.current?.scrollHeight +
-          portFolioRef.current.scrollHeight +
-          blogRef.current.scrollHeight +
-          300
-      ) {
-        setIsnow(3);
-      }
-    }
-  }, [scrollY]);
+  const onMainClick = () => {
+    navigate("/");
+  };
 
   return (
     <Wrapper istop={scrollY === 0}>
       <Logo onClick={onMainClick}>YTW.</Logo>
       <Contents>
-        <Content
-          variants={hoverTargetBar}
-          animate="animate"
-          whileHover={"hover"}
-          onClick={onPortfolioClick}
-        >
-          <Ment variants={hoverOverVar}>
-            PORTFOLIO
-            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Ment>
-          <Hidden variants={hoverUnderVar}>
-            PORTFOLIO
-            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Hidden>
+        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
+          <Ment variants={hoverOverVar}>PORTFOLIO </Ment>
+          <Hidden variants={hoverUnderVar}>PORTFOLIO </Hidden>
         </Content>
-        <Content
-          variants={hoverTargetBar}
-          animate="animate"
-          whileHover={"hover"}
-          onClick={onBlogClick}
-        >
-          <Ment variants={hoverOverVar}>
-            BLOG
-            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Ment>
-          <Hidden variants={hoverUnderVar}>
-            BLOG
-            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Hidden>
+        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
+          <Ment variants={hoverOverVar}>BLOG </Ment>
+          <Hidden variants={hoverUnderVar}>BLOG </Hidden>
         </Content>
-        <Content
-          variants={hoverTargetBar}
-          animate="animate"
-          whileHover={"hover"}
-          onClick={onContactClick}
-        >
-          <Ment variants={hoverOverVar}>
-            CONTACT
-            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Ment>
-          <Hidden variants={hoverUnderVar}>
-            CONTACT
-            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
-          </Hidden>
+        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
+          <Ment variants={hoverOverVar}>CONTACT </Ment>
+          <Hidden variants={hoverUnderVar}>CONTACT </Hidden>
         </Content>
         <Toggles>
           {isEng ? (
@@ -128,10 +58,7 @@ const NavigationBar = ({
                 setIsToggleOpen(false);
               }}
             >
-              <LanguageName>
-                EN
-                <UnderBar />
-              </LanguageName>
+              EN
               <Icon>
                 <FontAwesomeIcon icon={faAngleDown} />
               </Icon>
@@ -184,10 +111,7 @@ const NavigationBar = ({
                 setIsToggleOpen(false);
               }}
             >
-              <LanguageName>
-                KR
-                <UnderBar />
-              </LanguageName>
+              KR
               <Icon>
                 <FontAwesomeIcon icon={faAngleDown} />
               </Icon>
@@ -237,7 +161,7 @@ const NavigationBar = ({
   );
 };
 
-export default NavigationBar;
+export default PortfolioNaviagationBar;
 
 const Wrapper = styled.div<{ istop: boolean }>`
   display: flex;
@@ -253,7 +177,6 @@ const Wrapper = styled.div<{ istop: boolean }>`
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.03), 0px 1px 1px 0px rgba(0, 0, 0, 0.01),
     0px 0px 50px 0px rgba(0, 0, 0, 0.07);
   transition: height 0.3s ease-in-out;
-  background-color: white;
   @media (max-width: 745px) {
     padding: 0 20px;
   }
@@ -326,7 +249,6 @@ const Content = styled(motion.button)`
   cursor: pointer;
   margin-right: 30px;
   transform-origin: center left;
-  overflow: hidden;
   @media (max-width: 745px) {
     display: none;
   }
@@ -345,15 +267,13 @@ const Toggles = styled.div`
 `;
 
 const Lang = styled.h2<{ isnow: boolean }>`
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: ${(props) => props.isnow && "underline"};
   cursor: pointer;
   display: flex;
   align-items: center;
   height: 80px;
-`;
-
-const LanguageName = styled.h2`
-  font-size: 16px;
-  font-weight: 400;
 `;
 
 const Icon = styled.h2`
@@ -364,6 +284,8 @@ const Icon = styled.h2`
 const Hidden = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
 `;
 
 const Ment = styled(motion.h2)`
@@ -371,38 +293,20 @@ const Ment = styled(motion.h2)`
   font-weight: 400;
   position: absolute;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
 `;
-
-interface INavProps {
-  onMainClick: React.MouseEventHandler<HTMLButtonElement>;
-  onPortfolioClick: React.MouseEventHandler<HTMLButtonElement>;
-  onExperienceClick: React.MouseEventHandler<HTMLButtonElement>;
-  onBlogClick: React.MouseEventHandler<HTMLButtonElement>;
-  onContactClick: React.MouseEventHandler<HTMLButtonElement>;
-  mainRef: React.RefObject<HTMLDivElement>;
-  portFolioRef: React.RefObject<HTMLDivElement>;
-  blogRef: React.RefObject<HTMLDivElement>;
-  contactRef: React.RefObject<HTMLDivElement>;
-}
 
 const hoverUnderVar = {
   animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  hover: { opacity: 0, y: 30, transition: { duration: 0.15 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  animate: { opacity: 0, y: -30, transition: { duration: 0.15 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.15 } },
 };
 
 const hoverTargetBar = {
   animate: {},
   hover: {},
-};
-
-const underVar = {
-  initial: { width: 0 },
-  animate: { width: "100%" },
 };

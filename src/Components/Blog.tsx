@@ -4,13 +4,14 @@ import { forwardRef, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { blogState, languageState, screenState } from "../atoms";
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
+import { IBlogState } from "../atoms";
 
 const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   const blogData = useRecoilValue(blogState);
   const isEng = useRecoilValue(languageState);
   const [screen, setScreen] = useRecoilState(screenState);
-
   const [scrollY, setScrollY] = useState(0);
+  const [sorted, setSorted] = useState<IBlogState[]>([]);
   const controls = useAnimation();
 
   useEffect(() => {
@@ -19,6 +20,12 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    const temp = [...blogData];
+    temp.sort((a, b) => Number(b.date.split(".").join("")) - Number(a.date.split(".").join("")));
+
+    setSorted(temp);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -54,11 +61,18 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
         <SecondTitle>WRITING</SecondTitle>
 
         <Main>
-          {blogData &&
-            blogData.map((blog) => (
+          {sorted &&
+            sorted.map((blog) => (
               <BlogBox>
                 <a href={blog.link} target="_blank">
-                  <BlogPhoto bgPhoto={blog.image} />
+                  <BlogPhotoFrame>
+                    <BlogPhoto
+                      bgphoto={blog.image}
+                      variants={normalVar}
+                      animate="animate"
+                      whileHover={"hover"}
+                    />
+                  </BlogPhotoFrame>
                   <BlogContent>
                     <BlogTitle>{isEng ? blog.titleEng : blog.title}</BlogTitle>
                     <BlogDate>{blog.date}</BlogDate>
@@ -87,6 +101,8 @@ const Header = styled.div`
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const Subject = styled.h2`
@@ -96,6 +112,7 @@ const Subject = styled.h2`
 
 const ViewLink = styled(motion.a)`
   display: relative;
+  overflow: hidden;
 
   & svg {
     margin-left: 11px;
@@ -123,6 +140,7 @@ const SecondTitle = styled.h2`
 
 const Container = styled.div`
   width: 1440px;
+  background-color: white;
   @media (max-width: 1500px) {
     width: 100%;
     padding: 0 30px;
@@ -172,8 +190,25 @@ const BlogBox = styled(motion.div)`
   cursor: pointer;
 `;
 
-const BlogPhoto = styled.div<{ bgPhoto: string }>`
-  background-image: url(${(props) => props.bgPhoto});
+const BlogPhotoFrame = styled(motion.div)`
+  height: 384px;
+  border-radius: 32px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  @media (max-width: 1500px) {
+    height: 25vw;
+  }
+  @media (max-width: 1080px) {
+    height: 40vw;
+  }
+  @media (max-width: 745px) {
+    height: 80vw;
+  }
+`;
+
+const BlogPhoto = styled(motion.div)<{ bgphoto: string }>`
+  background-image: url(${(props) => props.bgphoto});
   background-position: center center;
   background-size: cover;
   height: 384px;
@@ -227,11 +262,16 @@ const hoverTargetBar = {
 };
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.1 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.1 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
+  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.1 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.1 } },
+  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+};
+
+const normalVar = {
+  animate: { scale: 1 },
+  hover: { scale: 1.05, transition: { duration: 0.5 } },
 };

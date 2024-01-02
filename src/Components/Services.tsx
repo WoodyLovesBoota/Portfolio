@@ -45,19 +45,3 @@ const Main = styled.div`
     padding: 0 30px;
   }
 `;
-
-const ServiceTitle = styled.h2`
-  font-size: 18px;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.theme.word.main};
-  margin-bottom: 15px;
-`;
-
-const ServiceDescription = styled.h2`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 2;
-  margin-bottom: 30px;
-`;

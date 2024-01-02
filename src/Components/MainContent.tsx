@@ -111,6 +111,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
+  @media (max-width: 1920px) {
+    background-color: transparent;
+  }
 `;
 
 const BgWrapper = styled.div`
@@ -138,8 +142,6 @@ const Background = styled.div`
 
 const BlackBox = styled.div`
   height: 100vh;
-  @media (max-width: 745px) {
-  }
   width: 100%;
   background-color: black;
 `;
@@ -147,7 +149,7 @@ const BlackBox = styled.div`
 const Main = styled.div`
   height: 100%;
   width: 100%;
-  padding-top: 352px;
+  padding-top: 40vh;
   z-index: 3;
   position: absolute;
   top: 0;
@@ -156,6 +158,9 @@ const Main = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1920px) {
+    padding-top: 352px;
+  }
   @media (max-width: 745px) {
     padding-top: 50%;
     height: 100%;

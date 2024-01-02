@@ -5,7 +5,7 @@ import { languageState, projectState } from "../atoms";
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 import "../assets/fonts/font.css";
 import { ReactComponent as Arrow } from "../assets/arrowbig.svg";
-import NavigationBar from "../Components/NavigationBar";
+import NavigationBar from "../Components/PortfolioNavigationBar";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as AngleR } from "../assets/anglearrowright.svg";
 import { ReactComponent as AngleL } from "../assets/anglearrowleft.svg";
@@ -14,52 +14,12 @@ import { useRecoilValue } from "recoil";
 import Footer from "../Components/Footer";
 
 const Portfolio = () => {
-  const serviceRef = useRef<HTMLDivElement>(null);
-  const portfolioRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const blogRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
   const [isRight, setIsRight] = useState(1);
-
-  const onMainClick = () => {
-    navigate("/");
-  };
-
-  const onServiceClick = () => {
-    serviceRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onPortfolioClick = () => {
-    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onExperienceClick = () => {
-    experienceRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onBlogClick = () => {
-    blogRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onContactClick = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const navigate = useNavigate();
   const [index, setIndex] = useState(0);
-  const [back, isBack] = useState(1);
-
   const isEng = useRecoilValue(languageState);
-  const [leaving, setLeaving] = useState(false);
-
   const projectData = useRecoilValue(projectState);
-
   const projectMatch: PathMatch<string> | null = useMatch("/:name");
-
-  const toggleLeaving = () => {
-    setLeaving((prev) => !prev);
-  };
 
   const increaseIndex = () => {
     setIsRight(1);
@@ -90,20 +50,33 @@ const Portfolio = () => {
 
   return (
     <Wrapper>
-      <NavigationBar
-        onContactClick={onContactClick}
-        onBlogClick={onBlogClick}
-        onExperienceClick={onExperienceClick}
-        onPortfolioClick={onPortfolioClick}
-        onServiceClick={onServiceClick}
-        onMainClick={onMainClick}
-      />
+      <NavigationBar />
       {projectMatch &&
         projectData &&
         projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)] && (
           <Container>
             <Header>
-              <Subject>PORTFOLIO</Subject>
+              <ViewLink
+                variants={hoverTargetBar}
+                animate="animate"
+                whileHover={"hover"}
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                <Ment variants={hoverOverVar}>
+                  <PrevArrowWrapper>
+                    <ArrowSmall />
+                  </PrevArrowWrapper>
+                  BACK TO PORTFOLIO
+                </Ment>
+                <Hidden variants={hoverUnderVar}>
+                  <PrevArrowWrapper>
+                    <ArrowSmall />
+                  </PrevArrowWrapper>
+                  BACK TO PORTFOLIO
+                </Hidden>
+              </ViewLink>
               <ViewLink
                 variants={hoverTargetBar}
                 animate="animate"
@@ -161,7 +134,12 @@ const Portfolio = () => {
                 <SlideButton onClick={increaseIndex}>
                   <AngleR />
                 </SlideButton>
-                <Dots>
+                <Dots
+                  num={
+                    projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                      .image.length
+                  }
+                >
                   {projectData[
                     projectData.findIndex((e) => e.name === projectMatch.params.name)
                   ].image.map((e, i) => (i === index ? <NowDot></NowDot> : <Dot></Dot>))}
@@ -348,6 +326,12 @@ const SlideButton = styled(motion.div)`
   color: white;
   cursor: pointer;
   padding: 0 30px;
+  @media (max-width: 745px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 580px) {
+    padding: 0;
+  }
 `;
 
 const SlideButtonL = styled(motion.div)`
@@ -361,6 +345,12 @@ const SlideButtonL = styled(motion.div)`
   cursor: pointer;
   z-index: 1;
   padding: 0 30px;
+  @media (max-width: 745px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 580px) {
+    padding: 0;
+  }
 `;
 
 const LinktoProject = styled.a`
@@ -381,7 +371,10 @@ const Box = styled.div`
   height: 810px;
   overflow: hidden;
   border-radius: 30px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   @media (max-width: 1500px) {
     height: 56.25vw;
   }
@@ -411,15 +404,16 @@ const Header = styled.div`
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-`;
-
-const Subject = styled.h2`
-  font-size: 16px;
-  font-weight: 400;
+  overflow: hidden;
+  align-items: center;
 `;
 
 const ViewLink = styled(motion.a)`
   position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
   & svg {
     margin-left: 11px;
   }
@@ -553,13 +547,14 @@ const Button = styled(motion.a)`
   line-height: 0.9;
   text-transform: uppercase;
   margin-bottom: 100px;
-
+  text-align: center;
   @media (max-width: 1500px) {
     font-size: 10.42vw;
   }
   @media (max-width: 745px) {
     margin-top: 40px;
     font-size: 60px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -609,6 +604,8 @@ const NextButton = styled.button`
 const Hidden = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
 `;
 
 const UnderBar = styled(motion.div)`
@@ -618,12 +615,18 @@ const UnderBar = styled(motion.div)`
   border-radius: 100px;
 `;
 
-const Dots = styled.div`
+const Dots = styled.div<{ num: number }>`
   display: flex;
   z-index: 100;
   position: absolute;
-  left: calc(50% - 14px);
+  left: calc(50% - 19px * number);
   bottom: 30px;
+  @media (max-width: 745px) {
+    bottom: 20px;
+  }
+  @media (max-width: 580px) {
+    bottom: 10px;
+  }
 `;
 
 const NowDot = styled.div`
@@ -632,6 +635,7 @@ const NowDot = styled.div`
   border-radius: 100px;
   background-color: white;
   margin: 0 7px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const Dot = styled.div`
@@ -640,6 +644,7 @@ const Dot = styled.div`
   border-radius: 100px;
   border: 1px solid white;
   margin: 0 7px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const hoverVar = {
@@ -652,6 +657,8 @@ const Ment = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
   position: absolute;
+  display: flex;
+  align-items: center;
 `;
 
 const hoverUnderVar = {

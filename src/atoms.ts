@@ -18,6 +18,7 @@ export const projectState = atom<IProjectDate[]>({
       detailKor: "",
       subtitle: "",
       date: [""],
+      subtitleKor: "",
     },
   ],
 });
@@ -50,9 +51,10 @@ interface IProjectDate {
   detailKor: string;
   subtitle: string;
   date: string[];
+  subtitleKor: string;
 }
 
-interface IBlogState {
+export interface IBlogState {
   title: string;
   date: string;
   link: string;

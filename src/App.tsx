@@ -45,7 +45,6 @@ const App = () => {
       const postsArr = snapshot.docs.map((eachDoc) => {
         return Object.assign(eachDoc.data(), { id: eachDoc.id });
       });
-
       setProjectData(postsArr && postsArr[0] && postsArr[0]["projects"]);
       setBlogDate(postsArr && postsArr[0] && postsArr[0]["blogs"]);
       setIsLoading(false);

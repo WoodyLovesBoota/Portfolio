@@ -9,23 +9,17 @@ import Footer from "../Components/Footer";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);
-  const serviceRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
-  const educationRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const onMainClick = () => {
     mainRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const onServiceClick = () => {
-    serviceRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const onPortfolioClick = () => {
-    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
+    portfolioRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   const onExperienceClick = () => {
@@ -34,10 +28,6 @@ const Home = () => {
 
   const onBlogClick = () => {
     blogRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onEducationClick = () => {
-    educationRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const onContactClick = () => {
@@ -51,8 +41,11 @@ const Home = () => {
         onBlogClick={onBlogClick}
         onExperienceClick={onExperienceClick}
         onPortfolioClick={onPortfolioClick}
-        onServiceClick={onServiceClick}
         onMainClick={onMainClick}
+        mainRef={mainRef}
+        portFolioRef={portfolioRef}
+        blogRef={blogRef}
+        contactRef={contactRef}
       />
       <MainContent ref={mainRef} />
       <Projects ref={portfolioRef} />

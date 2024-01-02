@@ -9,10 +9,22 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
         <Header>
           <Subject>CONTACT</Subject>
         </Header>
-        <Title>
-          WOODYLOVESBOOTA
+        <Title
+          variants={hoverTargetVar}
+          animate="animate"
+          whileHover={"hover"}
+          href="mailto:woodylovesboota@gmail.com"
+          target="_blank"
+        >
+          <LinkWrapper>
+            WOODYLOVESBOOTA
+            <UnderBar variants={underVar} />
+          </LinkWrapper>
           <br />
-          @GMAIL.COM
+          <LinkWrapper>
+            @GMAIL.COM
+            <UnderBar variants={underVar2} />
+          </LinkWrapper>
         </Title>
         <SubTitle>010-2363-7164</SubTitle>
 
@@ -98,6 +110,31 @@ const Subject = styled.h2`
   font-weight: 400;
 `;
 
+const UnderBar = styled(motion.h2)`
+  background-color: black;
+  width: 100%;
+  height: 4px;
+  border-radius: 100px;
+`;
+
+const LinkWrapper = styled(motion.h2)`
+  font-family: ClashGrotesk-Medium;
+  font-size: 150px;
+  line-height: 0.9;
+  letter-spacing: -1.5px;
+  overflow: hidden;
+  display: inline-block;
+  @media (max-width: 1500px) {
+    font-size: 10vw;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 9.7vw;
+  }
+  @media (max-width: 745px) {
+  }
+`;
+
 const Container = styled.div`
   width: 1440px;
   @media (max-width: 1500px) {
@@ -109,20 +146,11 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled(motion.a)`
+  display: block;
   margin-top: 100px;
-  font-family: ClashGrotesk-Medium;
-  font-size: 150px;
-  line-height: 0.9;
-  letter-spacing: -1.5px;
-  overflow-x: hidden;
-  @media (max-width: 1500px) {
-    font-size: 10vw;
-  }
-
   @media (max-width: 1080px) {
     margin-top: 80px;
-    font-size: 9.7vw;
   }
   @media (max-width: 745px) {
     margin-top: 40px;
@@ -177,4 +205,19 @@ const hoverVar = {
 const svgVar = {
   animate: { fill: "#000000" },
   hover: { fill: "#ffffff" },
+};
+
+const hoverTargetVar = {
+  animate: {},
+  hover: {},
+};
+
+const underVar = {
+  animate: { width: 0, transition: { delay: 0.1, duration: 0.2 } },
+  hover: { width: "100%", transition: { duration: 0.1 } },
+};
+
+const underVar2 = {
+  animate: { width: 0 },
+  hover: { width: "100%", transition: { delay: 0.1, duration: 0.2 } },
 };

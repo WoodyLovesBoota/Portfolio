@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import { ReactComponent as Arrow } from "../assets/arrowsmalltop.svg";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -115,6 +114,7 @@ const Wrapper = styled.div`
 
 const Center = styled.div`
   display: flex;
+  margin: 0 auto;
   @media (max-width: 745px) {
     flex-direction: column;
     align-items: center;
@@ -127,6 +127,7 @@ const FirstContent = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: white;
+  margin-right: auto;
 `;
 
 const RestContent = styled(motion.a)`
@@ -142,7 +143,7 @@ const RestContent = styled(motion.a)`
 
 const FooterMainRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 1440px;
   @media (max-width: 1500px) {
     width: 100%;
@@ -161,6 +162,7 @@ const Button = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
 `;
 
 const Circle = styled(motion.div)`

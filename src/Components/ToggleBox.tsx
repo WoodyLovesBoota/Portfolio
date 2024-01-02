@@ -303,5 +303,5 @@ const hoverTargetVar = {
 
 const hoverVar = {
   animate: { opacity: 0 },
-  hover: { opacity: 1 },
+  hover: { opacity: 1, transition: { duration: 0.7 } },
 };
