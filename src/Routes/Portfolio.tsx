@@ -121,7 +121,6 @@ const Portfolio = () => {
             </Header>
             <TitleRow>
               <Title>{projectMatch.params.name}</Title>
-
               <Box>
                 <SlideButtonL onClick={decreaseIndex}>
                   <AngleL />
@@ -278,6 +277,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   @media (max-width: 1500px) {
     width: 100%;
     padding: 0 30px;
@@ -391,31 +391,30 @@ const Title = styled.h2`
   @media (max-width: 745px) {
     margin-top: 40px;
     margin-bottom: 40px;
-
     font-size: 60px;
   }
 `;
 
 const DescriptionRow = styled.div`
   display: flex;
-  margin-top: calc(80px + 810px + 100px);
+  margin-top: calc(100px);
   justify-content: space-between;
   margin-bottom: 150px;
   width: 100%;
 
   @media (max-width: 1500px) {
-    margin-top: calc(80px + 56.25vw + 80px);
+    margin-top: 80px;
   }
 
   @media (max-width: 1080px) {
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: calc(40px + 56.25vw + 40px);
+    margin-top: 80px;
   }
 
   @media (max-width: 745px) {
     margin-bottom: 40px;
-    margin-top: calc(56.25vw + 40px);
+    margin-top: 80px;
   }
 `;
 
