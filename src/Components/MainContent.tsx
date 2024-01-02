@@ -21,11 +21,8 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
       <Wrapper ref={ref}>
         <Background>
           <BgWrapper>
-            {screen === 0 ? (
-              <Bg height={60} preserveAspectRatio="none" />
-            ) : (
-              <Bg height={200} preserveAspectRatio="none" />
-            )}
+            {" "}
+            <Bg height={200} />
           </BgWrapper>
           <BlackBox />
         </Background>
@@ -119,6 +116,7 @@ const Wrapper = styled.div`
 
 const BgWrapper = styled.div`
   display: flex;
+  margin-bottom: calc(-99px + 5vw);
 `;
 
 const Background = styled.div`
