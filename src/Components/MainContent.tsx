@@ -21,7 +21,6 @@ const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
       <Wrapper ref={ref}>
         <Background>
           <BgWrapper>
-            {" "}
             <Bg height={200} />
           </BgWrapper>
           <BlackBox />
@@ -107,7 +106,7 @@ export default MainContent;
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -116,7 +115,7 @@ const Wrapper = styled.div`
 
 const BgWrapper = styled.div`
   display: flex;
-  margin-bottom: calc(-99px + 5vw);
+  margin-bottom: calc(-99.5px + 5vw);
 `;
 
 const Background = styled.div`
@@ -128,14 +127,20 @@ const Background = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  padding-top: 152px;
+  padding-top: calc(85px + 5vw);
+  @media (max-width: 1080px) {
+    padding-top: calc(10vw + 25px);
+  }
+  @media (max-width: 375px) {
+    padding-top: calc(22px + 5vw);
+  }
 `;
 
 const BlackBox = styled.div`
-  height: calc(50vh + 200px);
+  height: 100vh;
   @media (max-width: 745px) {
-    height: calc(50vh + 200px);
   }
+  width: 100%;
   background-color: black;
 `;
 
@@ -150,6 +155,11 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  @media (max-width: 745px) {
+    padding-top: 50%;
+    height: 100%;
+  }
 `;
 
 const Introduce = styled.div`
