@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { forwardRef, useEffect, useState } from "react";
-import { useRecoilValue } from "recoil";
-import { blogState, languageState } from "../atoms";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { blogState, languageState, screenState } from "../atoms";
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
 const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   const blogData = useRecoilValue(blogState);
   const isEng = useRecoilValue(languageState);
+  const [screen, setScreen] = useRecoilState(screenState);
 
   const [scrollY, setScrollY] = useState(0);
   const controls = useAnimation();
@@ -55,7 +56,7 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
         <Main>
           {blogData &&
             blogData.map((blog) => (
-              <BlogBox initial={{ y: 500 }} animate={controls}>
+              <BlogBox>
                 <a href={blog.link} target="_blank">
                   <BlogPhoto bgPhoto={blog.image} />
                   <BlogContent>
