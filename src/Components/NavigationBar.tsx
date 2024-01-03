@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { languageState } from "../atoms";
 import { motion, useMotionValue } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 const NavigationBar = ({
@@ -19,7 +19,6 @@ const NavigationBar = ({
   blogRef,
 }: INavProps) => {
   const [isEng, setIsEng] = useRecoilState(languageState);
-  const pathLength = useMotionValue(0);
 
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 

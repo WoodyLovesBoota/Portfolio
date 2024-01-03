@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   const onPortfolioClick = () => {
-    portfolioRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const onExperienceClick = () => {
