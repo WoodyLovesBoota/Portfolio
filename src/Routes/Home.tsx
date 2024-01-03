@@ -6,6 +6,7 @@ import NavigationBar from "../Components/NavigationBar";
 import { useRef } from "react";
 import Contact from "../Components/Contact";
 import Footer from "../Components/Footer";
+import Services from "../Components/Services";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -13,9 +14,14 @@ const Home = () => {
   const experienceRef = useRef<HTMLDivElement>(null);
   const blogRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const serviceRef = useRef<HTMLDivElement>(null);
 
   const onMainClick = () => {
     mainRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const onServiceClick = () => {
+    serviceRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   const onPortfolioClick = () => {
@@ -42,12 +48,15 @@ const Home = () => {
         onExperienceClick={onExperienceClick}
         onPortfolioClick={onPortfolioClick}
         onMainClick={onMainClick}
+        onServiceClick={onServiceClick}
+        serviceRef={serviceRef}
         mainRef={mainRef}
         portFolioRef={portfolioRef}
         blogRef={blogRef}
         contactRef={contactRef}
       />
       <MainContent ref={mainRef} />
+      <Services ref={serviceRef} />
       <Projects ref={portfolioRef} />
       <Blog ref={blogRef} />
       <Contact ref={contactRef} />

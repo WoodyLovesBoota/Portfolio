@@ -266,6 +266,7 @@ const RowR = styled(motion.div)`
     flex-direction: column-reverse;
     align-items: center;
     height: inherit;
+    margin-bottom: 40px;
   }
 `;
 

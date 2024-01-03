@@ -15,7 +15,8 @@ const Footer = () => {
             href="https://github.com/WoodyLovesBoota/TravelGo"
             target="_blank"
           >
-            GITHUB <UnderBar variants={hoverUnderVar} />
+            <Show variants={hoverOverVar}>GITHUB</Show>
+            <Hidden variants={hiddenVar}>GITHUB</Hidden>
           </RestContent>
           <RestContent
             variants={hoverTargetBar}
@@ -24,7 +25,8 @@ const Footer = () => {
             target="_blank"
             href="https://velog.io/@woodylovescoding"
           >
-            BLOG <UnderBar variants={hoverUnderVar} />
+            <Show variants={hoverOverVar}>BLOG</Show>
+            <Hidden variants={hiddenVar}>BLOG</Hidden>
           </RestContent>
           <RestContent
             variants={hoverTargetBar}
@@ -33,8 +35,8 @@ const Footer = () => {
             target="_blank"
             href="https://www.linkedin.com/in/tae-wook-yang-6762092a2/"
           >
-            LINKEDIN
-            <UnderBar variants={hoverUnderVar} />
+            <Show variants={hoverOverVar}>LINKEDIN</Show>
+            <Hidden variants={hiddenVar}>LINKEDIN</Hidden>
           </RestContent>
         </Center>
         <Button
@@ -128,6 +130,9 @@ const FirstContent = styled.h1`
   font-weight: 400;
   color: white;
   margin-right: auto;
+  @media (max-width: 745px) {
+    margin-right: inherit;
+  }
 `;
 
 const RestContent = styled(motion.a)`
@@ -145,6 +150,7 @@ const FooterMainRow = styled.div`
   display: flex;
   justify-content: center;
   width: 1440px;
+  overflow: hidden;
   @media (max-width: 1500px) {
     width: 100%;
     padding: 0 30px;
@@ -163,6 +169,9 @@ const Button = styled(motion.button)`
   justify-content: center;
   align-items: center;
   margin-left: auto;
+  @media (max-width: 745px) {
+    margin-left: inherit;
+  }
 `;
 
 const Circle = styled(motion.div)`
@@ -186,6 +195,24 @@ const Ment = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
   color: white;
+`;
+
+const Hidden = styled(motion.h2)`
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  overflow: hidden;
+`;
+
+const Show = styled(motion.h2)`
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
 `;
 
 interface INavProps {
@@ -214,4 +241,14 @@ const hoverTargetBar = {
 const hoverUnderVar = {
   animate: { width: 0 },
   hover: { width: "100%" },
+};
+
+const hiddenVar = {
+  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
+  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
+
+const hoverOverVar = {
+  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
 };

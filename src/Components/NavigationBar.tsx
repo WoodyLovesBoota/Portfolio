@@ -11,6 +11,8 @@ const NavigationBar = ({
   onPortfolioClick,
   onBlogClick,
   onContactClick,
+  onServiceClick,
+  serviceRef,
   mainRef,
   portFolioRef,
   contactRef,
@@ -38,33 +40,45 @@ const NavigationBar = ({
   useEffect(() => {
     if (
       mainRef.current?.scrollHeight &&
+      serviceRef.current?.scrollHeight &&
       portFolioRef.current?.scrollHeight &&
       blogRef.current?.scrollHeight &&
       contactRef.current?.scrollHeight
     ) {
-      if (scrollY < mainRef.current?.scrollHeight + 300) setIsnow(0);
+      if (scrollY < mainRef.current?.scrollHeight - 200) setIsnow(0);
       else if (
-        scrollY > mainRef.current?.scrollHeight + 300 &&
-        scrollY < mainRef.current?.scrollHeight + portFolioRef.current.scrollHeight + 300
+        scrollY > mainRef.current?.scrollHeight - 200 &&
+        scrollY < mainRef.current?.scrollHeight + serviceRef.current.scrollHeight
       ) {
         setIsnow(1);
       } else if (
-        scrollY > mainRef.current?.scrollHeight + portFolioRef.current.scrollHeight + 300 &&
+        scrollY > mainRef.current?.scrollHeight + serviceRef.current.scrollHeight &&
+        scrollY <
+          mainRef.current?.scrollHeight +
+            portFolioRef.current.scrollHeight +
+            serviceRef.current.scrollHeight
+      ) {
+        setIsnow(2);
+      } else if (
+        scrollY >
+          mainRef.current?.scrollHeight +
+            portFolioRef.current.scrollHeight +
+            serviceRef.current.scrollHeight &&
         scrollY <
           mainRef.current?.scrollHeight +
             portFolioRef.current.scrollHeight +
             blogRef.current.scrollHeight +
-            300
+            serviceRef.current.scrollHeight
       ) {
-        setIsnow(2);
+        setIsnow(3);
       } else if (
         scrollY >
         mainRef.current?.scrollHeight +
           portFolioRef.current.scrollHeight +
           blogRef.current.scrollHeight +
-          300
+          serviceRef.current.scrollHeight
       ) {
-        setIsnow(3);
+        setIsnow(4);
       }
     }
   }, [scrollY]);
@@ -114,15 +128,30 @@ const NavigationBar = ({
           variants={hoverTargetBar}
           animate="animate"
           whileHover={"hover"}
+          onClick={onServiceClick}
+        >
+          <Ment variants={hoverOverVar}>
+            INFO
+            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+          </Ment>
+          <Hidden variants={hoverUnderVar}>
+            INFO
+            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+          </Hidden>
+        </Content>
+        <Content
+          variants={hoverTargetBar}
+          animate="animate"
+          whileHover={"hover"}
           onClick={onPortfolioClick}
         >
           <Ment variants={hoverOverVar}>
             PORTFOLIO
-            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Ment>
           <Hidden variants={hoverUnderVar}>
             PORTFOLIO
-            {isnow === 1 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Hidden>
         </Content>
         <Content
@@ -133,11 +162,11 @@ const NavigationBar = ({
         >
           <Ment variants={hoverOverVar}>
             BLOG
-            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Ment>
           <Hidden variants={hoverUnderVar}>
             BLOG
-            {isnow === 2 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Hidden>
         </Content>
         <Content
@@ -148,11 +177,11 @@ const NavigationBar = ({
         >
           <Ment variants={hoverOverVar}>
             CONTACT
-            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 4 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Ment>
           <Hidden variants={hoverUnderVar}>
             CONTACT
-            {isnow === 3 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
+            {isnow === 4 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Hidden>
         </Content>
         <Toggles>
@@ -419,6 +448,8 @@ interface INavProps {
   onExperienceClick: React.MouseEventHandler<HTMLButtonElement>;
   onBlogClick: React.MouseEventHandler<HTMLButtonElement>;
   onContactClick: React.MouseEventHandler<HTMLButtonElement>;
+  onServiceClick: React.MouseEventHandler<HTMLButtonElement>;
+  serviceRef: React.RefObject<HTMLDivElement>;
   mainRef: React.RefObject<HTMLDivElement>;
   portFolioRef: React.RefObject<HTMLDivElement>;
   blogRef: React.RefObject<HTMLDivElement>;
