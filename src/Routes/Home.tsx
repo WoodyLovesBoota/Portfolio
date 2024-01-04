@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { useRef } from "react";
+
+import Contact from "../Components/Contact";
+import Footer from "../Components/Footer";
+import Services from "../Components/Services";
 import MainContent from "../Components/MainContent";
 import Projects from "../Components/Projects";
 import Blog from "../Components/Blog";
 import NavigationBar from "../Components/NavigationBar";
-import { useRef } from "react";
-import Contact from "../Components/Contact";
-import Footer from "../Components/Footer";
-import Services from "../Components/Services";
 
 const Home = () => {
   const mainRef = useRef<HTMLDivElement>(null);

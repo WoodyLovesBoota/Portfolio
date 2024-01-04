@@ -1,12 +1,10 @@
 import styled, { keyframes } from "styled-components";
 import { forwardRef, useRef } from "react";
+import { motion } from "framer-motion";
+
 import { ReactComponent as Bg } from "../assets/bg.svg";
 import { ReactComponent as Arrow } from "../assets/arrow.svg";
 import "../assets/fonts/font.css";
-import Services from "./Services";
-import { motion } from "framer-motion";
-import { useRecoilState } from "recoil";
-import { screenState } from "../atoms";
 
 const MainContent = forwardRef<HTMLDivElement>((props, ref) => {
   const arrowRef = useRef<HTMLDivElement>(null);
@@ -150,15 +148,11 @@ const Main = styled.div`
   padding-top: 40vh;
   z-index: 3;
   background: linear-gradient(to top, black 50%, transparent 50%);
-  /* position: absolute; */
-  /* top: 0;
-  left: 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 745px) {
-    /* padding: 0; */
     padding-top: max(40vh, 170px);
   }
 `;
@@ -242,8 +236,6 @@ const shake = keyframes`
   50% {
     transform: translateY(-40px);
   }
-
-
 `;
 
 const ArrowBox = styled.div`

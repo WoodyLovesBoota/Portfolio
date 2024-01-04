@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
-import { languageState } from "../atoms";
-import { motion, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+
+import { languageState } from "../atoms";
 
 const NavigationBar = ({
   onMainClick,
@@ -21,9 +22,7 @@ const NavigationBar = ({
   const [isEng, setIsEng] = useRecoilState(languageState);
 
   const [isToggleOpen, setIsToggleOpen] = useState(false);
-
   const [scrollY, setScrollY] = useState(0);
-
   const [isnow, setIsnow] = useState(0);
 
   useEffect(() => {
@@ -183,122 +182,123 @@ const NavigationBar = ({
             {isnow === 4 && <UnderBar variants={underVar} initial="initial" animate="animate" />}
           </Hidden>
         </Content>
-        <Toggles>
-          {isEng ? (
-            <Lang
-              isnow={isEng}
-              onMouseOver={() => {
-                setIsToggleOpen(true);
-              }}
-              onMouseLeave={() => {
-                setIsToggleOpen(false);
-              }}
-            >
-              <LanguageName>
-                EN
-                <UnderBar />
-              </LanguageName>
-              <Icon>
-                <FontAwesomeIcon icon={faAngleDown} />
-              </Icon>
-              {isToggleOpen &&
-                (isEng ? (
-                  <ToggleList istop={scrollY === 0}>
-                    <LangChoicedBar
-                      onClick={() => {
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      ENGLISH
-                    </LangChoicedBar>
-                    <LangBar
-                      onClick={() => {
-                        setIsEng(false);
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      KOREAN
-                    </LangBar>
-                  </ToggleList>
-                ) : (
-                  <ToggleList istop={scrollY === 0}>
-                    <LangChoicedBar
-                      onClick={() => {
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      KOREAN
-                    </LangChoicedBar>
-                    <LangBar
-                      onClick={() => {
-                        setIsEng(true);
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      ENGLISH
-                    </LangBar>
-                  </ToggleList>
-                ))}
-            </Lang>
-          ) : (
-            <Lang
-              isnow={!isEng}
-              onMouseOver={() => {
-                setIsToggleOpen(true);
-              }}
-              onMouseLeave={() => {
-                setIsToggleOpen(false);
-              }}
-            >
-              <LanguageName>
-                KR
-                <UnderBar />
-              </LanguageName>
-              <Icon>
-                <FontAwesomeIcon icon={faAngleDown} />
-              </Icon>
-              {isToggleOpen &&
-                (isEng ? (
-                  <ToggleList istop={scrollY === 0}>
-                    <LangChoicedBar
-                      onClick={() => {
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      ENGLISH
-                    </LangChoicedBar>
-                    <LangBar
-                      onClick={() => {
-                        setIsEng(false);
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      KOREAN
-                    </LangBar>
-                  </ToggleList>
-                ) : (
-                  <ToggleList istop={scrollY === 0}>
-                    <LangChoicedBar
-                      onClick={() => {
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      KOREAN
-                    </LangChoicedBar>
-                    <LangBar
-                      onClick={() => {
-                        setIsEng(true);
-                        setIsToggleOpen(false);
-                      }}
-                    >
-                      ENGLISH
-                    </LangBar>
-                  </ToggleList>
-                ))}
-            </Lang>
-          )}
-        </Toggles>
       </Contents>
+
+      <Toggles>
+        {isEng ? (
+          <Lang
+            isnow={isEng}
+            onMouseOver={() => {
+              setIsToggleOpen(true);
+            }}
+            onMouseLeave={() => {
+              setIsToggleOpen(false);
+            }}
+          >
+            <LanguageName>
+              EN
+              <UnderBar />
+            </LanguageName>
+            <Icon>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+            {isToggleOpen &&
+              (isEng ? (
+                <ToggleList istop={scrollY === 0}>
+                  <LangChoicedBar
+                    onClick={() => {
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    ENGLISH
+                  </LangChoicedBar>
+                  <LangBar
+                    onClick={() => {
+                      setIsEng(false);
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    KOREAN
+                  </LangBar>
+                </ToggleList>
+              ) : (
+                <ToggleList istop={scrollY === 0}>
+                  <LangChoicedBar
+                    onClick={() => {
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    KOREAN
+                  </LangChoicedBar>
+                  <LangBar
+                    onClick={() => {
+                      setIsEng(true);
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    ENGLISH
+                  </LangBar>
+                </ToggleList>
+              ))}
+          </Lang>
+        ) : (
+          <Lang
+            isnow={!isEng}
+            onMouseOver={() => {
+              setIsToggleOpen(true);
+            }}
+            onMouseLeave={() => {
+              setIsToggleOpen(false);
+            }}
+          >
+            <LanguageName>
+              KR
+              <UnderBar />
+            </LanguageName>
+            <Icon>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </Icon>
+            {isToggleOpen &&
+              (isEng ? (
+                <ToggleList istop={scrollY === 0}>
+                  <LangChoicedBar
+                    onClick={() => {
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    ENGLISH
+                  </LangChoicedBar>
+                  <LangBar
+                    onClick={() => {
+                      setIsEng(false);
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    KOREAN
+                  </LangBar>
+                </ToggleList>
+              ) : (
+                <ToggleList istop={scrollY === 0}>
+                  <LangChoicedBar
+                    onClick={() => {
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    KOREAN
+                  </LangChoicedBar>
+                  <LangBar
+                    onClick={() => {
+                      setIsEng(true);
+                      setIsToggleOpen(false);
+                    }}
+                  >
+                    ENGLISH
+                  </LangBar>
+                </ToggleList>
+              ))}
+          </Lang>
+        )}
+      </Toggles>
     </Wrapper>
   );
 };
@@ -311,14 +311,13 @@ const Wrapper = styled.div<{ istop: boolean }>`
   align-items: center;
   width: 100%;
   position: fixed;
-  height: ${(props) => (props.istop ? "80px" : "60px")};
-  padding: 0 30px;
+  padding: ${(props) => (props.istop ? "24px 30px" : "17px 30px")};
   background-color: white;
   top: 0;
   z-index: 105;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.03), 0px 1px 1px 0px rgba(0, 0, 0, 0.01),
     0px 0px 50px 0px rgba(0, 0, 0, 0.07);
-  transition: height 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out;
   background-color: white;
   @media (max-width: 745px) {
     padding: 0 20px;
@@ -330,8 +329,9 @@ const Wrapper = styled.div<{ istop: boolean }>`
 
 const ToggleList = styled.div<{ istop: boolean }>`
   position: absolute;
-  top: ${(props) => (props.istop ? "80px" : "70px")};
+  top: ${(props) => (props.istop ? "70px" : "60px")};
   right: 0px;
+  top: 25px;
   width: 220px;
 `;
 
@@ -370,6 +370,8 @@ const Contents = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
+  margin-left: auto;
 `;
 
 const Logo = styled.button`
@@ -387,12 +389,11 @@ const Logo = styled.button`
 
 const Content = styled(motion.button)`
   border: none;
-  background-color: transparent;
-  color: ${(props) => props.theme.word.main};
+  background-color: white;
   cursor: pointer;
   margin-right: 30px;
-  transform-origin: center left;
   overflow: hidden;
+
   @media (max-width: 745px) {
     display: none;
   }
@@ -407,14 +408,14 @@ const UnderBar = styled(motion.div)`
 const Toggles = styled.div`
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 100%;
 `;
 
 const Lang = styled.h2<{ isnow: boolean }>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: 80px;
+  position: relative;
 `;
 
 const LanguageName = styled.h2`
@@ -456,13 +457,13 @@ interface INavProps {
 }
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 30, transition: { duration: 0.3 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -30, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 const hoverTargetBar = {

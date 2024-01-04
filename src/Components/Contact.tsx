@@ -1,12 +1,11 @@
-import styled from "styled-components";
-import { forwardRef } from "react";
-import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { languageState } from "../atoms";
-import { useRecoilValue } from "recoil";
+import { forwardRef } from "react";
+
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Contact = forwardRef<HTMLDivElement>((props, ref) => {
-  const { register, handleSubmit, setValue } = useForm<IForm>();
+  const { register, setValue } = useForm<IForm>();
 
   return (
     <Wrapper ref={ref}>
@@ -377,12 +376,6 @@ const underVar2 = {
   hover: { width: "100%", transition: { delay: 0.1, duration: 0.2 } },
 };
 
-interface IForm {
-  name: string;
-  email: string;
-  message: string;
-}
-
 const buttonVar = {
   click: { scale: 0.95 },
   animate: { backgroundColor: "#000000", color: "#ffffff", rotate: "0" },
@@ -393,3 +386,9 @@ const buttonVar = {
     transition: { delay: 0.2, duration: 0.2 },
   },
 };
+
+interface IForm {
+  name: string;
+  email: string;
+  message: string;
+}

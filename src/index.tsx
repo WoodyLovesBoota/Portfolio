@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createGlobalStyle } from "styled-components";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
 
 const GlobalStyle = createGlobalStyle`
@@ -25,11 +24,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     font-family: 'SUIT-Regular', Inter, sans-serif;
     vertical-align: baseline;
-    font-weight: 300;
     line-height: 1.5;
     color: black;
     word-break: keep-all;
     scroll-behavior:smooth;
+    box-sizing: border-box;
 
     @font-face {
       font-family: 'SUIT-Regular';
@@ -38,18 +37,15 @@ const GlobalStyle = createGlobalStyle`
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
       unicode-range: U+1100-11FF,U+3130-318F,U+A960-A97F,U+AC00-D7A3,U+D7B0-D7FF
     }
-
-    @media (max-width: 1000px) {
-      font-size: 12px;
-    }
   }
+
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
   footer, header, hgroup, main, menu, nav, section {
     display: block;
   }
+
   body { 
-    /* background-color: #f7f4f2; */
     background-color: white;
   }
   /* HTML5 hidden-attribute fix for newer browsers */
@@ -60,9 +56,11 @@ const GlobalStyle = createGlobalStyle`
   menu, ol, ul {
     list-style: none;
   }
+
   blockquote, q {
     quotes: none;
   }
+
   blockquote:before, blockquote:after,
   q:before, q:after {
     content: '';
@@ -72,10 +70,6 @@ const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
-
-  * {
-  box-sizing: border-box;
   }
 
   a {
@@ -100,15 +94,12 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
   }
 `;
-const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <RecoilRoot>
-      <GlobalStyle />
-      <App />
-    </RecoilRoot>
-  </QueryClientProvider>
+  <RecoilRoot>
+    <GlobalStyle />
+    <App />
+  </RecoilRoot>
 );

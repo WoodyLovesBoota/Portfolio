@@ -1,50 +1,58 @@
-import styled, { keyframes } from "styled-components";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import { languageState, projectState } from "../atoms";
-import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
-import "../assets/fonts/font.css";
-import { ReactComponent as Arrow } from "../assets/arrowbig.svg";
-import NavigationBar from "../Components/PortfolioNavigationBar";
+import { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRecoilValue } from "recoil";
+
+import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
+import { ReactComponent as Arrow } from "../assets/arrowbig.svg";
 import { ReactComponent as AngleR } from "../assets/anglearrowright.svg";
 import { ReactComponent as AngleL } from "../assets/anglearrowleft.svg";
 
-import { useRecoilValue } from "recoil";
+import NavigationBar from "../Components/PortfolioNavigationBar";
 import Footer from "../Components/Footer";
+
+import { languageState, projectState } from "../atoms";
+
+import "../assets/fonts/font.css";
 
 const Portfolio = () => {
   const [isRight, setIsRight] = useState(1);
-  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
+
   const isEng = useRecoilValue(languageState);
   const projectData = useRecoilValue(projectState);
+
+  const navigate = useNavigate();
+
   const projectMatch: PathMatch<string> | null = useMatch("/:name");
 
   const increaseIndex = () => {
     setIsRight(1);
-
     projectData &&
       setIndex((prev) =>
         prev ===
         projectData[projectData.findIndex((e) => e.name === projectMatch?.params.name)].image
           .length -
           1
-          ? prev
+          ? 0
           : prev + 1
       );
   };
 
   const decreaseIndex = () => {
     setIsRight(-1);
-    setIndex((prev) => (prev === 0 ? prev : prev - 1));
+    projectData &&
+      setIndex((prev) =>
+        prev === 0
+          ? projectData[projectData.findIndex((e) => e.name === projectMatch?.params.name)].image
+              .length - 1
+          : prev - 1
+      );
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [projectMatch?.params.name]);
-
-  useEffect(() => {
     setIndex(0);
   }, [projectMatch?.params.name]);
 
@@ -212,6 +220,20 @@ const Portfolio = () => {
                     </Skill>
                   </SkillList>
                 </Skills>
+                <Skills>
+                  <SkillTitle>Functions:</SkillTitle>
+                  <SkillList>
+                    <Skill>
+                      {isEng
+                        ? projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].functionsEng
+                        : projectData[
+                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          ].functions}
+                    </Skill>
+                  </SkillList>
+                </Skills>
               </Column>
               <Column>
                 <RowTitle>Description</RowTitle>
@@ -242,6 +264,9 @@ const Portfolio = () => {
             <PageButtons>
               {projectData.findIndex((e) => e.name === projectMatch.params.name) !== 0 && (
                 <PageButton
+                  variants={hoverTargetBar}
+                  animate="animate"
+                  whileHover={"hover"}
                   onClick={() => {
                     navigate(
                       `/${
@@ -253,15 +278,26 @@ const Portfolio = () => {
                     );
                   }}
                 >
-                  <PrevArrowWrapper>
-                    <ArrowSmall />
-                  </PrevArrowWrapper>
-                  Prev
+                  <ButtonMent variants={hoverOverVar}>
+                    <PrevArrowWrapper>
+                      <ArrowSmall />
+                    </PrevArrowWrapper>
+                    Prev
+                  </ButtonMent>
+                  <ButtonHidden variants={hoverUnderVar}>
+                    <PrevArrowWrapper>
+                      <ArrowSmall />
+                    </PrevArrowWrapper>
+                    Prev
+                  </ButtonHidden>
                 </PageButton>
               )}
               {projectData.findIndex((e) => e.name === projectMatch.params.name) !==
                 projectData.length - 1 && (
                 <NextButton
+                  variants={hoverTargetBar}
+                  animate="animate"
+                  whileHover={"hover"}
                   onClick={() => {
                     navigate(
                       `/${
@@ -273,10 +309,18 @@ const Portfolio = () => {
                     );
                   }}
                 >
-                  Next
-                  <ArrowWrapper>
-                    <ArrowSmall />
-                  </ArrowWrapper>
+                  <ButtonMent variants={hoverOverVar}>
+                    Next
+                    <ArrowWrapper>
+                      <ArrowSmall />
+                    </ArrowWrapper>
+                  </ButtonMent>
+                  <ButtonHidden variants={hoverUnderVar}>
+                    Next
+                    <ArrowWrapper>
+                      <ArrowSmall />
+                    </ArrowWrapper>
+                  </ButtonHidden>
                 </NextButton>
               )}
             </PageButtons>
@@ -291,13 +335,13 @@ export default Portfolio;
 
 const Wrapper = styled.div`
   width: 100vw;
-  padding-top: 180px;
+  padding-top: 162px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 745px) {
-    padding-top: 120px;
+    padding-top: 102px;
   }
 `;
 
@@ -400,11 +444,10 @@ const Card = styled(motion.div)<{ bgphoto: string }>`
 
 const Header = styled.div`
   width: 100%;
-  padding-bottom: 18px;
+  padding: 18px 0;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   align-items: center;
 `;
 
@@ -414,6 +457,8 @@ const ViewLink = styled(motion.a)`
   font-size: 16px;
   font-weight: 400;
   display: flex;
+  overflow: hidden;
+
   & svg {
     margin-left: 11px;
   }
@@ -560,25 +605,26 @@ const Button = styled(motion.a)`
 
 const PageButtons = styled.div`
   width: 100vw;
-  padding: 0 30px;
+  padding: 24px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 100px;
   border-top: 1px solid #e6e6e6;
   @media (max-width: 745px) {
-    padding: 0 20px;
+    padding: 17px 20px;
   }
 `;
 
-const PageButton = styled.button`
+const PageButton = styled(motion.button)`
   background-color: transparent;
   font-weight: 400;
   font-size: 18px;
   cursor: pointer;
-  padding: 24px 0;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 `;
 
 const ArrowWrapper = styled.div`
@@ -590,15 +636,33 @@ const PrevArrowWrapper = styled.div`
   rotate: 180deg;
 `;
 
-const NextButton = styled.button`
+const NextButton = styled(motion.button)`
   background-color: transparent;
   font-weight: 400;
   font-size: 18px;
   cursor: pointer;
-  padding: 24px 0;
   margin-left: auto;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+const ButtonMent = styled(motion.h2)`
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+`;
+
+const ButtonHidden = styled(motion.h2)`
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const Hidden = styled(motion.h2)`

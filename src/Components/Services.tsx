@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import { forwardRef } from "react";
-import { useRecoilValue } from "recoil";
-import { languageState } from "../atoms";
 import ToggleBox from "./ToggleBox";
 
 const Services = forwardRef<HTMLDivElement>((props, ref) => {
-  const isEng = useRecoilValue(languageState);
-
   return (
     <Wrapper ref={ref}>
       <Main>
@@ -29,11 +25,17 @@ const Wrapper = styled.div`
   background-color: black;
   padding-bottom: 200px;
 
+  @media (max-width: 1500px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   @media (max-width: 1080px) {
     padding-bottom: 150px;
   }
   @media (max-width: 745px) {
     padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 `;
 
@@ -42,6 +44,5 @@ const Main = styled.div`
   border-bottom: 1px solid white;
   @media (max-width: 1500px) {
     width: 100%;
-    padding: 0 30px;
   }
 `;

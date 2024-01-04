@@ -1,14 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+
 import { ReactComponent as Plus } from "../assets/plus.svg";
 import { ReactComponent as Minus } from "../assets/minus.svg";
-import "../assets/fonts/font.css";
-import { useRecoilState } from "recoil";
+
 import { languageState } from "../atoms";
+
+import "../assets/fonts/font.css";
 
 const ToggleBox = ({ title }: { title: number }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const [isEng, setIsEng] = useRecoilState(languageState);
 
   return (

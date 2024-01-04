@@ -1,14 +1,4 @@
-import {
-  arrayRemove,
-  arrayUnion,
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  serverTimestamp,
-  setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { firebaseDB } from "./firebase";
 
 const DBHandler = {

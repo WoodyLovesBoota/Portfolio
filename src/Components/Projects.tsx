@@ -3,21 +3,26 @@ import { forwardRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useRecoilState } from "recoil";
+
 import { languageState, projectState } from "../atoms";
-import "../assets/fonts/font.css";
+
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
+import "../assets/fonts/font.css";
+
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
-  const navigate = useNavigate();
   const [isHover, setIsHover] = useState(-1);
+  const [scrollY, setScrollY] = useState(0);
+
   const [projectData, setProjectData] = useRecoilState(projectState);
   const [isEng, setIsEng] = useRecoilState(languageState);
+
+  const navigate = useNavigate();
+  const controls = useAnimation();
 
   const onProjectClick = (name: string) => {
     navigate(`/${name}`);
   };
-  const [scrollY, setScrollY] = useState(0);
-  const controls = useAnimation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -164,11 +169,10 @@ const Wrapper = styled.div`
 `;
 
 const Header = styled.div`
-  padding-bottom: 18px;
+  padding: 18px 0;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   align-items: center;
 `;
 
@@ -179,6 +183,11 @@ const Subject = styled.h2`
 
 const ViewLink = styled(motion.a)`
   position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  overflow: hidden;
   & svg {
     margin-left: 11px;
   }
@@ -402,11 +411,13 @@ const Ment = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
   position: absolute;
+  line-height: 1;
 `;
 
 const Hidden = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
+  line-height: 1;
 `;
 
 const normalVar = {
@@ -415,13 +426,13 @@ const normalVar = {
 };
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 20, transition: { duration: 0.3 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -20, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 const hoverTargetBar = {

@@ -19,6 +19,8 @@ export const projectState = atom<IProjectDate[]>({
       subtitle: "",
       date: [""],
       subtitleKor: "",
+      functions: "",
+      functionsEng: "",
     },
   ],
 });
@@ -52,6 +54,8 @@ interface IProjectDate {
   subtitle: string;
   date: string[];
   subtitleKor: string;
+  functions: string;
+  functionsEng: string;
 }
 
 export interface IBlogState {

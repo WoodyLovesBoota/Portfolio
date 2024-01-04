@@ -117,10 +117,14 @@ const Wrapper = styled.div`
 const Center = styled.div`
   display: flex;
   margin: 0 auto;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  background-color: black;
   @media (max-width: 745px) {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin: 50px 0;
   }
 `;
@@ -137,12 +141,14 @@ const FirstContent = styled.h1`
 
 const RestContent = styled(motion.a)`
   margin: 0 20px;
-  font-size: 16px;
-  font-weight: 400;
+  line-height: 1;
   cursor: pointer;
+  display: flex;
+  position: relative;
   color: white;
+  overflow: hidden;
   @media (max-width: 745px) {
-    margin: 5px 0;
+    margin: 10px 0;
   }
 `;
 
@@ -201,7 +207,7 @@ const Hidden = styled(motion.h2)`
   font-size: 16px;
   font-weight: 400;
   color: white;
-  overflow: hidden;
+  line-height: 1;
 `;
 
 const Show = styled(motion.h2)`
@@ -209,15 +215,11 @@ const Show = styled(motion.h2)`
   font-weight: 400;
   position: absolute;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
-  overflow: hidden;
+  line-height: 1;
 `;
-
-interface INavProps {
-  onMainClick: React.MouseEventHandler<HTMLButtonElement>;
-}
 
 const hoverVar = {
   animate: { backgroundColor: "#000000", fill: "#ffffff" },
@@ -230,7 +232,7 @@ const hoverVar = {
 
 const svgVar = {
   animate: { stroke: "#ffffff" },
-  hover: { stroke: "#000000" },
+  hover: { stroke: "#000000", transition: { delay: 0.2 } },
 };
 
 const hoverTargetBar = {
@@ -240,15 +242,15 @@ const hoverTargetBar = {
 
 const hoverUnderVar = {
   animate: { width: 0 },
-  hover: { width: "100%" },
+  hover: { width: "100%", transition: { delay: 0.2 } },
 };
 
 const hiddenVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
-  hover: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 20, transition: { duration: 0.3 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -20, transition: { duration: 0.15 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  animate: { opacity: 1, y: -20, transition: { duration: 0.3 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
