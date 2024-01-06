@@ -16,6 +16,21 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
 
   const controls = useAnimation();
 
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -77,7 +92,13 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
                   </BlogPhotoFrame>
                   <BlogContent>
                     <BlogTitle>{isEng ? blog.titleEng : blog.title}</BlogTitle>
-                    <BlogDate>{blog.date}</BlogDate>
+                    <BlogDate>
+                      {months[Number(blog.date.split(".")[1]) - 1] +
+                        " " +
+                        blog.date.split(".")[2] +
+                        ", " +
+                        blog.date.split(".")[0]}
+                    </BlogDate>
                   </BlogContent>
                 </a>
               </BlogBox>
@@ -247,6 +268,7 @@ const BlogDate = styled.h2`
   margin-top: 24px;
   display: inline-block;
   color: gray;
+  text-transform: uppercase;
 `;
 
 const Ment = styled(motion.h2)`
