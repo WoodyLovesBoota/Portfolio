@@ -64,7 +64,7 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
 
         <Main>
           {sorted &&
-            sorted.map((blog) => (
+            sorted.slice(0, 6).map((blog) => (
               <BlogBox>
                 <a href={blog.link} target="_blank">
                   <BlogPhotoFrame>
