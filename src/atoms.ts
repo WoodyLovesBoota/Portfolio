@@ -21,6 +21,7 @@ export const projectState = atom<IProjectDate[]>({
       subtitleKor: "",
       functions: "",
       functionsEng: "",
+      index: 0,
     },
   ],
 });
@@ -43,7 +44,7 @@ export const screenState = atom<number>({
   default: 0,
 });
 
-interface IProjectDate {
+export interface IProjectDate {
   name: string;
   skill: string;
   image: string[];
@@ -56,6 +57,7 @@ interface IProjectDate {
   subtitleKor: string;
   functions: string;
   functionsEng: string;
+  index: number;
 }
 
 export interface IBlogState {

@@ -25,7 +25,7 @@ const Portfolio = () => {
 
   const navigate = useNavigate();
 
-  const projectMatch: PathMatch<string> | null = useMatch("/:name");
+  const projectMatch: PathMatch<string> | null = useMatch("project/:name");
 
   const increaseIndex = () => {
     setIsRight(1);
@@ -269,7 +269,7 @@ const Portfolio = () => {
                   whileHover={"hover"}
                   onClick={() => {
                     navigate(
-                      `/${
+                      `/project/${
                         projectData[
                           (projectData.findIndex((e) => e.name === projectMatch.params.name) - 1) %
                             projectData.length
@@ -300,7 +300,7 @@ const Portfolio = () => {
                   whileHover={"hover"}
                   onClick={() => {
                     navigate(
-                      `/${
+                      `/project/${
                         projectData[
                           (projectData.findIndex((e) => e.name === projectMatch.params.name) + 1) %
                             projectData.length

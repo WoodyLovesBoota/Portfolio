@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useRecoilState } from "recoil";
 
-import { languageState, projectState } from "../atoms";
+import { languageState, projectState, IProjectDate } from "../atoms";
 
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
@@ -13,6 +13,7 @@ import "../assets/fonts/font.css";
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const [isHover, setIsHover] = useState(-1);
   const [scrollY, setScrollY] = useState(0);
+  const [sorted, setSorted] = useState<IProjectDate[]>([]);
 
   const [projectData, setProjectData] = useRecoilState(projectState);
   const [isEng, setIsEng] = useRecoilState(languageState);
@@ -21,13 +22,18 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const controls = useAnimation();
 
   const onProjectClick = (name: string) => {
-    navigate(`/${name}`);
+    navigate(`/project/${name}`);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
+    const temp = [...projectData];
+    temp.sort((a, b) => a.index - b.index);
+
+    setSorted(temp);
 
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -64,8 +70,8 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
         <Title>SELECTED</Title>
         <SecondTitle>PROJECTS</SecondTitle>
         <Main>
-          {projectData &&
-            projectData.map((project, index) =>
+          {sorted &&
+            sorted.map((project, index) =>
               index % 2 === 1 ? (
                 <RowR animate={controls}>
                   <ProjectBox>

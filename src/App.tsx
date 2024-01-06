@@ -47,7 +47,7 @@ const App = () => {
       <Router basename={process.env.PUBLIC_URL}>
         {!isLoading && (
           <Routes>
-            <Route path="/:title" element={<Portfolio />} />
+            <Route path="/project/:title" element={<Portfolio />} />
             <Route path="/" element={<Home />}></Route>
           </Routes>
         )}
