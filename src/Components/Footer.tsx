@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <FooterMainRow>
-        <FirstContent>@ YANGTAEWOOK 2023.</FirstContent>
+        <FirstContent>@ YANGTAEWOOK 2024.</FirstContent>
         <Center>
           <RestContent
             variants={hoverTargetBar}
@@ -232,7 +232,7 @@ const hoverVar = {
 
 const svgVar = {
   animate: { stroke: "#ffffff" },
-  hover: { stroke: "#000000", transition: { delay: 0.2 } },
+  hover: { stroke: "#000000", transition: { delay: 0.2, type: "spring" } },
 };
 
 const hoverTargetBar = {
@@ -242,7 +242,7 @@ const hoverTargetBar = {
 
 const hoverUnderVar = {
   animate: { width: 0 },
-  hover: { width: "100%", transition: { delay: 0.2 } },
+  hover: { width: "100%", transition: { delay: 0.1 } },
 };
 
 const hiddenVar = {

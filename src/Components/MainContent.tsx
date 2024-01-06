@@ -195,6 +195,7 @@ const SubTitle = styled.p`
     font-weight: 400;
     line-height: 24.2px;
     letter-spacing: 1px;
+    margin-right: 6px;
   }
   @media (max-width: 745px) {
     display: block;

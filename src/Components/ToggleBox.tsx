@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { ReactComponent as Plus } from "../assets/plus.svg";
 import { ReactComponent as Minus } from "../assets/minus.svg";
@@ -30,13 +30,13 @@ const ToggleBox = ({ title }: { title: number }) => {
           <Circle variants={hoverVar} />
         </ToggleTitle>
         {isOpen ? (
-          <ToggleButton>
+          <ToggleButtonMinus key={"minus"} variants={rotateVar} initial="initial" animate="animate">
             <Minus />
-          </ToggleButton>
+          </ToggleButtonMinus>
         ) : (
-          <ToggleButton>
+          <ToggleButtonPlus key={"plus"} variants={rotateVar} initial="initial" animate="animate">
             <Plus />
-          </ToggleButton>
+          </ToggleButtonPlus>
         )}
       </ToggleHeader>
       <AnimatePresence mode="wait">
@@ -189,8 +189,25 @@ const ToggleHeader = styled(motion.div)`
   background-color: black;
 `;
 
-const ToggleButton = styled.div`
-  color: white;
+const scales = keyframes`
+  0%{
+    scale:1
+  }
+  50%{scale:1.2}
+  100%{scale:1}
+`;
+
+const ToggleButtonPlus = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${scales} 2s infinite;
+`;
+
+const ToggleButtonMinus = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ToggleTitle = styled.h2`
@@ -308,4 +325,9 @@ const hoverTargetVar = {
 const hoverVar = {
   animate: { opacity: 0 },
   hover: { opacity: 1, transition: { duration: 0.7 } },
+};
+
+const rotateVar = {
+  initial: { rotate: -90 },
+  animate: { rotate: 0, transition: { type: "tween", duration: 0.2 } },
 };

@@ -427,18 +427,18 @@ const Hidden = styled(motion.h2)`
 `;
 
 const normalVar = {
-  animate: { scale: 1.1 },
-  hover: { scale: 1.0, transition: { duration: 0.5 } },
+  animate: { scale: 1.1, transition: { duration: 0.5, delay: 0.1 } },
+  hover: { scale: 1.0, transition: { duration: 0.5, delay: 0.1 } },
 };
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.3 } },
-  hover: { opacity: 1, y: 20, transition: { duration: 0.3 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.25, ease: "easeInOut" } },
+  hover: { opacity: 1, y: 20, transition: { duration: 0.25, ease: "easeInOut" } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 1, y: -20, transition: { duration: 0.3 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  animate: { opacity: 1, y: -20, transition: { duration: 0.25, ease: "easeInOut" } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeInOut" } },
 };
 
 const hoverTargetBar = {

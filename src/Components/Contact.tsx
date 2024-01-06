@@ -13,19 +13,13 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
         <Header>
           <Subject>CONTACT</Subject>
         </Header>
-        <Title
-          variants={hoverTargetVar}
-          animate="animate"
-          whileHover={"hover"}
-          href="mailto:woodylovesboota@gmail.com"
-          target="_blank"
-        >
-          <LinkWrapper>
+        <Title variants={hoverTargetVar} animate="animate" whileHover={"hover"}>
+          <LinkWrapper href="mailto:woodylovesboota@gmail.com" target="_blank">
             WOODYLOVESBOOTA
             <UnderBar variants={underVar} />
           </LinkWrapper>
           <br />
-          <LinkWrapper>
+          <LinkWrapper href="mailto:woodylovesboota@gmail.com" target="_blank">
             @GMAIL.COM
             <UnderBar variants={underVar2} />
           </LinkWrapper>
@@ -190,7 +184,7 @@ const UnderBar = styled(motion.h2)`
   border-radius: 100px;
 `;
 
-const LinkWrapper = styled(motion.h2)`
+const LinkWrapper = styled(motion.a)`
   font-family: ClashGrotesk-Medium;
   font-size: 150px;
   line-height: 0.9;
@@ -217,7 +211,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled(motion.a)`
+const Title = styled(motion.h2)`
   display: block;
   margin-top: 100px;
   @media (max-width: 1080px) {
@@ -377,13 +371,14 @@ const underVar2 = {
 };
 
 const buttonVar = {
-  click: { scale: 0.95 },
+  click: { scale: 1 },
   animate: { backgroundColor: "#000000", color: "#ffffff", rotate: "0" },
   hover: {
     backgroundColor: "#ffffff",
     color: "#000000",
     rotate: "360deg",
     transition: { delay: 0.2, duration: 0.2 },
+    scale: 1.1,
   },
 };
 

@@ -27,6 +27,21 @@ const Portfolio = () => {
 
   const projectMatch: PathMatch<string> | null = useMatch("project/:name");
 
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   const increaseIndex = () => {
     setIsRight(1);
     projectData &&
@@ -175,34 +190,46 @@ const Portfolio = () => {
                         projectData.findIndex((e) => e.name === projectMatch.params.name)
                       ].date[1].slice(4) ? (
                       <Skill>
-                        {projectData[
-                          projectData.findIndex((e) => e.name === projectMatch.params.name)
-                        ].date[0].slice(0, 4) +
-                          "." +
+                        {months[
+                          Number(
+                            projectData[
+                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            ].date[0].slice(4)
+                          ) - 1
+                        ] +
+                          ", " +
                           projectData[
                             projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].date[0].slice(4)}
+                          ].date[0].slice(0, 4)}
                       </Skill>
                     ) : (
                       <>
                         <Skill>
-                          {projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].date[0].slice(0, 4) +
-                            "." +
+                          {months[
+                            Number(
+                              projectData[
+                                projectData.findIndex((e) => e.name === projectMatch.params.name)
+                              ].date[0].slice(4)
+                            ) - 1
+                          ] +
+                            ", " +
                             projectData[
                               projectData.findIndex((e) => e.name === projectMatch.params.name)
-                            ].date[0].slice(4)}
+                            ].date[0].slice(0, 4)}
                         </Skill>
                         <Divider>-</Divider>
                         <Skill>
-                          {projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].date[1].slice(0, 4) +
-                            "." +
+                          {months[
+                            Number(
+                              projectData[
+                                projectData.findIndex((e) => e.name === projectMatch.params.name)
+                              ].date[0].slice(4)
+                            ) - 1
+                          ] +
+                            ", " +
                             projectData[
                               projectData.findIndex((e) => e.name === projectMatch.params.name)
-                            ].date[1].slice(4)}
+                            ].date[1].slice(0, 4)}
                         </Skill>
                       </>
                     )}
@@ -563,6 +590,7 @@ const Skill = styled.h2`
   font-weight: 400;
   line-height: 2;
   flex-wrap: wrap;
+  text-transform: uppercase;
 `;
 
 const Description = styled.h2`
@@ -726,13 +754,13 @@ const Ment = styled(motion.h2)`
 `;
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.15 } },
-  hover: { opacity: 0, y: 30, transition: { duration: 0.15 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.25 } },
+  hover: { opacity: 0, y: 30, transition: { duration: 0.25 } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 0, y: -30, transition: { duration: 0.15 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.15 } },
+  animate: { opacity: 0, y: -30, transition: { duration: 0.25 } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.25 } },
 };
 
 const hoverTargetBar = {

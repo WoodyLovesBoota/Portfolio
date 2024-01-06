@@ -246,7 +246,7 @@ const BlogDate = styled.h2`
   font-weight: 400;
   margin-top: 24px;
   display: inline-block;
-  color: ${(props) => props.theme.word.sub};
+  color: gray;
 `;
 
 const Ment = styled(motion.h2)`
@@ -272,13 +272,13 @@ const hoverTargetBar = {
 };
 
 const hoverUnderVar = {
-  animate: { opacity: 1, y: -0, transition: { duration: 0.3 } },
-  hover: { opacity: 1, y: 20, transition: { duration: 0.3 } },
+  animate: { opacity: 1, y: -0, transition: { duration: 0.25, ease: "easeInOut" } },
+  hover: { opacity: 1, y: 20, transition: { duration: 0.25, ease: "easeInOut" } },
 };
 
 const hoverOverVar = {
-  animate: { opacity: 1, y: -20, transition: { duration: 0.3 } },
-  hover: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  animate: { opacity: 1, y: -20, transition: { duration: 0.25, ease: "easeInOut" } },
+  hover: { opacity: 1, y: 0, transition: { duration: 0.25, ease: "easeInOut" } },
 };
 
 const normalVar = {
