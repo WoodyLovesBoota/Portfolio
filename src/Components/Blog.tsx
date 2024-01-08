@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useRecoilValue } from "recoil";
 
 import { blogState, languageState, IBlogState } from "../atoms";
+import { months } from "../utils";
 
 import { ReactComponent as ArrowSmall } from "../assets/arrowsmall.svg";
 
@@ -15,21 +16,6 @@ const Blog = forwardRef<HTMLDivElement>((props, ref) => {
   const [sorted, setSorted] = useState<IBlogState[]>([]);
 
   const controls = useAnimation();
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -305,5 +291,5 @@ const hoverOverVar = {
 
 const normalVar = {
   animate: { scale: 1 },
-  hover: { scale: 1.05, transition: { duration: 0.5 } },
+  hover: { scale: 1.03, transition: { duration: 0.2, delay: 0.1 } },
 };
