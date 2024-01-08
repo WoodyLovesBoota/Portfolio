@@ -209,7 +209,7 @@ const Portfolio = () => {
                             Number(
                               sorted[
                                 sorted.findIndex((e) => e.name === projectMatch.params.name)
-                              ].date[0].slice(4)
+                              ].date[1].slice(4)
                             ) - 1
                           ] +
                             ", " +
