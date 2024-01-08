@@ -189,19 +189,10 @@ const ToggleHeader = styled(motion.div)`
   background-color: black;
 `;
 
-const scales = keyframes`
-  0%{
-    scale:1
-  }
-  50%{scale:1.2}
-  100%{scale:1}
-`;
-
 const ToggleButtonPlus = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${scales} 2s infinite;
 `;
 
 const ToggleButtonMinus = styled(motion.div)`

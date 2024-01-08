@@ -56,11 +56,11 @@ const Home = () => {
         blogRef={blogRef}
         contactRef={contactRef}
       />
-      <MainContent ref={mainRef} />
-      <Services ref={serviceRef} />
-      <Projects ref={portfolioRef} />
-      <Blog ref={blogRef} />
-      <Contact ref={contactRef} />
+      <MainContent key={"main"} ref={mainRef} />
+      <Services key={"service"} ref={serviceRef} />
+      <Projects key={"projects"} ref={portfolioRef} />
+      <Blog key={"blog"} ref={blogRef} />
+      <Contact key={"contact"} ref={contactRef} />
       <Footer />
     </Wrapper>
   );

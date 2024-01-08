@@ -12,13 +12,15 @@ import { ReactComponent as AngleL } from "../assets/anglearrowleft.svg";
 import NavigationBar from "../Components/PortfolioNavigationBar";
 import Footer from "../Components/Footer";
 
-import { languageState, projectState } from "../atoms";
+import { languageState, projectState, IProjectDate } from "../atoms";
+import { months } from "../utils";
 
 import "../assets/fonts/font.css";
 
 const Portfolio = () => {
   const [isRight, setIsRight] = useState(1);
   const [index, setIndex] = useState(0);
+  const [sorted, setSorted] = useState<IProjectDate[]>([]);
 
   const isEng = useRecoilValue(languageState);
   const projectData = useRecoilValue(projectState);
@@ -27,29 +29,19 @@ const Portfolio = () => {
 
   const projectMatch: PathMatch<string> | null = useMatch("project/:name");
 
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  useEffect(() => {
+    const temp = [...projectData];
+    temp.sort((a, b) => a.index - b.index);
+
+    setSorted(temp);
+  }, []);
 
   const increaseIndex = () => {
     setIsRight(1);
-    projectData &&
+    sorted &&
       setIndex((prev) =>
         prev ===
-        projectData[projectData.findIndex((e) => e.name === projectMatch?.params.name)].image
-          .length -
-          1
+        sorted[sorted.findIndex((e) => e.name === projectMatch?.params.name)].image.length - 1
           ? 0
           : prev + 1
       );
@@ -57,11 +49,10 @@ const Portfolio = () => {
 
   const decreaseIndex = () => {
     setIsRight(-1);
-    projectData &&
+    sorted &&
       setIndex((prev) =>
         prev === 0
-          ? projectData[projectData.findIndex((e) => e.name === projectMatch?.params.name)].image
-              .length - 1
+          ? sorted[sorted.findIndex((e) => e.name === projectMatch?.params.name)].image.length - 1
           : prev - 1
       );
   };
@@ -75,8 +66,8 @@ const Portfolio = () => {
     <Wrapper>
       <NavigationBar />
       {projectMatch &&
-        projectData &&
-        projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)] && (
+        sorted &&
+        sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)] && (
           <Container>
             <Header>
               <ViewLink
@@ -105,10 +96,7 @@ const Portfolio = () => {
                 animate="animate"
                 whileHover={"hover"}
                 target="_blank"
-                href={
-                  projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
-                    .github
-                }
+                href={sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].github}
               >
                 <Ment variants={hoverOverVar}>
                   VISIT GITHUB
@@ -127,45 +115,43 @@ const Portfolio = () => {
                   <AngleL />
                 </SlideButtonL>
                 <AnimatePresence custom={isRight}>
-                  {projectData[
-                    projectData.findIndex((e) => e.name === projectMatch.params.name)
-                  ].image.map((e, i) => (
-                    <Card
-                      custom={isRight}
-                      variants={index === i ? cardVar : noVar}
-                      initial={"initial"}
-                      animate={isRight ? "animate" : "animateWhenLeft"}
-                      exit={"exit"}
-                      key={index === i ? i + "boxImage" : i + "no"}
-                      bgphoto={`url(${
-                        projectData[
-                          projectData.findIndex((e) => e.name === projectMatch.params.name)
-                        ].image[i]
-                      })`}
-                    >
-                      <LinktoProject
-                        href={
-                          projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].demo
-                        }
-                        target="_blank"
-                      ></LinktoProject>
-                    </Card>
-                  ))}
+                  {sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].image.map(
+                    (e, i) => (
+                      <Card
+                        custom={isRight}
+                        variants={index === i ? cardVar : noVar}
+                        initial={"initial"}
+                        animate={isRight ? "animate" : "animateWhenLeft"}
+                        exit={"exit"}
+                        key={index === i ? i + "boxImage" : i + "no"}
+                        bgphoto={`url(${
+                          sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)]
+                            .image[i]
+                        })`}
+                      >
+                        <LinktoProject
+                          href={
+                            sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)]
+                              .demo
+                          }
+                          target="_blank"
+                        ></LinktoProject>
+                      </Card>
+                    )
+                  )}
                 </AnimatePresence>
                 <SlideButton onClick={increaseIndex}>
                   <AngleR />
                 </SlideButton>
                 <Dots
                   num={
-                    projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
-                      .image.length
+                    sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].image
+                      .length
                   }
                 >
-                  {projectData[
-                    projectData.findIndex((e) => e.name === projectMatch.params.name)
-                  ].image.map((e, i) => (i === index ? <NowDot></NowDot> : <Dot></Dot>))}
+                  {sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].image.map(
+                    (e, i) => (i === index ? <NowDot></NowDot> : <Dot></Dot>)
+                  )}
                 </Dots>
               </Box>
             </TitleRow>
@@ -175,31 +161,31 @@ const Portfolio = () => {
                 <Skills>
                   <SkillTitle>Date:</SkillTitle>
                   <SkillList>
-                    {projectData[
-                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    {sorted[
+                      sorted.findIndex((e) => e.name === projectMatch.params.name)
                     ].date[0].slice(0, 4) +
                       "." +
-                      projectData[
-                        projectData.findIndex((e) => e.name === projectMatch.params.name)
+                      sorted[
+                        sorted.findIndex((e) => e.name === projectMatch.params.name)
                       ].date[0].slice(4) ===
-                    projectData[
-                      projectData.findIndex((e) => e.name === projectMatch.params.name)
+                    sorted[
+                      sorted.findIndex((e) => e.name === projectMatch.params.name)
                     ].date[1].slice(0, 4) +
                       "." +
-                      projectData[
-                        projectData.findIndex((e) => e.name === projectMatch.params.name)
+                      sorted[
+                        sorted.findIndex((e) => e.name === projectMatch.params.name)
                       ].date[1].slice(4) ? (
                       <Skill>
                         {months[
                           Number(
-                            projectData[
-                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            sorted[
+                              sorted.findIndex((e) => e.name === projectMatch.params.name)
                             ].date[0].slice(4)
                           ) - 1
                         ] +
                           ", " +
-                          projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
+                          sorted[
+                            sorted.findIndex((e) => e.name === projectMatch.params.name)
                           ].date[0].slice(0, 4)}
                       </Skill>
                     ) : (
@@ -207,28 +193,28 @@ const Portfolio = () => {
                         <Skill>
                           {months[
                             Number(
-                              projectData[
-                                projectData.findIndex((e) => e.name === projectMatch.params.name)
+                              sorted[
+                                sorted.findIndex((e) => e.name === projectMatch.params.name)
                               ].date[0].slice(4)
                             ) - 1
                           ] +
                             ", " +
-                            projectData[
-                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            sorted[
+                              sorted.findIndex((e) => e.name === projectMatch.params.name)
                             ].date[0].slice(0, 4)}
                         </Skill>
                         <Divider>-</Divider>
                         <Skill>
                           {months[
                             Number(
-                              projectData[
-                                projectData.findIndex((e) => e.name === projectMatch.params.name)
+                              sorted[
+                                sorted.findIndex((e) => e.name === projectMatch.params.name)
                               ].date[0].slice(4)
                             ) - 1
                           ] +
                             ", " +
-                            projectData[
-                              projectData.findIndex((e) => e.name === projectMatch.params.name)
+                            sorted[
+                              sorted.findIndex((e) => e.name === projectMatch.params.name)
                             ].date[1].slice(0, 4)}
                         </Skill>
                       </>
@@ -239,11 +225,7 @@ const Portfolio = () => {
                   <SkillTitle>Skills:</SkillTitle>
                   <SkillList>
                     <Skill>
-                      {
-                        projectData[
-                          projectData.findIndex((e) => e.name === projectMatch.params.name)
-                        ].skill
-                      }
+                      {sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].skill}
                     </Skill>
                   </SkillList>
                 </Skills>
@@ -252,12 +234,10 @@ const Portfolio = () => {
                   <SkillList>
                     <Skill>
                       {isEng
-                        ? projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].functionsEng
-                        : projectData[
-                            projectData.findIndex((e) => e.name === projectMatch.params.name)
-                          ].functions}
+                        ? sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)]
+                            .functionsEng
+                        : sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)]
+                            .functions}
                     </Skill>
                   </SkillList>
                 </Skills>
@@ -266,9 +246,8 @@ const Portfolio = () => {
                 <RowTitle>Description</RowTitle>
                 <Description>
                   {isEng
-                    ? projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
-                        .detail
-                    : projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)]
+                    ? sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].detail
+                    : sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)]
                         .detailKor}
                 </Description>
               </Column>
@@ -280,16 +259,14 @@ const Portfolio = () => {
               variants={hoverVar}
               animate="animate"
               whileHover={"hover"}
-              href={
-                projectData[projectData.findIndex((e) => e.name === projectMatch.params.name)].demo
-              }
+              href={sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].demo}
               target="_blank"
             >
               VISIT WEBSITE
               <UnderBar variants={hoverUnderBarVar} />
             </Button>
             <PageButtons>
-              {projectData.findIndex((e) => e.name === projectMatch.params.name) !== 0 && (
+              {sorted.findIndex((e) => e.name === projectMatch.params.name) !== 0 && (
                 <PageButton
                   variants={hoverTargetBar}
                   animate="animate"
@@ -297,9 +274,9 @@ const Portfolio = () => {
                   onClick={() => {
                     navigate(
                       `/project/${
-                        projectData[
-                          (projectData.findIndex((e) => e.name === projectMatch.params.name) - 1) %
-                            projectData.length
+                        sorted[
+                          (sorted.findIndex((e) => e.name === projectMatch.params.name) - 1) %
+                            sorted.length
                         ].name
                       }`
                     );
@@ -319,8 +296,8 @@ const Portfolio = () => {
                   </ButtonHidden>
                 </PageButton>
               )}
-              {projectData.findIndex((e) => e.name === projectMatch.params.name) !==
-                projectData.length - 1 && (
+              {sorted.findIndex((e) => e.name === projectMatch.params.name) !==
+                sorted.length - 1 && (
                 <NextButton
                   variants={hoverTargetBar}
                   animate="animate"
@@ -328,9 +305,9 @@ const Portfolio = () => {
                   onClick={() => {
                     navigate(
                       `/project/${
-                        projectData[
-                          (projectData.findIndex((e) => e.name === projectMatch.params.name) + 1) %
-                            projectData.length
+                        sorted[
+                          (sorted.findIndex((e) => e.name === projectMatch.params.name) + 1) %
+                            sorted.length
                         ].name
                       }`
                     );

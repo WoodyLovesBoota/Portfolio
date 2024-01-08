@@ -427,8 +427,8 @@ const Hidden = styled(motion.h2)`
 `;
 
 const normalVar = {
-  animate: { scale: 1.1, transition: { duration: 0.5, delay: 0.1 } },
-  hover: { scale: 1.0, transition: { duration: 0.5, delay: 0.1 } },
+  animate: { scale: 1.05, transition: { duration: 0.5, delay: 0.1 } },
+  hover: { scale: 1.0, transition: { duration: 1.5, delay: 0.1 } },
 };
 
 const hoverUnderVar = {
