@@ -62,24 +62,7 @@ const PortfolioNavigationBar = () => {
           />
         </motion.svg>
       </Logo>
-      <Contents>
-        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
-          <Ment variants={hoverOverVar}>INFO</Ment>
-          <Hidden variants={hoverUnderVar}>INFO</Hidden>
-        </Content>
-        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
-          <Ment variants={hoverOverVar}>PORTFOLIO</Ment>
-          <Hidden variants={hoverUnderVar}>PORTFOLIO</Hidden>
-        </Content>
-        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
-          <Ment variants={hoverOverVar}>BLOG</Ment>
-          <Hidden variants={hoverUnderVar}>BLOG</Hidden>
-        </Content>
-        <Content variants={hoverTargetBar} animate="animate" whileHover={"hover"}>
-          <Ment variants={hoverOverVar}>CONTACT</Ment>
-          <Hidden variants={hoverUnderVar}>CONTACT</Hidden>
-        </Content>
-      </Contents>
+      <Contents></Contents>
 
       <Toggles>
         {isEng ? (

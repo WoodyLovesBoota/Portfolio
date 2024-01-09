@@ -21,6 +21,7 @@ const Portfolio = () => {
   const [isRight, setIsRight] = useState(1);
   const [index, setIndex] = useState(0);
   const [sorted, setSorted] = useState<IProjectDate[]>([]);
+  const [leaving, setLeaving] = useState(false);
 
   const isEng = useRecoilValue(languageState);
   const projectData = useRecoilValue(projectState);
@@ -37,6 +38,8 @@ const Portfolio = () => {
   }, []);
 
   const increaseIndex = () => {
+    if (leaving) return;
+    toggleLeaving();
     setIsRight(1);
     sorted &&
       setIndex((prev) =>
@@ -48,6 +51,8 @@ const Portfolio = () => {
   };
 
   const decreaseIndex = () => {
+    if (leaving) return;
+    toggleLeaving();
     setIsRight(-1);
     sorted &&
       setIndex((prev) =>
@@ -55,6 +60,10 @@ const Portfolio = () => {
           ? sorted[sorted.findIndex((e) => e.name === projectMatch?.params.name)].image.length - 1
           : prev - 1
       );
+  };
+
+  const toggleLeaving = () => {
+    setLeaving((prev) => !prev);
   };
 
   useEffect(() => {
@@ -114,7 +123,7 @@ const Portfolio = () => {
                 <SlideButtonL onClick={decreaseIndex}>
                   <AngleL />
                 </SlideButtonL>
-                <AnimatePresence custom={isRight}>
+                <AnimatePresence custom={isRight} onExitComplete={toggleLeaving}>
                   {sorted[sorted.findIndex((e) => e.name === projectMatch.params.name)].image.map(
                     (e, i) => (
                       <Card
